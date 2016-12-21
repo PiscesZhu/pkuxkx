@@ -1,0 +1,225 @@
+
+
+--- Scripting error on 星期二, 十二月 20, 2016, 4:17 下午 ---
+
+Run-time error
+World: 北侠--新手
+Function/Sub: always_watch.timer30 called by timer
+Reason: 正在处理定时器 "always_watch_timer30"
+...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:3835: attempt to concatenate field 'menpai' (a nil value)
+stack traceback:
+	...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:3835: in function 'startworkflow'
+	...pkuxkx\MUSHclient\worlds\xkx_public\class\always.lua:622: in function <...pkuxkx\MUSHclient\worlds\xkx_public\class\always.lua:593>
+
+
+--- Scripting error on 星期二, 十二月 20, 2016, 4:25 下午 ---
+
+Run-time error
+World: 北侠--新手
+Function/Sub: always_watch.timer30 called by timer
+Reason: 正在处理定时器 "always_watch_timer30"
+...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:3835: attempt to concatenate field 'menpai' (a nil value)
+stack traceback:
+	...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:3835: in function 'startworkflow'
+	...pkuxkx\MUSHclient\worlds\xkx_public\class\always.lua:622: in function <...pkuxkx\MUSHclient\worlds\xkx_public\class\always.lua:593>
+
+
+--- Scripting error on 星期二, 十二月 20, 2016, 4:38 下午 ---
+
+Run-time error
+World: 北侠--新手
+Immediate execution
+...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:4123: attempt to compare two nil values
+stack traceback:
+	...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:4123: in function 'startworkflow_hs_mp'
+	...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:4090: in function 'startworkflow_hs'
+	[string "Command line"]:1: in main chunk
+	[C]: in function 'Execute'
+	...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:3835: in function 'startworkflow'
+	...pkuxkx\MUSHclient\worlds\xkx_public\class\always.lua:622: in function <...pkuxkx\MUSHclient\worlds\xkx_public\class\always.lua:593>
+
+
+--- Scripting error on 星期三, 十二月 21, 2016, 9:21 上午 ---
+
+Run-time error
+World: 北侠--新手
+Immediate execution
+cannot open D:\Program Files\pkuxkx\MUSHclient\worlds\xkx_michen\mods\quest_gumu_love.lua: No such file or directory
+stack traceback:
+	[C]: in function 'dofile'
+	[string "Script file"]:160: in function 'include'
+	[string "Script file"]:163: in function 'loadmod'
+	...s\pkuxkx\MUSHclient\worlds\xkx_michen\mods\quest.mod:179: in function 'fileLoad'
+	...s\pkuxkx\MUSHclient\worlds\xkx_michen\mods\quest.mod:205: in main chunk
+	[C]: in function 'dofile'
+	[string "Script file"]:160: in function 'include'
+	[string "Script file"]:163: in function 'loadmod'
+	...es\pkuxkx\MUSHclient\worlds\xkx_michen\xkx_frame.mod:32: in main chunk
+	[C]: in function 'dofile'
+	[string "Script file"]:160: in function 'include'
+	[string "Script file"]:170: in main chunk
+
+
+--- Scripting error on 星期三, 十二月 21, 2016, 9:34 上午 ---
+
+Run-time error
+World: 北侠--新手
+Immediate execution
+...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:4123: attempt to compare two nil values
+stack traceback:
+	...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:4123: in function 'startworkflow_hs_mp'
+	...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:4090: in function 'startworkflow_hs'
+	[string "Command line"]:1: in main chunk
+	[C]: in function 'Execute'
+	...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:3835: in function 'startworkflow'
+	...pkuxkx\MUSHclient\worlds\xkx_public\class\always.lua:622: in function <...pkuxkx\MUSHclient\worlds\xkx_public\class\always.lua:593>
+
+
+--- Scripting error on 星期三, 十二月 21, 2016, 9:35 上午 ---
+
+Run-time error
+World: 北侠--新手
+Immediate execution
+...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:4123: attempt to compare two nil values
+stack traceback:
+	...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:4123: in function 'startworkflow_hs_mp'
+	...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:4090: in function 'startworkflow_hs'
+	[string "Command line"]:1: in main chunk
+	[C]: in function 'Execute'
+	...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:3835: in function 'startworkflow'
+	...pkuxkx\MUSHclient\worlds\xkx_public\class\always.lua:622: in function <...pkuxkx\MUSHclient\worlds\xkx_public\class\always.lua:593>
+
+
+--- Scripting error on 星期三, 十二月 21, 2016, 9:37 上午 ---
+
+Run-time error
+World: 北侠--新手
+Immediate execution
+...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:4123: attempt to compare two nil values
+stack traceback:
+	...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:4123: in function 'startworkflow_hs_mp'
+	...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:4090: in function 'startworkflow_hs'
+	[string "Command line"]:1: in main chunk
+	[C]: in function 'Execute'
+	...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:3835: in function 'startworkflow'
+	...pkuxkx\MUSHclient\worlds\xkx_public\class\always.lua:622: in function <...pkuxkx\MUSHclient\worlds\xkx_public\class\always.lua:593>
+
+
+--- Scripting error on 星期三, 十二月 21, 2016, 9:38 上午 ---
+
+Run-time error
+World: 北侠--新手
+Immediate execution
+...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:4123: attempt to compare two nil values
+stack traceback:
+	...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:4123: in function 'startworkflow_hs_mp'
+	...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:4090: in function 'startworkflow_hs'
+	[string "Command line"]:1: in main chunk
+	[C]: in function 'Execute'
+	...\MUSHclient\worlds\xkx_public\class\michen_alias.lua:3835: in function 'startworkflow'
+	...pkuxkx\MUSHclient\worlds\xkx_public\class\always.lua:622: in function <...pkuxkx\MUSHclient\worlds\xkx_public\class\always.lua:593>
+
+
+--- Scripting error on 星期三, 十二月 21, 2016, 9:38 上午 ---
+
+Run-time error
+World: 北侠--新手
+Immediate execution
+cannot open D:\Program Files\pkuxkx\MUSHclient\worlds\xkx_michen\mods\quest_gumu_love.lua: No such file or directory
+stack traceback:
+	[C]: in function 'dofile'
+	[string "Script file"]:160: in function 'include'
+	[string "Script file"]:163: in function 'loadmod'
+	...s\pkuxkx\MUSHclient\worlds\xkx_michen\mods\quest.mod:179: in function 'fileLoad'
+	...s\pkuxkx\MUSHclient\worlds\xkx_michen\mods\quest.mod:205: in main chunk
+	[C]: in function 'dofile'
+	[string "Script file"]:160: in function 'include'
+	[string "Script file"]:163: in function 'loadmod'
+	...es\pkuxkx\MUSHclient\worlds\xkx_michen\xkx_frame.mod:32: in main chunk
+	[C]: in function 'dofile'
+	[string "Script file"]:160: in function 'include'
+	[string "Script file"]:170: in main chunk
+
+
+--- Scripting error on 星期三, 十二月 21, 2016, 9:41 上午 ---
+
+Run-time error
+World: 北侠--新手
+Immediate execution
+cannot open D:\Program Files\pkuxkx\MUSHclient\worlds\xkx_michen\mods\quest_gumu_love.lua: No such file or directory
+stack traceback:
+	[C]: in function 'dofile'
+	[string "Script file"]:160: in function 'include'
+	[string "Script file"]:163: in function 'loadmod'
+	...s\pkuxkx\MUSHclient\worlds\xkx_michen\mods\quest.mod:179: in function 'fileLoad'
+	...s\pkuxkx\MUSHclient\worlds\xkx_michen\mods\quest.mod:205: in main chunk
+	[C]: in function 'dofile'
+	[string "Script file"]:160: in function 'include'
+	[string "Script file"]:163: in function 'loadmod'
+	...es\pkuxkx\MUSHclient\worlds\xkx_michen\xkx_frame.mod:32: in main chunk
+	[C]: in function 'dofile'
+	[string "Script file"]:160: in function 'include'
+	[string "Script file"]:170: in main chunk
+
+
+--- Scripting error on 星期三, 十二月 21, 2016, 9:42 上午 ---
+
+Run-time error
+World: 北侠--新手
+Immediate execution
+cannot open D:\Program Files\pkuxkx\MUSHclient\worlds\xkx_michen\mods\quest_gumu_love.lua: No such file or directory
+stack traceback:
+	[C]: in function 'dofile'
+	[string "Script file"]:160: in function 'include'
+	[string "Script file"]:163: in function 'loadmod'
+	...s\pkuxkx\MUSHclient\worlds\xkx_michen\mods\quest.mod:179: in function 'fileLoad'
+	...s\pkuxkx\MUSHclient\worlds\xkx_michen\mods\quest.mod:205: in main chunk
+	[C]: in function 'dofile'
+	[string "Script file"]:160: in function 'include'
+	[string "Script file"]:163: in function 'loadmod'
+	...es\pkuxkx\MUSHclient\worlds\xkx_michen\xkx_frame.mod:32: in main chunk
+	[C]: in function 'dofile'
+	[string "Script file"]:160: in function 'include'
+	[string "Script file"]:170: in main chunk
+
+
+--- Scripting error on 星期三, 十二月 21, 2016, 9:45 上午 ---
+
+Run-time error
+World: 北侠--新手
+Immediate execution
+cannot open D:\Program Files\pkuxkx\MUSHclient\worlds\xkx_michen\mods\quest_gumu_love.lua: No such file or directory
+stack traceback:
+	[C]: in function 'dofile'
+	[string "Script file"]:160: in function 'include'
+	[string "Script file"]:163: in function 'loadmod'
+	...s\pkuxkx\MUSHclient\worlds\xkx_michen\mods\quest.mod:179: in function 'fileLoad'
+	...s\pkuxkx\MUSHclient\worlds\xkx_michen\mods\quest.mod:205: in main chunk
+	[C]: in function 'dofile'
+	[string "Script file"]:160: in function 'include'
+	[string "Script file"]:163: in function 'loadmod'
+	...es\pkuxkx\MUSHclient\worlds\xkx_michen\xkx_frame.mod:32: in main chunk
+	[C]: in function 'dofile'
+	[string "Script file"]:160: in function 'include'
+	[string "Script file"]:170: in main chunk
+
+
+--- Scripting error on 星期三, 十二月 21, 2016, 9:46 上午 ---
+
+Run-time error
+World: 北侠--新手
+Immediate execution
+cannot open D:\Program Files\pkuxkx\MUSHclient\worlds\xkx_michen\mods\quest_gumu_love.lua: No such file or directory
+stack traceback:
+	[C]: in function 'dofile'
+	[string "Script file"]:160: in function 'include'
+	[string "Script file"]:163: in function 'loadmod'
+	...s\pkuxkx\MUSHclient\worlds\xkx_michen\mods\quest.mod:179: in function 'fileLoad'
+	...s\pkuxkx\MUSHclient\worlds\xkx_michen\mods\quest.mod:205: in main chunk
+	[C]: in function 'dofile'
+	[string "Script file"]:160: in function 'include'
+	[string "Script file"]:163: in function 'loadmod'
+	...es\pkuxkx\MUSHclient\worlds\xkx_michen\xkx_frame.mod:32: in main chunk
+	[C]: in function 'dofile'
+	[string "Script file"]:160: in function 'include'
+	[string "Script file"]:170: in main chunk

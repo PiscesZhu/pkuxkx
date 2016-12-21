@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Saved on 2016Äê Ê®¶þÔÂ 19ÈÕ ÐÇÆÚÒ», ÏÂÎç 2:48 -->
+<!-- MuClient version 5.02 -->
+<!-- Written by Nick Gammon -->
+<!-- Home Page: http://www.mushclient.com/ -->
+<muclient>
+
+<!-- timers -->
+
+<timers
+   muclient_version="5.02"
+   world_file_version="15"
+   date_saved="2016-12-19 14:48:59"
+  >
+  <timer name="xue" second="1.00" offset_second="0.00"    send_to="10"
+group="Ñ§¹¦·ò" >
+  <send>xue hong for staff 10</send>
+
+  </timer>
+  <timer enabled="y" minute="5" second="0.00" offset_second="0.00"    send_to="10"
+>
+  <send>say hello;</send>
+
+  </timer>
+</timers>
+</muclient>

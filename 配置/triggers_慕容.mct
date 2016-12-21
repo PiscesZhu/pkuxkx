@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Saved on 2016Äê Ê®¶þÔÂ 16ÈÕ ÐÇÆÚÎå, ÉÏÎç 10:42 -->
+<!-- MuClient version 5.02 -->
+<!-- Written by Nick Gammon -->
+<!-- Home Page: http://www.mushclient.com/ -->
+<muclient>
+
+<!-- triggers -->
+
+<triggers
+   muclient_version="5.02"
+   world_file_version="15"
+   date_saved="2016-12-16 10:42:21"
+  >
+  <trigger
+   enabled="y"
+   group="Ä½ÈÝ"
+   match="Ä½ÈÝÊÀ¼Ò¼ÒÔôËÀÁË¡£"
+   send_to="10"
+   sequence="100"
+  >
+  <send>get all from corpse</send>
+  </trigger>
+</triggers>
+</muclient>

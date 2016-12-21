@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Saved on 2016Äê Ê®¶þÔÂ 20ÈÕ ÐÇÆÚ¶þ, ÉÏÎç 11:27 -->
+<!-- MuClient version 5.02 -->
+<!-- Written by Nick Gammon -->
+<!-- Home Page: http://www.mushclient.com/ -->
+
+<!-- ²å¼þ×´Ì¬ÒÑ±»±£´æ¡£²å¼þ:¡°dztn_tools_121129¡±£¬ÓÎÏ·:¡°pkuxkx¡±¡£ -->
+
+<muclient>
+
+<!-- variables -->
+
+<variables
+   muclient_version="5.02"
+   world_file_version="15"
+   date_saved="2016-12-20 11:27:57"
+  >
+  <variable name="day">29</variable>
+  <variable name="dz_C">0</variable>
+  <variable name="dz_num">0</variable>
+  <variable name="dzdouble">0</variable>
+  <variable name="dztn">16.1</variable>
+  <variable name="enabled">true</variable>
+  <variable name="hour">21</variable>
+  <variable name="jing">522</variable>
+  <variable name="jingli">1751</variable>
+  <variable name="maxjing">522</variable>
+  <variable name="maxjingli">1319</variable>
+  <variable name="maxneili">1432</variable>
+  <variable name="maxqi">876</variable>
+  <variable name="minu">43</variable>
+  <variable name="neili">1976</variable>
+  <variable name="num">171</variable>
+  <variable name="qi">876</variable>
+  <variable name="sec">28</variable>
+  <variable name="tempday">29</variable>
+  <variable name="temphour">21</variable>
+  <variable name="tempmaxjingli">1319</variable>
+  <variable name="tempmaxneili">1432</variable>
+  <variable name="tempminu">43</variable>
+  <variable name="tempsec">28</variable>
+  <variable name="windowflags">0</variable>
+  <variable name="windowmode">6</variable>
+  <variable name="windowx">1275</variable>
+  <variable name="windowy">0</variable>
+</variables>
+</muclient>

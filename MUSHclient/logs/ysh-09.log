@@ -1,0 +1,73 @@
+[09:44:52]
+[09:44:52]--- 连接时间 2016年 十二月 21日 星期三, 上午 9:44 ---
+[09:44:52]Connecting...
+[09:44:52]n
+[09:44:52]ysh
+[09:44:52]
+[09:44:52]                  ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+[09:44:52]                ☆ 飞雪连天射白鹿，笑书神侠倚碧鸳 ☆
+[09:44:52]                  ☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆☆
+[09:44:52]                   本游戏参考金庸武侠系列小说编写     
+[09:44:52]
+[09:44:52]                ----====   北  大  侠  客  行  ====----
+[09:44:52]　　　    ___________________________________________________
+[09:44:52]
+[09:44:52]                                                                    
+[09:44:52]                                                                    
+[09:44:52]            谁  纵  千  救  眼  三  将  闲  事  十  银  赵          
+[09:44:52]            能  死  秋  赵  花  杯  炙  过  了  步  鞍  客          
+[09:44:52]            书  侠  二  挥  耳  吐  啖  信  拂  杀  照  缦          
+[09:44:52]            阁  骨  壮  金  热  然  朱  陵  衣  一  白  胡  侠      
+[09:44:52]            下  香  士  槌  后  诺  亥  饮  去  人  马  缨          
+[09:44:52]            ，  ，  ，  ，  ，  ，  ，  ，  ，  ，  ，  ，  客      
+[09:44:52]            白  不  洹  邯  意  五  持  脱  深  千  飒  吴          
+[09:44:52]            首  惭  赫  郸  气  岳  觞  剑  藏  里  沓  钩  行      
+[09:44:52]            太  世  大  先  素  倒  劝  膝  身  不  如  霜          
+[09:44:52]            玄  上  梁  震  霓  为  侯  前  与  留  流  雪          
+[09:44:52]            经  英  城  惊  生  轻  嬴  横  名  行  星  明          
+[09:44:52]            。  。  。  。  。  。  。  。  。  。  。  。          
+[09:44:52]                                                                                
+[09:44:52]        直连    pkuxkx.net 8080/5555/8081/8082  
+[09:44:52]        官方QQ群        152814678
+[09:44:52]        主页    http://www.pkuxkx.net/    
+[09:44:52]             （论坛临时地址：http://www.pkuxkx.net:9999/forum/index.php，fullme的时候也请在显示地址后面自行加:9999）
+[09:44:52]                       最新改动请用 news new 察看。
+[09:44:52]北大侠客行已经执行了三天十小时四十二秒。
+[09:44:52]目前为止,北大侠客行已经有七百四十八万二千八百九十六人次访问
+[09:44:52]目前共有 191 位玩家在线上，以及 6 位使用者尝试连线中。
+[09:44:52]
+[09:44:52]您的英文名字（要注册新人物请输入new）：对不起，你的英文名字必须是 3 到 12 个英文字母。
+[09:45:06]您的英文名字：此ID档案已存在，请输入密码：
+[09:45:09]----**********************************************************----
+[09:45:09]::>>框架模块载入Start<<::
+[09:45:09]Loading System mod ok!
+[09:45:09]Loading Hook mod ok!
+[09:45:09]Loading Status mod ok!
+[09:45:09]任务模块载入Start....
+[09:45:09]Run-time error
+[09:45:09]World: 北侠--新手
+[09:45:09]Immediate execution
+[09:45:09]cannot open D:\Program Files\pkuxkx\MUSHclient\worlds\xkx_michen\mods\quest_gumu_love.lua: No such file or directory
+[09:45:09]stack traceback:
+[09:45:09]        [C]: in function 'dofile'
+[09:45:09]        [string "Script file"]:160: in function 'include'
+[09:45:09]        [string "Script file"]:163: in function 'loadmod'
+[09:45:09]        ...s\pkuxkx\MUSHclient\worlds\xkx_michen\mods\quest.mod:179: in function 'fileLoad'
+[09:45:09]        ...s\pkuxkx\MUSHclient\worlds\xkx_michen\mods\quest.mod:205: in main chunk
+[09:45:09]        [C]: in function 'dofile'
+[09:45:09]        [string "Script file"]:160: in function 'include'
+[09:45:09]        [string "Script file"]:163: in function 'loadmod'
+[09:45:09]        ...es\pkuxkx\MUSHclient\worlds\xkx_michen\xkx_frame.mod:32: in main chunk
+[09:45:09]        [C]: in function 'dofile'
+[09:45:09]        [string "Script file"]:160: in function 'include'
+[09:45:09]        [string "Script file"]:170: in main chunk
+[09:45:12]Timer 函数 "always_watch.timer10" 无法被执行 - 脚本已被禁用 或者 解析错误。
+[09:45:22]Timer 函数 "always_watch.timer10" 无法被执行 - 脚本已被禁用 或者 解析错误。
+[09:45:22]Timer 函数 "always_watch.timer30" 无法被执行 - 脚本已被禁用 或者 解析错误。
+[09:45:32]Timer 函数 "always_watch.timer10" 无法被执行 - 脚本已被禁用 或者 解析错误。
+[09:45:42]Timer 函数 "always_watch.timer10" 无法被执行 - 脚本已被禁用 或者 解析错误。
+[09:45:52]Timer 函数 "always_watch.timer10" 无法被执行 - 脚本已被禁用 或者 解析错误。
+[09:45:52]Timer 函数 "always_watch.timer30" 无法被执行 - 脚本已被禁用 或者 解析错误。
+[09:45:52]Timer 函数 "always_watch.timer60" 无法被执行 - 脚本已被禁用 或者 解析错误。
+[09:45:53]您花在连线进入手续的时间太久了，下次想好再来吧。
+[09:45:53]Trigger 函数 "addtri_519" 无法被执行 - 脚本已被禁用 或者 解析错误。

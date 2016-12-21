@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Saved on 2016Äê Ê®¶þÔÂ 16ÈÕ ÐÇÆÚÎå, ÉÏÎç 10:42 -->
+<!-- MuClient version 5.02 -->
+<!-- Written by Nick Gammon -->
+<!-- Home Page: http://www.mushclient.com/ -->
+<muclient>
+
+<!-- aliases -->
+
+<aliases
+   muclient_version="5.02"
+   world_file_version="15"
+   date_saved="2016-12-16 10:42:48"
+  >
+  <alias
+   match="mrjob"
+   enabled="y"
+   group="Ä½ÈÝ"
+   send_to="10"
+   sequence="100"
+  >
+  <send>ask pu ren about job</send>
+  </alias>
+  <alias
+   match="mrok"
+   enabled="y"
+   group="Ä½ÈÝ"
+   send_to="10"
+   sequence="100"
+  >
+  <send>give xin jian to pu ren</send>
+  </alias>
+  <alias
+   match="plt"
+   enabled="y"
+   group="Õ½¶·"
+   send_to="10"
+   sequence="100"
+  >
+  <send>perform xianglong-zhang.leiting</send>
+  </alias>
+  <alias
+   match="psanhui"
+   enabled="y"
+   group="Õ½¶·"
+   send_to="10"
+   sequence="100"
+  >
+  <send>perform xianglong-zhang.sanhui</send>
+  </alias>
+  <alias
+   match="pxiao"
+   enabled="y"
+   group="Õ½¶·"
+   send_to="10"
+   sequence="100"
+  >
+  <send>perform xianglong-zhang.xiao</send>
+  </alias>
+  <alias
+   match="xiqi"
+   enabled="y"
+   group="Õ½¶·"
+   send_to="10"
+   sequence="100"
+  >
+  <send>yun recover</send>
+  </alias>
+  <alias
+   match="xszb"
+   enabled="y"
+   group="ÐÂÊÖ"
+   send_to="10"
+   sequence="100"
+  >
+  <send>draw cloth;draw head;draw boots;draw surcoat;draw armor;</send>
+  </alias>
+</aliases>
+</muclient>

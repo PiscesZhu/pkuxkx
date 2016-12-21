@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Saved on 2016Äê ÆßÔÂ 03ÈÕ ÐÇÆÚÈÕ, ÏÂÎç 10:45 -->
+<!-- MuClient version 5.01 -->
+<!-- Written by Nick Gammon -->
+<!-- Home Page: http://www.mushclient.com/ -->
+<muclient>
+
+<!-- macros -->
+
+<macros
+   muclient_version="5.01"
+   world_file_version="15"
+   date_saved="2016-07-03 22:45:29"
+  >
+
+  <macro name="up" type="send_now" >
+  <send>up</send>
+
+  </macro>
+
+  <macro name="down" type="send_now" >
+  <send>down</send>
+
+  </macro>
+
+  <macro name="north" type="send_now" >
+  <send>north</send>
+
+  </macro>
+
+  <macro name="south" type="send_now" >
+  <send>south</send>
+
+  </macro>
+
+  <macro name="east" type="send_now" >
+  <send>east</send>
+
+  </macro>
+
+  <macro name="west" type="send_now" >
+  <send>west</send>
+
+  </macro>
+
+  <macro name="examine" type="replace" >
+  <send>examine </send>
+
+  </macro>
+
+  <macro name="look" type="replace" >
+  <send>look </send>
+
+  </macro>
+
+  <macro name="page" type="replace" >
+  <send>page </send>
+
+  </macro>
+
+  <macro name="say" type="replace" >
+  <send>say </send>
+
+  </macro>
+
+  <macro name="whisper" type="replace" >
+  <send>whisper </send>
+
+  </macro>
+
+  <macro name="doing" type="send_now" >
+  <send>DOING</send>
+
+  </macro>
+
+  <macro name="who" type="send_now" >
+  <send>WHO</send>
+
+  </macro>
+
+  <macro name="drop" type="replace" >
+  <send>drop </send>
+
+  </macro>
+
+  <macro name="take" type="replace" >
+  <send>take </send>
+
+  </macro>
+
+  <macro name="F2" type="send_now" >
+  <send>perform poyu-quan.leidong</send>
+
+  </macro>
+
+  <macro name="F3" type="send_now" >
+  <send>perform hunyuan-zhang.wuji</send>
+
+  </macro>
+
+  <macro name="F4" type="send_now" >
+  <send>perform huashan-jianfa.jianzhang</send>
+
+  </macro>
+
+  <macro name="F5" type="send_now" >
+  <send>ask ning about quest
+ask ning about Éú»î·Ñ</send>
+
+  </macro>
+
+  <macro name="F7" type="send_now" >
+  <send>ask yue about finish</send>
+
+  </macro>
+
+  <macro name="F8" type="send_now" >
+  <send>ask yue about fail</send>
+
+  </macro>
+
+  <macro name="F2+Ctrl" type="send_now" >
+  <send>tt+ ´ò×øÍÂÄÉ
+enable
+hpbrief
+time</send>
+
+  </macro>
+
+  <macro name="F3+Ctrl" type="send_now" >
+  <send>tt- ´ò×øÍÂÄÉ</send>
+
+  </macro>
+
+  <macro name="F5+Ctrl" type="send_now" >
+  <send>ask pu about job</send>
+
+  </macro>
+
+  <macro name="F7+Ctrl" type="send_now" >
+  <send>ask pu about fail</send>
+
+  </macro>
+
+  <macro name="logout" type="send_now" >
+  <send>LOGOUT</send>
+
+  </macro>
+
+  <macro name="quit" type="send_now" >
+  <send>QUIT</send>
+
+  </macro>
+
+  <macro name="Alt+A" type="send_now" >
+  <send>yun regenerate</send>
+
+  </macro>
+
+  <macro name="Alt+B" type="send_now" >
+  <send>get all</send>
+
+  </macro>
+
+  <macro name="Alt+J" type="send_now" >
+  <send>wield sword
+wield sword 2</send>
+
+  </macro>
+
+  <macro name="Alt+K" type="send_now" >
+  <send>unwield all</send>
+
+  </macro>
+
+  <macro name="Alt+M" type="send_now" >
+  <send>get all from corpse</send>
+
+  </macro>
+
+  <macro name="Alt+N" type="send_now" >
+  <send>get all from corpse 2</send>
+
+  </macro>
+
+  <macro name="Alt+Q" type="send_now" >
+  <send>yun recover</send>
+
+  </macro>
+
+  <macro name="Alt+S" type="send_now" >
+  <send>perform huashan-jianfa.jianzhang</send>
+
+  </macro>
+
+  <macro name="F6" type="send_now" >
+  <send>ask yue about job</send>
+
+  </macro>
+
+  <macro name="F6+Ctrl" type="send_now" >
+  <send>give xin jian to pu</send>
+
+  </macro>
+</macros>
+</muclient>

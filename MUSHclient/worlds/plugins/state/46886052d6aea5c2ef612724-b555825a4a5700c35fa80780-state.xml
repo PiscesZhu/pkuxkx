@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Saved on 2016Äê Ê®¶þÔÂ 16ÈÕ ÐÇÆÚÎå, ÏÂÎç 3:39 -->
+<!-- MuClient version 5.02 -->
+<!-- Written by Nick Gammon -->
+<!-- Home Page: http://www.mushclient.com/ -->
+
+<!-- ²å¼þ×´Ì¬ÒÑ±»±£´æ¡£²å¼þ:¡°pkuxkx_Chat_Capture_Miniwindow¡±£¬ÓÎÏ·:¡°xkx_mzt¡±¡£ -->
+
+<muclient>
+
+<!-- variables -->
+
+<variables
+   muclient_version="5.02"
+   world_file_version="15"
+   date_saved="2016-12-16 15:39:43"
+  >
+  <variable name="WINDOW_HEIGHT">131</variable>
+  <variable name="WINDOW_WIDTH">657</variable>
+  <variable name="bendi_on">0</variable>
+  <variable name="date_format">[%d %b %H:%M:%S] </variable>
+  <variable name="duiwu_on">0</variable>
+  <variable name="echo">1</variable>
+  <variable name="enabled">true</variable>
+  <variable name="font_name">ËÎÌå</variable>
+  <variable name="font_size">9</variable>
+  <variable name="helpme_on">0</variable>
+  <variable name="jianghu_on">0</variable>
+  <variable name="jiaoyi_on">0</variable>
+  <variable name="log_colour_codes">1</variable>
+  <variable name="log_timestamps">1</variable>
+  <variable name="log_to_file">0</variable>
+  <variable name="mw_b555825a4a5700c35fa80780_windowflags">2</variable>
+  <variable name="mw_b555825a4a5700c35fa80780_windowmode">6</variable>
+  <variable name="mw_b555825a4a5700c35fa80780_windowx">0</variable>
+  <variable name="mw_b555825a4a5700c35fa80780_windowy">0</variable>
+  <variable name="qq_on">0</variable>
+  <variable name="quyu_on">0</variable>
+  <variable name="renwu_on">0</variable>
+  <variable name="rumor_on">0</variable>
+</variables>
+</muclient>

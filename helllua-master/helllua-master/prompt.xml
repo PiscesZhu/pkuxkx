@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<muclient>
+<plugin
+   name="prompt2newline"
+   id="9a541cf534fb864555f4cfba"
+   language="Lua"
+   author="jarlyyn"
+   date_written="2009-05-05 01:50:59"
+   requires="4.37"
+   version="1.0"
+   >
+
+</plugin>
+
+<script>
+<![CDATA[
+prompt=string.char("27").."%[256D"..string.char("27").."%[K"
+function OnPluginPacketReceived(packet)
+	packet=string.gsub(packet,prompt,"\n")
+	return packet
+end
+]]>
+</script>
+</muclient>

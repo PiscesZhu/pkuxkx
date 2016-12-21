@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Saved on 2016Äê ÆßÔÂ 05ÈÕ ÐÇÆÚ¶þ, ÏÂÎç 12:24 -->
+<!-- MuClient version 5.01 -->
+<!-- Written by Nick Gammon -->
+<!-- Home Page: http://www.mushclient.com/ -->
+<muclient>
+
+<!-- aliases -->
+
+<aliases
+   muclient_version="5.01"
+   world_file_version="15"
+   date_saved="2016-07-05 12:24:40"
+  >
+  <alias
+   match="^ww\s(\d+)$"
+   enabled="y"
+   regexp="y"
+   send_to="12"
+   sequence="1"
+  >
+  <send>waittime(%1)</send>
+  </alias>
+  <alias
+   match="gc (*)"
+   enabled="y"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="1"
+  >
+  <send>gan che to %1</send>
+  </alias>
+  <alias
+   match="ge"
+   enabled="y"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="2"
+  >
+  <send>gan che to east</send>
+  </alias>
+  <alias
+   match="gs"
+   enabled="y"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="3"
+  >
+  <send>gan che to south</send>
+  </alias>
+  <alias
+   match="gw"
+   enabled="y"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="4"
+  >
+  <send>gan che to west</send>
+  </alias>
+  <alias
+   match="gn"
+   enabled="y"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="5"
+  >
+  <send>gan che to north</send>
+  </alias>
+  <alias
+   match="gne"
+   enabled="y"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="6"
+  >
+  <send>gan che to northeast</send>
+  </alias>
+  <alias
+   match="gse"
+   enabled="y"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="7"
+  >
+  <send>gan che to southeast</send>
+  </alias>
+  <alias
+   match="gsw"
+   enabled="y"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="8"
+  >
+  <send>gan che to southwest</send>
+  </alias>
+  <alias
+   match="gnw"
+   enabled="y"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="9"
+  >
+  <send>gan che to northwest</send>
+  </alias>
+  <alias
+   match="gu"
+   enabled="y"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="10"
+  >
+  <send>gan che to up</send>
+  </alias>
+  <alias
+   match="gd"
+   enabled="y"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="11"
+  >
+  <send>gan che to down</send>
+  </alias>
+  <alias
+   match="geu"
+   enabled="y"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="12"
+  >
+  <send>gan che to eastup</send>
+  </alias>
+  <alias
+   match="gsu"
+   enabled="y"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="13"
+  >
+  <send>gan che to southup</send>
+  </alias>
+  <alias
+   match="gwu"
+   enabled="y"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="14"
+  >
+  <send>gan che to westup</send>
+  </alias>
+  <alias
+   match="gnu"
+   enabled="y"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="15"
+  >
+  <send>gan che to northup</send>
+  </alias>
+  <alias
+   match="ged"
+   enabled="y"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="16"
+  >
+  <send>gan che to eastdown</send>
+  </alias>
+  <alias
+   match="gsd"
+   enabled="y"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="17"
+  >
+  <send>gan che to southdown</send>
+  </alias>
+  <alias
+   match="gwd"
+   enabled="y"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="18"
+  >
+  <send>gan che to westdown</send>
+  </alias>
+  <alias
+   match="gnd"
+   enabled="y"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="19"
+  >
+  <send>gan che to northdown</send>
+  </alias>
+  <alias
+   match="genter"
+   enabled="y"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="20"
+  >
+  <send>gan che to enter</send>
+  </alias>
+  <alias
+   match="gout"
+   enabled="y"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="21"
+  >
+  <send>gan che to out</send>
+  </alias>
+  <alias
+   name="ptbl1"
+   match="^\.bl(.*)$"
+   enabled="y"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>ptbl_start('%1')
+</send>
+  </alias>
+  <alias
+   match="^aa\+ (.*)$"
+   enabled="y"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableAliasGroup('%1', ture)</send>
+  </alias>
+  <alias
+   match="^aa\- (.*)$"
+   enabled="y"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableAliasGroup('%1', false)</send>
+  </alias>
+  <alias
+   match="^t\+ (.*)$"
+   enabled="y"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableTrigger('%1', ture)</send>
+  </alias>
+  <alias
+   match="^t\- (.*)$"
+   enabled="y"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableTrigger('%1', false)</send>
+  </alias>
+  <alias
+   match="^tt\+ (.*)$"
+   enabled="y"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableTriggerGroup('%1', ture)</send>
+  </alias>
+  <alias
+   match="^tt\- (.*)$"
+   enabled="y"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableTriggerGroup('%1', false)</send>
+  </alias>
+  <alias
+   match="aqf"
+   enabled="y"
+   group="Í¶Ãû×´"
+   send_to="10"
+   sequence="100"
+  >
+  <send>ask qiu about Ê§°Ü</send>
+  </alias>
+  <alias
+   match="aqt"
+   enabled="y"
+   group="Í¶Ãû×´"
+   send_to="10"
+   sequence="100"
+  >
+  <send>ask qiu about Í¶Ãû×´</send>
+  </alias>
+  <alias
+   match="ask xiao about home"
+   enabled="y"
+   group="Ïô°ëºÍ"
+   send_to="10"
+   sequence="100"
+  >
+  <send>axh</send>
+  </alias>
+  <alias
+   match="axj"
+   enabled="y"
+   group="Ïô°ëºÍ"
+   send_to="10"
+   sequence="100"
+  >
+  <send>ask xiao about job</send>
+  </alias>
+  <alias
+   match="cunqian"
+   enabled="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>cunqian()</send>
+  </alias>
+  <alias
+   match="gdx"
+   enabled="y"
+   group="Ïô°ëºÍ"
+   send_to="10"
+   sequence="100"
+  >
+  <send>give yuanyang dao to xiao</send>
+  </alias>
+  <alias
+   name="ptbl2"
+   match="gg1"
+   enabled="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>bl_fast_goto()</send>
+  </alias>
+  <alias
+   name="ptbl3"
+   match="gg2"
+   enabled="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>bl_fast_back()</send>
+  </alias>
+  <alias
+   match="gn"
+   enabled="y"
+   group="Í¶Ãû×´"
+   send_to="10"
+   sequence="100"
+  >
+  <send>give beauty girl to qiu</send>
+  </alias>
+  <alias
+   match="hg"
+   enabled="y"
+   group="Í¶Ãû×´"
+   send_to="10"
+   sequence="100"
+  >
+  <send>hit beauty girl</send>
+  </alias>
+  <alias
+   match="hsjf"
+   enabled="y"
+   group="ÃÅÖÒÈÎÎñ"
+   send_to="10"
+   sequence="100"
+  >
+  <send>s;s;w;nw;ask punk about ÍõÐ¡¶þ;se;e;n;n;nw;nw;ne;enter hole;ask wang about Íµ¼¦;bihua;w;sw;se;se</send>
+  </alias>
+  <alias
+   match="sb"
+   enabled="y"
+   group="Í¶Ãû×´"
+   send_to="10"
+   sequence="100"
+  >
+  <send>give zhenshan zhibao to qiu</send>
+  </alias>
+  <alias
+   match="sj"
+   enabled="y"
+   group="Í¶Ãû×´"
+   send_to="10"
+   sequence="100"
+  >
+  <send>give shou ji to qiu</send>
+  </alias>
+</aliases>
+</muclient>

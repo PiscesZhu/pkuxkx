@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Saved on 2016Äê Ê®¶þÔÂ 20ÈÕ ÐÇÆÚ¶þ, ÏÂÎç 4:39 -->
+<!-- MuClient version 5.02 -->
+<!-- Written by Nick Gammon -->
+<!-- Home Page: http://www.mushclient.com/ -->
+
+<!-- ²å¼þ×´Ì¬ÒÑ±»±£´æ¡£²å¼þ:¡°pkuxkx_p2palias_v20160728¡±£¬ÓÎÏ·:¡°±±ÏÀ-ÐÂÊÖ¡±¡£ -->
+
+<muclient>
+
+<!-- variables -->
+
+<variables
+   muclient_version="5.02"
+   world_file_version="15"
+   date_saved="2016-12-20 16:39:14"
+  >
+  <variable name="roomname">¾®µ×</variable>
+</variables>
+</muclient>

@@ -1,0 +1,1413 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Saved on 2012Äê ËÄÔÂ 28ÈÕ ÐÇÆÚÁù, ÉÏÎç 12:28 -->
+<!-- MuClient version 4.72 -->
+<!-- Written by Nick Gammon -->
+<!-- Home Page: http://www.mushclient.com/ -->
+<muclient>
+<world
+   muclient_version="4.72"
+   world_file_version="15"
+   date_saved="2012-04-28 00:28:16"
+
+   auto_say_override_prefix="-"
+   auto_say_string="say "
+   chat_name="Name-not-set"
+   command_stack_character=";"
+   id="317b764481d38f9141198fdc"
+   input_font_name="Fixedsys"
+   mapping_failure="Alas, you cannot go that way."
+   name="±±´óÏÀ¿ÍÐÐMUSHClient4.43ÂÌÉ«°æ"
+   new_activity_sound="(No sound)"
+   output_font_name="ºÚÌå"
+   script_editor="D:\Program Files\EditPlus\editplus.exe"
+   script_filename="F:\Program Files\MUSHclient\worlds\huwei\huwei.lua"
+   script_language="Lua"
+   script_prefix="/"
+   site="pkuxkx.net"
+   spam_message="look"
+   speed_walk_prefix="#"
+   terminal_identification="mushclient"
+
+   arrows_change_history="y"
+   arrow_keys_wrap="y"
+   arrow_recalls_partial="y"
+   auto_pause="y"
+   auto_repeat="y"
+   auto_resize_minimum_lines="1"
+   auto_resize_maximum_lines="20"
+   chat_foreground_colour="red"
+   chat_background_colour="black"
+   chat_port="4050"
+   confirm_before_replacing_typing="y"
+   confirm_on_paste="y"
+   confirm_on_send="y"
+   copy_selection_to_clipboard="y"
+   default_trigger_sequence="100"
+   default_alias_sequence="100"
+   detect_pueblo="y"
+   display_my_input="y"
+   echo_colour="2"
+   echo_hyperlink_in_output_window="y"
+   edit_script_with_notepad="y"
+   enable_aliases="y"
+   enable_beeps="y"
+   enable_command_stack="y"
+   enable_scripts="y"
+   enable_speed_walk="y"
+   enable_timers="y"
+   enable_triggers="y"
+   enable_trigger_sounds="y"
+   escape_deletes_input="y"
+   history_lines="1000"
+   hyperlink_adds_to_command_history="y"
+   hyperlink_colour="#0080FF"
+   indent_paras="y"
+   input_background_colour="white"
+   input_font_height="9"
+   input_font_weight="400"
+   input_text_colour="black"
+   keypad_enable="y"
+   line_information="y"
+   log_output="y"
+   max_output_lines="5000"
+   mud_can_change_link_colour="y"
+   mud_can_change_options="y"
+   note_text_colour="#040000"
+   output_font_height="12"
+   output_font_weight="400"
+   output_font_charset="134"
+   paste_delay_per_lines="1"
+   pixel_offset="1"
+   port="8080"
+   proxy_port="1080"
+   send_file_delay_per_lines="1"
+   send_mxp_afk_response="y"
+   show_connect_disconnect="y"
+   spam_line_count="20"
+   speed_walk_delay="28"
+   tab_completion_lines="200"
+   timestamp_input_text_colour="maroon"
+   timestamp_notes_text_colour="blue"
+   timestamp_output_text_colour="white"
+   timestamp_input_back_colour="black"
+   timestamp_notes_back_colour="black"
+   timestamp_output_back_colour="black"
+   treeview_triggers="y"
+   treeview_aliases="y"
+   treeview_timers="y"
+   underline_hyperlinks="y"
+   unpause_on_send="y"
+   use_custom_link_colour="y"
+   use_default_input_font="y"
+   use_mxp="2"
+   warn_if_scripting_inactive="y"
+   wrap_column="177"
+   write_world_name_to_log="y"
+   > <!-- end of general world attributes -->
+
+</world>
+
+<!-- triggers -->
+
+<triggers
+   muclient_version="4.72"
+   world_file_version="15"
+   date_saved="2012-04-28 00:28:16"
+  >
+  <trigger
+   group="dazuo"
+   match="^[&gt; ]*ÄãµÄ.*Ôö¼ÓÁË£¡£¡$"
+   regexp="y"
+   sequence="99"
+  >
+  <send>hp</send>
+  </trigger>
+  <trigger
+   group="dazuo"
+   match="^[&gt; ]*ÄãµÄÄÚÁ¦²»¹»¡£$"
+   regexp="y"
+   sequence="99"
+  >
+  <send>e
+q
+sleep</send>
+  </trigger>
+  <trigger
+   group="dazuo"
+   match="^[&gt; ]*ÄãµÄÄÚÁ¦ÐÞÎªËÆºõÒÑ¾­´ïµ½ÁËÆ¿¾±¡£$"
+   regexp="y"
+   send_to="12"
+   sequence="99"
+  >
+  <send>SetAliasOption("dztn","send","tuna @costsp")
+Execute("dztn")</send>
+  </trigger>
+  <trigger
+   group="dazuo"
+   match="^[&gt; ]*Äã¸ÕÔÚÈý·ÖÖÓÄÚË¯¹ýÒ»¾õ, ¶àË¯¶ÔÉíÌåÓÐº¦ÎÞÒæ! $"
+   regexp="y"
+   send_to="12"
+   sequence="99"
+  >
+  <send>Execute("w;q")
+DoAfterSpecial(20,"dztn",10)</send>
+  </trigger>
+  <trigger
+   group="dazuo"
+   match="^[&gt; ]*ÄãÂÔÒ»ÄýÉñ£¬¾«Éñ¿´ÆðÀ´ºÃ¶àÁË¡£$"
+   regexp="y"
+   send_to="10"
+   sequence="99"
+  >
+  <send>dztn</send>
+  </trigger>
+  <trigger
+   group="dazuo"
+   match="^[&gt; ]*ÄãÉîÉîÎüÁË¼¸¿ÚÆø£¬Á³É«¿´ÆðÀ´ºÃ¶àÁË¡£$"
+   regexp="y"
+   send_to="10"
+   sequence="99"
+  >
+  <send>dztn</send>
+  </trigger>
+  <trigger
+   group="dazuo"
+   match="^[&gt; ]*ÄãÍÂÄÉÍê±Ï£¬Õö¿ªË«ÑÛ£¬Õ¾ÁËÆðÀ´¡£$"
+   regexp="y"
+   send_to="10"
+   sequence="99"
+  >
+  <send>dztn</send>
+  </trigger>
+  <trigger
+   group="dazuo"
+   match="^[&gt; ]*ÄãÏÖÔÚµÄÆøÌ«ÉÙÁË£¬ÎÞ·¨²úÉúÄÚÏ¢ÔËÐÐÈ«Éí¾­Âö¡£$"
+   regexp="y"
+   sequence="99"
+  >
+  <send>exert recover</send>
+  </trigger>
+  <trigger
+   group="dazuo"
+   match="^[&gt; ]*ÄãÏÖÔÚ¾«²»×ã£¬ÎÞ·¨ÐÞÐÐ¾«Á¦£¡$"
+   regexp="y"
+   send_to="10"
+   sequence="99"
+  >
+  <send>exert regenerate</send>
+  </trigger>
+  <trigger
+   group="dazuo"
+   match="^[&gt; ]*ÄãÏÖÔÚÉíÌå×´¿öÌ«²îÁË£¬ÎÞ·¨¼¯ÖÐ¾«Éñ£¡$"
+   regexp="y"
+   sequence="99"
+  >
+  <send>exert recover</send>
+  </trigger>
+  <trigger
+   group="dazuo"
+   match="^[&gt; ]*ÄãÒ»¾õÐÑÀ´£¬¾«Éñ¶¶ËÓµØ»î¶¯ÁË¼¸ÏÂÊÖ½Å¡£$"
+   regexp="y"
+   send_to="10"
+   sequence="99"
+  >
+  <send>eat liang
+drink jiudai
+w
+q
+dztn</send>
+  </trigger>
+  <trigger
+   group="dazuo"
+   match="^[&gt; ]*ÄãÔË¹¦Íê±Ï£¬ÉîÉîÎüÁË¿ÚÆø£¬Õ¾ÁËÆðÀ´¡£$"
+   regexp="y"
+   send_to="10"
+   sequence="99"
+  >
+  <send>dztn</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="fight"
+   match=".*ÄãÆø´­ÐêÐê£¬¿´ÆðÀ´×´¿ö²¢²»Ì«ºÃ¡£"
+   regexp="y"
+   sequence="100"
+  >
+  <send>exert recover</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="fight"
+   match=".*ÄãËÆºõÊ®·ÖÆ£±¹£¬¿´À´ÐèÒªºÃºÃÐÝÏ¢ÁË¡£"
+   regexp="y"
+   sequence="100"
+  >
+  <send>exert recover</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="fight"
+   match=".*ÄãÒ¡Í·»ÎÄÔ¡¢ÍáÍáÐ±Ð±µØÕ¾¶¼Õ¾²»ÎÈ£¬ÑÛ¿´¾ÍÒªµ¹ÔÚµØÉÏ¡£"
+   regexp="y"
+   sequence="100"
+  >
+  <send>exert recover</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="fight"
+   match=".*ÄãÒÑ¾­ÏÝÈë°ë»èÃÔ×´Ì¬£¬ËæÊ±¶¼¿ÉÄÜË¤µ¹ÔÎÈ¥¡£"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>AddTimer("ec",0,0,2,"exert recover",1025,"")
+Execute("touxiang;halt;quit")</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="fight"
+   match=".*ÄãÒÑ¾­Ò»¸±Í·ÖØ½ÅÇáµÄÄ£Ñù£¬ÕýÔÚÃãÁ¦Ö§³ÅÖø²»µ¹ÏÂÈ¥¡£"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>AddTimer("ec",0,0,2,"exert recover",1025,"")</send>
+  </trigger>
+  <trigger
+   group="zhuxi"
+   match=".*ÏòÖììä´òÌýÓÐ¹Ø¡ºquestion¡»µÄÏûÏ¢¡£"
+   omit_from_output="y"
+   regexp="y"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   expand_variables="y"
+   group="fight"
+   match="[ËûËý]+ÒÑ¾­À´²»¼°·´Ó¦£¬ÄãÊÖÖÐÓñóïÁ¬Ö¸£¬ÒÑ¾­·â×¡ÁË[ËûËý]+ËÄÖ«¸÷´óÒªÑ¨£¬"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>DoAfterSpecial(2,"enforce max;perform finger.tan @tar;enforce 0",10)</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="item"
+   match="\s+±ùÆÇÕÈ\(Bingpo zhang\)$"
+   regexp="y"
+   sequence="100"
+  >
+  <send>get zhang</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="fight"
+   match="\s+ÄªÔªá°·¢ÏÖµÄ ¹ÃËÕÄ½ÈÝÅÑÍ½.*$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>Execute("follow pantu;kill pantu")
+SetVariable("tar","pantu")</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="item"
+   match="\s+ÓñÖñÕÈ\(Yuzhu zhang\)$"
+   regexp="y"
+   sequence="100"
+  >
+  <send>get stick</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="»¤ÎÀ"
+   match="^.*ºÙºÙÒ»Ð¦£º´ò²»¹ý¾ÍÏëÍ¶½µ£¿ÀÏ×Ó¾ÍÊÇÀ´ÃðÁéðÕµÄ£¡Í¶½µ£¿ÐÝÏë£¡$"
+   regexp="y"
+   sequence="100"
+  >
+  <send>halt
+exert recover
+touxiang</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="»¤ÎÀ"
+   lines_to_match="2"
+   match="^[&gt; ]*.*¾ö¶¨¿ªÊ¼¸úËæÄãÒ»ÆðÐÐ¶¯¡£$\n^[&gt; ]*(.*)¿ñÐ¦µÀ£º½ñÌìÎÒÒª¼ûÊ¶¼ûÊ¶ÄãÃÇÁéðÕ¹¬ÓÐÊ²Ã´À÷º¦\?$"
+   multi_line="y"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>Execute("look")
+SetVariable("dizi","%1")
+
+</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="item"
+   match="^[&gt; ]*[^¡¾]*ËÀÁË¡£$"
+   regexp="y"
+   sequence="100"
+  >
+  <send>get all from corpse</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="»¤ÎÀ"
+   match="^[&gt; ]*·ç¾°ÒªÂýÂýµÄ¿´¡£"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>DoAfter(2,"look")</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   expand_variables="y"
+   group="»¤ÎÀ"
+   match="^[&gt; ]*»¤ÎÀÊ±¼äÒÑ¾­µ½ÁË£¬ÄãµÄÈÎÎñÍê³ÉÁË¡£$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>Send("halt")
+DoAfterSpecial(3,"h_back()",12)
+SetVariable("h_rnd",@h_rnd+1)</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="fight"
+   match="^[&gt; ]*½Ù·Ë½ÐµÀ£ºµã×ÓÔúÊÖ£¬³¶ºô£¡$"
+   regexp="y"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="fight"
+   match="^[&gt; ]*½Ù·ËÍ»È»´Ó°µ´¦ÌøÁË³öÀ´£¬ÒõÐ¦µÀ£º¡°ºì»õºÍÈËÃü¶¼ÁôÏÂÀ´°É£¡¡£¡±$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>DoAfterSpecial(2,'EnableTimerGroup("pfm",true)',12)
+SetVariable("tar","jhcx's robber")</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="fight"
+   match="^[&gt; ]*½á¹û£¬ÄãÕö¿ªÑÛ¾¦Ê±£¬·¢ÏÖÊÖÖÐ±øÆ÷²»Òí¶ø·É£¡$"
+   regexp="y"
+   sequence="100"
+  >
+  <send>get xiao
+wield xiao</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="»¤ÎÀ"
+   match="^[&gt; ]*Äã±»½±ÀøÁË$"
+   regexp="y"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="fight"
+   match="^[&gt; ]*ÄãµÄ±Ìº£Éñ¹¦ÔËÐÐÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableTimer("pwup",true)</send>
+  </trigger>
+  <trigger
+   group="dazuo"
+   match="^[&gt; ]*ÄãµÄ¾«Á¦ÐÞÎªÒÑ¾­´ïµ½ÁËÆ¿¾±£¬¾«Á¦×î´óÖµÎª»ù±¾ÄÚ¹¦¼¼ÄÜµÄ15±¶¡£$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>SetAliasOption("dztn","send","dazuo @costhp")
+Execute("dztn")</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="fight"
+   match="^[&gt; ]*ÄãµÄÄÚÁ¦²»¹»¡£$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableTimer("pfm",false)
+</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="»¤ÎÀ"
+   match="^[&gt; ]*ÄãÄýÉñ¾²Æø£¬°µÔËÉñ¹¦£¬Çê¿Ì¼ä±Ìº£Éñ¹¦µÄÄÚÁ¦±é²¼È«Éí¡£$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableTimer("pwup",false)</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="»¤ÎÀ"
+   match="^[&gt; ]*ÄãÉíÉÏÃ»ÓÐ°µÆ÷£¬ÎÞ·¨Ê¹³öµ¯Ö¸¾ø¼¼£¡"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>SetVariable("h_rnd",9)
+DoAfter(1,"perform sword.chan")</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="»¤ÎÀ"
+   match="^[&gt; ]*ÄãÏÖÔÚµÄÆøÌ«ÉÙÁË£¬ÎÞ·¨²úÉúÄÚÏ¢ÔËÐÐÈ«Éí¾­Âö¡£$"
+   regexp="y"
+   sequence="100"
+  >
+  <send>exert recover</send>
+  </trigger>
+  <trigger
+   group="dazuo"
+   match="^[&gt; ]*ÄãÏÖÔÚ¾«²»¹»£¬ÎÞ·¨¿ØÖÆÄÚÏ¢µÄÁ÷¶¯£¡$"
+   regexp="y"
+   sequence="100"
+  >
+  <send>exert regenerate</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="fight"
+   match="^[&gt; ]*ÄãÏÖÔÚÆøÁ¦³äÅæ¡£$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>DeleteTimer("ec")</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="»¤ÎÀ"
+   lines_to_match="4"
+   match="^[&gt; ]*ÄãÏòÊ¯É©´òÌýÓÐ¹Ø¡ºhuwei¡»µÄÏûÏ¢¡£$\n^Ê¯É©ÂúÁ³ºüÒÉµÄà½àì×Å£º¡°ÔõÃ´ÀÏÊÇÄã£¡ÎÒ¿´ÄãÊÇ»úÆ÷ÈË°É¡£¡±$\n^Ê¯É©ËµµÀ£º¡¸ÎÒ¸ÕµÃµ½ÏûÏ¢£¬ËùÎ½µÄÃûÃÅÕýÅÉ£¬À´ÁË¼¸¸öÈËÌôÕ½ÎÒÅÉ¡£$\n^\s+Äã¸Ï¿ìÈ¥(.*)»¤ÎÀÒ»ÏÂ°É\(huwei\)¡£$"
+   multi_line="y"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>SetVariable("hplace","%1")
+DoAfter(3,"exert recover")
+DoAfterSpecial(5,"h_go()",12)
+</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="»¤ÎÀ"
+   lines_to_match="2"
+   match="^[&gt; ]*ÄãÏòÊ¯É©´òÌýÓÐ¹Ø¡ºhuwei¡»µÄÏûÏ¢¡£$\n^Ê¯É©ËµµÀ£º¡¸Äã¸Õ×öÍêÈÎÎñ£¬µÈ»áÔÙÀ´¡£¡¹$"
+   multi_line="y"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>DoAfter(20,"ask shi about huwei")</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="»¤ÎÀ"
+   lines_to_match="3"
+   match="^[&gt; ]*ÄãÏòÊ¯É©´òÌýÓÐ¹Ø¡ºhuwei¡»µÄÏûÏ¢¡£$\n^Ê¯É©ËµµÀ£º¡¸ÎÒ¸ÕµÃµ½ÏûÏ¢£¬ËùÎ½µÄÃûÃÅÕýÅÉ£¬À´ÁË¼¸¸öÈËÌôÕ½ÎÒÅÉ¡£$\n^\s+Äã¸Ï¿ìÈ¥(.*)»¤ÎÀÒ»ÏÂ°É\(huwei\)¡£$"
+   multi_line="y"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>SetVariable("hplace","%1")
+DoAfter(3,"exert recover")
+DoAfterSpecial(5,"h_go()",12)
+</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="»¤ÎÀ"
+   match="^[&gt; ]*ÄãÏòÊ¯É©´òÌýÓÐ¹Ø¡ºhuwei¡»µÄÏûÏ¢¡£$\n^Ê¯É©ËµµÀ£º¡¸ÎÒ¿´Äã»ê²»ÊØÉá£¬ÐÄ²»ÔÚÑÉ£¬ÊµÔÚ²»ÄÜÈÃÎÒ·ÅÐÄ¡£ÄãµÄÐÄË¼·Éµ½ÄÄÀïÈ¥ÁË£¿¡¹$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>utils.msgbox("ÄãÀÛÁË£¬»ØÀ´¿´Ò»ÏÂ°É¡£")</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="fight"
+   match="^[&gt; ]*ÄãÒªÄÃ×Å sword ÀàÎäÆ÷²ÅÄÜÊ¹³öÕâÖÖ¾ø¼¼¡£$"
+   regexp="y"
+   sequence="100"
+  >
+  <send>get xiao
+wield xiao</send>
+  </trigger>
+  <trigger
+   group="»¤ÎÀ"
+   match="^[&gt; ]*ÄãÖÕÓÚÀ´µ½ÁË¶ÔÃæ£¬ÐÄÀïµÄÊ¯Í·ÖÕÓÚÂäµØ¡£$"
+   name="tiesuo"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+   variable="tiesuo"
+  >
+  <send>h_rest();EnableTrigger("tiesuo",0)</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="»¤ÎÀ"
+   match="^[&gt; ]*ÕâÀïÃ»ÓÐÄãÒª¹¥»÷µÄ¶ÔÏó¡£$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableTimerGroup("pfm",false)</send>
+  </trigger>
+  <trigger
+   group="zhuxi"
+   match="^[&gt; ]*ÖììäµÀ.*È«¶ÔµÄÓÐ(.*)¸ö£¬Ö»ÓÐÊé¼Ü¶ÔµÄÓÐ(.*)¸ö¡£$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>Get_Tishi("%1","%2");</send>
+  </trigger>
+  <trigger
+   group="zhuxi"
+   match="^[&gt;]*ÖììäµÀ.*Äã»¹ÓÐ(.*)´Î»ú»á£¡¡±$"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="gag"
+   match="^[^Äã]+ÅÌÏ¥×øÏÂ£¬¿ªÊ¼ÍÂÄÉÁ¶¾«¡£$"
+   omit_from_output="y"
+   regexp="y"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="gag"
+   match="^[^Äã]+ÍÂÄÉÍê±Ï£¬Õö¿ªË«ÑÛ£¬Õ¾ÁËÆðÀ´¡£$"
+   omit_from_output="y"
+   regexp="y"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="gag"
+   match="^[^Äã]+ÔË¹¦Íê±Ï£¬ÉîÉîÎüÁË¿ÚÆø£¬Õ¾ÁËÆðÀ´¡£$"
+   omit_from_output="y"
+   regexp="y"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   group="»¤ÎÀ"
+   match="^\s+.*µÜ×Ó\s(.*)\((.*)\s.*\).*$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>if GetVariable("dizi")=="%1" then SetVariable("tar",string.lower("%2"))
+end
+DoAfterSpecial(2,'EnableTimerGroup("pfm",true)',12)</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   expand_variables="y"
+   group="»¤ÎÀ"
+   match="^\s+.*µÜ×Ó\s@dizi\((.*)\s.*\).*$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>SetVariable("tar",string.lower("%1"))
+DoAfterSpecial(2,'EnableTimerGroup("pfm",true)',12)</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="fight"
+   match="^\s+¾Æ¿Í ÍõÎå\(Wang wu\)$"
+   regexp="y"
+   sequence="100"
+  >
+  <send>ask wang about ¹íµ¶
+kill wang</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="hp"
+   match="^\s+ÄÚ¹¦ \(force\).*ÓÐÐ§µÈ¼¶£º\s*(\d+)$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>SetVariable("costhp",%1/10*5)
+</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="hp"
+   match="^¡¾ ¾«Éñ ¡¿\s+(\d+)\s+\/\s+(\d+)\s+\[\s*(\d+)\%\]\s+¡¾ ¾«Á¦ ¡¿\s+(\d+)\s+\/\s+(\d+).*$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>SetVariable("sp",%1)
+SetVariable("maxsp",%2)
+SetVariable("ep",%4)
+SetVariable("maxep",%5)
+SetVariable("costsp",%5/4+1)
+</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="hp"
+   match="^¡¾ ÆøÑª ¡¿\s+(\d+)\s+\/\s+(\d+)\s+\[\s*(\d+)\%\]\s+¡¾ ÄÚÁ¦ ¡¿\s+(\d+)\s+\/\s+(\d+).*$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>SetVariable("hp",%1)
+SetVariable("maxhp",%2)
+SetVariable("health",%3)
+SetVariable("fp",%4)
+SetVariable("maxfp",%5)</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="hp"
+   match="^¡¾ Ê³Îï ¡¿\s*(\d+).*¡¾ Ç±ÄÜ ¡¿\s*(.*)$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>SetVariable("v_food",%1)
+SetVariable("pot","%2")
+</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="hp"
+   match="^¡¾ ÒûË® ¡¿\s+(\d+).*¡¾ ¾­Ñé ¡¿\s*(.*)$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>SetVariable("v_water",%1)
+SetVariable("exp","%2")
+
+</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="gag"
+   match="^¡¾ÈÎÎñ½±Àø¡¿.*$"
+   omit_from_output="y"
+   regexp="y"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="gag"
+   match="^¡¾ÏåÑô´«ÎÅ¡¿.*$"
+   omit_from_output="y"
+   regexp="y"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   expand_variables="y"
+   group="fight"
+   lines_to_match="2"
+   match="^ÄãÍ»È»Ô¾Æð£¬×óÅÄÒ»ÕÆ£¬ÓÒÌôÒ»ÍÈ£¬½«ÖÜÎ§µÄÊ¯¿é¡¢Ê÷Ö¦ÒÆ¶¯ÁËÎ»ÖÃ£¡$\n.*ÏÝÈëÃÔÕóÖÐ£¬µÇÊ±ÊÖ×ãÎÞ´ë¡£$"
+   multi_line="y"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>DoAfterSpecial(2,"enforce max;perform sword.xiaohua @tar;enforce 0",10)</send>
+  </trigger>
+  <trigger
+   group="zhuxi"
+   match="^Öììä¶ÔÄãÊúÆðÁË´óÄ´Ö¸£¬µÀ£º¡°ÄãÕæÐÐ¡£¡±$"
+   omit_from_output="y"
+   regexp="y"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   group="zhuxi"
+   match="°Ë¸öÊé¼Ü£¬ÏÖÔÚÎÒ°ÑÕâËÄ²áÊé·Ö±ð·Åµ½²»Í¬µÄÊé¼ÜÉÏÈ¥£¬ÄãÖ»Ðè²Â³ö"
+   omit_from_output="y"
+   regexp="y"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   group="zhuxi"
+   match="À´Ã¿²áÊé·ÅÔÚÄÇ¸öÊé¼ÜÉÏ¼´¿É¡£¡±"
+   omit_from_output="y"
+   regexp="y"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="login"
+   match="Ä¿Ç°¹²ÓÐ.+Î»Íæ¼ÒÔÚÏßÉÏ£¬ÒÔ¼°.+Î»Ê¹ÓÃÕß³¢ÊÔÁ¬ÏßÖÐ¡£"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>DoAfter(2,GetVariable("id"))
+DoAfter(3,GetVariable("passwd"))
+DoAfter(4,"y")
+DoAfterSpecial(10,"login()",12)</send>
+  </trigger>
+  <trigger
+   group="zhuxi"
+   match="ÄãµÃµ½ÁË.*µãÇ±ÄÜ¡£"
+   regexp="y"
+   sequence="100"
+  >
+  <send>hp</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="login"
+   match="Èç¹ûÓëÄúÊµ¼Ê¾­Àú²»·û£¬ÇëÁ¢¿ÌÐÞ¸ÄÃÜÂë¡£"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>Note("»¶Ó­À´µ½±±ÏÀ,Èç¹ûÄú¾õµÃÁ¬½ÓËÙ¶ÈÓÐÎÊÌâ,ÇëµÇÂ½pkuxkx.netÑ°ÕÒºÏÊÊµÄÁ¬½Ó·½Ê½");
+Note("ÄúÏÖÔÚÊ¹ÓÃµÄÊÇ±±ÏÀMUSHClient 4.43¼¯³É°æ");
+Note("¸Ã°æ±¾ÒÑ¾­¼¯³ÉÁË±±ÏÀÂ·¾¶²å¼þ¼°±±ÏÀfullme²å¼þ");
+Note("Ï£ÍûÄúÔÚ±±ÏÀÓÎÏ·Óä¿ì");
+DoAfter (3, "set mxp_image 1")
+</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="login"
+   match="ÖØÐÂÁ¬ÏßÍê±Ï¡£"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>DoAfter(3,"set mxp_image 1")</send>
+  </trigger>
+  <trigger
+   group="zhuxi"
+   match="ÖììäµÀ£º¡°Äã»¹ÓÐ.*´Î»ú»á£¡¡±"
+   omit_from_output="y"
+   regexp="y"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   group="zhuxi"
+   match="ÖììäµÀ£º¡°ÌâÄ¿ÊÇÕâÑùµÄ£ºÎÒÓÐÒ»Ì×ËÄ²á¡¶Ã·»¨Æ×¡·£¬¶øÊé·¿ÀïÓÐ"
+   omit_from_output="y"
+   regexp="y"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   group="zhuxi"
+   match="ÖììäµãµãÍ·µÀ£º¡°ºÃÁË£¬À´²Â.*"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>Init()</send>
+  </trigger>
+  <trigger
+   group="zhuxi"
+   match="Öììä¶ÔÄãËµµÀ£º¹ýÓÌ²»¼°£¬ÄãÏÈ³öÈ¥¡£"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>DoAfter(3,"enter")
+DoAfter(3,"q")</send>
+  </trigger>
+  <trigger
+   group="zhuxi"
+   match="Öììä¶ÔÄãÒ¡ÁËÒ¡Í·£¬Ëµ£º²ÂÃÕÌ«ÉËÄÔ½î£¬ÄãÏÈÐÝÏ¢Ò»ÏÂ°É¡£"
+   omit_from_output="y"
+   regexp="y"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   group="zhuxi"
+   match="Öììä¿´×ÅÄã£¬¾ªÑÈµØµÀ£º¡°Åå·þ.*"
+   omit_from_output="y"
+   regexp="y"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   group="zhuxi"
+   match="ÖììäÐ¦µÀ£º¡°»¹ÏëÔÙ½âÒ»´Î£¿ºÃ°É£¬µÈÎÒ×¼±¸ºÃ¾ÍÀ´²Â°É¡£¡±"
+   omit_from_output="y"
+   regexp="y"
+   sequence="100"
+  >
+  </trigger>
+</triggers>
+
+<!-- aliases -->
+
+<aliases
+   muclient_version="4.72"
+   world_file_version="15"
+   date_saved="2012-04-28 00:28:16"
+  >
+  <alias
+   match="aiai"
+   enabled="y"
+   expand_variables="y"
+   group="cmd"
+   sequence="100"
+  >
+  <send>d
+out
+draw head
+draw surcoat
+draw cloth
+draw armor
+draw boots
+draw @weapon1
+draw @weapon1
+draw @weapon1
+draw @weapon2
+wield @weapon1
+wield @weapon2
+remove all
+wear all
+enter
+u</send>
+  </alias>
+  <alias
+   match="dazuo_off"
+   enabled="y"
+   group="switch"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableTriggerGroup("dazuo",false)</send>
+  </alias>
+  <alias
+   match="dazuo_on"
+   enabled="y"
+   group="switch"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableTriggerGroup("dazuo",true)</send>
+  </alias>
+  <alias
+   name="dztn"
+   match="dztn"
+   enabled="y"
+   expand_variables="y"
+   group="cmd"
+   sequence="100"
+  >
+  <send>tuna @costsp</send>
+  </alias>
+  <alias
+   match="learn_off"
+   enabled="y"
+   group="switch"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableTriggerGroup("learn",false)</send>
+  </alias>
+  <alias
+   match="learn_on"
+   enabled="y"
+   group="switch"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableTriggerGroup("learn",true)
+EnableTriggerGroup("study",false)</send>
+  </alias>
+  <alias
+   match="pft"
+   enabled="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>Execute("perform finger.tan")</send>
+  </alias>
+  <alias
+   match="quest_off"
+   enabled="y"
+   group="switch"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableTimer("zhuxi",false)
+EnableTriggerGroup("zhuxi",false)</send>
+  </alias>
+  <alias
+   match="quest_on"
+   enabled="y"
+   group="switch"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableTimer("zhuxi",true)
+EnableTriggerGroup("zhuxi",true)</send>
+  </alias>
+  <alias
+   match="study_off"
+   enabled="y"
+   group="switch"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableTriggerGroup("study",false)</send>
+  </alias>
+  <alias
+   match="study_on"
+   enabled="y"
+   group="switch"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableTriggerGroup("study",true)
+EnableTriggerGroup("learn",false)</send>
+  </alias>
+</aliases>
+
+<!-- timers -->
+
+<timers
+   muclient_version="4.72"
+   world_file_version="15"
+   date_saved="2012-04-28 00:28:16"
+  >
+  <timer name="pfm_chan" second="2.00" offset_second="0.00" group="pfm" >
+
+  </timer>
+  <timer name="pfm_hit" second="9.00" offset_second="0.00" group="pfm" >
+  <send>exert qimen</send>
+
+  </timer>
+  <timer second="11.00" offset_second="0.00"    send_to="12"
+>
+  <send>Send("enforce max")
+Send("perform finger.tan "..GetVariable("tar"))
+Send("enforce 0")</send>
+
+  </timer>
+  <timer second="5.00" offset_second="0.00"    send_to="12"
+group="mingxiang" >
+  <send>Send("hp")
+mingxiang()</send>
+
+  </timer>
+  <timer name="login" enabled="y" minute="1" second="0.00" offset_second="0.00"    send_to="12"
+group="login" active_closed="y" >
+  <send>if IsConnected() == false then Connect() end</send>
+
+  </timer>
+  <timer name="pwup" second="3.00" offset_second="0.00" >
+  <send>exert powerup</send>
+
+  </timer>
+  <timer name="zhuxi" second="50.00" offset_second="0.00" group="zhuxi" active_closed="y" >
+  <send>ask zhu about question</send>
+
+  </timer>
+</timers>
+
+<!-- macros -->
+
+<macros
+   muclient_version="4.72"
+   world_file_version="15"
+   date_saved="2012-04-28 00:28:16"
+  >
+
+  <macro name="up" type="send_now" >
+  <send>up</send>
+
+  </macro>
+
+  <macro name="down" type="send_now" >
+  <send>down</send>
+
+  </macro>
+
+  <macro name="north" type="send_now" >
+  <send>north</send>
+
+  </macro>
+
+  <macro name="south" type="send_now" >
+  <send>south</send>
+
+  </macro>
+
+  <macro name="east" type="send_now" >
+  <send>east</send>
+
+  </macro>
+
+  <macro name="west" type="send_now" >
+  <send>west</send>
+
+  </macro>
+
+  <macro name="examine" type="replace" >
+  <send>examine </send>
+
+  </macro>
+
+  <macro name="look" type="replace" >
+  <send>look </send>
+
+  </macro>
+
+  <macro name="page" type="replace" >
+  <send>page </send>
+
+  </macro>
+
+  <macro name="say" type="replace" >
+  <send>say </send>
+
+  </macro>
+
+  <macro name="whisper" type="replace" >
+  <send>whisper </send>
+
+  </macro>
+
+  <macro name="doing" type="send_now" >
+  <send>DOING</send>
+
+  </macro>
+
+  <macro name="who" type="send_now" >
+  <send>WHO</send>
+
+  </macro>
+
+  <macro name="drop" type="replace" >
+  <send>drop </send>
+
+  </macro>
+
+  <macro name="take" type="replace" >
+  <send>take </send>
+
+  </macro>
+
+  <macro name="F2" type="send_now" >
+  <send>perform sword.chan</send>
+
+  </macro>
+
+  <macro name="F3" type="send_now" >
+  <send>enforce max
+perform sword.xiaohua
+enforce 0</send>
+
+  </macro>
+
+  <macro name="F4" type="send_now" >
+  <send>exert qimen</send>
+
+  </macro>
+
+  <macro name="F5" type="send_now" >
+  <send>exert recover</send>
+
+  </macro>
+
+  <macro name="logout" type="send_now" >
+  <send>LOGOUT</send>
+
+  </macro>
+
+  <macro name="quit" type="send_now" >
+  <send>QUIT</send>
+
+  </macro>
+
+  <macro name="F6" type="send_now" >
+  <send>exert powerup</send>
+
+  </macro>
+</macros>
+
+<!-- variables -->
+
+<variables
+   muclient_version="4.72"
+   world_file_version="15"
+   date_saved="2012-04-28 00:28:16"
+  >
+  <variable name="Guess">8475</variable>
+  <variable name="costhp">142.5</variable>
+  <variable name="costsp">263.25</variable>
+  <variable name="dizi">°ØÖ®É½</variable>
+  <variable name="ep">387</variable>
+  <variable name="exp">60712                 </variable>
+  <variable name="fp">1038</variable>
+  <variable name="h_rnd">0</variable>
+  <variable name="health">100</variable>
+  <variable name="hp">608</variable>
+  <variable name="hplace">ÏÉ³îÃÅ</variable>
+  <variable name="id"></variable>
+  <variable name="maxep">1049</variable>
+  <variable name="maxfp">1005</variable>
+  <variable name="maxhp">641</variable>
+  <variable name="maxsp">417</variable>
+  <variable name="passwd"></variable>
+  <variable name="pot">50978                 </variable>
+  <variable name="sp">417</variable>
+  <variable name="tar">jhcx's robber</variable>
+  <variable name="v_food">265</variable>
+  <variable name="v_water">235</variable>
+  <variable name="weapon1"></variable>
+  <variable name="weapon2"></variable>
+</variables>
+
+<!-- colours -->
+
+<colours
+   muclient_version="4.72"
+   world_file_version="15"
+   date_saved="2012-04-28 00:28:16"
+  >
+
+<ansi>
+
+ <normal>
+   <colour seq="1" rgb="black" />
+   <colour seq="2" rgb="maroon" />
+   <colour seq="3" rgb="green" />
+   <colour seq="4" rgb="olive" />
+   <colour seq="5" rgb="navy" />
+   <colour seq="6" rgb="purple" />
+   <colour seq="7" rgb="teal" />
+   <colour seq="8" rgb="forestgreen" />
+
+ </normal>
+
+ <bold>
+   <colour seq="1" rgb="gray" />
+   <colour seq="2" rgb="red" />
+   <colour seq="3" rgb="lime" />
+   <colour seq="4" rgb="yellow" />
+   <colour seq="5" rgb="blue" />
+   <colour seq="6" rgb="magenta" />
+   <colour seq="7" rgb="cyan" />
+   <colour seq="8" rgb="white" />
+
+ </bold>
+
+</ansi>
+
+<custom>
+  <colour seq="1" name="Custom1" text="#FF8080" back="black" />
+  <colour seq="2" name="Custom2" text="#FFFF80" back="black" />
+  <colour seq="3" name="Custom3" text="#80FF80" back="black" />
+  <colour seq="4" name="Custom4" text="#80FFFF" back="black" />
+  <colour seq="5" name="Custom5" text="#0080FF" back="black" />
+  <colour seq="6" name="Custom6" text="#FF80C0" back="black" />
+  <colour seq="7" name="Custom7" text="red" back="black" />
+  <colour seq="8" name="Custom8" text="#0080C0" back="black" />
+  <colour seq="9" name="Custom9" text="magenta" back="black" />
+  <colour seq="10" name="Custom10" text="#804040" back="black" />
+  <colour seq="11" name="Custom11" text="#FF8040" back="black" />
+  <colour seq="12" name="Custom12" text="teal" back="black" />
+  <colour seq="13" name="Custom13" text="#004080" back="black" />
+  <colour seq="14" name="Custom14" text="#FF0080" back="black" />
+  <colour seq="15" name="Custom15" text="green" back="black" />
+  <colour seq="16" name="Custom16" text="blue" back="black" />
+
+</custom>
+</colours>
+
+<!-- keypad -->
+
+<keypad
+   muclient_version="4.72"
+   world_file_version="15"
+   date_saved="2012-04-28 00:28:16"
+  >
+
+  <key name="0" >
+  <send>look</send>
+  </key>
+
+  <key name="1" >
+  <send>sw</send>
+  </key>
+
+  <key name="2" >
+  <send>south</send>
+  </key>
+
+  <key name="3" >
+  <send>se</send>
+  </key>
+
+  <key name="4" >
+  <send>west</send>
+  </key>
+
+  <key name="5" >
+  <send>look</send>
+  </key>
+
+  <key name="6" >
+  <send>east</send>
+  </key>
+
+  <key name="7" >
+  <send>nw</send>
+  </key>
+
+  <key name="8" >
+  <send>north</send>
+  </key>
+
+  <key name="9" >
+  <send>ne</send>
+  </key>
+
+  <key name="." >
+  <send>hide</send>
+  </key>
+
+  <key name="/" >
+  <send>inventory</send>
+  </key>
+
+  <key name="*" >
+  <send>score</send>
+  </key>
+
+  <key name="-" >
+  <send>up</send>
+  </key>
+
+  <key name="+" >
+  <send>down</send>
+  </key>
+
+  <key name="Ctrl+0" >
+  </key>
+
+  <key name="Ctrl+1" >
+  </key>
+
+  <key name="Ctrl+2" >
+  </key>
+
+  <key name="Ctrl+3" >
+  </key>
+
+  <key name="Ctrl+4" >
+  </key>
+
+  <key name="Ctrl+5" >
+  </key>
+
+  <key name="Ctrl+6" >
+  </key>
+
+  <key name="Ctrl+7" >
+  </key>
+
+  <key name="Ctrl+8" >
+  </key>
+
+  <key name="Ctrl+9" >
+  </key>
+
+  <key name="Ctrl+." >
+  </key>
+
+  <key name="Ctrl+/" >
+  </key>
+
+  <key name="Ctrl+*" >
+  </key>
+
+  <key name="Ctrl+-" >
+  </key>
+
+  <key name="Ctrl++" >
+  </key>
+</keypad>
+
+<!-- printing -->
+
+<printing
+   muclient_version="4.72"
+   world_file_version="15"
+   date_saved="2012-04-28 00:28:16"
+  >
+
+<ansi>
+
+ <normal>
+
+ </normal>
+
+ <bold>
+   <style seq="1" bold="y" />
+   <style seq="2" bold="y" />
+   <style seq="3" bold="y" />
+   <style seq="4" bold="y" />
+   <style seq="5" bold="y" />
+   <style seq="6" bold="y" />
+   <style seq="7" bold="y" />
+   <style seq="8" bold="y" />
+
+ </bold>
+
+</ansi>
+</printing>
+
+<!-- plugins -->
+<include name="Show_fullme_CODE_v2.09.xml" plugin="y" />
+<include name="hubiao.xml" plugin="y" />
+<include name="pkuxkx2011_common_jhcx.xml" plugin="y" />
+<include name="pkuxkx2011_walkalias_labaz.xml" plugin="y" />
+</muclient>

@@ -1,0 +1,1381 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+
+<muclient>
+<plugin
+   name="pkuxkx_status"
+   author="iceoo"
+   id="66c7d927ed3516f8cfadc2ec"
+   language="Lua"
+   purpose="±±´óÏÀ¿ÍÐÐ×´Ì¬¼¼ÄÜ´°¿Ú"
+   save_state="y"
+   date_written="2012-08-18 00:22:37"
+   requires="4.72"
+   version="1.0"
+   >
+</plugin>
+
+<!--  Get our standard constants -->
+
+<include name="constants.lua"/>
+
+<!--  Script  -->
+
+
+<script>
+<![CDATA[
+
+require "movewindow"
+require "gauge"
+require "serialize"
+
+-- ¹«ÓÃ
+local FONT_NAME = "f1"
+local FONT_SIZE = "9"
+
+-- HPÓÃ
+local hp_checktime = 60
+local hp_checktimecur = hp_checktime
+local hp_win = "hp_window"
+local hp_win_width = 300
+local hp_win_height = 183
+
+-- ¼¼ÄÜÓÃ
+local skill_checktime = 60
+local skill_checktimecur = skill_checktime
+local skill_win = "skill_window"
+local skill_win_width = 300
+local skill_win_height = 10
+
+local curskilltype = ""
+local skilltemp = {}
+local skilltypetemp = {}
+local skilltypeobj = {}
+local actorname = ""--GetVariable("actorname") or utils.inputbox("ÊäÈëÄãµÄ½ÇÉ«Ãû³Æ")
+
+---------------------------------------------------------------------------
+-- ¹«ÓÃµÄÒ»Ð©º¯ÊýºÍ¶¨Òå
+---------------------------------------------------------------------------
+
+--[[
+	Alarm()				---±¨¾¯£¡
+	Run(cmdtext)		---×Ô¶¨ÒåÖ´ÐÐÃüÁî
+	RunWait(WaitTime)	---¼ÓÈëµÈ´ý½øÃüÁî¶ÓÁÐ
+	RunNextCmd()		---¼ÌÐø´¦ÀíÏÂÌõÃüÁî
+	RunClear()			---Çå¿ÕÃüÁî¶ÓÁÐ
+	Printlog()			---´òÓ¡ÁÙÊ±¼ÇÂ¼¶ÓÁÐ
+	ChangeModel()		---¸Ä±äÄ£Ê½
+	Fun_AddAlias(name,match,group,script)		---×Ô¶¨ÒåAddAliasº¯Êý
+	Fun_AddAliasRE(name,match,group,script)		---×Ô¶¨ÒåAddAliasº¯Êý(´øÕýÔò±í´ïÊ½)
+	Fun_AddTrigger(name,match,group,script)		---×Ô¶¨ÒåAddTriggerº¯Êý£¬Í¬Ê±»á¼ÓÈë×é
+	Fun_AddTriggerHide(name,match,group,script)		---Òþ²ØÄ³Ð©ÏÔÊ¾£¬Í¬Ê±»á¼ÓÈë×é
+	Fun_AddTimer(name,time,group,script)		---×Ô¶¨ÒåAddTimeº¯Êý ×¢ÒâÊÇÕýÔò±í´ïÊ½Ä£Ê½
+	Fun_DrawGrid(win, cur, max, left, top, width, height, curcolor, maxcolor)							---×Ô¶¨Òå»æÖÆ½ø¶ÈÌõ
+	Fun_DrawGrid2(win, cur, curmax, max, left, top, width, height, curcolor, curmaxcolor, maxcolor)		---×Ô¶¨Òå»æÖÆ½ø¶ÈÌõ2¸ö½ø¶È
+	Fun_ChangeKM(value)							---ÐÞ¸Ä¾­ÑéµÄK¡¢MÎªÕý³£ÊýÖµÄ£Ê½
+	Fun_AddTaskData(taskname, taskaim)			---¼ÓÈëÈÎÎñÊý¾Ý
+	Fun_TimeChangeText(Time)					---°ÑÃë»»Ëã³ÉÒÔÌì¡¢Ð¡Ê±¡¢·ÖÖÓ¡¢ÃëÏÔÊ¾µÄÎÄ×Ö
+	Fun_TimeChange(Time)						---°ÑÃë»»Ëã³ÉÒÔÐ¡Ê±¡¢·ÖÖÓ¡¢Ãë
+	Fun_CHNum(str)								---°ÑÖÐÎÄÊý×Ö×ª»»³ÉÕý³£Êý×Ö
+	Fun_GetBackPath(strgo)						---¸ù¾ÝÂ·¾¶»ñÈ¡·´ÏòÂ·¾¶
+]]	
+
+-- ------------------------------------
+-- ÃèÊö: ±¨¾¯£¡
+-- ------------------------------------
+function Alarm(beep)
+	if beep ~= nil and beep then
+		Sound("ringin.wav")
+	end
+	ActivateClient()
+	Activate()
+end
+-- ------------------------------------
+-- ÃèÊö: ×Ô¶¨ÒåÖ´ÐÐÃüÁî
+-- ------------------------------------
+function Run(cmdtext)
+	if cmdtext == "" then
+		return
+	end
+	
+	if not IsConnected() then
+		return
+	end
+	
+	if not G_RunCmdIsBusy then
+		Execute(cmdtext)
+		return
+	end
+	
+	TextCmd = {text = cmdtext}
+	table.insert(G_RunCmdTable, TextCmd)
+end
+
+-- ------------------------------------
+-- ÃèÊö: ¼ÓÈëµÈ´ý½øÃüÁî¶ÓÁÐ
+-- ------------------------------------
+function RunWait(WaitTime)
+	if not IsConnected() then
+		return
+	end
+	
+	if WaitTime <= 0 then
+		return
+	end
+	
+	WaitTime = WaitTime + 1
+	
+	if not G_RunCmdIsBusy then
+		G_RunCmdIsBusy = true
+		G_RunCmdWaitTime = WaitTime
+		return
+	end
+	
+	WaitCmd = {time = WaitTime}
+	table.insert(G_RunCmdTable, WaitCmd)
+end
+
+-- ------------------------------------
+-- ÃèÊö: ¼ÌÐø´¦ÀíÏÂÌõÃüÁî
+-- ------------------------------------
+function RunNextCmd()
+	if not IsConnected() then
+		RunClear()
+		return
+	end
+	
+	local nextcmd = table.remove(G_RunCmdTable, 1)
+	if nextcmd == nil then
+		G_RunCmdIsBusy = false
+		return
+	end
+	
+	if nextcmd.time ~= nil then
+		G_RunCmdWaitTime = nextcmd.time
+		return
+	end
+	
+	if nextcmd.text ~= nil then
+		Execute(nextcmd.text)
+	end
+	
+	RunNextCmd()
+end
+
+-- ------------------------------------
+-- ÃèÊö: Çå¿ÕÃüÁî¶ÓÁÐ
+-- ------------------------------------
+function RunClear()
+	if not G_RunCmdIsBusy then
+		return
+	end
+	
+	G_RunCmdTable = {}
+	G_RunCmdIsBusy = false
+	G_RunCmdWaitTime = 0
+end
+-- ------------------------------------
+-- ÃèÊö: ´òÓ¡ÁÙÊ±¼ÇÂ¼¶ÓÁÐ
+-- ------------------------------------
+function Printlog()
+	if table.getn(G_Log) < 1 then
+		Note("ÔÝÎÞÐÅÏ¢¼ÇÂ¼")
+		return
+	end
+	
+	for i = 1,#G_Log do
+		Note("ÐÅÏ¢¼ÇÂ¼_"..i.."£º"..G_Log[i])
+	end
+end
+-- ------------------------------------
+-- ÃèÊö: ¸Ä±äÄ£Ê½
+-- ------------------------------------
+function ChangeModel()
+	if G_Model then
+		G_Model = false
+		Note("Ä£Ê½»¹Ô­³Éfalse")
+	else
+		G_Model = true
+		Note("Ä£Ê½±ä³Étrue")
+	end
+end
+
+-- ------------------------------------
+-- ÃèÊö: killall Ä¿±ê,Ö÷ÒªÊÇ·ÀÖ¹Ä¿±ê¶ªÊ§±ä³Ékillall npcÁË
+-- ------------------------------------
+function killall(npcname)
+	if npcname == nil or npcname == "" then
+		return
+	end
+	
+	Run("killall "..npcname)
+end
+
+-- ------------------------------------
+-- ÃèÊö: ×Ô¶¨ÒåAddAliasº¯Êý
+-- ------------------------------------
+function Fun_AddAlias(name,match,group,script)
+	local value = AddAlias(name, match, "", alias_flag.Enabled + alias_flag.Replace + alias_flag.Temporary + alias_flag.RegularExpression, script)
+	SetAliasOption(name,"group",group)
+	
+	if value ~= 0 then
+		ColourNote("red", "black", name.." Fun_AddAlias false")
+	end
+	
+	return value
+end
+
+-- ------------------------------------
+-- ÃèÊö: ×Ô¶¨ÒåAddAliasº¯Êý(´øÕýÔò±í´ïÊ½)
+-- ------------------------------------
+function Fun_AddAliasRE(name,match,group,script)
+	local value = AddAlias(name, match, "", alias_flag.Enabled + alias_flag.Replace + alias_flag.Temporary + alias_flag.RegularExpression, script)
+	SetAliasOption(name,"group",group)
+	
+	if value ~= 0 then
+		ColourNote("red", "black", name.." Fun_AddAlias false")
+	end
+	
+	return value
+end
+
+-- ------------------------------------
+-- ÃèÊö: ×Ô¶¨ÒåAddTriggerº¯Êý£¬Í¬Ê±»á¼ÓÈë×é
+-- ------------------------------------
+function Fun_AddTrigger(name,match,group,script)
+	local value = AddTrigger(name, match, "", trigger_flag.KeepEvaluating + trigger_flag.RegularExpression + trigger_flag.Replace + trigger_flag.Temporary, custom_colour.NoChange, 0, "", script)
+	SetTriggerOption(name,"group",group)
+
+	if value ~= 0 then
+		ColourNote("red", "black", name.." Fun_AddTrigger false")
+	end
+	
+	return value
+end
+
+-- ------------------------------------
+-- ÃèÊö: Òþ²ØÄ³Ð©ÏÔÊ¾£¬Í¬Ê±»á¼ÓÈë×é
+-- ------------------------------------
+function Fun_AddTriggerHide(name,match,group,script)
+	local value = AddTrigger(name, match, "", trigger_flag.KeepEvaluating + trigger_flag.RegularExpression + trigger_flag.Replace + trigger_flag.Temporary + trigger_flag.OmitFromOutput, custom_colour.NoChange, 0, "", script)
+	SetTriggerOption(name,"group",group)
+
+	if value ~= 0 then
+		ColourNote("red", "black", name.." Fun_AddTriggerHide false")
+	end
+	
+	return value
+end
+
+-- ------------------------------------
+-- ÃèÊö: ×Ô¶¨ÒåAddTimeº¯Êý ×¢ÒâÊÇÕýÔò±í´ïÊ½Ä£Ê½
+-- ------------------------------------
+function Fun_AddTimer(name,time,group,script)
+	local Hour = math.floor(time / 3600)
+	time = time - Hour * 3600
+	local Min = math.floor(time / 60)
+	time = time - Min * 60
+	local value = AddTimer(name, Hour, Min, time, "", timer_flag.Replace + timer_flag.Temporary, script)
+	SetTimerOption(name,"group",group)
+	
+	if value ~= 0 then
+		ColourNote("red", "black", name.." Fun_AddTimer false")
+		ColourNote("red", "black", "Hour "..Hour.." Min "..Min.." Time "..time)
+	end
+	
+	return value
+end
+
+-- ------------------------------------
+-- ÃèÊö: ÉèÖÃ´¥·¢Æ÷ÐÐÊý
+-- ------------------------------------
+function Fun_SetTriggerLine(name, line)
+	local value = SetTriggerOption(name, "multi_line", "y")
+	if value ~= 0 then
+		ColourNote("red", "black", name.." Fun_SetTriggerLine false")
+	end
+	value = SetTriggerOption(name, "lines_to_match", line)
+	if value ~= 0 then
+		ColourNote("red", "black", name.." Fun_SetTriggerLine false")
+	end
+end
+-- ------------------------------------
+-- ÃèÊö: ×Ô¶¨Òå»æÖÆ½ø¶ÈÌõ
+-- ------------------------------------
+function Fun_DrawGrid(win, cur, max, left, top, width, height, curcolor, maxcolor)
+	gauge (win, "", cur, max,
+			left, top, width, height,
+			curcolor, maxcolor,
+			0, 0x000000, 0x000000, 0x000000)
+end
+-- ------------------------------------
+-- ÃèÊö: ×Ô¶¨Òå»æÖÆ½ø¶ÈÌõ2¸ö½ø¶È
+-- ------------------------------------
+function Fun_DrawGrid2(win, cur, curmax, max, left, top, width, height, curcolor, curmaxcolor, maxcolor)
+	gauge (win, "", cur, max,
+			left, top, width, height,
+			curcolor, maxcolor,
+			0, 0x000000, 0x000000, 0x000000)
+
+	if curmax < max then
+		local lenght = math.floor((max - curmax) * width / max)
+		if lenght < 1 then
+			lenght = 1
+		end
+		WindowRectOp (win, 2, left + width - lenght - 1, top + 1, left + width + 1, top + height - 1, curmaxcolor)
+	end
+end
+	
+	
+-- ------------------------------------
+-- ÃèÊö: ÐÞ¸Ä¾­ÑéµÄK¡¢MÎªÕý³£ÊýÖµÄ£Ê½
+-- ------------------------------------
+function Fun_ChangeKM(value)
+	local num = 0
+
+	if string.find (value, "K")~=nil then
+		num = math.floor(tonumber((string.gsub(value, "K", ""))*1000))
+	elseif string.find (value, "M")~=nil then
+		num = math.floor(tonumber((string.gsub(value, "M", ""))*1000000))
+	else
+		num = math.floor(tonumber(value))
+	end
+	
+	return num
+end
+
+-- ------------------------------------
+-- ÃèÊö: ¼ÓÈëÈÎÎñÊý¾Ý
+-- ------------------------------------
+function Fun_AddTaskData(taskname, taskaim)
+	G_TaskData[taskname] = taskaim
+		
+	InfoClear()
+	
+	local first = false
+	for Name in pairs(G_TaskData) do
+		if not first then
+			first = true
+		else
+			Info("|")
+		end
+		Info(Name.."£º"..G_TaskData[Name])
+	end
+end
+
+-- ------------------------------------
+-- ÃèÊö: °ÑÃë»»Ëã³ÉÒÔÌì¡¢Ð¡Ê±¡¢·ÖÖÓ¡¢ÃëÏÔÊ¾µÄÎÄ×Ö
+-- ------------------------------------
+function Fun_TimeChangeText(Time)
+	local szText = ''
+	
+	local Day = math.floor(Time / (3600 * 24))
+	if Day > 0 then
+		szText = szText..Day..'Ìì'
+		Time = math.fmod(Time, (3600 * 24))
+	end
+	
+	local Hour = math.floor(Time / 3600)
+	if Hour > 0 then
+		szText = szText..Hour..'Ð¡Ê±'
+		Time = math.fmod(Time, 3600)
+	end
+	
+	local Min = math.floor(Time / 60)
+	if Min > 0 then
+		szText = szText..Min..'·Ö'
+		Time = math.fmod(Time, 60)
+	end
+	
+	szText = szText..Time..'Ãë'
+	
+	return szText
+end
+
+-- ------------------------------------
+-- ÃèÊö: °ÑÃë»»Ëã³ÉÒÔÐ¡Ê±¡¢·ÖÖÓ¡¢Ãë
+-- ------------------------------------
+function Fun_TimeChange(Time)
+	local Hour = math.floor(Time / 3600)
+	Time = math.fmod(Time, 3600)	
+	local Min = math.floor(Time / 60)
+	local Sec = math.fmod(Time, 60)
+	
+	return Hour,Min,Sec
+end
+
+local CH_NUM =
+{
+	["Ò»"] = 1,
+	["¶þ"] = 2,
+	["Èý"] = 3,
+	["ËÄ"] = 4,
+	["Îå"] = 5,
+	["Áù"] = 6,
+	["Æß"] = 7,
+	["°Ë"] = 8,
+	["¾Å"] = 9,
+}
+-- ------------------------------------
+-- ÃèÊö: °ÑÖÐÎÄÊý×Ö×ª»»³ÉÕý³£Êý×Ö
+-- ------------------------------------
+function Fun_CHNum(str)
+	if (#str % 2) ==1 then
+		return 0
+	end
+	result=0
+	wan=1
+	unit=1
+	for i=#str -2 ,0,-2 do
+		char=string.sub(str,i+1,i+2)
+		if (char=="Ê®") then
+			unit=10*wan
+			if (i==0) then
+				result=result+unit
+			elseif CH_NUM[string.sub(str,i-1,i)]==nil then
+				result=result+unit
+			end
+		elseif (char=="°Ù") then
+			unit=100*wan
+		elseif (char=="Ç§") then
+			unit=1000*wan
+		elseif (char=="Íò") then
+			unit=10000*wan
+			wan=10000
+		else
+			if CH_NUM[char]~=nil then
+				result=result+CH_NUM[char]*unit
+			end
+		end
+	end
+	return result
+end
+
+
+-- ------------------------------------
+-- ¸ù¾ÝÂ·¾¶»ñÈ¡·´ÏòÂ·¾¶
+-- ------------------------------------
+function Fun_GetBackPath(strgo)
+	if strgo == "" then
+		return ""
+	end
+	
+	local strback = ""
+	string.gsub(strgo, "(%a+)", 
+		function(subpath)
+			strback = subpath..";"..strback
+		end
+	)
+	
+	strback = string.gsub(strback, "s", "N")
+	strback = string.gsub(strback, "n", "S")
+	strback = string.gsub(strback, "w", "E")
+	strback = string.gsub(strback, "e", "W")
+	strback = string.gsub(strback, "d", "U")
+	strback = string.gsub(strback, "u", "D")	
+	strback = string.lower(strback)
+	
+	return strback
+end
+
+---------------------------------------------------------------------------
+-- ×´Ì¬Ä£¿é
+---------------------------------------------------------------------------
+
+status =
+{
+	-- ¾«Éñ
+	jing = 1000,
+	jing_curmax = 1000,
+	jing_max = 1000,
+	jing_pre = 100,
+	
+	-- ÆøÑª
+	qi = 1000,
+	qi_curmax = 1000,
+	qi_max = 1000,
+	qi_pre = 100,
+	
+	-- ¾«Á¦
+	jingli = 10000,
+	jingli_curmax = 10000,
+	jingli_canadd = 0,
+	
+	-- ÄÚÁ¦
+	neili = 10000,
+	neili_curmax = 10000,
+	neili_canadd = 0,
+	
+	-- Ê³Îï
+	shiwu = 1000,
+	shiwu_max = 1000,
+	
+	-- ÒûË®
+	yinsui = 1000,
+	yinsui_max = 1000,
+	
+	-- Ç±ÄÜ
+	pot = 0,
+	pot_lastadd = 0,
+	
+	-- ¾­Ñé
+	exp = "0",
+	exp_lastadd = 0,
+	
+	-- ÔËÆø¾« 1ÔËÆø2ÔË¾«
+	yun = 0,
+	yuntime = 0,
+	-- Ì«¼«¼ÓÁ¦
+	jiali = false,
+	
+	-- µ±Ç°Ä¿±ê
+	targer = "",
+	targerqi = 0,
+	targerqi_curmax = 0,
+	targerlasttime = 0,
+		
+	-- Ê±¼äÏà¹Ø
+	fullmetime = 0,		-- fullmeºó¾­¹ýÊ±¼ä
+	uptime = 0,			-- uptime
+	week = "",	
+}
+
+skill = {}				-- µ¥¸ö¼¼ÄÜÊý¾Ý
+
+skillinfo = 
+{
+	skilllimitf = 9999,	-- ¼¼ÄÜµÈ¼¶ÏÞÖÆ(´øÐ¡Êýµã)
+	skilllimit = 9999,	-- ¼¼ÄÜµÈ¼¶ÏÞÖÆ
+}
+
+
+-- ------------------------------------
+-- »ñÈ¡Ä³¸ö¼¼ÄÜµÈ¼¶
+-- ------------------------------------
+function getskilllv(skillname)
+	if skill[skillname] == nil then
+		Note("Î´Ñ§»áÕâ¸ö¼¼ÄÜ "..skillname)
+		return 0
+	end
+	
+	return skill[skillname].lv
+end
+
+---------------------------------------------------------------------------
+-- ¼ÇÂ¼ÉúÃüÐÅÏ¢
+---------------------------------------------------------------------------
+
+-- ------------------------------------
+-- »æÖÆ´°¿Ú
+-- ------------------------------------
+function hp_draw_win()
+	WindowCircleOp (hp_win, miniwin.circle_round_rectangle, 0, 2, hp_win_width - 2, hp_win_height, 0xc0c0c0, 0, 1,0, 0, 9, 9)
+	
+	local left = 5
+	local top = 10
+	local title_leght = 28
+	local titletarger_leght = 75
+	local grid_lenght = 100
+	local grid_height = 12
+	
+	if status.targer ~= "" then
+		local targernamelenght = WindowTextWidth (hp_win, FONT_NAME, status.targer)
+		local alllenght = targernamelenght + grid_lenght + 60
+		local targerleft = math.floor((hp_win_width - alllenght) / 2)
+		WindowText (hp_win, FONT_NAME, status.targer,
+					targerleft, top, 0, 0,
+					ColourNameToRGB ("white"), false)
+		Fun_DrawGrid2(hp_win, status.targerqi, status.targerqi_curmax, 100,
+					targerleft + targernamelenght + 4, top + 1, grid_lenght, grid_height,
+					0x40FF40, ColourNameToRGB("red"), ColourNameToRGB ("white"))
+		WindowText (hp_win, FONT_NAME, status.targerqi.."%/"..status.targerqi_curmax.."%",
+					targerleft + targernamelenght + grid_lenght + 7, top, 0, 0,
+					0x40FF40, false)
+	else
+		WindowText (hp_win, FONT_NAME, "µ±Ç°ÎÞÄ¿±ê",
+					left + 94, top, 0, 0,
+					ColourNameToRGB ("white"), false)
+	end
+		
+	top = top + 15
+    WindowText (hp_win, FONT_NAME, "£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­",
+                left, top, 0, 0,
+                ColourNameToRGB ("gray"), false)
+	top = top + 15
+
+	-- ¾«Éñ
+    WindowText (hp_win, FONT_NAME, "¾«Éñ",
+                left, top, 0, 0,
+                ColourNameToRGB ("white"), false)				
+	Fun_DrawGrid2(hp_win, status.jing, status.jing_curmax, status.jing_max,
+				left + title_leght, top + 1, grid_lenght, grid_height,
+				0x40FF40, ColourNameToRGB("red"), ColourNameToRGB ("white"))
+    WindowText (hp_win, FONT_NAME, status.jing.."/"..status.jing_curmax.."("..status.jing_pre.."%)",
+                left + title_leght + grid_lenght + 2, top, 0, 0,
+                0x40FF40, false)
+				
+	top = top + 15
+
+	-- ÆøÑª
+    WindowText (hp_win, FONT_NAME, "ÆøÑª",
+                left, top, 0, 0,
+                ColourNameToRGB ("white"), false)
+	Fun_DrawGrid2(hp_win, status.qi, status.qi_curmax, status.qi_max,
+				left + title_leght, top + 1, grid_lenght, grid_height,
+				0x40FF40, ColourNameToRGB("red"), ColourNameToRGB ("white"))
+    WindowText (hp_win, FONT_NAME, status.qi.."/"..status.qi_curmax.."("..status.qi_pre.."%)",
+                left + title_leght + grid_lenght + 2, top, 0, 0,
+                0x40FF40, false)
+				
+	top = top + 15
+
+	-- ¾«Á¦
+    WindowText (hp_win, FONT_NAME, "¾«Á¦",
+                left, top, 0, 0,
+                ColourNameToRGB ("white"), false)
+	if status.jingli > status.jingli_curmax then
+		Fun_DrawGrid(hp_win, status.jingli - status.jingli_curmax, status.jingli_curmax,
+					left + title_leght, top + 1, grid_lenght, grid_height,
+					0xFFDA58, 0xFF6060)
+		WindowText (hp_win, FONT_NAME, status.jingli.."/"..status.jingli_curmax.."("..status.jingli_canadd..")",
+					left + title_leght + grid_lenght + 2, top, 0, 0,
+					0xFFDA58, false)
+	else
+		Fun_DrawGrid(hp_win, status.jingli, status.jingli_curmax,
+					left + title_leght, top + 1, grid_lenght, grid_height,
+					0xFF6060, ColourNameToRGB ("white"))
+		WindowText (hp_win, FONT_NAME, status.jingli.."/"..status.jingli_curmax.."("..status.jingli_canadd..")",
+					left + title_leght + grid_lenght + 2, top, 0, 0,
+					0x40FF40, false)
+	end
+	
+	top = top + 15
+
+	-- ÄÚÁ¦
+    WindowText (hp_win, FONT_NAME, "ÄÚÁ¦",
+                left, top, 0, 0,
+                ColourNameToRGB ("white"), false)
+	if status.neili > status.neili_curmax then
+		Fun_DrawGrid(hp_win, status.neili - status.neili_curmax, status.neili_curmax,
+					left + title_leght, top + 1, grid_lenght, grid_height,
+					0xFFDA58, 0xFF6060)
+		WindowText (hp_win, FONT_NAME, status.neili.."/"..status.neili_curmax.."("..status.neili_canadd..")",
+					left + title_leght + grid_lenght + 2, top, 0, 0,
+					0xFFDA58, false)
+	else
+		Fun_DrawGrid(hp_win, status.neili, status.neili_curmax,
+					left + title_leght, top + 1, grid_lenght, grid_height,
+					0xFF6060, ColourNameToRGB ("white"))
+		WindowText (hp_win, FONT_NAME, status.neili.."/"..status.neili_curmax.."("..status.neili_canadd..")",
+					left + title_leght + grid_lenght + 2, top, 0, 0,
+					0x40FF40, false)
+	end
+	
+	top = top + 15
+    WindowText (hp_win, FONT_NAME, "£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­£­",
+                left, top, 0, 0,
+                ColourNameToRGB ("gray"), false)
+	top = top + 15
+
+	-- Ê³Îï
+    WindowText (hp_win, FONT_NAME, "Ê³Îï",
+                left, top, 0, 0,
+                ColourNameToRGB ("white"), false)
+	Fun_DrawGrid(hp_win, status.shiwu, status.shiwu_max,
+				left + title_leght, top + 1, grid_lenght, grid_height,
+				0x58A7FF, ColourNameToRGB ("white"))
+    WindowText (hp_win, FONT_NAME, status.shiwu.."/"..status.shiwu_max,
+                left + title_leght + grid_lenght + 2, top, 0, 0,
+                0x40FF40, false)
+	
+	-- fullmeºó¾­¹ýÊ±¼ä
+	local timetext = Fun_TimeChangeText(status.fullmetime)
+    WindowText (hp_win, FONT_NAME, timetext,
+                hp_win_width - 6 - WindowTextWidth (hp_win, FONT_NAME, timetext), top, 0, 0,
+                ColourNameToRGB ("white"), false)
+	
+	top = top + 15
+	
+	-- ÒûË®
+    WindowText (hp_win, FONT_NAME, "ÒûË®",
+                left, top, 0, 0,
+                ColourNameToRGB ("white"), false)
+	Fun_DrawGrid(hp_win, status.yinsui, status.yinsui_max,
+				left + title_leght, top + 1, grid_lenght, grid_height,
+				0x58A7FF, ColourNameToRGB ("white"))
+    WindowText (hp_win, FONT_NAME, status.yinsui.."/"..status.yinsui_max,
+                left + title_leght + grid_lenght + 2, top, 0, 0,
+                0x40FF40, false)
+	
+	-- fullmeºó¾­¹ýÊ±¼ä
+	timetext = Fun_TimeChangeText(status.uptime)
+    WindowText (hp_win, FONT_NAME, timetext,
+                hp_win_width - 6 - WindowTextWidth (hp_win, FONT_NAME, timetext), top, 0, 0,
+                ColourNameToRGB ("white"), false)
+	
+	top = top + 15
+	
+	-- Ç±ÄÜ
+    WindowText (hp_win, FONT_NAME, "Ç±ÄÜ",
+                left, top, 0, 0,
+                ColourNameToRGB ("white"), false)
+    WindowText (hp_win, FONT_NAME, status.pot.."("..status.pot_lastadd..")",
+                left + title_leght, top, 0, 0,
+                0x40FF40, false)
+				
+	-- ÔË¾«Æø
+	if status.yun == 1 then
+		WindowText (hp_win, FONT_NAME, "ÔËÆøÖÐ",
+					hp_win_width - 41, top, 0, 0,
+					ColourNameToRGB ("yellow"), false)
+	elseif status.yun == 2 then
+		WindowText (hp_win, FONT_NAME, "ÔË¾«ÖÐ",
+					hp_win_width - 41, top, 0, 0,
+					0xFFDA58, false)
+	end
+	
+	top = top + 15
+	
+	-- ¾­Ñé
+    WindowText (hp_win, FONT_NAME, "¾­Ñé",
+                left, top, 0, 0,
+                ColourNameToRGB ("white"), false)
+    WindowText (hp_win, FONT_NAME, status.exp.."("..status.exp_lastadd..")",
+                left + title_leght, top, 0, 0,
+                0x40FF40, false)
+
+	-- ÖÜ
+    WindowText (hp_win, FONT_NAME, status.week,
+                hp_win_width - 55 - WindowTextWidth (hp_win, FONT_NAME, status.week), top, 0, 0,
+                ColourNameToRGB ("white"), false)
+	
+	-- Ì«¼«¼ÓÁ¦
+	if status.jiali == true then
+		WindowText (hp_win, FONT_NAME, "ÔË¹¦ÖÐ",
+					hp_win_width - 41, top, 0, 0,
+					ColourNameToRGB ("red"), false)
+	end
+	
+				
+	WindowShow (hp_win, true)
+	movewindow.save_state(hp_win)
+end
+
+-- ------------------------------------
+-- ¶¨Ê±
+-- ------------------------------------
+function hp_ontime()
+	SendNoEcho("hpbrief")
+	
+	-- ¹¥»÷Ä¿±ê30ÃëÎ´¸üÐÂÔòµ±×÷ÎÞ
+	if status.targerlasttime > 0 then
+		status.targerlasttime = status.targerlasttime - 1
+		if status.targerlasttime <= 0 then
+			status.targer = ""
+		end
+	end	
+	
+	-- HP´°¿ÚÒûÊ³Ò»·ÖÖÓ²éÒ»´Î
+	if hp_checktimecur < hp_checktime then
+		if hp_checktimecur == 0 then
+			-- ¹Ø±ÕÁÙÊ±ÆôÓÃÒþ²ØÎÄ×Ö´¥·¢Æ÷	
+			--EnableGroup("hp_temp", false)
+		end
+		hp_checktimecur = hp_checktimecur + 1
+	else
+		hp_checktimecur = 0
+		
+		-- ÁÙÊ±ÆôÓÃÒþ²ØÎÄ×Ö´¥·¢Æ÷	
+		EnableGroup("hp_temp", true)
+		
+		SendNoEcho("hp")
+		SendNoEcho("time")
+		SendNoEcho("uptime")
+		AddTrigger("hp_hide_over","^±±´óÏÀ¿ÍÐÐÒÑ¾­Ö´ÐÐÁË.*","EnableGroup('hp_temp', false)",1+32+4+32768,1,0,"","")
+		SetTriggerOption("hp_hide_over","send_to",12)
+	end
+	
+	-- ÔË¾«Æø½Ï¼ì
+	if status.yun > 0 then
+		status.yuntime = status.yuntime + 1
+		if status.yuntime > 100 then
+			-- ³¬¹ý100Ãë»¹Î´¸üÐÂËµÃ÷´¥·¢Ê§°ÜÁËÖØÖÃÎªÎ´ÔË¾«Æø
+			status.yun = 0
+		end
+	end
+	
+	
+	-- Ê±¼äµÝÔö
+	status.fullmetime = status.fullmetime + 1	
+	status.uptime = status.uptime + 1
+	if status.uptime >= 3600 then
+		status.uptime = 0
+	end
+	
+	-- ¶¨Ê±´æÅÌ ÏÈ²»´æÁË£¬ÃâµÃ´æÔÚ±ðµÄµØ·½
+	if math.fmod(status.fullmetime, 180) == 0 then		
+		--Run("save")
+	end
+end
+
+-- ------------------------------------
+-- hpbriefÃüÁî
+-- ------------------------------------
+function hp_hpbrief(n,l,w)
+	local Lastexp = status.exp
+	local LastPot = status.pot
+	
+	status.exp 				= w[1]
+	status.pot 				= tonumber(w[2])
+	status.neili_curmax 	= tonumber(w[3])
+	status.neili 			= tonumber(w[4])
+	status.jingli_curmax 	= tonumber(w[5])
+	status.jingli 			= tonumber(w[6])
+	status.qi_max 			= tonumber(w[7])
+	status.qi_curmax 		= tonumber(w[8])
+	status.qi 				= tonumber(w[9])
+	status.jing_max 		= tonumber(w[10])
+	status.jing_curmax 		= tonumber(w[11])
+	status.jing 			= tonumber(w[12])
+	
+	status.jing_pre = math.floor(status.jing_curmax * 100 / status.jing_max)
+	status.qi_pre = math.floor(status.qi_curmax * 100 / status.qi_max)
+	
+	if Lastexp ~= "0" and Lastexp ~= status.exp then
+		status.exp_lastadd = Fun_ChangeKM(status.exp) - Fun_ChangeKM(Lastexp)
+		if status.exp_lastadd > 0 then
+		   status.exp_lastadd = "+"..status.exp_lastadd
+		end
+	end
+	
+	if LastPot ~= 0 and LastPot ~= status.pot then
+		status.pot_lastadd = status.pot - LastPot
+		if status.pot_lastadd > 0 then
+		   status.pot_lastadd = "+"..status.pot_lastadd
+		end
+	end
+
+--	if skill["force"] ~= nil then
+--		status.jingli_canadd = getskilllv("force") * 15 - status.jingli_curmax
+--		if skill["taiji-shengong"] ~= nil then
+--			status.neili_canadd = math.floor(getskilllv("force") / 2 + getskilllv("taiji-shengong")) * 10 - status.neili_curmax
+--		end
+--	end
+	
+	--skillinfo.skilllimitf = math.floor((Fun_ChangeKM(status.exp)*10)^(1/3) * 10)/10 + 1
+	--skillinfo.skilllimit = math.floor(skillinfo.skilllimitf)
+	skillinfo.skilllimit = skilllimit
+	hp_draw_win()
+end
+
+-- ------------------------------------
+-- ×Ô¼ºÊÜ»÷ --Ö÷ÒªÓÃÀ´»ñÈ¡×Ô¼ºÃû×Ö»ñÈ¡µ½Ö®ºó¾ÍÍ£µô´¥·¢Æ÷£¬ÔÝÊ±Ã»Ïëµ½ºÃ°ì·¨
+-- ------------------------------------
+function hp_selfbehit(n,l,w)
+	actorname = w[1]
+	EnableTrigger("trigger_hp_selfbehit", false)
+end
+-- ------------------------------------
+-- ÊÜ»÷
+-- ------------------------------------
+function hp_behit(n,l,w)
+	local name = w[1]
+	local pre1 = tonumber(w[2])
+	local pre2 = tonumber(w[3])
+	
+	if name == actorname then
+		status.qi_curmax = math.floor(status.qi_max * pre2 / 100)
+		status.qi = math.floor(status.qi_curmax * pre1 / 100)
+		status.qi_pre = pre2
+	else
+		status.targer = name
+		status.targerqi_curmax = pre2
+		if status.targerqi_curmax < 0 then
+			status.targerqi_curmax = 0
+		end
+		status.targerqi = math.floor(status.targerqi_curmax * pre1 / 100)
+		if status.targerqi < 0 then
+			status.targerqi = 0
+		end
+		status.targerlasttime = 30
+	end	
+	
+	hp_draw_win()
+end
+
+-- ------------------------------------
+-- Ê³Îï
+-- ------------------------------------
+function hp_shiwu(n,l,w)
+	status.shiwu 			= tonumber(w[1])
+	status.shiwu_max 		= tonumber(w[2])
+	
+	hp_draw_win()
+end
+-- ------------------------------------
+-- ÒûË®
+-- ------------------------------------
+function hp_yinsui(n,l,w)
+	status.yinsui 			= tonumber(w[1])
+	status.yinsui_max 		= tonumber(w[2])
+	
+	hp_draw_win()
+end
+-- ------------------------------------
+-- ÖÜ
+-- ------------------------------------
+function hp_zou(n,l,w)
+	status.week 			= w[1].." "..w[2].."%"
+	
+	hp_draw_win()
+end
+-- ------------------------------------
+-- uptime
+-- ------------------------------------
+function hp_uptime(n,l,w)
+	status.uptime 			= Fun_CHNum(w[1]) * 60 + Fun_CHNum(w[2])
+	
+	hp_draw_win()
+end
+-- ------------------------------------
+-- ÔËÆøÖÐ
+-- ------------------------------------
+function hp_yunqi()
+	status.yun = 1
+	status.yuntime = 0
+	hp_draw_win()
+end
+-- ------------------------------------
+-- ÔË¾«ÖÐ
+-- ------------------------------------
+function hp_yunjing()
+	status.yun = 2
+	status.yuntime = 0
+	hp_draw_win()
+end
+-- ------------------------------------
+-- ÔËÆø¾«½áÊø
+-- ------------------------------------
+function hp_yunover()
+	status.yun = 0
+	hp_draw_win()
+end
+-- ------------------------------------
+-- Ì«¼«¼ÓÁ¦
+-- ------------------------------------
+function hp_jiali()
+	status.jiali = true
+	hp_draw_win()
+end
+-- ------------------------------------
+-- Ì«¼«¼ÓÁ¦½áÊø
+-- ------------------------------------
+function hp_jialiover()
+	status.jiali = false
+	hp_draw_win()
+end
+-- ------------------------------------
+-- fullme½áÊø
+-- ------------------------------------
+function hp_fullmeover()
+	status.fullmetime = 0
+	hp_draw_win()
+	hp_checktimecur = hp_checktime
+end
+-- ------------------------------------
+-- fullme¸üÐÂ
+-- ------------------------------------
+function hp_fullmeupdate(n,l,w)
+	status.fullmetime = 15 * 60 - tonumber(w[1]) * 60 - tonumber(w[2])
+	hp_draw_win()
+end
+
+-- ------------------------------------
+-- jifa¸üÐÂ
+-- ------------------------------------
+function hp_jifaupdate(n,l,w)
+	status.jingli_canadd = tonumber(w[1]) * 10 - status.jingli_curmax
+	if status.neili_canadd == 0 then
+	  status.neili_canadd = tonumber(w[1]) * 10 - status.neili_curmax
+	end
+	hp_draw_win()
+end
+
+-- ------------------------------------
+-- maxneili¸üÐÂ
+-- ------------------------------------
+function hp_maxnlupdate(n,l,w)
+	status.neili_canadd = tonumber(w[1]) - status.neili_curmax
+	--print(w[1])
+	hp_draw_win()
+end
+
+-- ------------------------------------
+-- ´¥·¢
+-- ------------------------------------
+local TriggerList =
+{
+	{	-- hpbriefÃüÁî
+		funame = "hpbrief",
+		funtrigger = "#(.+),(.*),(\\d+),(\\d+),(\\d+),(\\d+)\\n#(\\d+),(\\d+),(\\d+),(\\d+),(\\d+),(\\d+)",
+		line = 2,
+	},	
+	{	-- ×Ô¼ºÊÜ»÷
+		funame = "selfbehit",
+		funtrigger = "^[> ]*(\\sÄã.+¡º(.*)\(damage.*ÆøÑª\:(\d+)\%\/(\d+)\%\)¡»$",
+	},
+	{	-- ÊÜ»÷
+		funame = "behit",
+		funtrigger = "¡º(.*)\(damage.*ÆøÑª\:(\\d+)\%\/(\\d+)\%\)¡»$",
+	},
+	{	-- Ê³Îï
+		funame = "shiwu",
+		funtrigger = "^¡¾ Ê³Îï ¡¿\\s*(\\d+)\\s*/\\s*(\\d+)",
+	},
+	{	-- ÒûË®
+		funame = "yinsui",
+		funtrigger = "^¡¾ ÒûË® ¡¿\\s*(\\d+)\\s*/\\s*(\\d+)",
+	},
+	{	-- ÖÜ
+		funame = "zou",
+		funtrigger = "^[> ]*±¾ÖÜÎª(........)\\D+(\\d+)",
+	},
+	{	-- uptime
+		funame = "uptime",
+		funtrigger = "^[> ]*±±´óÏÀ¿ÍÐÐÒÑ¾­Ö´ÐÐÁË.*Ð¡Ê±(.+)·Ö(.+)Ãë",
+	},
+	{	-- ÔËÆø
+		funame = "yunqi",
+		funtrigger = "^[> ]*ÄãÔËÐÐÕæÆø¼ÓËÙ×ÔÉíµÄÆøÑª»Ö¸´",
+	},
+	{	-- ÔË¾«
+		funame = "yunjing",
+		funtrigger = "^[> ]*Äã¾²ÐÄÄýÉñ£¬¼ÓËÙ×ÔÉíµÄ¾«Æø»Ö¸´",
+	},
+	{	-- ÔËÆø¾«½áÊø
+		funame = "yunover",
+		funtrigger = "^[> ]*Äã¼õ»ºÕæÆøÔËÐÐ£¬ÈÃ",
+	},
+	{	-- Ì«¼«¼ÓÁ¦
+		funame = "jiali",
+		funtrigger = "^[> ]*(ÄãÆø³Áµ¤Ìï£¬ÔËÓÃÌ«¼«Éñ¹¦À´|ÄãÎ¢Ò»ÄýÉñ£¬ÔËÆð»ìÌìÆø¹¦)",
+	},
+	{	-- Ì«¼«¼ÓÁ¦½áÊø
+		funame = "jialiover",
+		funtrigger = "^[> ]*ÄãµÄ.*ÔËÐÐÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Ø",
+	},
+	{	-- fullme½áÊø
+		funame = "fullmeover",
+		funtrigger = "^[> ]*.*Ò»¸öÐ¡Ê±Ö®ÄÚÄã²»ÓÃµ£ÐÄ±»ÅÐÎª»úÆ÷ÈË",
+	},
+	{	-- fullme¸üÐÂ
+		funame = "fullmeupdate",
+		funtrigger = "^[> ]*Äã¸Õ¸ÕÓÃ¹ýÕâ¸öÃüÁî²»¾Ã£¬»¹Òª(.+)·ÖÖÓ(.+)Ãë²ÅÄÜÔÙÓÃ",
+	},
+	{	-- jifa¼ì²é
+		funame = "jifaupdate",
+		funtrigger = "^\\s+ÄÚ¹¦.*ÓÐÐ§µÈ¼¶£º\\s*(\\d+)"
+	},
+	{	-- maxneili¼ì²é
+		funame = "maxnlupdate",
+		funtrigger = "^¡õ.*\\(.*\\).*\\((.+)\\)$"}
+}
+for i=1,#TriggerList do
+	Fun_AddTrigger("trigger_hp_"..TriggerList[i].funame, TriggerList[i].funtrigger, "hp", "hp_"..TriggerList[i].funame)
+	if TriggerList[i].line ~= nil and TriggerList[i].line > 1 then
+		Fun_SetTriggerLine("trigger_hp_"..TriggerList[i].funame, TriggerList[i].line)
+	end
+end
+
+---------------------------------------------------------------------------
+local HideTriggerList =
+{
+	"#(.+),(.+),(\\d+),(\\d+),(\\d+),(\\d+)",
+}
+for i=1,#HideTriggerList do
+	Fun_AddTriggerHide("trigger_hp_hd_"..i, HideTriggerList[i], "hp", "")
+end
+---------------------------------------------------------------------------
+-- ÁÙÊ±Òþ²ØÎÄ×Ö´¥·¢Æ÷
+local TempHideTriggerList =
+{
+	"^[> ]*¡Ô©¥©¥©¥©¥",
+	"^¡¾ ¾«Éñ ¡¿",
+	"^¡¾ ÆøÑª ¡¿",
+	"^¡¾ ÕæÆø ¡¿",
+	"^¡¾ Ê³Îï ¡¿",
+	"^¡¾ ÒûË® ¡¿",
+	"^¡¾ ×´Ì¬ ¡¿",
+	"^[> ]*ÏÖÔÚÏÖÊµÖÐµÄÊ±¼ä",
+	"^±±´óÏÀ¿ÍÐÐÏÖÔÚ´óÔ¼ÊÇ",
+	"^±¾ÖÜÎª",
+	"^[> ]*±±´óÏÀ¿ÍÐÐÒÑ¾­Ö´ÐÐ",
+	"^[> ]*$",
+}
+for i=1,#TempHideTriggerList do
+	Fun_AddTriggerHide("trigger_hp_temp_hd_"..i, TempHideTriggerList[i], "hp_temp", "")
+end
+
+-- ¶¨Ê±²éÑ¯
+Fun_AddTimer("timer_hp", 1, "hp", "hp_ontime")
+
+-- ×Ô¶¯¿ªÆôÉúÃüÐÅÏ¢
+EnableGroup("hp", true)
+
+---------------------------------------------------------------------------
+-- ¼ÇÂ¼¼¼ÄÜÐÅÏ¢
+---------------------------------------------------------------------------
+
+-- ------------------------------------
+-- »æÖÆ´°¿Ú
+-- ------------------------------------
+function skill_draw_win()
+	skill = skilltemp
+	
+	-- È·¶¨¸ß¶È
+	skill_win_height = 35
+	for i = 1,#skilltypetemp do
+		skill_win_height = skill_win_height + 15
+		for j = 1,#skilltypetemp[i].list do
+			skill_win_height = skill_win_height + 15
+		end
+	end
+	
+	-- »æÖÆ±³¾°
+	WindowResize (skill_win, skill_win_width, skill_win_height, 0x000010)
+	WindowCircleOp (skill_win, miniwin.circle_round_rectangle, 0, 2, skill_win_width - 2, skill_win_height, 0xc0c0c0, 0, 1,0, 0, 9, 9)
+	
+	local left = 20
+	local top = 10
+	local title_leght = 88
+	local grid_off = title_leght + 40
+	local grid_lenght = 100
+	local grid_height = 12
+	
+	if skillinfo.skilllimit == nil then
+	  skillinfo.skilllimit = 9999
+	end
+	
+	WindowText (skill_win, FONT_NAME, "¼¼ÄÜ×î´óµÈ¼¶ÏÞÖÆ£º"..skillinfo.skilllimit,
+				left + 60, top, 0, 0,
+				0x40FF40, false)
+	top = top + 15
+				
+	for i = 1,#skilltypetemp do	
+		local skilltype = skilltypetemp[i]
+		WindowText (skill_win, FONT_NAME, "£­£­£­£­£­£­£­£­"..skilltype.name.."£­£­£­£­£­£­£­£­£­",
+					left, top, 0, 0,
+					ColourNameToRGB ("gray"), false)
+		top = top + 15
+		for j = 1,#skilltype.list do
+			local skillobj = skill[skilltype.list[j]]
+			local color = ColourNameToRGB ("white")
+			if i ~= 1 and skillobj.lv >= skillinfo.skilllimit then
+				color = 0xFFDA58
+			elseif skillobj.expadd > 0 then
+				color = 0x40FF40
+			end
+			WindowText (skill_win, FONT_NAME, skillobj.name,
+						left + title_leght - WindowTextWidth (skill_win, FONT_NAME, skillobj.name), top, 0, 0,
+						color, false)
+			WindowText (skill_win, FONT_NAME, skillobj.lv,
+						left + title_leght + 2, top, 0, 0,
+						color, false)
+			Fun_DrawGrid(skill_win, skillobj.exp, skillobj.maxexp,
+						left + grid_off, top + 1, grid_lenght, grid_height,
+						color, ColourNameToRGB ("gray"))						
+			if skillobj.expadd > 0 then
+				WindowText (skill_win, FONT_NAME, "+"..skillobj.expadd,
+							left + grid_off + grid_lenght + 2, top, 0, 0,
+							color, false)
+			end
+			
+			top = top + 15	
+		end
+	end
+	
+	WindowShow (skill_win, true)
+	movewindow.save_state(skill_win)
+end
+
+-- ------------------------------------
+-- ¶¨Ê±
+-- ------------------------------------
+function skill_ontime()
+	-- ¶¨Ê±²éÑ¯
+	if skill_checktimecur < skill_checktime then
+		if skill_checktimecur == 2 then
+			-- ¹Ø±ÕÁÙÊ±ÆôÓÃÒþ²ØÎÄ×Ö´¥·¢Æ÷	
+			--EnableGroup("skill_temp", false)
+		end
+		skill_checktimecur = skill_checktimecur + 1
+		return
+	end
+
+	skill_checktimecur = 0
+	
+	-- ÁÙÊ±ÆôÓÃÒþ²ØÎÄ×Ö´¥·¢Æ÷	
+	EnableGroup("skill_temp", true)
+	
+	SendNoEcho("jifa")
+	SendNoEcho("skills")
+	AddTrigger("skill_hide_over",".*¡ò ±±´óÏÀ¿ÍÐÐ ¡ò.*","EnableGroup('skill_temp', false)",1+32+4+32768,1,0,"","")
+	SetTriggerOption("skill_hide_over","send_to",12)
+end
+
+function jifa_ontime()
+	SendNoEcho("jifa")
+end
+
+-- ------------------------------------
+-- ¿ªÊ¼´¥·¢¼¼ÄÜ
+-- ------------------------------------
+function skill_start(n,l,w)
+	skilltemp = {}
+	skilltypetemp = {}
+	skilllimit = Fun_CHNum(w[2])
+	--print(skilllimit)
+	DoAfterSpecial(1, "skill_draw_win()", sendto.script)
+end
+
+-- ------------------------------------
+-- ¼¼ÄÜÀàÐÍ
+-- ------------------------------------
+function skill_skilltype(n,l,w)
+	skilltypeobj = {name = w[1], list = {}}
+	table.insert(skilltypetemp, skilltypeobj)
+	table.foreachi(skilltypeobj,print)
+end
+
+-- ------------------------------------
+-- ¼¼ÄÜ
+-- ------------------------------------
+function skill_skill(n,l,w)
+	table.insert(skilltypeobj.list, w[2])
+	skilltemp[w[2]] = {name = "", lv = 0, exp = 0, expadd = 0, maxexp = 0,}
+	local skillobj = skilltemp[w[2]]
+	skillobj.name	= w[1]
+	skillobj.lv		= tonumber(w[3])
+	skillobj.exp	= tonumber(w[4])
+	skillobj.maxexp	= (skillobj.lv+1)^2
+	
+	if skill[w[2]] ~= nil then
+		if skillobj.lv ~= skill[w[2]].lv then
+			skillobj.expadd = (skill[w[2]].lv+1)^2 + skillobj.exp - skill[w[2]].exp
+		elseif skillobj.exp ~= skill[w[2]].exp then
+			skillobj.expadd = skillobj.exp - skill[w[2]].exp
+		end
+	end
+end
+
+-- ------------------------------------
+-- ´¥·¢
+-- ------------------------------------
+local TriggerList =
+{
+	{	-- ¿ªÊ¼´¥·¢¼¼ÄÜ
+		funame = "start",
+		funtrigger = "^[> ]*ÄãÄ¿Ç°ËùÑ§¹ýµÄ¼¼ÄÜ£º£¨¹²(.*)Ïî¼¼ÄÜ£¬ÄãµÄ¼¼ÄÜµÈ¼¶×î¶àÄÜ´ïµ½\\n(.*)¼¶£©",
+	},
+	{	-- ¼¼ÄÜÀàÐÍ
+		funame = "skilltype",
+		funtrigger = "^[©°|©À][©¤]*\\S+Ïî(\\S{8}).*[©´|©È]$",
+	},
+	{	-- µ¥¸ö¼¼ÄÜ
+		funame = "skill",
+		funtrigger = "^.{4}(.+)\\s*©¦(\\S+)\\s*©¦\\S+©¦\\s*(\\d+)©¦(\\d+).*©¦$",
+	},
+}
+for i=1,#TriggerList do
+	Fun_AddTrigger("trigger_skill_"..TriggerList[i].funame, TriggerList[i].funtrigger, "skill", "skill_"..TriggerList[i].funame)
+end
+
+SetTriggerOption("trigger_skill_start","multi_line","y")
+SetTriggerOption("trigger_skill_start","lines_to_match",2)
+
+---------------------------------------------------------------------------
+-- ÁÙÊ±Òþ²ØÎÄ×Ö´¥·¢Æ÷
+local TempHideTriggerList =
+{
+	"^[> ]*ÄãÄ¿Ç°ËùÑ§¹ýµÄ¼¼ÄÜ",
+	"^[©°|©À][©¤]*\\S+Ïî(\\S{8}).*[©´|©È]$",
+	"^©¦[\\s*|¡õ](.+)\\s*©¦(\\S+)\\s*©¦\\S+©¦\\s*(\\d+)©¦(\\d+).*©¦$",
+	"^©¸[©¤]+©Ø[©¤]+©Ø[©¤]+¡ò ±±´óÏÀ¿ÍÐÐ ¡ò[©¤]+©¼",
+	"»ù±¾¹¦·ò",
+	"³£ÓÃ±øÆ÷",
+	"³£ÓÃÈ­½Å",
+	"ÆäËû¹¦·ò",
+	"¼¶£©",
+	"^[> ]*ÒÔÏÂÊÇÄãÄ¿Ç°Ê¹ÓÃÖÐµÄÌØÊâ¼¼ÄÜ¡£$",
+	"^\\s+.*ÓÐÐ§µÈ¼¶£º\\s*\\d+",
+	"^$",
+}
+for i=1,#TempHideTriggerList do
+	Fun_AddTriggerHide("trigger_skill_temp_hd_"..i, TempHideTriggerList[i], "skill_temp", "")
+end
+
+
+-- ¶¨Ê±²éÑ¯
+Fun_AddTimer("timer_skill", 1, "skill", "skill_ontime")
+Fun_AddTimer("timer_jifa", 1, "jifa", "jifa_ontime")
+
+-- ×Ô¶¯¿ªÆô¼¼ÄÜÐÅÏ¢
+EnableGroup("skill", true)	
+
+
+function OnPluginInstall ()
+	--Note("OnPluginInstall")
+	
+	WindowCreate (hp_win, 0, 0, hp_win_width, hp_win_height, miniwin.pos_bottom_left, 0, 0x000010)
+	local hp_win_info = movewindow.install (hp_win, miniwin.pos_bottom_left, miniwin.create_absolute_location, true)
+	WindowCreate(hp_win, hp_win_info.window_left, hp_win_info.window_top, hp_win_width, hp_win_height, hp_win_info.window_mode, hp_win_info.window_flags, 0x000010)
+	movewindow.add_drag_handler (hp_win, 0, 0, hp_win_width, 30)
+	WindowFont (hp_win, FONT_NAME, "Arial", FONT_SIZE)
+	
+	WindowCreate (skill_win, 0, 0, skill_win_width, skill_win_height, miniwin.pos_top_left, 0, 0x000010)
+	local skill_win_info = movewindow.install (skill_win, miniwin.pos_top_left, miniwin.create_absolute_location, true)
+	WindowCreate(skill_win, skill_win_info.window_left, skill_win_info.window_top, hp_win_width, hp_win_height, skill_win_info.window_mode, skill_win_info.window_flags, 0x000010)
+	movewindow.add_drag_handler (skill_win, 0, 0, skill_win_width, 30)
+	WindowFont (skill_win, FONT_NAME, "Arial", FONT_SIZE)
+end
+
+function OnPluginClose ()
+	--Note("OnPluginClose")
+   if GetPluginInfo(GetPluginID(), 17) then
+      OnPluginDisable()
+   end
+end
+
+function OnPluginEnable ()
+	--Note("OnPluginEnable")
+   WindowShow(hp_win, true)
+   WindowShow(skill_win, true)
+   -- if we are connected when the plugin loads, it must have been reloaded while playing
+   if IsConnected() then
+   end -- if already connected
+   OnPluginSaveState()
+end -- OnPluginEnable
+
+function OnPluginSaveState()
+	--Note("OnPluginSaveState")
+   -- save window current location for next time  
+   SetVariable("enabled", tostring (GetPluginInfo (GetPluginID(), 17)))
+   movewindow.save_state(hp_win)
+   movewindow.save_state(skill_win)
+   
+   --SetVariable("actorname", actorname)
+end --  OnPluginSaveState
+
+function OnPluginDisable()
+	--Note("OnPluginDisable")
+   WindowShow(hp_win, false)
+   WindowShow(skill_win, false)
+   OnPluginSaveState()
+end
+
+
+]]>
+</script>
+
+
+</muclient>

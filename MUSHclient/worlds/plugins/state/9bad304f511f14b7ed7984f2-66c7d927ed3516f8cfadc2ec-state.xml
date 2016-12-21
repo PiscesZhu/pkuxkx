@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Saved on 2016Äê Ê®¶þÔÂ 20ÈÕ ÐÇÆÚ¶þ, ÉÏÎç 11:27 -->
+<!-- MuClient version 5.02 -->
+<!-- Written by Nick Gammon -->
+<!-- Home Page: http://www.mushclient.com/ -->
+
+<!-- ²å¼þ×´Ì¬ÒÑ±»±£´æ¡£²å¼þ:¡°pkuxkx_status¡±£¬ÓÎÏ·:¡°pkuxkx¡±¡£ -->
+
+<muclient>
+
+<!-- variables -->
+
+<variables
+   muclient_version="5.02"
+   world_file_version="15"
+   date_saved="2016-12-20 11:27:57"
+  >
+  <variable name="enabled">true</variable>
+  <variable name="mw_hp_window_windowflags">2</variable>
+  <variable name="mw_hp_window_windowmode">0</variable>
+  <variable name="mw_hp_window_windowx">1056</variable>
+  <variable name="mw_hp_window_windowy">0</variable>
+  <variable name="mw_skill_window_windowflags">2</variable>
+  <variable name="mw_skill_window_windowmode">0</variable>
+  <variable name="mw_skill_window_windowx">0</variable>
+  <variable name="mw_skill_window_windowy">0</variable>
+</variables>
+</muclient>

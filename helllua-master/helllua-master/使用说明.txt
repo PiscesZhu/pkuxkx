@@ -1,0 +1,152 @@
+主页：http://code.google.com/p/helllua/
+mushclient适用版本：4.27
+
+
+文件列表:
+helllia.mcl:mushclient文件,可以放置在任何位置。其他文件必须和hell.lua放在同一目录下
+hell.lua:lua主程序，mushclient中指定为脚本
+mods目录下的.mod文件：模块文件
+config.ini:对于机器的一些设置
+	config-dfcs.ini 东方传说的设置文件，可以覆盖config.ini或者configfile 变量中指定
+configs目录下的.ini文件：机器模块的配置文件
+
+机器会自动载入mcl文件所在目录下的config.ini,可以进行点个性化设置，比如杀龙信息的加密
+
+
+mapper.dll  地图路径程序。可在http://code.google.com/p/mushluamapper/得到最新源代码，用vc toolkit 2003自行编译
+aeslib.dll  文字加密程序，由mushclient作者nick提供的代码，源代码已提供到如上位置。用mingw32编译。
+room_all.h 地图文件。与老版本mapper.exe的格式略有不同.
+
+第一次使用说明:
+mushclient设置:
+1.允许lua使用mapper.dll文件:
+   按住ctrl+alt+g,选择lua选项卡
+   勾上Allow dll to be loaded
+   按 Edit按钮
+   把第一行的trust_all_worlds = false 改成trust_all_worlds = true
+   点ok确认.
+   只需要设置一次
+
+2.设置lua文件
+   按住shift+ctrl+6，出现scripts设置页面。
+   确定scripting后的选项是 lua
+   点击Browes... 按钮,选择hell.lua
+   点 确定 按钮保存设定.
+   如果你使用多个mcl文件，每个都需要这样设定.
+
+3.关于账号和密码。
+ 为了方便起见，账号和密码信息将由文件名决定。
+ 请你把你的账号改名为 账号-密码.mcl 或者 帐号.mcl
+ 比如 bao-123456.mcl 或者 bao.mcl
+ 如果文件名不含密码，请设置在mcl文件的passwd变量中.id也可设置在id 变量中
+
+4.一些mud中的设置：
+alias chatroom 你的聊天室名字，比如alias chatroom bao,决定了gift丢在哪里
+set can_tell 你的遥控id的名字，比如set can_tell bao,决定了你的遥控大米
+关于帮助寻找很远的npc:目前是利用party,也就是帮派寻找的，以后会加入league寻找。
+如果需要帮助寻找，请加入一个帮派。推荐明教，人多，没什么副作用。
+alias eat9z  是否吃9z 解毒。防止all 20 id吃 9z德设定。随便设为什么都可以。如果不吃9z解毒，unalias eat 9z
+在give head后会自动发送一个mastercmd到mud.如果需要特殊指令，比如alias mastercmd ask miejue about 涅磐决.
+alias nopowerup 不自动使用powerup。有些技能和powerup冲突。如果设为drunk则自动使用醉棍的 zuida
+alias dragon  设为find 自动找龙，设为kill自动杀龙
+
+
+
+
+4.设置config.ini文件
+一般来说，只需要设置cmd_limit,根据的网速设置每秒命令数
+
+指令列表:
+
+1.任务命令:
+start 师门任务
+
+#assist 协助任务机器人。
+关于协助任务，help quest
+两个id停在同一个地方
+低exp的id,把高exp的id设置在can_accept,比如set can_accept bao,然后#assist
+而高exp的id,#assist 低exp的id,比如 #assist mrbao
+
+#caxie 擦鞋机器人
+#beiqi 做备齐任务
+#letter 送信
+#fish 钓鱼
+#liandan 炼丹
+#stop 停止任务
+#dutable 读石桌
+#canwu 参悟洗髓经
+#dazuo 打坐内力
+#lian 练习技能
+	格式如下:
+	#lian dodge,parry,sword book 练习dodge,parry,读sword book
+	#lian dodge>start 练习满dodge后执行start
+	#lian dodge.feiyan-zoubi,dodge.shenxing-baibian<100 分别激活feiyan-zoubi和shenxing-baibian练习dodge,shenxing-baibian不超过100lv
+	#lian dodge.feiyan-zoubi,parry book>#to 2046
+#kill 杀npc
+	格式:#kill xxx或者 #kill xxx@123
+
+#make 做药
+	格式:#make xxx 20
+
+2.其他命令:
+#to loc 到达某个地点,loc请参考rooms_all.
+#to npc 到达某个npc处.支持npc 中文名/id.具体信息储存在npcs.ini
+spwk 强制停止.
+#kl npc名 城市名 在xx城市杀xx npc
+
+
+
+变量列表:
+1.skilllist:技能列表，具体格式如下:
+技能(学习指令-npc名字-位置)
+其中除了 技能 都可以省略
+学习指令在80w exp前默认为xue,80w以后默认为yanjiu
+范例：
+literate(xue-zhu xi) 朱熹处学习liteate
+force   80w前师傅那里学force/80w后研究force
+higgling(xue-戚长发-26)在26(客店) 向戚长发学习 higgling
+dodge(yanjiu) 研究dodge
+
+
+目前支持的学习指令包括:
+xue,yanjiu,jingxiu,closed,ask,lian
+
+
+
+
+2.goldmin:  数字,最少带多少黄金
+3.flylist: miss的列表,格式为:  命令%当成多少步计算:位置, 比如 miss sword:26%5,指miss sword可以到达26,同时这个动作在计算路径时当5步计算. 可以使用多个命令,每个都必须带 , 号.
+4.potmax: 多少pot去学习.0为不学习
+5.qixuemin:多少气血%去治疗
+6.neilinmin:低与多少内力去休息。
+7.tihuimax多少体会去汲取
+8.weapon 使用的武器 如果是zhenwu jian 之类的特殊门派武器，会自动ask
+9.weapon2 要磨的武器
+10.fightcuff kill后的用的空手技能，比如yun suck。
+11.jinlimin:最低精力
+12 killcmd :等信的时候执行的命令
+13 nuqimin 最小怒气,超过3000自动爆发.
+
+
+14.configfile:制定特别的config文件。
+默认是config.ini
+
+15.fight_preper: 战斗准备技能
+
+可以设成 config-dfcs.ini  东方传说
+
+遥控：
+把遥控者的id设为can_tell
+
+命令为do xxxx
+
+比如 tell bao do #fish
+
+
+解毒:
+
+自动吃聊天室地上的丹药解毒.
+以及budai of here里的9z。
+
+正常情况下，用本机器liandan 或者quest得到的gift会自动丢在相应位置。
+

@@ -1,0 +1,2676 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Saved on 2016Äê ÆßÔÂ 05ÈÕ ÐÇÆÚ¶þ, ÏÂÎç 6:51 -->
+<!-- MuClient version 5.01 -->
+<!-- Written by Nick Gammon -->
+<!-- Home Page: http://www.mushclient.com/ -->
+<muclient>
+<world
+   muclient_version="5.01"
+   world_file_version="15"
+   date_saved="2016-07-05 18:51:06"
+
+   auto_log_file_name="E:\netgame\MUSHclient\logs\xkx.txt"
+   auto_say_override_prefix="-"
+   auto_say_string="say "
+   chat_name="Luoeric"
+   command_stack_character=";"
+   id="96f29f6cc2ada57a7fd57c49"
+   input_font_name="Á¥Êé"
+   mapping_failure="Alas, you cannot go that way."
+   name="±±´óÏÀ¿ÍÐÐ"
+   new_activity_sound="(No sound)"
+   output_font_name="¿¬Ìå"
+   password_base64="y"
+   password="bHVvMTg1NDAx"
+   player="luoeric"
+   script_editor="C:\Program Files (x86)\Notepad2\Notepad2.exe"
+   script_editor_argument="%file"
+   script_filename="E:\netgame\MUSHclient\scripts\xkx.lua"
+   script_language="Lua"
+   script_prefix="\"
+   site="pkuxkx.net"
+   spam_message="look"
+   speed_walk_prefix="#"
+   terminal_identification="mushclient"
+
+   alt_arrow_recalls_partial="y"
+   arrows_change_history="y"
+   arrow_keys_wrap="y"
+   auto_pause="y"
+   auto_repeat="y"
+   auto_resize_minimum_lines="1"
+   auto_resize_maximum_lines="20"
+   chat_foreground_colour="red"
+   chat_background_colour="black"
+   chat_port="4050"
+   confirm_on_paste="y"
+   confirm_on_send="y"
+   connect_method="2"
+   convert_ga_to_newline="y"
+   default_trigger_sequence="100"
+   default_alias_sequence="100"
+   detect_pueblo="y"
+   display_my_input="y"
+   echo_colour="2"
+   echo_hyperlink_in_output_window="y"
+   enable_aliases="y"
+   enable_beeps="y"
+   enable_command_stack="y"
+   enable_scripts="y"
+   enable_speed_walk="y"
+   enable_timers="y"
+   enable_triggers="y"
+   escape_deletes_input="y"
+   history_lines="1000"
+   hyperlink_adds_to_command_history="y"
+   hyperlink_colour="#0080FF"
+   indent_paras="y"
+   input_background_colour="moccasin"
+   input_font_height="14"
+   input_font_weight="400"
+   input_font_charset="134"
+   input_text_colour="blueviolet"
+   keypad_enable="y"
+   line_information="y"
+   log_output="y"
+   max_output_lines="5000"
+   mud_can_change_link_colour="y"
+   mud_can_change_options="y"
+   naws="y"
+   note_text_colour="#040000"
+   no_echo_off="y"
+   output_font_height="14"
+   output_font_weight="400"
+   output_font_charset="1"
+   paste_delay_per_lines="1"
+   pixel_offset="1"
+   port="8080"
+   proxy_port="1080"
+   save_world_automatically="y"
+   script_reload_option="1"
+   script_errors_to_output_window="y"
+   send_file_delay_per_lines="1"
+   send_mxp_afk_response="y"
+   show_connect_disconnect="y"
+   spam_line_count="20"
+   speed_walk_delay="28"
+   tab_completion_lines="200"
+   timestamp_input_text_colour="maroon"
+   timestamp_notes_text_colour="blue"
+   timestamp_output_text_colour="white"
+   timestamp_input_back_colour="black"
+   timestamp_notes_back_colour="black"
+   timestamp_output_back_colour="black"
+   tool_tip_visible_time="5000"
+   tool_tip_start_time="400"
+   treeview_triggers="y"
+   treeview_aliases="y"
+   treeview_timers="y"
+   underline_hyperlinks="y"
+   unpause_on_send="y"
+   use_custom_link_colour="y"
+   use_mxp="2"
+   warn_if_scripting_inactive="y"
+   wrap_column="180"
+   write_world_name_to_log="y"
+   > <!-- end of general world attributes -->
+  <connect_text>y
+say ÎÒ%name%ÓÖÀ´ÁË
+w
+s
+d
+out
+remove all
+draw head
+draw cloth
+draw armor
+draw boots
+draw surcoat
+draw sword
+draw sword
+wear all
+wield sword
+wield sword 2</connect_text>
+
+</world>
+
+<!-- triggers -->
+
+<triggers
+   muclient_version="5.01"
+   world_file_version="15"
+   date_saved="2016-07-05 18:51:06"
+  >
+  <trigger
+   enabled="y"
+   group="¹«ÓÃ"
+   match="*º®±ùÆÐÌá·¢ÏÖµÄ ¹ÃËÕÄ½ÈÝÅÑÍ½(Luoeric's murong pantu)*"
+   send_to="10"
+   sequence="1"
+  >
+  <send>kill pantu
+perform huashan-jianfa.jianzhang</send>
+  </trigger>
+  <trigger
+   group="Á·Ï°"
+   match="*Äã*Á·Ï°*£¬»ñµÃÁË*½ø²½£¡*"
+   send_to="10"
+   sequence="1"
+  >
+  <send>lian sword 50</send>
+  </trigger>
+  <trigger
+   group="ÐÞÁ¶"
+   match="*Äã´ÓÐþ»ÃÖ®¾³»Ø¹ýÉñÀ´£¬¶Ù¾õÄÚ¹¦ÐÞÎªÔö½ø²»Ð¡¡£*"
+   send_to="10"
+   sequence="1"
+  >
+  <send>xiulian zixia-shengong</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="¹«ÓÃ"
+   match="*Äã¸ÕÔÚÈý·ÖÖÓÄÚË¯¹ýÒ»¾õ, ¶àË¯¶ÔÉíÌåÓÐº¦ÎÞÒæ!*"
+   send_to="12"
+   sequence="1"
+  >
+  <send>waitsleep()</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Ñ§Îä¹¦"
+   match="*Äã¹²Çë½ÌÁËÁù´Î*"
+   send_to="10"
+   sequence="1"
+  >
+  <send>learn feng for huashan-neigong 6</send>
+  </trigger>
+  <trigger
+   group="¶ÁÊé"
+   match="*ÄãÑÐ¶ÁÁËÎå´ÎÓÐ¹Ø*µÄ¼¼ÇÉ£¬ËÆºõÓÐµãÐÄµÃ¡£*"
+   send_to="10"
+   sequence="1"
+  >
+  <send>du miji for 5</send>
+  </trigger>
+  <trigger
+   group="¶ÁÉäµñ"
+   match="*ÄãÒ»¾õÐÑÀ´£¬¾«Éñ¶¶ËÓµØ»î¶¯ÁË¼¸ÏÂÊÖ½Å¡£*"
+   send_to="10"
+   sequence="1"
+  >
+  <send>read shediao 1</send>
+  </trigger>
+  <trigger
+   group="×¢²á"
+   match="*Õâ¸öÃû×Ö½«»á´´ÔìÒ»¸öÐÂµÄÈËÎï£¬ÄúÈ·¶¨Âð*"
+   send_to="10"
+   sequence="1"
+  >
+  <send>y</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Ñ§Îä¹¦"
+   match="*Äã¼õ»ºÕæÆøÔËÐÐ£¬ÈÃ×ÔÉí»Ö¸´Õý³£¡£*"
+   send_to="10"
+   sequence="2"
+  >
+  <send>learn feng for huashan-neigong 6</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÄãÀ´µ½Õâ¸öÄ°ÉúµÄµØ·½£¬Ç°Í¾Î´²·£¬ÇëÏÈÓÃhpÃüÁî¼ì²é×Ô¼ºµÄÉíÌåÇé¿ö"
+   send_to="10"
+   sequence="2"
+  >
+  <send>hp</send>
+  </trigger>
+  <trigger
+   group="Á·Ï°"
+   match="*ÄãÂÔÒ»ÄýÉñ£¬¾«Éñ¿´ÆðÀ´ºÃ¶àÁË¡£*"
+   send_to="10"
+   sequence="2"
+  >
+  <send>lian sword 50</send>
+  </trigger>
+  <trigger
+   group="¶ÁÉäµñ"
+   match="*ÄãÂÔÒ»ÄýÉñ£¬¾«Éñ¿´ÆðÀ´ºÃ¶àÁË¡£*"
+   send_to="10"
+   sequence="2"
+  >
+  <send>read shediao 1</send>
+  </trigger>
+  <trigger
+   group="¶ÁÊé"
+   match="*ÄãÒ»¾õÐÑÀ´£¬¾«Éñ¶¶ËÓµØ»î¶¯ÁË¼¸ÏÂÊÖ½Å¡£*"
+   send_to="10"
+   sequence="2"
+  >
+  <send>du miji for 5</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Ñ§Îä¹¦"
+   match="*ÄãÂÔÒ»ÄýÉñ£¬¾«Éñ¿´ÆðÀ´ºÃ¶àÁË¡£*"
+   send_to="10"
+   sequence="3"
+  >
+  <send>learn feng for huashan-neigong 6</send>
+  </trigger>
+  <trigger
+   group="¶ÁÊé"
+   match="*ÄãÂÔÒ»ÄýÉñ£¬¾«Éñ¿´ÆðÀ´ºÃ¶àÁË¡£*"
+   send_to="10"
+   sequence="3"
+  >
+  <send>du miji for 5</send>
+  </trigger>
+  <trigger
+   group="Á·Ï°"
+   match="*ÄãÉîÉîÎüÁË¼¸¿ÚÆø£¬Á³É«¿´ÆðÀ´ºÃ¶àÁË¡£*"
+   send_to="10"
+   sequence="3"
+  >
+  <send>lian sword 50</send>
+  </trigger>
+  <trigger
+   group="¶ÁÉäµñ"
+   match="*ÄãË¼Ë÷×ÅÐ¡ËµÖÐ¹ØÓÚ*£¬¶Ô*ÓÐÒ»Ð©ÐÂµÄÀí½â¡£*"
+   send_to="10"
+   sequence="3"
+  >
+  <send>read shediao 1</send>
+  </trigger>
+  <trigger
+   group="×¢²á"
+   match="*ÄúµÄµç×ÓÓÊ¼þµØÖ·*"
+   send_to="10"
+   sequence="3"
+  >
+  <send>luoeric@21cn.com</send>
+  </trigger>
+  <trigger
+   group="¶ÁÊé"
+   match="*ÄãµÄÄÚÁ¦²»¹»¡£*"
+   send_to="10"
+   sequence="4"
+  >
+  <send>sleep</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÄãÏÖÔÚÓÖ¿ÊÓÖ¶ö£¬¿´¿´ÔÚÕâÀïÄÜ·ñÕÒµ½Ð©³ÔµÄºÈµÄ¡£"
+   sequence="4"
+  >
+  <send>get hu lu
+get guo</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Ñ§Îä¹¦"
+   match="*ÄãÒ»¾õÐÑÀ´£¬¾«Éñ¶¶ËÓµØ»î¶¯ÁË¼¸ÏÂÊÖ½Å¡£*"
+   send_to="10"
+   sequence="4"
+  >
+  <send>n;e;n;n;n;nd;nu;nd;nd;nu
+learn feng for huashan-neigong 6</send>
+  </trigger>
+  <trigger
+   group="Á·Ï°"
+   match="*ÄãÒ»¾õÐÑÀ´£¬¾«Éñ¶¶ËÓµØ»î¶¯ÁË¼¸ÏÂÊÖ½Å¡£*"
+   send_to="10"
+   sequence="4"
+  >
+  <send>lian sword 50</send>
+  </trigger>
+  <trigger
+   group="¶ÁÉäµñ"
+   match="*ÄãÕý×¨ÐÄ¿´×ÅÒ»±¾ºñºñµÄÐ¡Ëµ¡£*"
+   send_to="10"
+   sequence="4"
+  >
+  <send>read shediao 1</send>
+  </trigger>
+  <trigger
+   group="Á·Ï°"
+   match="*ÄãµÄÌåÁ¦Ì«µÍÁË¡£*"
+   send_to="10"
+   sequence="5"
+  >
+  <send>yun recover</send>
+  </trigger>
+  <trigger
+   group="×¢²á"
+   match="*ÇëÉè¶¨ÄúµÄÃÜÂë£º*"
+   send_to="10"
+   sequence="5"
+  >
+  <send>luo185401</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*Äã¼ñÆðÒ»¸öºùÂ«¡£"
+   send_to="10"
+   sequence="6"
+  >
+  <send>fill hulu</send>
+  </trigger>
+  <trigger
+   group="×¢²á"
+   match="*ÇëÔÙÊäÈëÒ»´ÎÄúµÄÃÜÂë£¬ÒÔÈ·ÈÏÄúÃ»¼Ç´í£º*"
+   send_to="10"
+   sequence="7"
+  >
+  <send>luo185401</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*Äã½«ºùÂ«×°ÂúÇåË®¡£"
+   send_to="10"
+   sequence="8"
+  >
+  <send>drink hulu</send>
+  </trigger>
+  <trigger
+   group="×¢²á"
+   match="*ÄúÒª°çÑÝÄÐÐÔ(m)µÄ½ÇÉ«»òÅ®ÐÔ(f)µÄ½ÇÉ«£¿*"
+   send_to="10"
+   sequence="9"
+  >
+  <send>m</send>
+  </trigger>
+  <trigger
+   group="×¢²á"
+   match="*¡¾½­ºþ¡¿ÌýËµ*¾ö¶¨ÆúÎÄ´ÓÎä£¬Í¶Éí½­ºþ£¬ÐÂÒ»´ú´óÏÀ¿ÉÄÜ¾Í´Ëµ®ÉúÁË£¡*"
+   send_to="10"
+   sequence="10"
+  >
+  <send>tune all</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÄãÄÃÆðºùÂ«¹¾ààààµØºÈÁË¼¸¿ÚÇåË®¡£"
+   send_to="10"
+   sequence="10"
+  >
+  <send>drink hulu</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÄãÒÑ¾­ºÈÌ«¶àÁË£¬ÔÙÒ²¹à²»ÏÂÒ»µÎË®ÁË¡£"
+   send_to="10"
+   sequence="12"
+  >
+  <send>get guo</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*Äã¼ñÆðÒ»Ã¶Ò°¹û¡£"
+   send_to="10"
+   sequence="14"
+  >
+  <send>eat guo</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÄãÄÃÆðÒ°¹ûÒ§ÁË¼¸¿Ú¡£"
+   send_to="10"
+   sequence="16"
+  >
+  <send>eat guo</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÖÕÓÚ³Ô±¥ºÈ×ãÁË£¬ÄãÏÖÔÚ¿ÉÒÔÈ¥ÖÜÎ§Ì½Ë÷ÏÂ£¬¿´¿´ÓÐÃ»ÓÐÄÜÖ±½Ó³öÈ¥µÄ³ö¿Ú¡£"
+   send_to="10"
+   sequence="18"
+  >
+  <send>e;w;w;e;s;n</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*°ÑÖÜÎ§×ßÁË¸ö±é£¬¶¼Ã»ÓÐ·¢ÏÖÓÐÆäËû³ö¿Ú£¬»¹ÊÇ´ÓÕâÀïµÄÉ½ÆÂ³öÈ¥°É¡£"
+   send_to="10"
+   sequence="20"
+  >
+  <send>l path</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÕâÊÇÒ»¶Î¶¸ÇÍµÄÉ½ÆÂ£¬Ó¦¸Ã¿ÉÒÔÏòÉÏÅÊÅÀ³öÈ¥¡£*"
+   send_to="10"
+   sequence="22"
+  >
+  <send>climb up</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*Äã¿´×Å»³ÀïµÄºùÂ«£¬ÐÄÏëÁøÐãÉ½×¯»á²»»á¾ÍÔÚÇ°Ãæ¸½½üµÄµØ·½¡£ÓÃlocalmapsÃüÁî¿ÉÒÔ²é¿´¸½½üµØÍ¼¡£"
+   send_to="10"
+   sequence="24"
+  >
+  <send>#3 n</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÄãÕúÕúµØÕ¾ÔÚÄÇÀï²»ÖªËù´ë,²»ÈçÈ¥ÇÃÇÃÃÅ(knock gate)£¬ÕÒÀïÃæµÄÈËÎÊÎÊ"
+   send_to="10"
+   sequence="26"
+  >
+  <send>knock gate
+ask yahuan about ºùÂ«</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÄãÕúÕúµØÕ¾ÔÚÄÇÀï²»ÖªËù´ë£¬²»ÈçÔÙÈ¥ÇÃÇÃÃÅ£¬ÏòËýÎÊ¸ö¾¿¾¹"
+   send_to="10"
+   sequence="28"
+  >
+  <send>knock gate</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*Ñ¾÷ß×ª¹ýÍ·À´ÇÆ×ÅÄã£¬Ê¾ÒâÄã¸Ï½ô°ÑºùÂ«¸øÕâÎ»×¯Ö÷¡£"
+   send_to="10"
+   sequence="30"
+  >
+  <send>give hulu to you kunyi</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÏòÓÎöïÒíÒÀ´Î´òÌý£ºhere¡¢name¡¢ºùÂ«¡¢´³µ´½­ºþ¡£"
+   send_to="10"
+   sequence="32"
+  >
+  <send>ask you about here
+ask you about name
+ask you about ºùÂ«
+ask you about ´³µ´½­ºþ</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*Äã¼ûËûÈç´ËÊ¢Çé£¬±ãÒ²²»ºÃÍÆ´Ç£¬¸ú×ÅÑ¾÷ß°¢æ­£¬ÈÃËý´øÄãÊìÏ¤Ò»ÏÂÉ½×¯°É¡£"
+   send_to="10"
+   sequence="34"
+  >
+  <send>follow ashu</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*Çë°ÑÒÂ·þÍÑÁË,ºÃºÃÔÚÕâÀïÏ´¸öÔè°É¡£"
+   send_to="10"
+   sequence="36"
+  >
+  <send>remove all;bath</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÖÕÓÚ°ÑÔèÏ´ÍêÁË£¬È¥ÎÊ×¯Ö÷¹ØÓÚ´³µ´½­ºþµÄÊÂÇé°É¡£"
+   send_to="10"
+   sequence="38"
+  >
+  <send>wear all
+s
+e
+ask you about ´³µ´½­ºþ</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÄãÔ¾Ô¾ÓûÊÔ£¬ÒÑ¾­ÆÈ²»¼°´ýÁË£¡¿ìÈ¥ÉÐÎäÌÃÕÒÎäÊ¦ÊÔÊÔÉíÊÖ°É¡£"
+   send_to="10"
+   sequence="40"
+  >
+  <send>n
+fight wushi</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*Õâ³¡±ÈÊÔÏûºÄÁËÄã²»ÉÙµÄÌåÁ¦£¬»ØÏá·¿È¥ÐÝÏ¢(sleep)Ò»ÏÂ°É¡£"
+   send_to="10"
+   sequence="42"
+  >
+  <send>s
+w
+sleep</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÏòÓÎöïÒí´òÌý´³µ´½­ºþ£¡*"
+   send_to="10"
+   sequence="44"
+  >
+  <send>e
+ask you about ´³µ´½­ºþ</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*Äã°´ÕÕËûµÄ·Ô¸ÀÈ¥×ö,³ö·¢Ö®Ç°ÏÈÓÃ*²éÏÂÁøÐãÆ±ºÅÔÚÄÄÀï¡£"
+   send_to="10"
+   sequence="46"
+  >
+  <send>localmaps
+q</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*¿ìÈ¥ÁøÐãÆ±ºÅ¿´¿´ÓÎöïÒí¸øÄã´æÁË¶àÉÙÇ®£¬¶¼È¡³öÀ´°É"
+   send_to="10"
+   sequence="48"
+  >
+  <send>#2 s
+open gate
+s
+e
+qu 1 gold</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*È¡ÁËÇ®£¬¸Ï½ôÈ¥Ò©ÆÌÂòÒ©ÁÆÉË°É¡£"
+   send_to="10"
+   sequence="50"
+  >
+  <send>w
+#2 s
+northeast
+buy yao
+eat yao</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÄãµÄÉËÖÎºÃÁË£¡¿ì»Øµ½ÓÎ×¯Ö÷´¦£¬ÈÃËûÖ¸µ¼Äã´³µ´½­ºþ°É£¡"
+   send_to="10"
+   sequence="52"
+  >
+  <send>southwest
+#2 n
+knock gate
+#3 n
+ask you about ´³µ´½­ºþ</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*¿ìÈ¥ÉÐÎäÌÃ£¬ÕÒÎäÊ¦°ÝÊ¦Ñ§ÒÕÈ¥°É¡£*"
+   send_to="10"
+   sequence="54"
+  >
+  <send>n
+bai wushi
+quest</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÎäÊ¦Å¿ÔÚÄã¶ú±ßÇáÇáËµµÀ£º¡°ÎÒÐèÒªÒ»ºøÉÕµ¶×ÓºÍÒ»°Ñ¸Ö½££¬ÄãÈ¥¾ÆÆÌ¡¢Ìú½³ÆÌ¸øÎÒÂò»ØÀ´¡£¡±"
+   send_to="10"
+   sequence="56"
+  >
+  <send>s</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÄãÍ£ÏÂÁË½Å²½¡£*"
+   send_to="10"
+   sequence="58"
+  >
+  <send>quest</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*°ïÎäÊ¦È¥Ìú½³ÆÌÂòÒ»°Ñ¸Ö½££¬È¥¾ÆÆÌÂòÒ»ºøÉÕµ¶×Ó¾Æ£¬»ØÀ´½»¸øÎäÊ¦"
+   send_to="10"
+   sequence="60"
+  >
+  <send>#3 s
+open gate
+#3 s
+southeast
+buy shaodaozi
+northwest
+n
+w
+buy jian
+e
+n
+knock gate
+#4 n
+give shaodaozi to wushi</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*Äã¸øÎäÊ¦Ò»Ì³ÉÕµ¶×Ó¡£*"
+   send_to="12"
+   sequence="62"
+  >
+  <send>newgive()</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÔÙÈ¥¾ÆÆÌÂò¸ö¼¦ÍÈ£¬È¥ÔÓ»õÆÌÂò¸öÊ³ºÐ£¬°Ñ¼¦ÍÈ·Åµ½Ê³ºÐÀï½»¸øÎäÊ¦"
+   send_to="10"
+   sequence="64"
+  >
+  <send>#3 s
+open gate
+#2 s
+e
+buy shi he
+w
+s
+southeast
+buy jitui
+put jitui in shi he
+northwest
+n
+n
+n
+knock gate
+#4 n
+give shi he to wushi</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*Äã¸øÎäÊ¦Ò»¸öÊ³ºÐ¡£*"
+   send_to="12"
+   sequence="66"
+  >
+  <send>newgive2()</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*bai wushi,²é¿´ÎäÊ¦¼¼ÄÜ£¬cha wushi*"
+   send_to="10"
+   sequence="68"
+  >
+  <send>bai wushi
+cha wushi</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÄÚ¹¦ÊÇÒ»ÇÐÎäÑ§Ö®¸ù»ù£¡½¨ÒéÏÈÑ§»ù±¾ÄÚ¹¦ºÍÌØÊâÄÚ¹¦£¡"
+   send_to="10"
+   sequence="70"
+  >
+  <send>xue wushi for dodge 2
+xue wushi for force 2
+xue wushi for strike 2
+xue wushi for parry 2
+xue wushi for sword 2
+skills</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   lines_to_match="8"
+   match="^.*Äã.*$\n^.*$\n^\S+\s+\S*Ïî»ù±¾¹¦·ò.*$\n^.*\((.+)\)\s+\-\s\S+\s+(\d+)\/.*$\n^.*\((.+)\)\s+\-\s\S+\s+(\d+)\/.*$\n^.*\((.+)\)\s+\-\s\S+\s+(\d+)\/.*$\n^.*\((.+)\)\s+\-\s\S+\s+(\d+)\/.*$\n^.*\((.+)\)\s+\-\s\S+\s+(\d+)\/.*$\n"
+   multi_line="y"
+   name="base"
+   regexp="y"
+   send_to="12"
+   sequence="72"
+  >
+  <send>newskills1("%1",%2,"%3",%4,"%5",%6,"%7",%8,"%9",%&lt;10&gt;)</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   lines_to_match="2"
+   match="*Äã½ñÌìÌ«ÀÛÁË£¬½á¹ûÊ²Ã´Ò²Ã»ÓÐÑ§µ½¡£È¥Ë¯Ò»¾õÔÙÀ´Ñ§°É¡£"
+   send_to="10"
+   sequence="74"
+  >
+  <send>s
+w
+sleep</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*Ñ§Ï°ÎäÊ¦ÉíÉÏËùÓÐ»ù±¾¹¦·òµ½5¼¶£¬ËùÓÐ¸ß¼¶¹¦·òµ½5¼¶*"
+   send_to="10"
+   sequence="76"
+  >
+  <send>e
+n
+skills</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   lines_to_match="8"
+   match="*ÄãËµµÀ£º¡¸ÀÏÂÞ£¬ÎåÏî»ù±¾¹¦ÂúÁË£¬×¼±¸Ñ§ÌØÊâ¹¦·ò°É¡£¡¹"
+   send_to="10"
+   sequence="78"
+  >
+  <send>xue wu shi for taiyi-jian 2
+xue wu shi for taiyi-shengong 2
+xue wushi for taiyi-you 2
+xue wushi for taiyi-zhang 2
+skills</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   lines_to_match="14"
+   match="^.*Äã.*$\n^.*$\n^.*$\n^.*$\n^.*$\n^.*$\n^.*$\n^.*$\n^.*$\n^\S+\s+\S*ÏîÌØÊâ¹¦·ò.*$\n^.*\((.+)\)\s+\-\s\S+\s+(\d+)\/.*$\n^.*\((.+)\)\s+\-\s\S+\s+(\d+)\/.*$\n^.*\((.+)\)\s+\-\s\S+\s+(\d+)\/.*$\n^.*\((.+)\)\s+\-\s\S+\s+(\d+)\/.*$"
+   multi_line="y"
+   name="adv"
+   regexp="y"
+   send_to="12"
+   sequence="80"
+  >
+  <send>newskills2("%1",%2,"%3",%4,"%5",%6,"%7",%8)</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*°ÑÑ§µ½µÄ¹¦·ò¶¼¼¤·¢ÆðÀ´°É£¡"
+   send_to="10"
+   sequence="82"
+  >
+  <send>jifa force taiyi-shengong
+jifa dodge taiyi-you
+jifa sword taiyi-jian
+jifa parry taiyi-jian
+jifa strike taiyi-zhang</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*»ù±¾¹¦·òÊÇ×¼±¸ºÃÁË£¬»¹ÒªÔÙ×¼±¸Ò»ÏÂÖ÷ÓÃ¿ÕÊÖÕÐÊ½"
+   send_to="10"
+   sequence="84"
+  >
+  <send>bei taiyi-zhang</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÔÙºÍÎäÊ¦¹ý¹ýÕÐÊÔÊÔ£¡"
+   send_to="10"
+   sequence="86"
+  >
+  <send>e
+n
+quest</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÉÐÎäÌÃÕÒÎäÊ¦ÔÙ´Î±ÈÎä*"
+   send_to="10"
+   sequence="88"
+  >
+  <send>fight wu shi</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*³ÃÈÈ´òÌúÈ¥Á·Ï°Ò»¼¶Ì«ÒÒ½£·¨£¬Ò»¶¨ÄÜÓÐÊÕ»ñµÄ¡£"
+   send_to="10"
+   sequence="90"
+  >
+  <send>wield jian
+s
+w
+lian sword 1</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÄãÊÔ×ÅÁ·Ï°Ì«ÒÒÉñ½££¬»ñµÃÁËÉÙÐí½ø²½£¡"
+   send_to="10"
+   sequence="92"
+  >
+  <send>skills</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   lines_to_match="2"
+   match="^.*ÏîÌØÊâ¹¦·ò.*$\n^.*(taiyi-jian).+²»¿°Ò»»÷.+(\d+).+(\d+).*$"
+   multi_line="y"
+   name="lian"
+   regexp="y"
+   send_to="12"
+   sequence="94"
+  >
+  <send>newskills3("%1",%2,%3)</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÄãµÄÌåÁ¦²»¹»Á·Ì«ÒÒÉñ½£¡£"
+   send_to="10"
+   sequence="96"
+  >
+  <send>s
+w
+sleep</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*Á·Ï°Ò»¼¶Ì«ÒÒ½£·¨£¬Ñ§»áÓÃÌ«ÒÒ½£·¨µÄÒ»¸ö¾øÕÐ*"
+   send_to="10"
+   sequence="98"
+  >
+  <send>skills</send>
+  </trigger>
+  <trigger
+   group="»ªÉ½Á·Çá¹¦"
+   match="*°Ù³ßÏ¿*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>nd</send>
+  </trigger>
+  <trigger
+   group="»ªÉ½Ö¸µãÈÎÎñ"
+   keep_evaluating="y"
+   match="*±éÀú×ßÍê*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>zhidian luoeric's student</send>
+  </trigger>
+  <trigger
+   group="»ªÉ½Ö¸µãÈÎÎñ"
+   match="*³ÃÄã²»×¢Òâ£¬Ò»ÁïÑÌ²»ÖªµÀÅÜµ½ÄÄÀïÈ¥ÁË¡£*"
+   name="ptbl2"
+   send_to="12"
+   sequence="100"
+  >
+  <send>ptbl_start("hs")</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="ÆÁ±Î"
+   match="*º«Ð¡ÄÖ*"
+   omit_from_output="y"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   group="¶ÁÉäµñ"
+   match="*º®±ùÆÐÌáµãÁËµãÍ·£¬µÀ£º´ËÊÂÎÒÒÑÖªÏ¤£¬ÉÔµÈÆ¬¿Ì¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>n
+w
+s
+eat baicai
+eat qiezi
+eat fentiao
+eat doufu
+drink hulu
+say ³Ô±¥ºÈ×ã£¬×¼±¸Ë¯¾õ</send>
+  </trigger>
+  <trigger
+   group="Ñ²É½"
+   match="*º®±ùÆÐÌáµãÁËµãÍ·£¬µÀ£º´ËÊÂÎÒÒÑÖªÏ¤£¬ÉÔµÈÆ¬¿Ì¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>north
+north
+give ling to yue</send>
+  </trigger>
+  <trigger
+   group="¶ÁÊ¯×À"
+   match="*º®±ùÆÐÌáµãÁËµãÍ·£¬µÀ£º´ËÊÂÎÒÒÑÖªÏ¤£¬ÉÔµÈÆ¬¿Ì¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>dz</send>
+  </trigger>
+  <trigger
+   group="Á·Ï°"
+   match="*º®±ùÆÐÌáµãÁËµãÍ·£¬µÀ£º´ËÊÂÎÒÒÑÖªÏ¤£¬ÉÔµÈÆ¬¿Ì¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>n
+w
+s
+eat baicai
+eat qiezi
+eat fentiao
+eat doufu
+drink hulu
+say ³Ô±¥ºÈ×ã£¬×¼±¸Ë¯¾õ</send>
+  </trigger>
+  <trigger
+   group="»ªÉ½Ö¸µãÈÎÎñ"
+   keep_evaluating="y"
+   match="*º®±ùÆÐÌáµãÁËµãÍ·£¬µÀ£º´ËÊÂÎÒÒÑÖªÏ¤£¬ÉÔµÈÆ¬¿Ì¡£*"
+   name="zhidian2"
+   send_to="10"
+   sequence="100"
+  >
+  <send>zhidian luoeric's student</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Ñ§Îä¹¦"
+   match="*º®±ùÆÐÌáµãÁËµãÍ·£¬µÀ£º´ËÊÂÎÒÒÑÖªÏ¤£¬ÉÔµÈÆ¬¿Ì¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>n
+w
+s
+eat baicai
+eat qiezi
+eat fentiao
+eat doufu
+drink hulu
+say ³Ô±¥ºÈ×ã£¬×¼±¸Ë¯¾õ</send>
+  </trigger>
+  <trigger
+   group="¶ÁÊé"
+   match="*º®±ùÆÐÌáµãÁËµãÍ·£¬µÀ£º´ËÊÂÎÒÒÑÖªÏ¤£¬ÉÔµÈÆ¬¿Ì¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>n
+w
+s
+eat baicai
+eat qiezi
+eat fentiao
+eat doufu
+drink hulu
+say ³Ô±¥ºÈ×ã£¬×¼±¸Ë¯¾õ</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Ä½ÈÝÈÎÎñ"
+   match="*º®±ùÆÐÌá·¢ÏÖµÄ Ä½ÈÝÊÀ¼Ò¼ÒÔô(Luoeric's murong jiazei)*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>follow jiazei
+kill jiazei</send>
+  </trigger>
+  <trigger
+   group="ÁèÏö¿´Ñ©"
+   match="*»·¹ËËÄÖÜ£¬µ½´¦¶¼ÊÇ°×°¨°¨µÄ»ýÑ©¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>look snow</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="¹«ÓÃ"
+   match="*»Æ½ð(Gold)*"
+   sequence="100"
+  >
+  <send>get gold</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*¼ÇµÃÊÔÊÔ¸Õ¸ÕÁìÎòµÄ¾øÕÐ¡°°Ë·½·çÓê¡±*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>perform sword.bafang</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="ÆÁ±Î"
+   match="*½Ü·ò*"
+   omit_from_output="y"
+   sequence="100"
+  >
+  </trigger>
+  <trigger
+   group="ÁèÏö¿´Ñ©"
+   match="*½à°×µÄÑ©µØÉÏÁãÐÇµÄÉ¢Âä×Å¼¸¶ä½ÅÓ¡¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>look snow</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="¹«ÓÃ"
+   match="*Á½°×Òø(Silver)*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>get silver</send>
+  </trigger>
+  <trigger
+   group="ÁèÏö¿´Ñ©"
+   match="*ÂýÂýµÄ£¬Äã·¢ÏÖ×Ô¼º¿ÉÒÔÕö¿ªÑÛÁË£¬Ö»ÊÇÑÛ¾¦ËÆÓÐÉ°×Ó£¬ÌÛÍ´Á÷Àá¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>look snow</send>
+  </trigger>
+  <trigger
+   group="ÁèÏö¿´Ñ©"
+   match="*ÂýÂýµØÄãÖÕÓÚÓÖÓÐÁËÖª¾õ....*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>look snow</send>
+  </trigger>
+  <trigger
+   group="»ªÉ½Á·Çá¹¦"
+   match="*ÂýÂýµØÄãÖÕÓÚÓÖÓÐÁËÖª¾õ....*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>look</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Ñ§Îä¹¦"
+   match="*ÄãµÄ*½ø²½ÁË£¡*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>skills</send>
+  </trigger>
+  <trigger
+   group="Á·Ï°"
+   match="*ÄãµÄÄÚÁ¦²»¹»*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>sleep</send>
+  </trigger>
+  <trigger
+   group="¶ÁÉäµñ"
+   match="*ÄãµÄÄÚÁ¦²»¹»¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>sleep</send>
+  </trigger>
+  <trigger
+   group="¶ÁÊ¯×À"
+   match="*ÄãµÄÄÚÁ¦²»¹»¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>ww 30</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   match="*ÄãµÄÄÚÁ¦²»¹»¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>sleep</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Ñ§Îä¹¦"
+   match="*ÄãµÄÄÚÁ¦²»¹»¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>sd;su;su;sd;su;s;s;s;w;s;sleep</send>
+  </trigger>
+  <trigger
+   group="Á·Ï°"
+   match="*ÄãµÄÄÚÁ¦²»¹»Á·*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>sleep</send>
+  </trigger>
+  <trigger
+   group="Á·Ï°"
+   match="*ÄãµÄÌåÁ¦²»¹»Á·*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>yun recover</send>
+  </trigger>
+  <trigger
+   group="Á·Ï°"
+   match="*ÄãµÄÌåÁ¦Ì«²îÁË£¬²»ÄÜÁ·*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>yun recover</send>
+  </trigger>
+  <trigger
+   group="ÎÞÁ¿¿´Æå"
+   match="*Äã¶Ô×Å²Ð¾ÖÑÐ¾¿ÁËÒ»»á,ËÆºõÓÐÐ©ÐÄµÃ¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>watch canju</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Ñ§Îä¹¦"
+   match="*Äã¸½½üÃ»ÓÐ*Õâ¸öÈË£¬*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>e
+s
+sleep</send>
+  </trigger>
+  <trigger
+   group="Ñ²É½"
+   match="*Äã¸øÔÀÁéÉºÒ»¿éÁîÅÆ¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>ask yue about job</send>
+  </trigger>
+  <trigger
+   group="Ñ§Öììä"
+   match="*Äã¹²Çë½ÌÁËÎå´Î*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>learn zhu for literate 5</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   match="*Äã¼õ»ºÕæÆøÔËÐÐ£¬*Õý³£¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>hpbrief
+time</send>
+  </trigger>
+  <trigger
+   group="Ñ§Öììä"
+   match="*Äã½ñÌìÌ«ÀÛÁË£¬½á¹ûÊ²Ã´Ò²Ã»ÓÐÑ§µ½¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>e
+sleep</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Ñ§Îä¹¦"
+   match="*Äã½ñÌìÌ«ÀÛÁË£¬½á¹ûÊ²Ã´Ò²Ã»ÓÐÑ§µ½¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>yun regenerate</send>
+  </trigger>
+  <trigger
+   group="ÎÞÁ¿¿´Æå"
+   match="*Äã¾«Á¦²»¹»£¬ÎÞ·¨ÁìÎò²Ð¾Ö¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>yun regenerate</send>
+  </trigger>
+  <trigger
+   group="»ªÉ½Ö¸µãÈÎÎñ"
+   match="*Äã¿ªÊ¼Ö¸µã*»ªÉ½ÅÉµÄÎäÑ§¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>ww 2</send>
+  </trigger>
+  <trigger
+   group="¶ÁÊ¯×À"
+   match="*ÄãÂÔÒ»ÄýÉñ£¬¾«Éñ¿´ÆðÀ´ºÃ¶àÁË¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>study table</send>
+  </trigger>
+  <trigger
+   group="ÎÞÁ¿¿´Æå"
+   match="*ÄãÂÔÒ»ÄýÉñ£¬¾«Éñ¿´ÆðÀ´ºÃ¶àÁË¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>watch canju</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   match="*ÄãÂÔÒ»ÄýÉñ£¬¾«Éñ¿´ÆðÀ´ºÃ¶àÁË¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>hpbrief
+time</send>
+  </trigger>
+  <trigger
+   group="Ñ²É½"
+   match="*ÄãÉíÉÏÃ»ÓÐ ling ÕâÑù¶«Î÷¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>ask yue about fail</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   match="*ÄãÉîÉîÎüÁË¼¸¿ÚÆø£¬Á³É«¿´ÆðÀ´ºÃ¶àÁË¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>hpbrief
+time</send>
+  </trigger>
+  <trigger
+   group="¶ÁÊé"
+   match="*ÄãËµµÀ£º¡¸ÄÇÎÒµÈµÈÔÙË¯¡¹*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>n
+e
+s
+get all
+ww 3</send>
+  </trigger>
+  <trigger
+   group="¶ÁÉäµñ"
+   match="*ÄãËµµÀ£º¡¸ÄÇÎÒµÈµÈÔÙË¯¡¹*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>n
+e
+s
+get all
+ww 3</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="Ñ§Îä¹¦"
+   match="*ÄãËµµÀ£º¡¸ÄÇÎÒµÈµÈÔÙË¯¡¹*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>n
+e
+s
+get all
+ww 3</send>
+  </trigger>
+  <trigger
+   group="Á·Ï°"
+   match="*ÄãËµµÀ£º¡¸ÄÇÎÒµÈµÈÔÙË¯¡¹*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>n
+e
+s
+get all
+ww 3</send>
+  </trigger>
+  <trigger
+   group="»ªÉ½Ö¸µãÈÎÎñ"
+   match="*ÄãËµµÀ£º¡¸×¼±¸ÕÒÈË¡¹*"
+   send_to="12"
+   sequence="100"
+  >
+  <send>ptbl_start("hs")</send>
+  </trigger>
+  <trigger
+   group="ÁèÏö¿´Ñ©"
+   match="*ÄãÍ»È»·¢ÏÖÔÚÂ·ÅÔµÄÒ»Æ¬»ýÑ©ÉÏÐÐ×ß(walk)ËÆºõ¿ÉÒÔÓÃÀ´Á·Ï°Çá¹¦¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>walk snow</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   match="*ÄãÍÂÄÉÍê±Ï£¬Õö¿ªË«ÑÛ£¬Õ¾ÁËÆðÀ´¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>hpbrief
+time</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   match="*ÄãÏÖÔÚµÄÆøÌ«ÉÙÁË£¬ÎÞ·¨²úÉúÄÚÏ¢ÔËÐÐÈ«Éí¾­Âö¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>yun recover</send>
+  </trigger>
+  <trigger
+   group="¶ÁÊé"
+   match="*ÄãÏÖÔÚ¹ýÓÚÆ£¾ë£¬ÎÞ·¨×¨ÐÄÏÂÀ´ÑÐ¶ÁÐÂÖª¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>yun regenerate</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   match="*ÄãÏÖÔÚ¾«²»×ã£¬ÎÞ·¨ÐÞÐÐ¾«Á¦£¡*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>yun regenerate</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   match="*ÄãÏÖÔÚ¾«Á¦³äÅæ¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>hpbrief
+time</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   match="*ÄãÒ»¾õÐÑÀ´£¬¾«Éñ¶¶ËÓµØ»î¶¯ÁË¼¸ÏÂÊÖ½Å¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>hpbrief
+time</send>
+  </trigger>
+  <trigger
+   group="Ñ§Öììä"
+   match="*ÄãÒ»¾õÐÑÀ´£¬¾«Éñ¶¶ËÓµØ»î¶¯ÁË¼¸ÏÂÊÖ½Å¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>w
+learn zhu for literate 5</send>
+  </trigger>
+  <trigger
+   group="»ªÉ½Ö¸µãÈÎÎñ"
+   match="*ÄãÒ»¾õÐÑÀ´£¬¾«Éñ¶¶ËÓµØ»î¶¯ÁË¼¸ÏÂÊÖ½Å¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>n
+w
+ask ning about job</send>
+  </trigger>
+  <trigger
+   group="Ñ²É½"
+   match="*ÄãÒ»¾õÐÑÀ´£¬¾«Éñ¶¶ËÓµØ»î¶¯ÁË¼¸ÏÂÊÖ½Å¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>north
+east
+north
+eat baicai
+eat qiezi
+eat fentiao
+eat doufu
+drink hulu
+ask yue about job</send>
+  </trigger>
+  <trigger
+   group="ÁèÏö¿´Ñ©"
+   match="*ÄãÒ»Â·×ßÏÂÀ´£¬¿´×Å½ÅÓ¡»ØÏë·½²ÅµÄ²½·¨£¬Çá¹¦Ë®Æ½Ìá¸ßÁË£¡*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>look snow</send>
+  </trigger>
+  <trigger
+   group="¶ÁÊ¯×À"
+   match="*ÄãÒÑ¾­ºÜÀÛÁË£¬ÐªÐªÔÙ¶Á°É¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>yun regenerate</send>
+  </trigger>
+  <trigger
+   group="¶ÁÉäµñ"
+   match="*ÄãÒÑ¾­ºÜÀÛÁË£¬ÐªÐªÔÙ¶Á°É£¬ÉíÌåÒª½ô¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>yun regenerate</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   match="*ÄãÔË¹¦Íê±Ï£¬ÉîÉîÎüÁË¿ÚÆø£¬Õ¾ÁËÆðÀ´¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>hpbrief</send>
+  </trigger>
+  <trigger
+   group="»ªÉ½Ö¸µãÈÎÎñ"
+   keep_evaluating="y"
+   match="*ÄãÕýÃ¦×ÅÄØ*"
+   name="zhidian1"
+   send_to="10"
+   sequence="100"
+  >
+  <send>ww 2</send>
+  </trigger>
+  <trigger
+   group="¶ÁÊ¯×À"
+   match="*ÄãÕý×¨ÐÄÑÐ¶ÁÊ¯×ÀÉÏµÄ¹Å¹ÖÍ¼ÐÎ¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>study table</send>
+  </trigger>
+  <trigger
+   group="»ªÉ½Ö¸µãÈÎÎñ"
+   match="*ÄþÖÐÔò¸øÁËÄãÒ»°üÀñÎï¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>haha</send>
+  </trigger>
+  <trigger
+   group="»ªÉ½Ö¸µãÈÎÎñ"
+   match="*ÄþÖÐÔòËµµÀ£º¡¸Äã¸Õ¸Õ×ö¹ýÈÎÎñ£¬ÏÈÈ¥ÐÝÏ¢Ò»»á°É¡£¡¹*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>e
+s
+sleep</send>
+  </trigger>
+  <trigger
+   group="»ªÉ½Ö¸µãÈÎÎñ"
+   match="*ÄþÖÐÔòËµµÀ£º¡¸ÎÒ»¹ÊÇ¿´´íÁËÈË°¡£¡ÏÂÈ¥°É¡¹*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>ask ning about job</send>
+  </trigger>
+  <trigger
+   group="»ªÉ½Á·Çá¹¦"
+   match="*Ç§³ß´±*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>su</send>
+  </trigger>
+  <trigger
+   group="»ªÉ½Ö¸µãÈÎÎñ"
+   match="*Íê³ÉÈÎÎñºó£¬Äã±»½±ÀøÁË£º*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>ask ning about job</send>
+  </trigger>
+  <trigger
+   group="ÁèÏö¿´Ñ©"
+   match="*Ñ©£¬Ñ©£¬»¹ÊÇÑ©¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>look snow</send>
+  </trigger>
+  <trigger
+   group="»ªÉ½Ö¸µãÈÎÎñ"
+   match="*Ò»ÕÐÒ»Ê½ÓÐ°åÓÐÑÛ£¬Äã¿ÉÒÔ»ØÈ¥ºÍÄþÖÐÔò¸´ÃüÁË¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>#3 w
+ask ning about finish</send>
+  </trigger>
+  <trigger
+   group="Ñ²É½"
+   match="*ÔÀÁéÉº¶ÔÄãËµµÀ£º×î½ü»ªÉ½ÆÄ²»°²Äþ£¬Äã´ø×ÅÕâ¿éÁîÅÆÈ¥Ñ²ÂßÒ»ÏÂ°É¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>set brief 2
+n</send>
+  </trigger>
+  <trigger
+   group="Ñ²É½"
+   match="*ÕâÀïÃ»ÓÐ yue ¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>south
+south
+ww 60
+save
+backup</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   lines_to_match="2"
+   match="^.*\#(.*)\,(\d+)\,(\d+)\,(\d+)\,(\d+)\,(\d+)$\n^.*\#(\d+)\,(\d+)\,(\d+)\,(\d+)\,(\d+)\,(\d+)$"
+   multi_line="y"
+   name="dztn"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>dz_tn("%1",%2,%3,%4,%5,%6,%7,%8,%&lt;10&gt;,%&lt;11&gt;)</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   lines_to_match="2"
+   match="^.*±¾ÖÜÎª(.*)Ö®ÖÜ\D+(\d*)\D+(\d*)\D+$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+   variable="zhoumu"
+  >
+  <send>dz_tn_var("%1","%2","%3")</send>
+  </trigger>
+  <trigger
+   group="»ªÉ½Ö¸µãÈÎÎñ"
+   lines_to_match="2"
+   match="^.*µÀ£ºÐÝÏ¢Ò»»áÐÐ²»ÐÐ°¡£¿$"
+   name="target2"
+   regexp="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>ask luoeric's student about Ö¸½Ì</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   match="^.*ÄÚ¹¦ \(force\).*ÓÐÐ§µÈ¼¶£º\s*(\d+)$"
+   regexp="y"
+   send_to="9"
+   sequence="100"
+   variable="force_level"
+  >
+  <send>%1</send>
+  </trigger>
+  <trigger
+   group="»ªÉ½Ö¸µãÈÎÎñ"
+   lines_to_match="2"
+   match="^.*ÄãÏò.*´òÌýÓÐ¹Ø¡ºÖ¸½Ì¡»µÄÏûÏ¢¡£$\n^.*µÀ£ººÃ°É£¬ºÃ°É£¬ÎÒ»ØÈ¥»¹²»ÐÐÂð£¿$"
+   multi_line="y"
+   name="target1"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>find()</send>
+  </trigger>
+  <trigger
+   group="»ªÉ½Ö¸µãÈÎÎñ"
+   lines_to_match="3"
+   match="^.*ÄãÏòÄþÖÐÔò´òÌýÓÐ¹Ø¡ºjob¡»µÄÏûÏ¢¡£$\n^.*¾ö¶¨¿ªÊ¼¸úËæÄãÒ»ÆðÐÐ¶¯¡£$\n^.*ÄþÖÐÔò¶ÔÄãËµµÀ£º×î½ü»ªÉ½À´ÁËÐ©ÐÂµÜ×Ó£¬Äã´øÈ¥Á·¹¦·¿Ö¸µã\(zhidian\)Ò»ÏÂ°É¡£$"
+   multi_line="y"
+   regexp="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>#3 e
+zhidian luoeric's student
+t+ zhidian1
+t+ zhidian2</send>
+  </trigger>
+  <trigger
+   group="Ñ²É½"
+   lines_to_match="2"
+   match="^.*ÄãÏòÔÀÁéÉº´òÌýÓÐ¹Ø¡ºfail¡»µÄÏûÏ¢¡£$\n^.*ÔÀÁéÉºËµµÀ£º¡¸ÁîÅÆ¶ªÁË£¿ÄãÈ¥Áì·£°É£¡¡¹$"
+   multi_line="y"
+   regexp="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>ask yue about job</send>
+  </trigger>
+  <trigger
+   group="Ñ²É½"
+   lines_to_match="2"
+   match="^.*ÄãÏòÔÀÁéÉº´òÌýÓÐ¹Ø¡ºjob¡»µÄÏûÏ¢¡£$\n^.*ÔÀÁéÉºËµµÀ£º¡¸µÈÄãÃ¦ÍêÔÙÀ´ÕÒÎÒ°É¡£¡¹$"
+   multi_line="y"
+   regexp="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>ask yue about job</send>
+  </trigger>
+  <trigger
+   group="Ñ²É½"
+   lines_to_match="2"
+   match="^.*ÄãÏòÔÀÁéÉº´òÌýÓÐ¹Ø¡ºjob¡»µÄÏûÏ¢¡£$\n^.*ÔÀÁéÉºËµµÀ£º¡¸Äã¸Õ¸Õ×ö¹ýÈÎÎñ£¬ÏÈÈ¥ÐÝÏ¢Ò»»á°É¡£¡¹$"
+   multi_line="y"
+   regexp="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>south
+west
+south
+sleep</send>
+  </trigger>
+  <trigger
+   group="Ñ²É½"
+   lines_to_match="2"
+   match="^.*ÄãÏòÔÀÁéÉº´òÌýÓÐ¹Ø¡ºjob¡»µÄÏûÏ¢¡£$\n^.*ÔÀÁéÉºËµµÀ£º¡¸ÄãÉÏ´ÎÈÎÎñ»¹Ã»ÓÐÍê³ÉÄØ£¡¡¹$"
+   multi_line="y"
+   regexp="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>give ling to yue</send>
+  </trigger>
+  <trigger
+   group="Ñ²É½"
+   match="^.*ÄãÔÚ(\S+)Ñ²ß®£¬ÉÐÎ´·¢ÏÖµÐ×Ù¡£.*$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>xunshan("%1")</send>
+  </trigger>
+  <trigger
+   group="»ªÉ½Ö¸µãÈÎÎñ"
+   match="^.*ÄþÖÐÔò¿´×ÅÄã£¬µÀ£ººÃ¾ÃÃ»ÓÐ¼û¹ý\S+\((.*)\)\s\S+\((.*)\)\s\S+\((.*)\).*ÕâÐ©ÈËÁË.*$"
+   regexp="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>helpme find %1
+helpme find %2
+helpme find %3
+</send>
+  </trigger>
+  <trigger
+   group="»ªÉ½Ö¸µãÈÎÎñ"
+   match="^.*ÄþÖÐÔò¿´×ÅÄã£¬µÀ£ººÃ¾ÃÃ»ÓÐ¼û¹ý\S+\((.*)\)\s\S+\((.*)\)\s\S+\((.*)\)\s\S+\((.*)\).*ÕâÐ©ÈËÁË£¬.*$"
+   regexp="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>helpme find %1
+helpme find %2
+helpme find %3
+helpme find %4</send>
+  </trigger>
+  <trigger
+   group="Ñ²É½"
+   lines_to_match="2"
+   match="^.*ÔÀÁéÉº²»ÏëÒªÁîÅÆ£¬Äã¾Í×Ô¸öÁô×Å°É¡£$\n^.*ÕâÃ´¿ì¾Í»ØÀ´ÁË£¿¿Ï¶¨ÍµÀÁÁË°É£¿$"
+   multi_line="y"
+   regexp="y"
+   send_to="10"
+   sequence="100"
+  >
+  <send>south
+south
+get all
+ww 5
+save
+backup</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÎªÃñ³ýº¦£¬ÄÄÄÜÍÆ´Ç£¿ÖÕÓÚÒªÕýÊ½ÉÏÕóÁË£¬È¥Ê÷ÁÖÊÖÈÐÓ×»¢£¬ÒÔÊ¾ÎäÓÂ¡£"
+   send_to="10"
+   sequence="102"
+  >
+  <send>#2 s
+open gate
+#4 s
+climb down</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*È¥Î´Ã÷¹ÈµÄÊ÷ÁÖ³ýµôÀÏ»¢*"
+   send_to="10"
+   sequence="103"
+  >
+  <send>e
+#2 s
+open gate
+#4 s
+climb down</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*Äã·ÑÁË¾ÅÅ£¶þ»¢Ö®Á¦£¬ÖÕÓÚÅÀµ½ÁË¹Èµ×£¡"
+   send_to="10"
+   sequence="104"
+  >
+  <send>w
+wield sword
+kill lao hu
+perform sword.bafang lao hu</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*Äã¸ÕÊ¹ÓÃ¹ý¡¸°Ë·½·çÓê¡¹¾ø¼¼£¬ÏÖÔÚ»¹ÎÞ·¨Ê¹ÓÃ¡£*"
+   send_to="10"
+   sequence="106"
+  >
+  <send>perform sword.bafang</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÊÖÈÐÁË¶ñ»¢£¬Äã¸Ð¾õ×Ô¼ºÍþ·çÁÝÁÝ£¡»ØÈ¥ÔÙÏòÓÎöïÒíÎÊÎÊÄÜ²»ÄÜ´³µ´½­ºþÁË°É£¡"
+   send_to="10"
+   sequence="108"
+  >
+  <send>e
+climb up</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÄãÇáÇáËÉËÉµÃÅÀÁËÉÏÀ´¡£"
+   send_to="10"
+   sequence="110"
+  >
+  <send>#4 n
+knock gate
+#3 n
+ask you about ´³µ´½­ºþ</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*²»ÖªÓÎöïÒíÈÃÄã¿´ÄÇ±¾¡¶½­ºþÕÆ¹Ê¡·ÓÐºÎÓÃÒâ£¬»¹ÊÇÈ¥²ØÊé¸ó¶ÁÒ»¶Á¿´¿´°É"
+   send_to="10"
+   sequence="112"
+  >
+  <send>#2 n
+l shujia
+get book from shujia
+read book for 1</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*µ½´óÌüÕÒÓÎöïÒíask you about ´³µ´½­ºþ*"
+   send_to="10"
+   sequence="114"
+  >
+  <send>#2 s
+ask you about ´³µ´½­ºþ</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*¼ÈÈ»Ó¢ÐÛÒªËÍÄã£¬È´Ö®²»¹§¡£ÔÚÐÓ×ÓÁÖºÍÓÎ×¯Ö÷µÀ±ð¡£*"
+   sequence="115"
+  >
+  <send>#3 s
+open gate
+$3 s
+w
+chat* bye you</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*¹§Ï²Äã£¬ÓÎ×¯Ö÷³É¹¦ÎªÄã¸ÄÉÆÏÈÌì×ÊÖÊ£¡"
+   send_to="10"
+   sequence="120"
+  >
+  <send>s
+gu
+qu ÑïÖÝ
+qu ÑïÖÝ</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÓÎöïÒí¶ÔÄã±§È­µÀ£º¡¸ÇàÉ½²»¸Ä£¬ÂÌË®³£Á÷£¬ÔÛÃÇºó»áÓÐÆÚ£¡¡¹"
+   send_to="10"
+   sequence="124"
+  >
+  <send>s</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*´ó³µÍ£ÎÈÁËÏÂÀ´£¬Äã¿ÉÒÔÏÂ³µ(xia)ÁË¡£"
+   send_to="10"
+   sequence="126"
+  >
+  <send>xia</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*»¶Ó­ÄãÀ´µ½±±´óÏÀ¿ÍÐÐµÄÊÀ½ç¡£ÕâÀïÊÇÑïÖÝ¡£Äã¿ÉÒÔËÄ´¦×ß×ß£¬Ò²¿ÉÒÔ¸úÍæ¼ÒËµËµ»°¡£½­ºþÓ­À´ÁËÒ»Î»ÐÂµÄÓ¢ÐÛ£¡*"
+   send_to="10"
+   sequence="128"
+  >
+  <send>pick guo
+eat guo
+u
+ask lver about ÔÂ±ý
+answer ÌðÔÂ±ý
+eat yuebing
+#2 d
+out
+remove all
+draw sword
+draw armor
+draw head
+draw cloth
+draw surcoat
+draw boots
+wear all
+wield sword
+
+</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÄãÏÖÔÚÕýÃ¦×ÅÄØ¡£"
+   send_to="10"
+   sequence="200"
+  >
+  <send>quest</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÄãÒ»¾õÐÑÀ´£¬¾«Éñ¶¶ËÓµØ»î¶¯ÁË¼¸ÏÂÊÖ½Å¡£*"
+   name="weakup"
+   send_to="10"
+   sequence="250"
+  >
+  <send>quest</send>
+  </trigger>
+  <trigger
+   group="ÐÂÊÖ´å"
+   match="*ÏòÓÎöïÒí´òÌý´³µ´½­ºþ£¡£¡£¡*"
+   one_shot="y"
+   send_to="10"
+   sequence="300"
+  >
+  <send>e
+ask you about ´³µ´½­ºþ</send>
+  </trigger>
+</triggers>
+
+<!-- aliases -->
+
+<aliases
+   muclient_version="5.01"
+   world_file_version="15"
+   date_saved="2016-07-05 18:51:06"
+  >
+  <alias
+   match="^ww\s(\d+)$"
+   enabled="y"
+   regexp="y"
+   send_to="12"
+   sequence="1"
+  >
+  <send>waittime(%1)</send>
+  </alias>
+  <alias
+   match="gc (*)"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="1"
+  >
+  <send>gan che to %1</send>
+  </alias>
+  <alias
+   match="ge"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="2"
+  >
+  <send>gan che to east</send>
+  </alias>
+  <alias
+   match="gs"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="3"
+  >
+  <send>gan che to south</send>
+  </alias>
+  <alias
+   match="gw"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="4"
+  >
+  <send>gan che to west</send>
+  </alias>
+  <alias
+   match="gn"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="5"
+  >
+  <send>gan che to north</send>
+  </alias>
+  <alias
+   match="gne"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="6"
+  >
+  <send>gan che to northeast</send>
+  </alias>
+  <alias
+   match="gse"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="7"
+  >
+  <send>gan che to southeast</send>
+  </alias>
+  <alias
+   match="gsw"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="8"
+  >
+  <send>gan che to southwest</send>
+  </alias>
+  <alias
+   match="gnw"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="9"
+  >
+  <send>gan che to northwest</send>
+  </alias>
+  <alias
+   match="gu"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="10"
+  >
+  <send>gan che to up</send>
+  </alias>
+  <alias
+   match="gd"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="11"
+  >
+  <send>gan che to down</send>
+  </alias>
+  <alias
+   match="geu"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="12"
+  >
+  <send>gan che to eastup</send>
+  </alias>
+  <alias
+   match="gsu"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="13"
+  >
+  <send>gan che to southup</send>
+  </alias>
+  <alias
+   match="gwu"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="14"
+  >
+  <send>gan che to westup</send>
+  </alias>
+  <alias
+   match="gnu"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="15"
+  >
+  <send>gan che to northup</send>
+  </alias>
+  <alias
+   match="ged"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="16"
+  >
+  <send>gan che to eastdown</send>
+  </alias>
+  <alias
+   match="gsd"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="17"
+  >
+  <send>gan che to southdown</send>
+  </alias>
+  <alias
+   match="gwd"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="18"
+  >
+  <send>gan che to westdown</send>
+  </alias>
+  <alias
+   match="gnd"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="19"
+  >
+  <send>gan che to northdown</send>
+  </alias>
+  <alias
+   match="genter"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="20"
+  >
+  <send>gan che to enter</send>
+  </alias>
+  <alias
+   match="gout"
+   group="¸Ï³µ"
+   send_to="10"
+   sequence="21"
+  >
+  <send>gan che to out</send>
+  </alias>
+  <alias
+   name="ptbl1"
+   match="^\.bl(.*)$"
+   enabled="y"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>ptbl_start('%1')
+</send>
+  </alias>
+  <alias
+   match="^aa\+ (.*)$"
+   enabled="y"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableAliasGroup('%1', ture)</send>
+  </alias>
+  <alias
+   match="^aa\- (.*)$"
+   enabled="y"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableAliasGroup('%1', false)</send>
+  </alias>
+  <alias
+   match="^t\+ (.*)$"
+   enabled="y"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableTrigger('%1', ture)</send>
+  </alias>
+  <alias
+   match="^t\- (.*)$"
+   enabled="y"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableTrigger('%1', false)</send>
+  </alias>
+  <alias
+   match="^tt\+ (.*)$"
+   enabled="y"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableTriggerGroup('%1', ture)</send>
+  </alias>
+  <alias
+   match="^tt\- (.*)$"
+   enabled="y"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>EnableTriggerGroup('%1', false)</send>
+  </alias>
+  <alias
+   match="aqf"
+   enabled="y"
+   group="Í¶Ãû×´"
+   send_to="10"
+   sequence="100"
+  >
+  <send>ask qiu about Ê§°Ü</send>
+  </alias>
+  <alias
+   match="aqt"
+   enabled="y"
+   group="Í¶Ãû×´"
+   send_to="10"
+   sequence="100"
+  >
+  <send>ask qiu about Í¶Ãû×´</send>
+  </alias>
+  <alias
+   match="axh"
+   enabled="y"
+   group="Ïô°ëºÍ"
+   send_to="10"
+   sequence="100"
+  >
+  <send>ask xiao about home</send>
+  </alias>
+  <alias
+   match="axj"
+   enabled="y"
+   group="Ïô°ëºÍ"
+   send_to="10"
+   sequence="100"
+  >
+  <send>ask xiao about job</send>
+  </alias>
+  <alias
+   match="cunqian"
+   enabled="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>cunqian()</send>
+  </alias>
+  <alias
+   match="gdx"
+   enabled="y"
+   group="Ïô°ëºÍ"
+   send_to="10"
+   sequence="100"
+  >
+  <send>give yuanyang dao to xiao</send>
+  </alias>
+  <alias
+   name="ptbl2"
+   match="gg1"
+   enabled="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>bl_fast_goto()</send>
+  </alias>
+  <alias
+   name="ptbl3"
+   match="gg2"
+   enabled="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>bl_fast_back()</send>
+  </alias>
+  <alias
+   match="gn"
+   enabled="y"
+   group="Í¶Ãû×´"
+   send_to="10"
+   sequence="100"
+  >
+  <send>give beauty girl to qiu</send>
+  </alias>
+  <alias
+   match="hg"
+   enabled="y"
+   group="Í¶Ãû×´"
+   send_to="10"
+   sequence="100"
+  >
+  <send>hit beauty girl</send>
+  </alias>
+  <alias
+   match="hsjf"
+   enabled="y"
+   group="ÃÅÖÒÈÎÎñ"
+   send_to="10"
+   sequence="100"
+  >
+  <send>s;s;w;nw;ask punk about ÍõÐ¡¶þ;se;e;n;n;nw;nw;ne;enter hole;ask wang about Íµ¼¦;bihua;w;sw;se;se</send>
+  </alias>
+  <alias
+   match="lm"
+   enabled="y"
+   sequence="100"
+  >
+  <send>localmaps</send>
+  </alias>
+  <alias
+   match="sb"
+   enabled="y"
+   group="Í¶Ãû×´"
+   send_to="10"
+   sequence="100"
+  >
+  <send>give zhenshan zhibao to qiu</send>
+  </alias>
+  <alias
+   match="sj"
+   enabled="y"
+   group="Í¶Ãû×´"
+   send_to="10"
+   sequence="100"
+  >
+  <send>give shou ji to qiu</send>
+  </alias>
+</aliases>
+
+<!-- timers -->
+
+<timers
+   muclient_version="5.01"
+   world_file_version="15"
+   date_saved="2016-07-05 18:51:06"
+  >
+</timers>
+
+<!-- macros -->
+
+<macros
+   muclient_version="5.01"
+   world_file_version="15"
+   date_saved="2016-07-05 18:51:06"
+  >
+
+  <macro name="up" type="send_now" >
+  <send>up</send>
+
+  </macro>
+
+  <macro name="down" type="send_now" >
+  <send>down</send>
+
+  </macro>
+
+  <macro name="north" type="send_now" >
+  <send>north</send>
+
+  </macro>
+
+  <macro name="south" type="send_now" >
+  <send>south</send>
+
+  </macro>
+
+  <macro name="east" type="send_now" >
+  <send>east</send>
+
+  </macro>
+
+  <macro name="west" type="send_now" >
+  <send>west</send>
+
+  </macro>
+
+  <macro name="examine" type="replace" >
+  <send>examine </send>
+
+  </macro>
+
+  <macro name="look" type="replace" >
+  <send>look </send>
+
+  </macro>
+
+  <macro name="page" type="replace" >
+  <send>page </send>
+
+  </macro>
+
+  <macro name="say" type="replace" >
+  <send>say </send>
+
+  </macro>
+
+  <macro name="whisper" type="replace" >
+  <send>whisper </send>
+
+  </macro>
+
+  <macro name="doing" type="send_now" >
+  <send>DOING</send>
+
+  </macro>
+
+  <macro name="who" type="send_now" >
+  <send>WHO</send>
+
+  </macro>
+
+  <macro name="drop" type="replace" >
+  <send>drop </send>
+
+  </macro>
+
+  <macro name="take" type="replace" >
+  <send>take </send>
+
+  </macro>
+
+  <macro name="F2" type="send_now" >
+  <send>perform poyu-quan.leidong</send>
+
+  </macro>
+
+  <macro name="F3" type="send_now" >
+  <send>perform hunyuan-zhang.wuji</send>
+
+  </macro>
+
+  <macro name="F4" type="send_now" >
+  <send>perform huashan-jianfa.jianzhang</send>
+
+  </macro>
+
+  <macro name="F5" type="send_now" >
+  <send>ask ning about quest
+ask ning about Éú»î·Ñ</send>
+
+  </macro>
+
+  <macro name="F7" type="send_now" >
+  <send>ask yue about finish</send>
+
+  </macro>
+
+  <macro name="F8" type="send_now" >
+  <send>ask yue about fail</send>
+
+  </macro>
+
+  <macro name="F4+Shift" type="send_now" >
+  <send>perform yunushijiu-jian.sanqingfeng</send>
+
+  </macro>
+
+  <macro name="F2+Ctrl" type="send_now" >
+  <send>tt+ ´ò×øÍÂÄÉ
+enable
+hpbrief
+time</send>
+
+  </macro>
+
+  <macro name="F3+Ctrl" type="send_now" >
+  <send>tt- ´ò×øÍÂÄÉ</send>
+
+  </macro>
+
+  <macro name="F5+Ctrl" type="send_now" >
+  <send>ask pu about job</send>
+
+  </macro>
+
+  <macro name="F7+Ctrl" type="send_now" >
+  <send>ask pu about fail</send>
+
+  </macro>
+
+  <macro name="logout" type="send_now" >
+  <send>LOGOUT</send>
+
+  </macro>
+
+  <macro name="quit" type="send_now" >
+  <send>QUIT</send>
+
+  </macro>
+
+  <macro name="Alt+A" type="send_now" >
+  <send>yun regenerate</send>
+
+  </macro>
+
+  <macro name="Alt+B" type="send_now" >
+  <send>get all</send>
+
+  </macro>
+
+  <macro name="Alt+J" type="send_now" >
+  <send>wield sword
+wield sword 2</send>
+
+  </macro>
+
+  <macro name="Alt+K" type="send_now" >
+  <send>unwield all</send>
+
+  </macro>
+
+  <macro name="Alt+M" type="send_now" >
+  <send>get all from corpse</send>
+
+  </macro>
+
+  <macro name="Alt+N" type="send_now" >
+  <send>get all from corpse 2</send>
+
+  </macro>
+
+  <macro name="Alt+Q" type="send_now" >
+  <send>yun recover</send>
+
+  </macro>
+
+  <macro name="Alt+S" type="send_now" >
+  <send>perform huashan-jianfa.jianzhang</send>
+
+  </macro>
+
+  <macro name="F6" type="send_now" >
+  <send>ask yue about job</send>
+
+  </macro>
+
+  <macro name="F6+Ctrl" type="send_now" >
+  <send>give xin jian to pu</send>
+
+  </macro>
+</macros>
+
+<!-- variables -->
+
+<variables
+   muclient_version="5.01"
+   world_file_version="15"
+   date_saved="2016-07-05 18:51:06"
+  >
+  <variable name="bianli_i">34</variable>
+  <variable name="bl_dstep">0.5</variable>
+  <variable name="bl_dtime">0</variable>
+  <variable name="force_level">225</variable>
+  <variable name="jiangdisudu"></variable>
+  <variable name="zhoumu">É±Â¾</variable>
+</variables>
+
+<!-- colours -->
+
+<colours
+   muclient_version="5.01"
+   world_file_version="15"
+   date_saved="2016-07-05 18:51:06"
+  >
+
+<ansi>
+
+ <normal>
+   <colour seq="1" rgb="black" />
+   <colour seq="2" rgb="maroon" />
+   <colour seq="3" rgb="green" />
+   <colour seq="4" rgb="olive" />
+   <colour seq="5" rgb="navy" />
+   <colour seq="6" rgb="purple" />
+   <colour seq="7" rgb="teal" />
+   <colour seq="8" rgb="gainsboro" />
+
+ </normal>
+
+ <bold>
+   <colour seq="1" rgb="gray" />
+   <colour seq="2" rgb="red" />
+   <colour seq="3" rgb="lime" />
+   <colour seq="4" rgb="yellow" />
+   <colour seq="5" rgb="blue" />
+   <colour seq="6" rgb="magenta" />
+   <colour seq="7" rgb="cyan" />
+   <colour seq="8" rgb="white" />
+
+ </bold>
+
+</ansi>
+
+<custom>
+  <colour seq="1" name="Custom1" text="#FF8080" back="black" />
+  <colour seq="2" name="Custom2" text="yellow" back="black" />
+  <colour seq="3" name="Custom3" text="#80FF80" back="black" />
+  <colour seq="4" name="Custom4" text="#80FFFF" back="black" />
+  <colour seq="5" name="Custom5" text="#0080FF" back="black" />
+  <colour seq="6" name="Custom6" text="#FF80C0" back="black" />
+  <colour seq="7" name="Custom7" text="red" back="black" />
+  <colour seq="8" name="Custom8" text="#0080C0" back="black" />
+  <colour seq="9" name="Custom9" text="magenta" back="black" />
+  <colour seq="10" name="Custom10" text="#804040" back="black" />
+  <colour seq="11" name="Custom11" text="#FF8040" back="black" />
+  <colour seq="12" name="Custom12" text="teal" back="black" />
+  <colour seq="13" name="Custom13" text="#004080" back="black" />
+  <colour seq="14" name="Custom14" text="#FF0080" back="black" />
+  <colour seq="15" name="Custom15" text="green" back="black" />
+  <colour seq="16" name="Custom16" text="blue" back="black" />
+
+</custom>
+</colours>
+
+<!-- keypad -->
+
+<keypad
+   muclient_version="5.01"
+   world_file_version="15"
+   date_saved="2016-07-05 18:51:06"
+  >
+
+  <key name="0" >
+  <send>localmaps</send>
+  </key>
+
+  <key name="1" >
+  <send>southwest</send>
+  </key>
+
+  <key name="2" >
+  <send>south</send>
+  </key>
+
+  <key name="3" >
+  <send>southeast</send>
+  </key>
+
+  <key name="4" >
+  <send>west</send>
+  </key>
+
+  <key name="5" >
+  <send>look</send>
+  </key>
+
+  <key name="6" >
+  <send>east</send>
+  </key>
+
+  <key name="7" >
+  <send>northwest</send>
+  </key>
+
+  <key name="8" >
+  <send>north</send>
+  </key>
+
+  <key name="9" >
+  <send>northeast</send>
+  </key>
+
+  <key name="." >
+  <send>sleep</send>
+  </key>
+
+  <key name="/" >
+  <send>inventory</send>
+  </key>
+
+  <key name="*" >
+  <send>score</send>
+  </key>
+
+  <key name="-" >
+  <send>skills</send>
+  </key>
+
+  <key name="+" >
+  <send>hp</send>
+  </key>
+
+  <key name="Ctrl+0" >
+  </key>
+
+  <key name="Ctrl+1" >
+  </key>
+
+  <key name="Ctrl+2" >
+  </key>
+
+  <key name="Ctrl+3" >
+  </key>
+
+  <key name="Ctrl+4" >
+  </key>
+
+  <key name="Ctrl+5" >
+  </key>
+
+  <key name="Ctrl+6" >
+  </key>
+
+  <key name="Ctrl+7" >
+  </key>
+
+  <key name="Ctrl+8" >
+  </key>
+
+  <key name="Ctrl+9" >
+  </key>
+
+  <key name="Ctrl+." >
+  </key>
+
+  <key name="Ctrl+/" >
+  </key>
+
+  <key name="Ctrl+*" >
+  </key>
+
+  <key name="Ctrl+-" >
+  </key>
+
+  <key name="Ctrl++" >
+  </key>
+</keypad>
+
+<!-- printing -->
+
+<printing
+   muclient_version="5.01"
+   world_file_version="15"
+   date_saved="2016-07-05 18:51:06"
+  >
+
+<ansi>
+
+ <normal>
+
+ </normal>
+
+ <bold>
+   <style seq="1" bold="y" />
+   <style seq="2" bold="y" />
+   <style seq="3" bold="y" />
+   <style seq="4" bold="y" />
+   <style seq="5" bold="y" />
+   <style seq="6" bold="y" />
+   <style seq="7" bold="y" />
+   <style seq="8" bold="y" />
+
+ </bold>
+
+</ansi>
+</printing>
+
+<!-- plugins -->
+</muclient>

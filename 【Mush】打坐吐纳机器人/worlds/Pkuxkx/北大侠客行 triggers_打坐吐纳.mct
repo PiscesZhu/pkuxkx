@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Saved on 2016Äê ÆßÔÂ 03ÈÕ ÐÇÆÚÈÕ, ÏÂÎç 12:14 -->
+<!-- MuClient version 5.01 -->
+<!-- Written by Nick Gammon -->
+<!-- Home Page: http://www.mushclient.com/ -->
+<muclient>
+
+<!-- triggers -->
+
+<triggers
+   muclient_version="5.01"
+   world_file_version="15"
+   date_saved="2016-07-03 12:14:50"
+  >
+  <trigger
+   enabled="y"
+   group="¹«ÓÃ"
+   match="*º®±ùÆÐÌá·¢ÏÖµÄ ¹ÃËÕÄ½ÈÝÅÑÍ½(Luoeric's murong pantu)*"
+   send_to="10"
+   sequence="1"
+  >
+  <send>kill pantu
+perform huashan-jianfa.jianzhang</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="¹«ÓÃ"
+   match="*Äã¸ÕÔÚÈý·ÖÖÓÄÚË¯¹ýÒ»¾õ, ¶àË¯¶ÔÉíÌåÓÐº¦ÎÞÒæ!*"
+   send_to="12"
+   sequence="1"
+  >
+  <send>waitsleep()</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="¹«ÓÃ"
+   match="*»Æ½ð(Gold)*"
+   sequence="100"
+  >
+  <send>get gold</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="¹«ÓÃ"
+   match="*Á½°×Òø(Silver)*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>get silver</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   match="*ÄãµÄÄÚÁ¦²»¹»¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>sleep</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   match="*Äã¼õ»ºÕæÆøÔËÐÐ£¬*Õý³£¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>hpbrief
+time</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   match="*ÄãÂÔÒ»ÄýÉñ£¬¾«Éñ¿´ÆðÀ´ºÃ¶àÁË¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>hpbrief
+time</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   match="*ÄãÉîÉîÎüÁË¼¸¿ÚÆø£¬Á³É«¿´ÆðÀ´ºÃ¶àÁË¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>hpbrief
+time</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   match="*ÄãÍÂÄÉÍê±Ï£¬Õö¿ªË«ÑÛ£¬Õ¾ÁËÆðÀ´¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>hpbrief
+time</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   match="*ÄãÏÖÔÚµÄÆøÌ«ÉÙÁË£¬ÎÞ·¨²úÉúÄÚÏ¢ÔËÐÐÈ«Éí¾­Âö¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>yun recover</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   match="*ÄãÏÖÔÚ¾«²»×ã£¬ÎÞ·¨ÐÞÐÐ¾«Á¦£¡*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>yun regenerate</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   match="*ÄãÏÖÔÚ¾«Á¦³äÅæ¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>hpbrief
+time</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   match="*ÄãÒ»¾õÐÑÀ´£¬¾«Éñ¶¶ËÓµØ»î¶¯ÁË¼¸ÏÂÊÖ½Å¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>hpbrief
+time</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   match="*ÄãÔË¹¦Íê±Ï£¬ÉîÉîÎüÁË¿ÚÆø£¬Õ¾ÁËÆðÀ´¡£*"
+   send_to="10"
+   sequence="100"
+  >
+  <send>hpbrief</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   lines_to_match="2"
+   match="^.*\#(.*)\,(\d+)\,(\d+)\,(\d+)\,(\d+)\,(\d+)$\n^.*\#(\d+)\,(\d+)\,(\d+)\,(\d+)\,(\d+)\,(\d+)$"
+   multi_line="y"
+   name="dztn"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>dz_tn("%1",%2,%3,%4,%5,%6,%7,%8,%&lt;10&gt;,%&lt;11&gt;)</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="´ò×øÍÂÄÉ"
+   lines_to_match="2"
+   match="^.*±¾ÖÜÎª(.*)Ö®ÖÜ\D+(\d*)\D+(\d*)\D+$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+   variable="zhoumu"
+  >
+  <send>dz_tn_var("%1","%2","%3")</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   match="^.*ÄÚ¹¦ \(force\).*ÓÐÐ§µÈ¼¶£º\s*(\d+)$"
+   regexp="y"
+   send_to="9"
+   sequence="100"
+   variable="force_level"
+  >
+  <send>%1</send>
+  </trigger>
+  <trigger
+   group="´ò×øÍÂÄÉ"
+   match="^.*ÄãËµµÀ£º¡¸(.*)£¬ÆäËûÐ§ÂÊ(.*)£¬´ò×øÐ§ÂÊ½µµÍ(.*)¡¹$"
+   send_to="10"
+   sequence="100"
+  >
+  <send>%1</send>
+  </trigger>
+</triggers>
+</muclient>

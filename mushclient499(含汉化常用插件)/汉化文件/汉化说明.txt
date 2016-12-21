@@ -1,0 +1,2 @@
+官方原版安装文件，安装完成后拷贝ch.dll和ch.lua到MUSHclient目录下的locale目录。
+运行mush客户端，按CTRL+ALT+G进入配置，找到EN代码改成CH，退出重新运行客户端即可。

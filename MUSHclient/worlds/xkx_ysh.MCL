@@ -1,0 +1,3712 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Saved on 2016Äê Ê®¶þÔÂ 20ÈÕ ÐÇÆÚ¶þ, ÏÂÎç 4:39 -->
+<!-- MuClient version 5.02 -->
+<!-- Written by Nick Gammon -->
+<!-- Home Page: http://www.mushclient.com/ -->
+<muclient>
+<world
+   muclient_version="5.02"
+   world_file_version="15"
+   date_saved="2016-12-20 16:39:14"
+
+   auto_log_file_name="%L%P-%H.log"
+   auto_say_override_prefix="-"
+   auto_say_string="say "
+   chat_name="Name-not-set"
+   command_stack_character=";"
+   id="ae3239a45b7ac82ee0686f25"
+   input_font_name="Fixedsys"
+   log_line_preamble_input="[%H:%M:%S]"
+   log_line_preamble_notes="[%H:%M:%S]"
+   log_line_preamble_output="[%H:%M:%S]"
+   mapping_failure="Alas, you cannot go that way."
+   name="±±ÏÀ--ÐÂÊÖ"
+   new_activity_sound="(No sound)"
+   on_world_connect="alias.atconnect"
+   on_world_disconnect="alias.atdisconnect"
+   output_font_name="ÐÂËÎÌå"
+   password_base64="y"
+   password="MTk4OTAzMDV6eg=="
+   player="ysh"
+   script_editor="notepad"
+   script_editor_argument="%file"
+   script_filename="D:\Program Files\pkuxkx\MUSHclient\worlds\xkx_public\michen_xkx.lua"
+   script_language="Lua"
+   script_prefix="/"
+   site="pkuxkx.net"
+   spam_message="look"
+   speed_walk_prefix="#"
+   terminal_identification="mushclient"
+
+   arrows_change_history="y"
+   auto_pause="y"
+   auto_repeat="y"
+   auto_resize_minimum_lines="1"
+   auto_resize_maximum_lines="20"
+   chat_foreground_colour="red"
+   chat_background_colour="black"
+   chat_port="4050"
+   confirm_before_replacing_typing="y"
+   confirm_on_paste="y"
+   confirm_on_send="y"
+   default_trigger_sequence="100"
+   default_alias_sequence="100"
+   detect_pueblo="y"
+   echo_hyperlink_in_output_window="y"
+   edit_script_with_notepad="y"
+   enable_aliases="y"
+   enable_beeps="y"
+   enable_command_stack="y"
+   enable_scripts="y"
+   enable_timers="y"
+   enable_triggers="y"
+   enable_trigger_sounds="y"
+   history_lines="1000"
+   hyperlink_adds_to_command_history="y"
+   hyperlink_colour="#0080FF"
+   indent_paras="y"
+   input_background_colour="white"
+   input_font_height="9"
+   input_font_weight="400"
+   input_text_colour="black"
+   keep_commands_on_same_line="y"
+   keypad_enable="y"
+   line_information="y"
+   log_input="y"
+   log_notes="y"
+   log_output="y"
+   log_script_errors="y"
+   max_output_lines="5000"
+   mud_can_change_link_colour="y"
+   mud_can_change_options="y"
+   note_text_colour="#040000"
+   output_font_height="9"
+   output_font_weight="400"
+   output_font_charset="134"
+   paste_delay_per_lines="1"
+   pixel_offset="1"
+   port="5555"
+   proxy_port="1080"
+   script_errors_to_output_window="y"
+   send_file_delay_per_lines="1"
+   send_mxp_afk_response="y"
+   show_connect_disconnect="y"
+   show_italic="y"
+   show_underline="y"
+   spam_line_count="20"
+   speed_walk_delay="50"
+   tab_completion_lines="200"
+   timestamp_input_text_colour="maroon"
+   timestamp_notes_text_colour="blue"
+   timestamp_output_text_colour="white"
+   timestamp_input_back_colour="black"
+   timestamp_notes_back_colour="black"
+   timestamp_output_back_colour="black"
+   tool_tip_visible_time="5000"
+   tool_tip_start_time="400"
+   treeview_triggers="y"
+   treeview_aliases="y"
+   treeview_timers="y"
+   underline_hyperlinks="y"
+   unpause_on_send="y"
+   use_custom_link_colour="y"
+   use_default_input_font="y"
+   warn_if_scripting_inactive="y"
+   wrap="y"
+   wrap_column="120"
+   > <!-- end of general world attributes -->
+
+</world>
+
+<!-- triggers -->
+
+<triggers
+   muclient_version="5.02"
+   world_file_version="15"
+   date_saved="2016-12-20 16:39:14"
+  >
+  <trigger
+   group="check_items"
+   keep_evaluating="y"
+   match="(.+)\((.+)\)"
+   name="check_items_dosth2"
+   regexp="y"
+   script="addtri_38805"
+   sequence="10"
+   variable="check_items_dosth2"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_daytime"
+   keep_evaluating="y"
+   match="(Ì«Ñô´Ó¶«·½µÄµØÆ½ÏßÉýÆðÁË¡£|ÒÑ¾­ÊÇÎçÒ¹ÁË¡£|°øÍíÁË£¬Ì«ÑôµÄâÅêÍ½«Î÷·½µÄÌì¿ÕÓ³³ÉÒ»Æ¬»ðºì¡£|¶«·½µÄÌì¿ÕÖÐ¿ªÊ¼³öÏÖÒ»Ë¿Î¢êØ¡£|ÒÑ¾­ÊÇÕýÎçÁË£¬Ì«Ñô´ÓÄãÕýÉÏ·½ÕÕÒ«Öø´óµØ¡£|Ì«Ñô¿ªÊ¼´ÓÎ÷·½µÄÌì¿ÕÖÐÂýÂýÎ÷³Á¡£|Ò¹Íí½µÁÙÁË¡£|¶«·½µÄÌì¿ÕÒÑÖð½¥·¢°×|¶«·½µÄÌì¿ÕÖÐ¿ªÊ¼³öÏÖÒ»Ë¿Î¢êØ¡£|Ì«Ñô¸Õ´Ó¶«·½µÄµØÆ½ÏßÉýÆð|Ì«ÑôÕý¸ß¹ÒÔÚ¶«·½µÄÌì¿ÕÖÐ|Ì«ÑôÕý¸ß¹ÒÔÚÎ÷·½µÄÌì¿ÕÖÐ|ÏÖÔÚÊÇÕýÎçÊ±·Ö£¬Ì«Ñô¸ß¹ÒÔÚÄãµÄÍ·¶¥ÕýÉÏ·½|Ò¹Ä»µÍ´¹£¬ÂúÌì·±ÐÇ|Ò¹Ä»ÁýÕÖÖø´óµØ|Ò»ÂÖ»ðºìµÄÏ¦ÑôÕýÅÇ»²ÔÚÎ÷·½µÄµØÆ½ÏßÉÏ|ÒÑ¾­ÊÇÎçÒ¹ÁË¡£)"
+   name="always_daytime_dosth1"
+   regexp="y"
+   script="addtri_38661"
+   sequence="10"
+   variable="always_daytime_dosth1"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_skills"
+   keep_evaluating="y"
+   match="\s*±ÛÁ¦£º\s*(\d+)/\s*(\d+)\s*ÎòÐÔ£º\s*(\d+)/\s*(\d+)"
+   name="always_skills_dosth1"
+   regexp="y"
+   script="addtri_38715"
+   sequence="10"
+   variable="always_skills_dosth1"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_skills"
+   keep_evaluating="y"
+   match="\s*¸ù¹Ç£º\s*(\d+)/\s*(\d+)\s*Éí·¨£º\s*(\d+)/\s*(\d+)"
+   name="always_skills_dosth2"
+   regexp="y"
+   script="addtri_38718"
+   sequence="10"
+   variable="always_skills_dosth2"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_skills"
+   keep_evaluating="y"
+   match="\s*ÄÚ¹¦ \(force\)\s*£º\s*(\S+)\s*ÓÐÐ§µÈ¼¶£º(\d+)"
+   name="always_skills_dosth3"
+   regexp="y"
+   script="addtri_38721"
+   sequence="10"
+   variable="always_skills_dosth3"
+  >
+  </trigger>
+  <trigger
+   group="gps_yztd_3_2"
+   keep_evaluating="y"
+   match="\s*ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÊÇ\s+(\w+)\s*ºÍ\s*(\w+)¡£"
+   name="gps_yztd_3_2_dosth1"
+   regexp="y"
+   script="addtri_39114"
+   sequence="10"
+   variable="gps_yztd_3_2_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_yztd_1_2"
+   keep_evaluating="y"
+   match="\s*ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÊÇ\s+(\w+)\s*ºÍ\s*(\w+)¡£"
+   name="gps_yztd_1_2_dosth1"
+   regexp="y"
+   script="addtri_39099"
+   sequence="10"
+   variable="gps_yztd_1_2_dosth1"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_hp"
+   keep_evaluating="y"
+   match="\s+¾­ÑéÔö¼Ó£º(\d+)\s+"
+   name="always_hp_dosth1"
+   regexp="y"
+   script="addtri_38664"
+   sequence="10"
+   variable="always_hp_dosth1"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_hp"
+   keep_evaluating="y"
+   match="\s+Ç®×¯Ó¯Óà£º(\S+)Á½»Æ½ð"
+   name="always_hp_dosth2"
+   regexp="y"
+   script="addtri_38667"
+   sequence="10"
+   variable="always_hp_dosth2"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_hp"
+   keep_evaluating="y"
+   match="\s+Ç®×¯Ó¯Óà£º(¿÷¿ÕÎÞÓà|ºÜÉÙ)\s+"
+   name="always_hp_dosth3"
+   regexp="y"
+   script="addtri_38670"
+   sequence="10"
+   variable="always_hp_dosth3"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_hp"
+   keep_evaluating="y"
+   match="\s+ÔÚÏßÊ±¼ä£º(\S+)Ìì"
+   name="always_hp_dosth17"
+   regexp="y"
+   script="addtri_38712"
+   sequence="10"
+   variable="always_hp_dosth17"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_hp"
+   keep_evaluating="y"
+   match="^ ÆøÑª£º\s*(\d+)\s*/\s*(\d+)\s*\(\s*(\d+)%\)\s*ÄÚÁ¦£º\s*(\S+)\s*/\s*(\d+)\s*\(\s*\+\s*(\d+)\)"
+   name="always_hp_dosth5"
+   regexp="y"
+   script="addtri_38676"
+   sequence="10"
+   variable="always_hp_dosth5"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_hp"
+   keep_evaluating="y"
+   match="^ Ê³Îï£º\s*(\d+)\s*/\s*(\d+)\s*Ç±ÄÜ£º\s*(\S+)\s*/\s*(\d+)\s*"
+   name="always_hp_dosth6"
+   regexp="y"
+   script="addtri_38679"
+   sequence="10"
+   variable="always_hp_dosth6"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_hp"
+   keep_evaluating="y"
+   match="^ ÒûË®£º\s*(\d+)\s*/\s*(\d+)\s*¾­Ñé£º\s*(\S+)\s*"
+   name="always_hp_dosth7"
+   regexp="y"
+   script="addtri_38682"
+   sequence="10"
+   variable="always_hp_dosth7"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_hp"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |) ¾«Éñ£º\s*(\d+)\s*/\s*(\d+)\s*\(\s*(\d+)%\)\s*¾«Á¦£º\s*(\d+)\s*/\s*(\d+)\s*\(\s*\+\s*(\d+)\)"
+   name="always_hp_dosth4"
+   regexp="y"
+   script="addtri_38673"
+   sequence="10"
+   variable="always_hp_dosth4"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="fj_watch"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)((.+)(¶ÔÄãµãÁËµãÍ·|ÅÄÁËÅÄÄãµÄÍ·|»Ø¹ýÍ·¿´ÁËÄãÒ»ÑÛ|ÅÄÅÄÄãµÄ¼ç|¶ÔÄã¡¸ºÙºÙºÙ¡¹¼éÐ¦ÁË¼¸Éù).+ËµµÀ£º¡°(.+)£¬.+\n(.+)ËµµÀ:¡°½üÈÕÔÚ(.+)¸½½ü.*\Z\w*)"
+   multi_line="y"
+   name="fj_watch_m_dosth1"
+   regexp="y"
+   script="addtri_39265"
+   sequence="10"
+   variable="fj_watch_m_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_gb_gold_fujia"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)((.+)\s+=\s+(.+),\w*)"
+   name="mp_gb_gold_fujia_dosth1"
+   regexp="y"
+   script="addtri_39339"
+   sequence="10"
+   variable="mp_gb_gold_fujia_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="fang"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)((.+)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|ÄãµÄÑÛÇ°Ò»ºÚ£¬½ÓÖøÊ²Ã´Ò²²»ÖªµÀÁË....\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª killover=yes µÄ±äÁ¿Éè¶¨¡£\w*)"
+   name="fang_dosth1"
+   regexp="y"
+   script="addtri_38908"
+   sequence="10"
+   variable="fang_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_gb_gold_robber"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)((\S+)\s+=\s+(\w+)\w*)"
+   name="mp_gb_gold_robber_dosth1"
+   regexp="y"
+   script="addtri_39333"
+   sequence="10"
+   variable="mp_gb_gold_robber_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_gb_gold_owner"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)((\S+)\s+=\s+(\w+)\w*)"
+   name="mp_gb_gold_owner_dosth1"
+   regexp="y"
+   script="addtri_39336"
+   sequence="10"
+   variable="mp_gb_gold_owner_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="dealwith_gun"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)((³Î¼Å|³ÎÁé)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|µÀ³¾¸øÄãÒ»¼þÆëÃ¼¹÷¡£\w*|Äã´Ó(³Î¼Å|³ÎÁé)µÄÊ¬ÌåÉíÉÏËÑ³öÒ»¸ùÆëÃ¼¹÷¡£\w*|Äã¶Ô×Å³ÎÁé¡¸ºÙºÙºÙ¡¹¼éÐ¦ÁË¼¸Éù¡£\w*|Äã¼ñÆðÒ»¸ùÆëÃ¼¹÷¡£\w*|ÄãËµ£º¡°³Î¼ÅÃÀÃ¼ºÃÑ½£¡¡±\w*|µÀ³¾ìøÊ¦ËµµÀ£º±§Ç¸£¬ÄãÀ´µÃ²»ÊÇÊ±ºò£¬ÎäÆ÷ÒÑ¾­·¢ÍêÁË¡£\w*|ÄãÒª¶ÔË­×ö hehe Õâ¸ö¶¯×÷£¿\w*|ÄãÒª¶ÔË­×ö ysis Õâ¸ö¶¯×÷£¿\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡º³Î¼Å¡»\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡º³ÎÁé¡»\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡ºµÀ³¾¡»\w*|ÕâÀïÃ»ÓÐ chanshi Õâ¸öÈË¡£\w*)"
+   name="dealwith_gun_dosth1"
+   regexp="y"
+   script="addtri_38837"
+   sequence="10"
+   variable="dealwith_gun_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="dealwith_bian"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)((ÄÁÑòÅ®|ÄÁÑòÈË)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|Äã´Ó(ÄÁÑòÅ®|ÄÁÑòÈË)µÄÊ¬ÌåÉíÉÏËÑ³öÒ»±úÑò±Þ¡£\w*|Äã¼ñÆðÒ»±úÑò±Þ¡£\w*|ÄãÏòÄÁÑòÅ®´òÌýÓÐ¹Ø¡¸À´Ê×Ê®°ËÃþ°É£¡¡¹µÄÏûÏ¢¡£\w*|Äã¶Ô×ÅÄÁÑòÈË¡¸ºÙºÙºÙ¡¹¼éÐ¦ÁË¼¸Éù¡£\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬312¾ÍÊÇÕâÀï£¡\w*|ÄãÒª¶ÔË­×ö hehe Õâ¸ö¶¯×÷£¿\w*|ÕâÀïÃ»ÓÐ nu Õâ¸öÈË¡£\w*)"
+   name="dealwith_bian_dosth1"
+   regexp="y"
+   script="addtri_38819"
+   sequence="10"
+   variable="dealwith_bian_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="dealwith_jian"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)((Çà|°×|ºì)ÒÂÎäÊ¿µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|Äã´Ó(Çà|°×|ºì)ÒÂÎäÊ¿µÄÊ¬ÌåÉíÉÏ³ýÏÂÒ»¼þÌú¼×¡£\w*|Äã´Ó(Çà|°×|ºì)ÒÂÎäÊ¿µÄÊ¬ÌåÉíÉÏËÑ³öÒ»±ú.+½£¡£\w*|Äã¼ñÆðÒ»±ú.+½£¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª check=jian µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÏò(Çà|°×|ºì)ÒÂÎäÊ¿´òÌýÓÐ¹Ø¡¸ÏÈ¼éºóÉ±¡¹µÄÏûÏ¢¡£\w*|Ë«·É£¬Èý·É£¬´ó¼ÒÒ»Æð·É£¬ÏÈ¡Á.+ ¸ö¡º (Çà|°×|ºì)ÒÂÎäÊ¿ ¡»ÖÐµÄµÚ .+¸ö¡«¡«\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡ºÇàÒÂÎäÊ¿¡»\w*|ÕâÀïÃ»ÓÐ wei shi Õâ¸öÈË¡£\w*)"
+   name="dealwith_jian_dosth1"
+   regexp="y"
+   script="addtri_38846"
+   sequence="10"
+   variable="dealwith_jian_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="dealwith_bi"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)((ÇñÉ½·ç|·¶Ò»·É)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|Äã´Ó(ÇñÉ½·ç|·¶Ò»·É)µÄÊ¬ÌåÉíÉÏËÑ³öÒ»Ö§ÅÐ¹Ù±Ê¡£\w*|Äã¼ñÆðÒ»Ö§ÅÐ¹Ù±Ê¡£\w*|ÄãÏò·¶Ò»·É´òÌýÓÐ¹Ø¡¸À´Ê×Ê®°ËÃþ°É£¡¡¹µÄÏûÏ¢¡£\w*|ÄãÏòÇñÉ½·ç´òÌýÓÐ¹Ø¡¸À´Ê×Ê®°ËÃþ°É£¡¡¹µÄÏûÏ¢¡£\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬1094¾ÍÊÇÕâÀï£¡\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬1101¾ÍÊÇÕâÀï£¡\w*|ÕâÀïÃ»ÓÐ fan Õâ¸öÈË¡£\w*|ÕâÀïÃ»ÓÐ qiu Õâ¸öÈË¡£\w*)"
+   name="dealwith_bi_dosth1"
+   regexp="y"
+   script="addtri_38816"
+   sequence="10"
+   variable="dealwith_bi_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_dealwith"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)((Îäµ±NPC|ÁéÐéµÀ³¤|ÁèÐéµÀ³¤|ÕÅËÉÏª)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|ÕâÀïÃ»ÓÐÕâ¸öÈË¡£\w*|(°×ÍÕNPC|¼Ò¶¡)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|(Î÷ÓòNPC|ºúÀÏÒ¯)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|(³¤ÀÖ°ïNPC|ÇñÉ½·ç|Ë¾Í½ºá|°ïÖÚ)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|(¶ëáÒNPC|¾²ÐÄ)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|(»ªÉ½NPC|ÀÍµÂÅµ|Áº·¢|Â½´óÓÐ|ÄþÖÐÔò|ÔÀÁéæ©|Ê©´÷×Ó|¸ß¸ùÃ÷)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|(»ªÉ½NPC|ÄþÖÐÔò|ÔÀÁéæ©)Íù\S+Âä»Ä¶øÌÓÁË¡£\w*|(º¼ÖÝNPC|ÌìÓ¥½ÌÊØÎÀ|¶¼´ó½õ)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|(Ã÷½ÌNPC|Ëµ²»µÃ)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|(Î÷ÏÄNPC|»Ê¹¬ÎÀÊ¿|Ð£Î¾|Ò»Æ·ÌÃÎäÊ¿)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|(ÄÏÑôNPC|ÊØ³Ç¹Ù±ø)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|(ÆîÁ¬É½NPC|ÈÕÔÂÉñ½ÌÎÀÊ¿)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|(È«ÕæNPC|ÕÅÖ¾¹â|Ì·´¦¶Ë)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|(ÉÙÁÖNPC|ÐéÍ¨|ÐéÃ÷|Çå¹Û±ÈÇð|ÇåÀÖ±ÈÇð)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|(Ñ©É½NPC|¸ðÂ×²¼|ÈøÄ¾»î·ð|½äÂÉÉ®)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|(ÐÇËÞNPC|Ê¨ºð×Ó|²É»¨×Ó)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|(ÑïÖÝNPC|æ¾Å®|ÃÉ¹Å¾ü¹Ù)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|(Îäµ±NPC|\S*½«ÁéÐéµÀ³¤·öÁËÆðÀ´±³ÔÚ±³ÉÏ¡£)\w*|(ÐÇËÞNPC|Ê¨ºð×ÓÒ»ÑÔ²»·¢£¬ÉÁÉíÀ¹ÔÚÄãÃæÇ°¡£)\w*|\S*(ÉÙÁÖNPC|Ç§ÄêÒÔÀ´£¬ÉÙÁÖÏò²»ÐíÅ®Á÷ÉÃÈë¡£|Äã²»ÊÇÉÙÁÖµÜ×Ó£¬²»µÃ½øÈëºóµî¡£|ÇëÁô²½£¬Ë¡Ð¡ËÂ²»½Ó´ýÅ®¿Í¡£)\w*|\S*(Ã»¹ýÕó|ÕâÎ»Å®Ê©Ö÷»¹ÊÇÇë»Ø°Õ|ÕâÎ»Ê©Ö÷Çë»Ø°Õ|Á¢Ê±´ÓÉíÅÏÖ¿³öÒ»°ÑÑ©ÁÁµÄ½äµ¶À´)\w*|(³¤ÀÖ°ïNPC|°ïÖÚÀ¹ÔÚÄãÃæÇ°£¬ËµµÀ£ºÀïÃæÊÇ¹ØÑº±¾°ïÅÑÍ½µÄµØ·½£¬ÄãÇë»Ø°É¡£)\w*|(ÐÇËÞNPC|²É»¨×Óµ²×¡ÁËÄã£ºÎÒµÄÐ¡æ¤¿É²»ÊÇ¸øÄãÃÇ)\w*|(ÉÙÁÖNPC|µÀÒ»ËµµÀ: ÄãÎ´¾­Ðí¿É£¬²»ÄÜÉÏ¶þÂ¥¡£)\w*|(º¼ÖÝNPC|¶¼´ó½õÀ¹ÔÚÄãÃæÇ°£¬ºÈµÀ£º)\w*|(»ªÉ½NPC|¸ß¸ùÃ÷À¹×¡ÄãËµ£ºÓÉ´ËÍùÉÏÄË±¾ÅÉ½ûµØ£¬ÇëÖ¹²½¡£)\w*|(Ñ©É½NPC|¸ðÂ×²¼µ²×¡ÄãËµ£ºÄã×¼±¸ÓÃÊ²÷á¹©·îÎÒÃÇ·ðÒ¯Ñ½£¿)\w*|(Î÷ÓòNPC|ºúÀÏÒ¯Ëµ: ÎÒ°Ñ°¢·²Ìá¹ØÔÚÎÒµÄ¿ÍÌüÀïÁË£¬Ë­Ò²²»Ðí½øÈ¥¡£)\w*|(°×ÍÕNPC|¼Ò¶¡µ²×¡ÁËÄãµÄÈ¥Â·£ºÀÏÒ¯ÕýÔÚÁ·¹¦£¬Çë¸ÄÈÕÔÙÀ´¡£)\w*|(¹éÔÆ×¯NPC|¼Ò¶¡×öÁË¸öÒ¾£¬ËµµÀ£º×ð¼ÝÓë±Ö×¯ËØÎÞÍùÀ´£¬×¯Ö÷²»¼ûÍâ¿Í£¬»¹ÊÇÇë»Ø°É)\w*|(Ø¤°ïNPC|¼ò³¤ÀÏÒ»°Ñ¾¾×¡ÄãµÄÒÂÁìËµ£º¡°Âý×Å£¡¡±)\w*|(Ø¤°ïNPC|¼ò³¤ÀÏ)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|(Ì©É½NPC|½­°ÙÊ¤ÉìÊÖÀ¹×¡ÄãËµµÀ£ºÃËÖ÷ºÜÃ¦£¬ÏÖÔÚ²»¼ûÍâ¿Í£¬ÄãÏÂÉ½È¥°É£¡)\w*|(Ì©É½NPC|½­°ÙÊ¤µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£)\w*|(Ñ©É½NPC|½äÂÉÉ®µ²×¡ÄãËµ£ººóÃæÄË±¾ËÂÖØµØ£¬Çë»Ø°É£¡)\w*|(¶ëáÒNPC|¾²ÐÄÊ¦Ì«×ßÉÏÇ°Ëµ£ººó±ßÊÇ¶ëáÒµÜ×ÓÁ·¹¦ÐÝÏ¢µÄµØ·½£¬ÇëÁô²½¡£)\w*|(»ªÉ½NPC|ÀÍµÂÅµÇ·ÉíËµµÀ£ºÕâÎ»)\w*|(»ªÉ½NPC|Áº·¢µ²×¡ÄãËµµÀ£ººóÃæÊÇ±¾ÅÉÊéÔº£¬ÕâÎ»)\w*|(Îäµ±NPC|ÁèÐéµÀ³¤ºÈµÀ£ºÈç²»ÊÇÉÏÉ½¾´Ïã£¬¼´¿ÌÇë»Ø£¡)\w*|(»ªÉ½NPC|Â½´óÓÐºÈµÀ£ººóÃæÊÇ»ªÉ½ÅÉµÄÄÚÔº£¬ÕâÎ»)\w*|(ÑïÖÝNPC|ÃÉ¹Å¾ü¹ÙÒ»Óï²»·¢£¬Õ¾ÔÚÄãÃæÇ°µ²ÖøÄãµÄÈ¥Â·£¡)\w*|(»ªÉ½NPC|ÄþÖÐÔòÀ¹ÔÚÄãÉíÇ°³âµÀ£ºÍâÈË²»ÄÜËæÒ×³öÈë±¾ÅÉÖØµØ£¡»¹²»¿ì¸øÎÒÀë¿ª£¿)\w*|(ÉÙÁÖNPC|Çå¹ÛºÈµÀ£ºÄã²»ÊÇÉÙÁÖµÜ×Ó£¬²»µÃ½øÈëºóÉ½ÖñÁÖ£¡)\w*|\S*(³¤ÀÖ°ïNPC|ÔõÃ´Á¬Ò»µã½­ºþ¹æ¾Ø¶¼²»¶®£¿ÆðÂëÒ²µÃÐ¢¾´Ò»ÏÂÀÏ×Ó¡£)\w*|\S*(Îäµ±NPC|Èç²»ÊÇÉÏÉ½¾´Ïã£¬¼´¿ÌÇë»Ø£¡)\w*|(Ñ©É½NPC|ÈøÄ¾»î·ðµ²×¡ÄãËµµÀ£ºááÃæÊÇ±¾ËÂ¸ßÉ®ÐÞÐÐÖ®µØ£¬Ê©Ö÷Çë»Ø¡£)\w*|(»ªÉ½NPC|Ê©´÷×ÓÀ¹×¡ÄãËµ£ºÁ½Î»Ê¦Êå×æ²»Óû¼û¿Í£¬Çë»Ø°É¡£)\w*|(Ã÷½ÌNPC|Ëµ²»µÃÉìÊÖÀ¹×¡Äã£¬ËµµÀ£ºÉÏÃæÊÇÃ÷½Ì¹âÃ÷¶¥£¬ÕâÎ»\S+²¢·ÇÎÒ½ÌµÜ×Ó£¬ÇëÖ¹²½!)\w*|(³¤ÀÖ°ïNPC|Ë¾Í½ºáÀ¹ÔÚÄãÃæÇ°£¬ºÈµÀ£º)\w*|(º¼ÖÝNPC|ÌìÓ¥½ÌÊØÎÀºÈµÀ£ºÕâÎ»)\w*|(Î÷ÏÄNPC|ÎÀÊ¿¶ÔÄã´óºðÒ»Éù£º·ÅËÁ£¡ÄÇ²»ÊÇÄãÄÜ½øÈ¥µÄµØ·½¡£)\w*|(ÆîÁ¬É½NPC|ÎÀÊ¿¶ÔÄãºÈµÀ£º¿´ÕÐ£¡±ðÍýÏë´³Èë±¾½ÌÖØµØ£¡)\w*|(ÆîÁ¬É½NPC|ÎÀÊ¿¶Ô×ÅÄãºÈµÀ£º¿´ÕÐ£¡±ðÍýÏëÔÚ±¾´óÒ¯ÊÖÏÂ¾ÈÈË£¡)\w*|(Î÷ÏÄNPC|Ð£Î¾µ²×¡ÁËÄãµÄÈ¥Â·£¡)\w*|(ÉÙÁÖNPC|Çë·ÅÏÂ±øÈÐ¡£ÉÙÁÖÇ§ÄêµÄ¹æ¾Ø£¬Íâ¿Í)\w*|(Î÷ÏÄNPC|Ò»Æ·ÌÃÎäÊ¿µ²×¡ÁËÄãµÄÈ¥Â·£¡)\w*|(»ªÉ½NPC|ÔÀÁéæ©À¹ÉíËµµÀ£ººóÃæÊÇ±¾ÅÉ³ø·¿)\w*|(Îäµ±NPC|ÕÅËÉÏªºÈµÀ£ºÀïÃæÊÇÎäµ±ÖØµØ£¬ÏÐÈËÇëÖ¹²½¡£)\w*|(È«ÕæNPC|ÕÅÖ¾¹âÀ¹×¡ËµµÀ£º¶Ô²»Æð£¬ÑøÐÄµî²»¶ÔÍâ¿ª·Å£¡)\w*|(ÑïÖÝNPC|æ¾Å®ÉìÊÖµ²×¡ÁËÄãµÄÈ¥Â·£ºÉÙ×¯Ö÷ÕýÔÚµ÷Ñµ¶¾Éß£¬Çë¸ÄÈÕÔÙÀ´¡£)\w*|(¹éÔÆ×¯NPC|¼Ò¶¡)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkmove=yes µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª check=dealwith µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª killover=GPS µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª (.+) µÄ±äÁ¿Éè¶¨¡£\w*|Äã.+Ò»ÕÐ\w*)"
+   name="gps_dealwith_dosth1"
+   regexp="y"
+   script="addtri_38963"
+   sequence="10"
+   variable="gps_dealwith_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_qzh_mcx"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)((Îä½«|¹Ù±ø)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|(Îä½«|¹Ù±ø)½ÅÏÂÒ»¸ö²»ÎÈ£¬µøÔÚµØÉÏ»èÁË¹ýÈ¥¡£\w*|(Îä½«|¹Ù±ø)´óºÈµÀ£º¶¼¶½ÓÐÁî£¬ÏÐÔÓÈËµÈ²»ÄÜÓÉ´Ë¾­¹ý£¡\w*|Õâ²»ÊÇ»îÎï£¡\w*)"
+   name="gps_qzh_mcx_dosth1"
+   regexp="y"
+   script="addtri_39004"
+   sequence="10"
+   variable="gps_qzh_mcx_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_qzh_sl"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)((Îä½«|¹Ù±ø)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|(Îä½«|¹Ù±ø)½ÅÏÂÒ»¸ö²»ÎÈ£¬µøÔÚµØÉÏ»èÁË¹ýÈ¥¡£\w*|(Îä½«|¹Ù±ø)À¹×¡ÁËÄãµÄÈ¥Â·¡£\w*|Õâ²»ÊÇ»îÎï£¡\w*)"
+   name="gps_qzh_sl_dosth1"
+   regexp="y"
+   script="addtri_39010"
+   sequence="10"
+   variable="gps_qzh_sl_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_qz_watch"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.*´ÞÖ¾·½.*\w*|.*ÍõÖ¾Ì¹.*\w*|.*ÀîÖ¾³£.*\w*|.*ÒüÖ¾Æ½.*\w*|.*³ÂÖ¾Òæ.*\w*|.*ÉêÖ¾·².*\w*|.*´ï¶û°Í.*\w*|.*»ô¶¼.*\w*|.*½ðÂÖ·¨Íõ.*\w*|.*Áº×ÓÎÌ.*\w*|.*Å·Ñô¿Ë.*\w*|.*ÅíÁ¬»¢.*\w*|.*É³Í¨Ìì.*\w*|.*Òü¿ËÎ÷.*\w*|.*½á¹ûÖ»ÊÇÇáÇáµØ»®ÆÆËûµÄÆ¤Èâ.*\w*|.*½á¹ûÖ»ÊÇÇáÇáµØÅöµ½.*\w*|.*Ôì³ÉÒ»´¦ðöÇà.*\w*|.*¿³³öÒ»µÀÉË¿Ú.*\w*|.*´Ì³öÒ»¸ö´´¿Ú.*\w*|.*±»Ëû¸ñ¿ªÁË.*\w*|.*ÑªÁÜÁÜµÄÉË¿Ú.*\w*|.*ÑªÈâÄ£ºýµÄÑª¿ßÁþ.*\w*|.*´ÌÆÆËûµÄÆ¤Èâ.*\w*|.*±»Ëûµ²¿ªÁË.*\w*|.*Ï¸³¤µÄÑªºÛ.*\w*|.*¾ÍµØÒ»¹ö.*\w*|.*Ììî¸±±¶·Õó·¨.*\w*|.*Ììî¸±±¶·Õó°µºÏ.*\w*|.*Ììî¸±±¶·ÕóÔ½Ëõ.*\w*|.*Ììî¸±±¶·ÕóÆøÊÆ.*\w*|Î»ÉÏµÄ.+´óºÈÒ»Éù£¬Ò»ÕÐ\w*|Î»ÉÏµÄ.+Æø³Áµ¤Ìï£¬°µÔËÉñ¹¦\w*|Î»ÉÏµÄ.+ÉíÐÎÏòÉÏÆ®Æð\w*|Î»ÉÏµÄ.+ÊÖÖÐ½£Ò»Ö¸£¬×ÝÆðÕÉÓà£¬Ò»Ê½\w*|Î»ÉÏµÄ.+Ì¤ÆæÃÅ£¬×ßÆ«·æ\w*|Î»ÉÏµÄ.+Í¦Éí¶ø³ö£¬²½·¨¾«Ãî£¬³¤ÐäÆ®Æ®£¬¹¥ÊÆÈçºç¡£\w*|Î»ÉÏµÄ.+ÏòÇ°ÂõÈ¥Ò»´ó²½£¬Ê¹³ö\w*|Î»ÉÏµÄ.+ÔËÁ¦Ò»¶¶½££¬Ò»Ê½\w*|Î»ÉÏµÄ.+×óÊÖÄó×Å½£¾÷£¬ÓÒ×ãÌ¤¿ªÒ»ÕÐ\w*)"
+   name="mp_qz_watch_gag_dosth1"
+   omit_from_output="y"
+   regexp="y"
+   sequence="10"
+   variable="mp_qz_watch_gag_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_start"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+) - \n(.*)\Z"
+   multi_line="y"
+   name="gps_start_dosth1"
+   regexp="y"
+   script="addtri_38932"
+   sequence="10"
+   variable="gps_start_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_qz_start"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_qz_start_dosth1"
+   regexp="y"
+   script="addtri_39453"
+   sequence="10"
+   variable="mp_qz_start_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="ftb_ask"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="ftb_ask_dosth1"
+   regexp="y"
+   script="addtri_39273"
+   sequence="10"
+   variable="ftb_ask_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="kill_qz"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="kill_qz_dosth1"
+   regexp="y"
+   script="addtri_39156"
+   sequence="10"
+   variable="kill_qz_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_xs_lzjob"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_xs_lzjob_dosth1"
+   regexp="y"
+   script="addtri_39529"
+   sequence="10"
+   variable="mp_xs_lzjob_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_sl_watch"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_sl_watch_dosth1"
+   regexp="y"
+   script="addtri_39493"
+   sequence="10"
+   variable="mp_sl_watch_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_bt_watch"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_bt_watch_dosth1"
+   regexp="y"
+   script="addtri_39581"
+   sequence="10"
+   variable="mp_bt_watch_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="qzwd_pre"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="qzwd_pre_dosth1"
+   regexp="y"
+   script="addtri_39319"
+   sequence="10"
+   variable="qzwd_pre_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="ftb_start"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="ftb_start_dosth1"
+   regexp="y"
+   script="addtri_39304"
+   sequence="10"
+   variable="ftb_start_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="ftb_pre"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="ftb_pre_dosth1"
+   regexp="y"
+   script="addtri_39291"
+   sequence="10"
+   variable="ftb_pre_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="sl_zc"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="sl_zc_dosth1"
+   regexp="y"
+   script="addtri_39229"
+   sequence="10"
+   variable="sl_zc_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="sl_sj"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="sl_sj_dosth1"
+   regexp="y"
+   script="addtri_39219"
+   sequence="10"
+   variable="sl_sj_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_sl_pre"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_sl_pre_dosth1"
+   regexp="y"
+   script="addtri_39485"
+   sequence="10"
+   variable="mp_sl_pre_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_xs_pre"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_xs_pre_dosth1"
+   regexp="y"
+   script="addtri_39496"
+   sequence="10"
+   variable="mp_xs_pre_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_mj_tyjob"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_mj_tyjob_dosth1"
+   regexp="y"
+   script="addtri_39654"
+   sequence="10"
+   variable="mp_mj_tyjob_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_mj_wxq"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_mj_wxq_dosth1"
+   regexp="y"
+   script="addtri_39644"
+   sequence="10"
+   variable="mp_mj_wxq_dosth1"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_hp"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="always_hp_dosth16"
+   regexp="y"
+   script="addtri_38709"
+   sequence="10"
+   variable="always_hp_dosth16"
+  >
+  </trigger>
+  <trigger
+   group="kill_gb"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="kill_gb_dosth1"
+   regexp="y"
+   script="addtri_39145"
+   sequence="10"
+   variable="kill_gb_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_dl_start"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_dl_start_dosth1"
+   regexp="y"
+   script="addtri_39389"
+   sequence="10"
+   variable="mp_dl_start_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_gm_watch"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_gm_watch_dosth1"
+   regexp="y"
+   script="addtri_39564"
+   sequence="10"
+   variable="mp_gm_watch_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="chongmai_watch"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="chongmai_watch_dosth1"
+   regexp="y"
+   script="addtri_39316"
+   sequence="10"
+   variable="chongmai_watch_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="kill_gm"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="kill_gm_dosth1"
+   regexp="y"
+   script="addtri_39176"
+   sequence="10"
+   variable="kill_gm_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_bt_start"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_bt_start_dosth1"
+   regexp="y"
+   script="addtri_39573"
+   sequence="10"
+   variable="mp_bt_start_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_xs_npc2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_xs_npc2_dosth1"
+   regexp="y"
+   script="addtri_39502"
+   sequence="10"
+   variable="mp_xs_npc2_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_xs_start"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_xs_start_dosth1"
+   regexp="y"
+   script="addtri_39505"
+   sequence="10"
+   variable="mp_xs_start_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="ftb_watch"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="ftb_watch_dosth1"
+   regexp="y"
+   script="addtri_39307"
+   sequence="10"
+   variable="ftb_watch_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_wd_pre"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_wd_pre_dosth1"
+   regexp="y"
+   script="addtri_39482"
+   sequence="10"
+   variable="mp_wd_pre_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_xs_watch"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_xs_watch_dosth1"
+   regexp="y"
+   script="addtri_39513"
+   sequence="10"
+   variable="mp_xs_watch_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="skills_xue"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="skills_xue_dosth1"
+   regexp="y"
+   script="addtri_39201"
+   sequence="10"
+   variable="skills_xue_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="dazuo"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="dazuo_dosth1"
+   regexp="y"
+   script="addtri_38911"
+   sequence="10"
+   variable="dazuo_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_start"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="gps_start_dosth6"
+   regexp="y"
+   script="addtri_38949"
+   sequence="10"
+   variable="gps_start_dosth6"
+  >
+  </trigger>
+  <trigger
+   group="kill_sl"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="kill_sl_dosth1"
+   regexp="y"
+   script="addtri_39159"
+   sequence="10"
+   variable="kill_sl_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="xf_mj"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="xf_mj_dosth1"
+   regexp="y"
+   script="addtri_39237"
+   sequence="10"
+   variable="xf_mj_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_sl_start"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_sl_start_dosth1"
+   regexp="y"
+   script="addtri_39488"
+   sequence="10"
+   variable="mp_sl_start_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="kill_em"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="kill_em_dosth1"
+   regexp="y"
+   script="addtri_39173"
+   sequence="10"
+   variable="kill_em_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="chongmai_pre"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="chongmai_pre_dosth1"
+   regexp="y"
+   script="addtri_39310"
+   sequence="10"
+   variable="chongmai_pre_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_xx_pre"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_xx_pre_dosth1"
+   regexp="y"
+   script="addtri_39589"
+   sequence="10"
+   variable="mp_xx_pre_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_em_start"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_em_start_dosth1"
+   regexp="y"
+   script="addtri_39540"
+   sequence="10"
+   variable="mp_em_start_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_qz_boyao_ti"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_qz_boyao_ti_dosth1"
+   regexp="y"
+   script="addtri_39435"
+   sequence="10"
+   variable="mp_qz_boyao_ti_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_xx_xiulian"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_xx_xiulian_dosth1"
+   regexp="y"
+   script="addtri_39613"
+   sequence="10"
+   variable="mp_xx_xiulian_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_dl_work"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_dl_work_dosth1"
+   regexp="y"
+   script="addtri_39397"
+   sequence="10"
+   variable="mp_dl_work_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_th_watch"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_th_watch_dosth1"
+   regexp="y"
+   script="addtri_39635"
+   sequence="10"
+   variable="mp_th_watch_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_99guai"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="gps_99guai_dosth2"
+   regexp="y"
+   script="addtri_38971"
+   sequence="10"
+   variable="gps_99guai_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="mp_hs_pre"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_hs_pre_dosth1"
+   regexp="y"
+   script="addtri_39413"
+   sequence="10"
+   variable="mp_hs_pre_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_xx_watch"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_xx_watch_dosth1"
+   regexp="y"
+   script="addtri_39610"
+   sequence="10"
+   variable="mp_xx_watch_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_th_start"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_th_start_dosth1"
+   regexp="y"
+   script="addtri_39627"
+   sequence="10"
+   variable="mp_th_start_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_bt_pre"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_bt_pre_dosth1"
+   regexp="y"
+   script="addtri_39570"
+   sequence="10"
+   variable="mp_bt_pre_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_xs_npc1"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_xs_npc1_dosth1"
+   regexp="y"
+   script="addtri_39499"
+   sequence="10"
+   variable="mp_xs_npc1_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_xx_kmmr"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_xx_kmmr_dosth1"
+   regexp="y"
+   script="addtri_39616"
+   sequence="10"
+   variable="mp_xx_kmmr_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_mj_yudi"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_mj_yudi_dosth1"
+   regexp="y"
+   script="addtri_39641"
+   sequence="10"
+   variable="mp_mj_yudi_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="skills_lingwu"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="skills_lingwu_dosth1"
+   regexp="y"
+   script="addtri_39195"
+   sequence="10"
+   variable="skills_lingwu_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="kill_dl"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="kill_dl_dosth1"
+   regexp="y"
+   script="addtri_39142"
+   sequence="10"
+   variable="kill_dl_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_em_pre"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_em_pre_dosth1"
+   regexp="y"
+   script="addtri_39537"
+   sequence="10"
+   variable="mp_em_pre_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="kill_xx"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="kill_xx_dosth1"
+   regexp="y"
+   script="addtri_39179"
+   sequence="10"
+   variable="kill_xx_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_qz_boyao"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_qz_boyao_dosth1"
+   regexp="y"
+   script="addtri_39427"
+   sequence="10"
+   variable="mp_qz_boyao_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="qzwd_watch"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="qzwd_watch_dosth1"
+   regexp="y"
+   script="addtri_39325"
+   sequence="10"
+   variable="qzwd_watch_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_gm_caimi_t"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_gm_caimi_t_dosth1"
+   regexp="y"
+   script="addtri_39559"
+   sequence="10"
+   variable="mp_gm_caimi_t_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_hs_watch"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_hs_watch_dosth1"
+   regexp="y"
+   script="addtri_39424"
+   sequence="10"
+   variable="mp_hs_watch_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_gm_caimi"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_gm_caimi_dosth1"
+   regexp="y"
+   script="addtri_39556"
+   sequence="10"
+   variable="mp_gm_caimi_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="chongmai_start"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="chongmai_start_dosth1"
+   regexp="y"
+   script="addtri_39313"
+   sequence="10"
+   variable="chongmai_start_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_qz_pre"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_qz_pre_dosth1"
+   regexp="y"
+   script="addtri_39440"
+   sequence="10"
+   variable="mp_qz_pre_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="xf_em"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="xf_em_dosth1"
+   regexp="y"
+   script="addtri_39214"
+   sequence="10"
+   variable="xf_em_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_gm_pre"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_gm_pre_dosth1"
+   regexp="y"
+   script="addtri_39553"
+   sequence="10"
+   variable="mp_gm_pre_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="kill_hs"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="kill_hs_dosth1"
+   regexp="y"
+   script="addtri_39153"
+   sequence="10"
+   variable="kill_hs_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="wd_xtjf"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="wd_xtjf_dosth1"
+   regexp="y"
+   script="addtri_39232"
+   sequence="10"
+   variable="wd_xtjf_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_mj_pre"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_mj_pre_dosth1"
+   regexp="y"
+   script="addtri_39638"
+   sequence="10"
+   variable="mp_mj_pre_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_gm_job3"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_gm_job3_dosth1"
+   regexp="y"
+   script="addtri_39567"
+   sequence="10"
+   variable="mp_gm_job3_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="qzwd_start"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="qzwd_start_dosth1"
+   regexp="y"
+   script="addtri_39322"
+   sequence="10"
+   variable="qzwd_start_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="kill_xs"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="kill_xs_dosth1"
+   regexp="y"
+   script="addtri_39170"
+   sequence="10"
+   variable="kill_xs_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_qz_watch"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_qz_watch_dosth1"
+   regexp="y"
+   script="addtri_39476"
+   sequence="10"
+   variable="mp_qz_watch_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="xf_hs"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="xf_hs_dosth1"
+   regexp="y"
+   script="addtri_39206"
+   sequence="10"
+   variable="xf_hs_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_hs_start"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_hs_start_dosth1"
+   regexp="y"
+   script="addtri_39421"
+   sequence="10"
+   variable="mp_hs_start_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_dl_pre"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_dl_pre_dosth1"
+   regexp="y"
+   script="addtri_39381"
+   sequence="10"
+   variable="mp_dl_pre_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="kill_bt"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="kill_bt_dosth1"
+   regexp="y"
+   script="addtri_39162"
+   sequence="10"
+   variable="kill_bt_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_xx_start"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_xx_start_dosth1"
+   regexp="y"
+   script="addtri_39596"
+   sequence="10"
+   variable="mp_xx_start_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_em_watch"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_em_watch_dosth1"
+   regexp="y"
+   script="addtri_39550"
+   sequence="10"
+   variable="mp_em_watch_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="kill_run"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="kill_run_dosth1"
+   regexp="y"
+   script="addtri_39139"
+   sequence="10"
+   variable="kill_run_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_th_pre"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="mp_th_pre_dosth1"
+   regexp="y"
+   script="addtri_39619"
+   sequence="10"
+   variable="mp_th_pre_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="kill"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+)$"
+   name="kill_dosth1"
+   regexp="y"
+   script="addtri_39131"
+   sequence="10"
+   variable="kill_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="boat"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(.+Ëµ¡°µ½À²£¬ÉÏ°¶°É¡±£¬Ëæ¼´°ÑÒ»¿éÌ¤½Å°å´îÉÏµÌ°¶¡£\w*|Á·ÄÚ¹¦ÒªÓÐ¼äÏ¶£¬Ì«ÀÍÀÛ»á×ß»ðÈëÄ§µÄ¡£\w*|ÄãµÄÄÚÁ¦²»¹»£¬ÎÞ·¨Ê©Õ¹Ò»Î­¶É½­¾ø¼¼£¡\w*|Äã¸Õ¸ÕÑ¹ÖÆ×¡ÉíÉÏÉËÊÆ£¬»¹ÊÇ²»ÒªÍý¶¯ÕæÆø¡£\w*|ÄãÃÍÎü¼¸¿Ú´óÆø£¬Õ¾ÁËÆðÀ´¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª dazuo=over µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª lian=over µÄ±äÁ¿Éè¶¨¡£\w*|ËÉ»¨½­»¯¶³ÁË£¬Äãº°\(yell\)Ìõ´¬¹ý½­°É¡£\w*|´¬·ò°â½°»®´¬£¬ÔÚºþÖÐÐÐÁËÊýÀï£¬»º»ºÍ£²´ÔÚ°¶±ß£¬½«Ò»¿éÌ¤½Å°å´îÉÏÁËµÌ°¶¡£\w*|½ÓÖøÄãÒ»Ô¾¶øÆð£¬½Å¼âÔÚÎ­Ö¦ÉÏÒ»µã£¬Á½ÐäÆ®Æ®£¬¼ýÒ»°ãµØÔÚË®ÃæÉÏ´©ÁË¹ýÈ¥¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª boat=enter µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª boat=out µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkmove=yes µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkyell=yes µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkyunbusy=yes µÄ±äÁ¿Éè¶¨¡£\w*|Äã¹Ä×ãÖÐÆø£¬³¤Ð¥Ò»Éù£º¡°´¬¼Ò£¡¡±\w*|Äã¼û½­Ãæ½á¶³£¬±ã×³Æðµ¨×Ó²È±ù¶ø¹ý¡£\w*|ÄãÊ¹³ö³ÔÄÌµÄÁ¦Æøº°ÁËÒ»Éù£º¡°´¬¼Ò¡±\w*|ÄãÎüÁË¿ÚÆø£¬Ò»Éù¡°´¬¼Ò¡±£¬ÉùÒôÖÐÕýÆ½ºÍµØÔ¶Ô¶´«ÁË³öÈ¥¡£\w*|Ò»Ò¶±âÖÛ»º»ºµØÊ»ÁË¹ýÀ´\w*|ÄãµÄ¶¯×÷»¹Ã»ÓÐÍê³É£¬²»ÄÜÒÆ¶¯¡£\w*)"
+   name="boat_dosth1"
+   regexp="y"
+   script="addtri_38914"
+   sequence="10"
+   variable="boat_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_start"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(\S+) - "
+   name="gps_start_dosth3"
+   regexp="y"
+   script="addtri_38940"
+   sequence="10"
+   variable="gps_start_dosth3"
+  >
+  </trigger>
+  <trigger
+   group="gps_watch"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(\S+)\s+-\s+"
+   name="gps_watch_dosth2"
+   regexp="y"
+   script="addtri_38960"
+   sequence="10"
+   variable="gps_watch_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="gps_thd_go"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(\s+ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÊÇ\s+(\w+)\s+ºÍ\s+(\w+)¡£\w*|(Ò»ÌõÓæ´¬Ó¦ÉùÂýÂýÊ»ÁË¹ýÀ´£¬Óæ·ò½«Ò»¿éÌ¤½Å°å´îÔÚÉ³Ì²ÉÏ¡£|±ð½ÐÁË£¬ÕâÃ´´óÑÛ¾¦Ã»¿´¼û´¬£¿)\w*|´¬·òËµ£º¡°ÌÒ»¨µºµ½À²£¬ÉÏ°¶°É¡±¡£\w*|Äã´óºÈÒ»Éù¡°¿ª´¬¡±£¬ÓÚÊÇ´¬±ãÀëÁË°¶¡£\w*|Äã¼«Ä¿Ô¶Ì÷£¬·¢ÏÖ(.+)·½ÏòÓÐÒ»¹É¼Ð×ÅÆË±Ç»¨ÏãµÄº£·ç´µÀ´¡£\w*|ÄãÏÖÔÚÔÚÖÛÉ½¡£\w*|ÄãÏÖÔÚÔÚÖÛÉ½¶«Ô¼(.+)º£Á¨±±Ô¼(.+)º£Á¨¡£\w*|ÄãÏÖÔÚÔÚÖÛÉ½¶«Ô¼(.+)º£Á¨ÄÏÔ¼(.+)º£Á¨¡£\w*|ÄãÏÖÔÚÔÚÖÛÉ½Õý¶«Ô¼(.+)º£Á¨¡£\w*|Çî¹âµ°£¬Ò»±ß´ô×ÅÈ¥£¡\w*)"
+   name="gps_thd_go_dosth1"
+   regexp="y"
+   script="addtri_39043"
+   sequence="10"
+   variable="gps_thd_go_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_thd_back"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(\s+ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÊÇ\s+(\w+)\s+ºÍ\s+(\w+)¡£\w*|(Ò»ÌõÓæ´¬Ó¦ÉùÂýÂýÊ»ÁË¹ýÀ´£¬Óæ·ò½«Ò»¿éÌ¤½Å°å´îÔÚÉ³Ì²ÉÏ¡£|±ð½ÐÁË£¬ÕâÃ´´óÑÛ¾¦Ã»¿´¼û´¬£¿)\w*|´¬·òËµ£º¡°ÖÛÉ½µ½À²£¬ÉÏ°¶°É¡±¡£\w*|Äã´óºÈÒ»Éù¡°¿ª´¬¡±£¬ÓÚÊÇ´¬±ãÀëÁË°¶¡£\w*|ÄãÏÖÔÚÔÚÖÛÉ½¡£\w*|ÄãÏÖÔÚÔÚÖÛÉ½¶«Ô¼(.+)º£Á¨±±Ô¼(.+)º£Á¨¡£\w*|ÄãÏÖÔÚÔÚÖÛÉ½¶«Ô¼(.+)º£Á¨ÄÏÔ¼(.+)º£Á¨¡£\w*|ÄãÏÖÔÚÔÚÖÛÉ½Õý(.+)Ô¼.+º£Á¨¡£\w*)"
+   name="gps_thd_back_dosth1"
+   regexp="y"
+   script="addtri_39040"
+   sequence="10"
+   variable="gps_thd_back_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_xxmap"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(\s+ÕâÀïÎ¨Ò»µÄ³ö¿ÚÊÇ (.+)¡£\w*|\s+ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÊÇ northup¡¢(\w+) ºÍ (.+)¡£\w*|\s+ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÊÇ (\w+)¡¢northup ºÍ (.+)¡£\w*|\s+ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÊÇ (\w+)¡¢(\w+) ºÍ\s+northup¡£\w*|\s+ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÊÇ (\w+) ºÍ (\w+)¡£\w*)"
+   name="gps_xxmap_dosth1"
+   regexp="y"
+   script="addtri_39072"
+   sequence="10"
+   variable="gps_xxmap_dosth1"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="fj_watch"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(°¦£¡Äãµ¢ÎóµÄÊ±¼äÌ«¾ÃÁË£¬Õâ´ÎÈÎÎñÈ¡ÏûÁË¡£\w*|Ò»¸ö.+µÜ×Ó×ßÁË¹ýÀ´,¶ÔÄã±¨È­µÀ£º¡°ÔÚÏÂ·î(.+)Ö®Ãü£¬ÇëÄãËÙ»Ø.+´¦½ú¼û¡±¡£\w*|(.+)ÒÑÅÉÄãÈ¥(.+)¸½½üÍê³ÉÖØÒªÈÎÎñ£¬¸Ï¿ìÈ¥Ö´ÐÐ°É¡£\w*|ÈÎÎñÒÑ¾­Íê³É£¬¸Ï¿ì»ØÈ¥¸´Ãü°É¡£\w*|(.+)¶ÔÄãËµµÀ£ºÄ¿Ç°ÎÒ.+µÄ¹±Ï×¶ÈÎª(.+)µã¡£\w*|(.+)¶ÔÄãËµµÀ£ºÄãÎª.+Ëù×öµÄ¹±Ï×Îª(.+)µã¡£ÄãÒª¼ÌÐøÅ¬Á¦£¬ÕùÈ¡ÔÚÏÂ´Î.+´ó»áÉÏµÃµ½×î¼ÑÆÀ¶¨¡£\w*|(.+)ÒÑ´«ÁîÒªÕÙ¼ûÄã£¬Äã»¹ÊÇ¿ìµãÈ¥°É¡£\w*|(.+)ËµµÀ:¡°ÐÁ¿àÄãÁË£¬(.+)£¬ÄãÎª.+Á¢ÏÂÁËÒ»¹¦¡£¡±\w*|ÄãµÄ¾­ÑéÉÏÉýÁË(\d+)µã¡£\w*|(.+)ËµµÀ:¡°¸ÉµÃºÃ£¬(.+)£¬ÀÏÏÉÎÒÔ½À´Ô½ÐÀÉÍÄãÁË¡£¡±\w*)"
+   name="fj_watch_dosth1"
+   regexp="y"
+   script="addtri_39270"
+   sequence="10"
+   variable="fj_watch_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_watch"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(±ðÄÇÃ´×ÔË½£¡Äã²»ÄÜ´ø×ß³¬¹ýÒ»°Ñ±øÆ÷¡£\w*|²Ý¿ÜÏòÄãÒ»ÕóÒõÐ¦£ºË¬¿ìµÄ½«±¦±´½»³öÀ´£¬²»È»½ÐÄãºó»ÚÄª¼°£¡\w*|.+´ËµØ²»ÊÊºÏÊ©Õ¹Ò»Î­¶É½­¾ø¼¼£¡\w*|ÀÏÊ¦¸µÀ¹×ÅÄãËµ£ºÄãÏë°ÑÊ³ÎïÄÃÈ¥ÄÄÀï£¿¶«Î÷·ÅÏÂÔÙ×ß¡£\w*|ÂíÔôÐ×°Í°ÍµØ½ÐµÀ£º·Å´ÏÃ÷µã£¬¿ì½«±¦±´½»³öÀ´£¡ \w*|Ã÷½ÌµÜ×ÓÖ¸ÁËÖ¸ÄãÄÃ×ÅµÄÊ³Îï£¬ËµµÀ£º¸ù¾Ý½Ì¹æ£¬Ã÷½ÌµÜ×Ó²»µÃ½«Ê³Îï´ø³ö´óÊ³µî¡£\w*|ÄÏÃæÄË¶ëáÒÅ®ÏÀÐÝÏ¢Ö®Ëù£¬ÕâÎ»\S+»¹ÇëÁô²½¡£\w*|ÄãµÄ¶¯×÷»¹Ã»ÓÐÍê³É£¬²»ÄÜÒÆ¶¯¡£\w*|Äã¸ÕÒª½øÈëÃØ¶´£¬Ò»¹É¾Þ´óµÄÁ¦Á¿½«Äãµ²ÔÚÁË¶´¿Ú£¡\w*|Äã»¹Ã»½«¡¶ÎäÑ§´óÈ«¡·¹é»¹\(return\)£¬¾ÍÏëÁï£¿\w*|Äã»¹ÊÇÏÈÕ¾ÆðÀ´ÔÙ×ß°É£¡\w*|Äã½ÅÏÂÒ»»¬£¬²ÈÁË¸ö¿Õ£¡\w*|ÄãÒ»²»Ð¡ÐÄ½ÅÏÂÌ¤ÁË¸ö¿Õ£¬\.\.\. °¡\.\.\.£¡\w*|É½Ôô´óºðµÀ£º¸Ï¿ì½«±¦±´½»³öÀ´£¬²»È»Äã¾Í±ðÖ¸Íû»î×ÅÀë¿ª£¡\w*|ÉÙÁÖµÜ×ÓÆñ¿ÉÌ°ÉúÅÂËÀ£¬ÒÔ×¹±¾ÅÉÉùÃû£¡\w*|Ê¯¼¶ÅÔ±ßµÄ²Ý´ÔÖÐºöÈ»Ô¾ÆðÒ»¸öÉíÓ°£¬µ²×¡ÁËÄã£¡\w*|ÐÇËÞÅÉµÜ×Ó¶ñºÝºÝµØÍþÐ²µÀ£º¿ì½«±¦±´½»³öÀ´£¬·ñÔòÈ¡Äã¹·Ãü£¡\w*|Ô¬×ÏÒÂËµµÀ£º±¾¹ÃÄïÔÚÕâÀïÐÝÏ¢£¬±ðÀ´´ò½Á£¡\w*|Õâ¸ö·½ÏòÃ»ÓÐ³öÂ·¡£\w*|ô¹¹«»Øµ½²ÖÀï£¬·¢ÏÖÄã»¹ÔÚ£¬ß×ÁËÒ»Éù, Ëµ£º¡°Äã»¹Ã»ÓÐÉÏ°¶°¡, ÎÒËÍÄãµ½°¶±ß¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª gps=false µÄ±äÁ¿Éè¶¨¡£\w*|\.*ËÄÏÂ¾°¿öËÆºõºÍÑ°³£Ëù¼ûÂÔÓÐ²»Í¬£¬Í¸³öÉ­É­¹íÆø¡£\w*|\.*Ò»ÕóÎ¢·ç´µ¹ý£¬ËÄÃæ¾°ÖÂËÆºõÆðÁËÐ©±ä»¯¡£\w*)"
+   name="gps_watch_dosth11"
+   regexp="y"
+   script="addtri_38957"
+   sequence="10"
+   variable="gps_watch_dosth11"
+  >
+  </trigger>
+  <trigger
+   group="liaoshang"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(³ÁË¼ÁËÒ»»áËµµÀ£º¸óÏÂËùÖÐµÄ.+ÒÑ²¢ÎÞÒìÑù....\w*|³ÁË¼ÁËÒ»»áËµµÀ£º¸óÏÂËùÖÐµÄ.+ÒÑ²¢ÎÞÒìÑù£¬ÊµÔÚÎÞ´ÓÖÎÆð¡£\w*|³ÁË¼ÁËÒ»»áËµµÀ£º¸óÏÂËùÖÐµÄ.+ÒÑÉîÈëÐÄÂö£¬ÇëÈÝÔÚÏÂÎªÄúÒ½ÖÎ¡£\w*|ËµµÀ£ºÏÈ¿´¿´ÄãµÄÂöÏó°É¡£\w*|ÔÚÄãµÄ¶ú±ßÇÄÉùËµµÀ£ºÄãÃ»ÓÐÖÐ¶¾£¡\w*|ÔÚÄãµÄ¶ú±ßÇÄÉùËµµÀ£ºÈ¥Îä¹ÝË¯·¿°É£¡\w*|ÔÚÄãµÄ¶ú±ßÇÄÉùËµµÀ£ºÐ¡Ñù£¡ÎÒ²»ÊÇÕâÃ´Ëæ±ãµÄÈË¡«¡«\w*|ÂýÂýµØÒ»ÕóÑ£ÔÎ¸Ð´«À´£¬ÄãÖÕÓÚÓÖÓÐÁËÖª¾õ....\w*|Äã´ÓÌÆéªÄÇÀïÂòÏÂÁËÒ»¿ÃÊ×ÎÚ¾«¡£\w*|Äã´ÓºÎºìÒ©ÄÇÀïÂòÏÂÁËÒ»¿ÃÊ×ÎÚ¾«¡£\w*|Äã¿ÚÄîÖäÓï¡ºÉñÂí¶¼ÊÇ¸¡ÔÆ,ÏºÃ×¶¼ÊÇ³¾ÍÁ¡»£¬¡ºµ±ÆÌ¡»Á¢Âíµ½´ï£¡\w*|Äã¿ÚÄîÖäÓï¡ºÉñÂí¶¼ÊÇ¸¡ÔÆ,ÏºÃ×¶¼ÊÇ³¾ÍÁ¡»£¬¡ºÎä¹ÝÐÝÏ¢ÊÒ¡»Á¢Âíµ½´ï£¡\w*|Äã¿ÚÄîÖäÓï¡ºÉñÂí¶¼ÊÇ¸¡ÔÆ,ÏºÃ×¶¼ÊÇ³¾ÍÁ¡»£¬¡ºÎäÃí¡»Á¢Âíµ½´ï£¡\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡ººÎºìÒ©¡»\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª busyover=liaoshang µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª dealwithitems=over µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÉí²»ÓÉ¼¸µÄÎ¢Î¢Ò»Ìø£¬Ö»¾õµÄÒ»¹ÉÈÈÆø´Ó¶¥ÃÅÖ±Í¸ÏÂÀ´¡£\w*|ÄãÍ»È»¾õµÃÒ»¹ÉÅ¯Á÷×Ô¶¥¶øÈë£¬¿ÚÖÐÍÂ³ö¼¸¿ÚºÚÑª£¬ÑÛÇ°Ò»ºÚ¾ÍÊ²Ã´Ò²¿´²»¼ûÁË£¡\w*|ÄãÏëÂòµÄ¶«Î÷ÎÒÕâÀïÃ»ÓÐ¡£\w*|ÄãÒ»¾õÐÑÀ´£¬Ö»¾õ¾«Á¦³äÅæ¡£¸Ã»î¶¯Ò»ÏÂÁË¡£\w*|Çî¹âµ°£¬Ò»±ß´ô×ÅÈ¥£¡\w*|Ëµ×Å±ãÌáÆðÄãµÄÊÖ°ÑÁËÒ»»áÂö¡£\w*|ÕâÀïÃ»ÓÐ  Õâ¸öÈË¡£\w*)"
+   name="liaoshang_dosth1"
+   regexp="y"
+   script="addtri_38905"
+   sequence="10"
+   variable="liaoshang_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_lsd_go"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(´¬·òËµ£º¡°ÁéÉßµºµ½À²£¬ÉÏ°¶°É¡±¡£\w*|´¬·òËµ£ºÌ¾£¡Æ¯µ½ÁËÒ»»Äµº£¬»¹ÊÇ¸Ï½ôÀë¿ª°É¡£\w*|´¬ÕýÍù.+·½ÏòÇ°½ø¡£\w*|Äã¼«Ä¿Ô¶Ì÷£¬·¢ÏÖ(.+)·½ÏòÊýÀïÍâÊÇ¸öÊ÷Ä¾´Ð´äµÄº£µº£¬µºÉÏÆæ·åÍ¦°Î£¬ËÊÁ¢×ÅºÃ¼¸×ù¸ßÉ½¡£\w*|ÄãÏÖÔÚÔÚÌÁ¹Á¿Ú¡£\w*|ÄãÏÖÔÚÔÚÌÁ¹Á¿Ú¶«Ô¼(.+)º£Á¨ÄÏÔ¼(.+)º£Á¨\w*|ÄãÏÖÔÚÔÚÌÁ¹Á¿ÚÕýÄÏÔ¼(.+)º£Á¨¡£\w*)"
+   name="gps_lsd_go_dosth1"
+   regexp="y"
+   script="addtri_38995"
+   sequence="10"
+   variable="gps_lsd_go_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_lsd_back"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(´¬·òËµ£º¡°ÌÁ¹Á¿Úµ½À²£¬ÉÏ°¶°É¡±¡£\w*|´¬·òËµ£ºÌ¾£¡Æ¯µ½ÁËÒ»»Äµº£¬»¹ÊÇ¸Ï½ôÀë¿ª°É¡£\w*|´¬ÕýÍù.+·½ÏòÇ°½ø¡£\w*|ÄãÏÖÔÚÔÚÌÁ¹Á¿Ú.+Ô¼.+º£Á¨.+Ô¼.+º£Á¨¡£\w*|ÄãÏÖÔÚÔÚÌÁ¹Á¿Ú¡£\w*|ÄãÏÖÔÚÔÚÌÁ¹Á¿ÚÕýÄÏÔ¼.+º£Á¨¡£\w*|ÄãÏÖÔÚÔÚÌÁ¹Á¿ÚÕý±±Ô¼.+º£Á¨¡£\w*)"
+   name="gps_lsd_back_dosth1"
+   regexp="y"
+   script="addtri_38992"
+   sequence="10"
+   variable="gps_lsd_back_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_watch"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(´ËÊéÄËÎáÁôÓèºó´ú¶ëáÒ´Ï»ÛµÜ×Ó£¬\n»¹ÍüÊ¦Ì«ÄÜ°ÑÊéÁôÔÚ´Ë´¦ÒÔ±ãËûÈËÔÄ¶Á²ÎÎò¡£\Z\w*|ºÃÏóÓÐÒ»Ö»òùòðÍ£ÔÚÄãÉíºóµÄÑÒÊ¯ÉÏ¡£\nÄãÏñÃ»Í·²ÔÓ¬Ò»ÑùÔÚ¶´ÀïÏ¹×ê£¬½á¹ûÒ»Í·×²ÔÚ¶´±ÚÉÏ¡£\Z\w*|ÄãÏñÃ»Í·²ÔÓ¬Ò»ÑùÔÚ¶´ÀïÏ¹×ê£¬½á¹ûÒ»Í·×²ÔÚ¶´±ÚÉÏ¡£\nÄã¾õµÃÄãÔÎºõºõµÄ£¬ËÆºõ×²ÉµÁË¡£\Z\w*|Ö»ÌýÀïÃæÓÐÈËËµÁËÉù£º¸óÏÂ¹âÁÙ±Ö°ïÓÐºÎ¹ó¸É£¿\nÊ²Ã´£¿\Z\w*|Äã±»²Ý¿Üµ²×¡ÁËÈ¥Â·¡£\n²Ý¿ÜºÈµÀ£ºÏëÁï£¿Ã»ÃÅ£¡\Z\w*|Äã±»µ²×¡ÁËÈ¥Â·¡£\nÃ«ÔôºÈµÀ£ºÏëÁï£¿Ã»ÃÅ£¡\Z\w*)"
+   multi_line="y"
+   name="gps_watch_dosth1"
+   regexp="y"
+   script="addtri_38952"
+   sequence="10"
+   variable="gps_watch_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_sl_gate"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(´óÃÅÌìÁÁÇ°²»¿ª£¬ÔõÃ´ÇÃÒ²Ã»ÓÃ¡£\w*|´óÃÅÒÑ¾­ÊÇ¿ª×ÅÁË¡£\w*|ÄãÇáÇáµØÇÃÁËÇÃÃÅ£¬Ö»ÌýÖ¨µØÒ»Éù£¬Ò»Î»×³ÄêÉ®ÈËÓ¦Éù´ò¿ª´óÃÅ\w*|Ö¨µØÒ»Éù£¬ÀïÃæÓÐÈË°Ñ´óÃÅ´ò¿ªÁË\w*)"
+   name="gps_sl_gate_dosth1"
+   regexp="y"
+   script="addtri_39028"
+   sequence="10"
+   variable="gps_sl_gate_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="skills_lingwu"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(¶Ô·½ÕýÃ¦×ÅÄØ£¬ÄãµÈ»á¶ùÔÚÎÊ»°°É¡£\n(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÓÖÃ»ÓÐÎäÑ§¾«Òª£¬×øÏÂÀ´Õ¼Î»ÖÃ°¡£¡£¿\Z\w*|ÕâÀïÃ»ÓÐ wenying Õâ¸öÈË¡£\n(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÓÖÃ»ÓÐÎäÑ§¾«Òª£¬×øÏÂÀ´Õ¼Î»ÖÃ°¡£¡£¿\Z\w*|ÄãÏòÎÄÓ±´òÌýÓÐ¹Ø¡¸ÎäÑ§¾«Òª¡¹µÄÏûÏ¢¡£\nÎÄÓ±ËµµÀ£º°¡£¡ÄãÀ´ÍíÁË£¬ËÄ±¾¡¶ÎäÑ§¾«Òª¡·¶¼±»½è×ßÁË¡£\Z\w*|Äã¸½½üÃ»ÓÐÕâÑù¶«Î÷¡£\n(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÓÖÃ»ÓÐÎäÑ§¾«Òª£¬×øÏÂÀ´Õ¼Î»ÖÃ°¡£¡£¿\Z\w*|´ËÊéÄËÎáÁôÓèºó´ú¶ëáÒ´Ï»ÛµÜ×Ó£¬\n»¹Íü.+ÄÜ°ÑÊéÁôÔÚ´Ë´¦ÒÔ±ãËûÈËÔÄ¶Á²ÎÎò¡£\Z\w*|¶ÎÕý´¾¶Ô×ÅÄãµãÁËµãÍ·¡£\n¶ÎÕý´¾ËµµÀ£ººÃ°É£¬Äã¾ÍÄÃ´Ë½ðÅÆÌæëÞµ÷ÔÄ±ø½«°É¡£\Z\w*|¶ÎÕý´¾¶Ô×ÅÄãÒ¡ÁËÒ¡Í·¡£\n¶ÎÕý´¾ËµµÀ£º²»ÀÍ.+·ÑÐÄ£¬ëÞÒÑÅÉÈËÈ¥µ÷ÔÄÁË¡£\Z\w*)"
+   multi_line="y"
+   name="skills_lingwu_m_triggerlist"
+   regexp="y"
+   script="addtri_39190"
+   sequence="10"
+   variable="skills_lingwu_m_triggerlist"
+  >
+  </trigger>
+  <trigger
+   group="dealwith_staff"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(¸èÅ®µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|Äã´Ó¸èÅ®µÄÊ¬ÌåÉíÉÏËÑ³öÒ»ÕÅ.+ÇÙ¡£\w*|Äã´ÓÐ¡··ÄÇÀïÂòÏÂÁËÒ»¸ù±âµ£¡£\w*|ÄãµÍÏÂÍ·À´£¬¼ûÅ·Ñô¿Ë½¿ÐßÖ®Ì¬£¬½¿ÃÀ²»¿É·½Îï£¬ÐÄÖÐÒ»µ´£¬±ã´Õ¹ýÈ¥ÔÚËûÁ³¼ÕÉÏÎÇÁËÒ»ÏÂ¡£\w*|Äã¸½½üÃ»ÓÐÕâÑù¶«Î÷¡£\w*|ÄãÏò¸èÅ®´òÌýÓÐ¹Ø¡¸À´Ê×Ê®°ËÃþ°É£¡¡¹µÄÏûÏ¢¡£\w*|ÄãÒª¶ÔË­×ö kiss4 Õâ¸ö¶¯×÷£¿\w*|ÄãÕÒ²»µ½ corpse ÕâÑù¶«Î÷¡£\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬1383¾ÍÊÇÕâÀï£¡\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬280¾ÍÊÇÕâÀï£¡\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬926¾ÍÊÇÕâÀï£¡\w*|ÕâÀïÃ»ÓÐ nu Õâ¸öÈË¡£\w*)"
+   name="dealwith_staff_dosth1"
+   regexp="y"
+   script="addtri_38861"
+   sequence="10"
+   variable="dealwith_staff_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_99guai"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ºöÈ»Ò»ÕóÐÈ·çÏ®À´£¬Ò»Ìõ¾Þòþ´ÓÉíÅÔ´óÊ÷ÉÏÐüÏÂ£¬°ÑÄã¾í×ßÁË¡£\w*|¾ÞòþÈ«ÉíÅ¤Çú£¬·­ÌÚ»ÓÎè£¬ÖÕì¶½©Ö±¶øËÀÁË¡£\w*)"
+   name="gps_99guai_dosth1"
+   regexp="y"
+   script="addtri_38968"
+   sequence="10"
+   variable="gps_99guai_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="boat_yell"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ºþÃæÉÏµÄ´¬¼ÒÀ´À´ÍùÍù£¬Ò»ÎÞ·´Ó¦¡­¡­\w*|¿ÉÊÇÕâÊ±ºîÒ¹É«ÒÑÉî£¬ºþÃæÉÏµÄ´¬¼Ò´ó¶¼ÐªÏ¢ÁË£¬ìóÓÐÎ÷±ßµÄºþ°¶»¹ÓÐ±âÖÛÍù·µ¡£\w*|Ö»ÌýµÃ(.+)ÃæÉÏÒþÒþ´«À´£º¡°±ð¼±Âï£¬Õâ¶ùÕýÃ¦×ÅÄÅ¡­¡­¡±\w*|°¶±ßÒ»Ö»¶É´¬ÉÏµÄ(ÀÏô¹¹«|´¬·ò)ËµµÀ£ºÕýµÈ×ÅÄãÄØ£¬ÉÏÀ´°É¡£\w*|(Ò»ÌõÓæ´¬Ó¦ÉùÂýÂý|Ò»Ò¶±âÖÛ»º»ºµØ)Ê»ÁË¹ýÀ´\w*)"
+   name="boat_yell_dosth1"
+   regexp="y"
+   script="addtri_38917"
+   sequence="10"
+   variable="boat_yell_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="quit"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(»¶Ó­ÏÂ´ÎÔÙÀ´£¡\w*|¿ªÊ¼ÍË³öÓÎÏ·£¬½øÐÐÖÐ¡­¡­\w*)"
+   name="quit_dosth1"
+   regexp="y"
+   script="addtri_38894"
+   sequence="10"
+   variable="quit_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_thd_ms"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(½ñÓÐÎï²»ÖªÆäÊý£¬ÈýÈýÊýÖ®Ê£(.+)£¬ÎåÎåÊýÖ®Ê£(.+)£¬ÆßÆßÊýÖ®Ê£(.+)£¬ÎÊÎï¼¸ºÎ£¿\w*|Ö»ÌýµÃ¡°Â¡Â¡¡±¼¸Éù´óÏì£¬Ê¯ÃÅ»º»ºÏòÒ»²à»®¿ª\w*|ð®µÀ¶¥²¿ºöÈ»Æ®ÂäÒ»Êø±¡¾íÖá£¬\w*)"
+   name="gps_thd_ms_dosth1"
+   regexp="y"
+   script="addtri_39046"
+   sequence="10"
+   variable="gps_thd_ms_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_em_killjm"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(¾ÞòþÈ«ÉíÅ¤Çú£¬·­ÌÚ»ÓÎè£¬ÖÕì¶½©Ö±¶øËÀÁË¡£\w*)"
+   name="gps_em_killjm_dosth1"
+   regexp="y"
+   script="addtri_38986"
+   sequence="10"
+   variable="gps_em_killjm_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="quitdis"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(¿ªÊ¼ÍË³öÓÎÏ·£¬½øÐÐÖÐ¡­¡­\w*)"
+   name="quitdis_dosth1"
+   regexp="y"
+   script="addtri_38899"
+   sequence="10"
+   variable="quitdis_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_gb_gold_ti"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(¿´À´»¹ÊÇ×ß°É£¬Õâ¼Ò»ïÉíÉÏÒÑ¾­Ã»ÓÐ¶àÉÙÓÍË®¿ÉÕ¥ÁË¡£\w*|Äã(ÏëÆòÌÖµÄ¶ÔÏó²»ÔÚÕâÀï|ÒªÏòË­ÆòÌÖ)\w*|Äã¶ªÏÂÒ»(¿Å|¿é)(.+)¡£\w*|Ì«¿ÉÏ§ÁË£¬ÄãÒªÆòÌÖµÄÈËÒÑ¾­×ßÁË\w*)"
+   name="mp_gb_gold_ti_dosth1"
+   regexp="y"
+   script="addtri_39328"
+   sequence="10"
+   variable="mp_gb_gold_ti_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="skills_lian"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Á·.+±Ø.+¿ÕÊÖ\w*|Äã²»ÄÜÍ¨¹ýÁ·Ï°ÕÐ¼ÜÀ´Ìá¸ßÕâÏî¼¼ÄÜ\w*|ÄãµÄ.+ÒÑ¾­Á·Ï°µ½¶¥·åÁË£¬±ØÐëÏÈ´òºÃ»ù´¡²ÅÄÜ¼ÌÐøÌá¸ß\w*|ÄãµÄÄÚÁ¦²»¹»Á·\w*|ÄãµÄÄÚÁ¦Ì«µÍÁË¡£\w*|ÄãÊ¹ÓÃµÄÎäÆ÷²»¶Ô¡£\w*|ÄãÌåÄÚµÄÕæÆø²»¹»¡£\w*|ÄãÐÞÏ°Íê±Ï£¬ÉîÉîÎüÁËÒ»¿ÚÆø£¬±ÕÄ¿¶ø(Á¢|×ø)¡£\w*|ÄãÖ»ÄÜÁ·Ï°ÓÃ enable Ö¸¶¨µÄÌØÊâ¼¼ÄÜ\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª lian µÄ±äÁ¿Éè¶¨¡£\w*|½ð»¨ÕÈ·¨Ö»ÄÜÔÚÊµÕ½ÖÐÌá¸ß\w*|ÄãµÄ»ù±¾¹¦»ðºòÎ´µ½£¬±ØÐëÏÈ´òºÃ»ù´¡²ÅÄÜ¼ÌÐøÌá¸ß¡£\w*|ÄãÒ»»ÓÊÖÖÐµÄ.+£¬¿ªÊ¼Á·Ï°.+¡£\w*|ÄãÊÖÖÐ.+£¬¼¸ÕÐºó½Ó×ÅÒ»ÕÐ¡¸.+¡¹Ê¹³ö£¬ÈçÍ¬ÐÐÔÆÁ÷Ë®¡£\w*|Äã·´¸´Á·Ï°×Å.+ÖÐµÄ¡¸.+¡¹£¬µ«È´×ÜÊÇ²»µÃÒªÁì¡£\w*|ÄãÎè×ÅÊÖÖÐµÄ.+, ÈçÐÐÔÆÁ÷Ë®°ãµØÑÝÁ·Öø.+ÖÐ¼¸¸öÕÐÊ½£¬ÍêÈ«²»¼ûÖÍµ¡¡£\w*|Äã½«.+Ò»ÕÐÒ»Ê½µÄÑÝÁ·ÏÂÀ´£¬ËäÈ»²»¼ûÐÂÒâ£¬µ«¶ÔÕÐÊýµÄ»ù±¾Ó¦ÓÃÉÏÓÖÓÐËùÎò¡£\w*|ÄãË³Öø.+ÆøÏ¢ÔËÐÐÂ·Ïß£¬½«ÌåÄÚÕæÆø»º»º°áÔËÁËÒ»¸ö´óÖÜÌì¡£\w*|Äã°µ×ÔÆøÔËµ¤Ìï£¬¾Û¾«»áÉñµØÐÞÁ·×Å.+¡£\w*|Äã±ØÐëÏÈÕÒÒ»Ìõ±Þ×Ó²ÅÄÜÁ·.+±Þ·¨¡£\w*|¸òó¡´Ó²»ÊÖ³Ö±øÈÐ£¬ËùÒÔÁ·.+Ò²±ØÐë¿ÕÊÖ¡£\w*|º®±ùÃàÕÆ±ØÐëÍ¨¹ýÌØÊâµÄ·¨ÃÅ²ÅÄÜÐÞÁ¶¡£\w*)"
+   name="skills_lian_dosth1"
+   regexp="y"
+   script="addtri_39198"
+   sequence="10"
+   variable="skills_lian_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_sgy_sd"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Á¼¾Ã£¬ÄãÍ»È»ÓÐÒ»¹ÉÆÆ±Ú\(strike\)µÄ³å¶¯¡£\w*|Ö»ÌýµÃÉíºóÊ¯Í·Ï¡Àï»©À­Ì®ËúÏÂÀ´£¬·â×¡ÁËÈë¿Ú¡£\w*)"
+   name="gps_sgy_sd_dosth1"
+   regexp="y"
+   script="addtri_39022"
+   sequence="10"
+   variable="gps_sgy_sd_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_yz_lts"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÁèÍËË¼µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|ÁèÍËË¼½ÅÏÂÒ»¸ö²»ÎÈ£¬µøÔÚµØÉÏ»èÁË¹ýÈ¥¡£\w*|Áèº²ÁÖµ²×¡ÁËÄã£ºÇëÎðÈëÄÚÕ¬¡£\w*|Õâ²»ÊÇ»îÎï£¡\w*)"
+   name="gps_yz_lts_dosth1"
+   regexp="y"
+   script="addtri_39087"
+   sequence="10"
+   variable="gps_yz_lts_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_slh"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Ä¾·¤ÓÖ±»³åµ½ºÓÖÐÑëÈ¥ÁË¡£\w*|Äã²ÙÉÏÊÖÖÐµÄ¼Ò»ï£¬´ÓÊ÷ÉÏ¿³ÏÂÒ»Ð©Ê÷Ö¦¡£\w*|Äã»®ÁË°ëÌì£¬Ä¾·¤ÖÕì¶¿¿°¶ÁË¡£\w*|Äã¿³ÏÂµÄÊ÷Ö¦ËÆºõ×ã¹»×ö\(make\)Ò»¸öÄ¾·¤\(raft\)ÁË¡£\w*|ÄãÓÃ¿³ÏÂµÄÊ÷Ö¦×öÁËÒ»¸öÄ¾·¤¡£\w*|ÊèÀÕºÓÎ÷°¶\s+-\w*)"
+   name="gps_slh_dosth1"
+   regexp="y"
+   script="addtri_39034"
+   sequence="10"
+   variable="gps_slh_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_climbxy"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄÇ¸ö·½ÏòÃ»·¨ÅÀ¡£\w*|ÄãÅÀÁËÉÏÀ´¡£\w*|ÄãÅÀÁËÏÂÀ´¡£\w*)"
+   name="gps_climbxy_dosth1"
+   regexp="y"
+   script="addtri_38974"
+   sequence="10"
+   variable="gps_climbxy_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="dealwith_dao"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Äã°ÑÕýÔÚÔËÐÐµÄÕæÆøÇ¿ÐÐÑ¹»Øµ¤Ìï£¬Õ¾ÁËÆðÀ´¡£\w*|Äã´Ó³ÎÐÐµÄÊ¬ÌåÉíÉÏËÑ³öÒ»°Ñ½äµ¶¡£\w*|Äã´ÓµÀÆ·ìøÊ¦µÄÊ¬ÌåÉíÉÏËÑ³öÒ»°Ñ½äµ¶¡£\w*|Äã´Ó»ÛÈç×ðÕßµÄÊ¬ÌåÉíÉÏËÑ³öÒ»°Ñ½äµ¶¡£\w*|Äã¶Ô×ÅµÀÆ·ìøÊ¦¡¸ºÙºÙºÙ¡¹¼éÐ¦ÁË¼¸Éù¡£\w*|Äã¼ñÆðÒ»°Ñ½äµ¶¡£\w*|ÄãËµ£º¡°³ÎÐÐÃÀÃ¼ºÃÑ½£¡¡±\w*|ÕâÀïÃ»ÓÐÕâ¸öÈË¡£\w*|(³ÎÐÐ|µÀÆ·ìøÊ¦|»ÛÈç×ðÕß)µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|µÀ³¾¸øÄãÒ»¼þ½äµ¶¡£\w*|µÀ³¾ìøÊ¦ËµµÀ£º±§Ç¸£¬ÄãÀ´µÃ²»ÊÇÊ±ºò£¬ÎäÆ÷ÒÑ¾­·¢ÍêÁË¡£\w*|ÄãÒª¶ÔË­×ö hehe Õâ¸ö¶¯×÷£¿\w*|ÄãÒª¶ÔË­×ö ysis Õâ¸ö¶¯×÷£¿\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡º³ÎÐÐ¡»\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡ºµÀ³¾¡»\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡ºµÀÆ·¡»\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡º»ÛÈç¡»\w*|ÕâÀïÃ»ÓÐ chanshi Õâ¸öÈË¡£\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬964¾ÍÊÇÕâÀï£¡\w*|Äã´ÓïÚÍ·µÄÊ¬ÌåÉíÉÏËÑ³öÒ»±ú¸Öµ¶¡£\w*|Äã¼ñÆðÒ»±ú¸Öµ¶¡£\w*|ïÚÍ·µ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*)"
+   name="dealwith_dao_dosth1"
+   regexp="y"
+   script="addtri_38825"
+   sequence="10"
+   variable="dealwith_dao_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="fj_start"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Äã²ì¾õËÄÖÜºÃÏñÓÐÐ©²»¶Ô¾¢\.\.\.\.\.\.\w*|¡°ÊÜËÀ°É£¬(.+)£¡¡±(.+)´óÉùºðµÀ¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkmenpai=yes µÄ±äÁ¿Éè¶¨¡£\w*|(.+)µÜ×Ó (.+)\(.+\)\w*|¸¡ÔÆ¶ä¶äÆ®£¬Æ®µ½ÁË \d+ ¸ö¡º.+¡»ÖÐµÄµÚ \d+ ¸ö¡«¡«\w*|Äã¿ÚÄîÖäÓï¡ºÉñÂí¶¼ÊÇ¸¡ÔÆ,ÏºÃ×¶¼ÊÇ³¾ÍÁ¡»£¬¡º.+¡»Á¢Âíµ½´ï£¡\w*|\s+¡õ(.+)\(.+\)\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª killover=yes µÄ±äÁ¿Éè¶¨¡£\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬(\d+)¾ÍÊÇÕâÀï£¡\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkgxd=yes µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkexpover=fj µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª busyover=flytonext µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkfj=over µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkkillstart=yes µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª busyover=refly µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checklooknpc=yes µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÒª¿´Ê²Ã´£¿\w*|Äã¶ÔÖø(.+)ºÈµÀ£º¡¸.+¡¹\w*)"
+   name="fj_start_dosth1"
+   regexp="y"
+   script="addtri_39240"
+   sequence="10"
+   variable="fj_start_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="dealwith_he"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Äã´Ó(ÑîÓÀ¸£|ÌÆéª)ÄÇÀïÂòÏÂÁËÒ»¸öÊ³ºÐ¡£\w*|Äã´Ó(ÑîÓÀ¸£|ÌÆéª)ÄÇÀïÂòÏÂÁËÒ»Ö§»ðÕÛ¡£\w*|ÄãÏëÂòµÄ¶«Î÷ÎÒÕâÀïÃ»ÓÐ¡£\w*|ÄãÏòÑîÓÀ¸£´òÌýÓÐ¹Ø¡¸Æð´²Ã»°¡£¿¡¹µÄÏûÏ¢¡£\w*|Ó´£¬±§Ç¸°¡£¬ÎÒÕâ¶ùÕýÃ¦×ÅÄØ¡­¡­ÄúÇëÉÔºò¡£\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡ºÌÆéª¡»\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡ºÑîÓÀ¸£¡»\w*|ÕâÀïÃ»ÓÐ Yang yongfu Õâ¸öÈË¡£\w*|ÔÓ»õÆÌÍíÉÏ²»¿ª£¬ÇëÌìÁÁÁËÔÙÀ´£¡\w*)"
+   name="dealwith_he_dosth1"
+   regexp="y"
+   script="addtri_38840"
+   sequence="10"
+   variable="dealwith_he_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="dealwith_jiudai"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Äã´ÓµêÐ¡¶þÄÇÀïÂòÏÂÁËÒ»¸öÅ£Æ¤¾Æ´ü¡£\w*|Äã½«.+¾Æ´ü·ÅÈëÁË´óÄ¾Í°ÖÐÊ¢ÁËÂúÁËË®¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª busyover=fill µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÏòµêÐ¡¶þ´òÌýÓÐ¹Ø¡¸×íÏÉÂ¥¡¹µÄÏûÏ¢¡£\w*|ÄãÏòÙþÀÏ°å´òÌýÓÐ¹Ø¡¸×íÏÉÂ¥¶þÂ¥¡¹µÄÏûÏ¢¡£\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬1805¾ÍÊÇÕâÀï£¡\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬437¾ÍÊÇÕâÀï£¡\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬948¾ÍÊÇÕâÀï£¡\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬1447¾ÍÊÇÕâÀï£¡\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬537¾ÍÊÇÕâÀï£¡\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡ºÐ¡æ©¡»\w*|ÕâÀïÃ»ÓÐ xian laoban Õâ¸öÈË¡£\w*|ÕâÀïÃ»ÓÐ xiao er Õâ¸öÈË¡£\w*)"
+   name="dealwith_jiudai_dosth1"
+   regexp="y"
+   script="addtri_38849"
+   sequence="10"
+   variable="dealwith_jiudai_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="dealwith_stick"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Äã´ÓÄª²»ÊÕµÄÊ¬ÌåÉíÉÏËÑ³öÒ»¸ùÍ­°ô¡£\w*|ÄãËµ£º¡°Äª²»ÊÕÃÀÃ¼ºÃÑ½£¡¡±\w*|ÄãÕÛÏÂÒ»¸ËÖñ×Ó£¬×öÁËÒ»Ö»Öñ°ô¡£\w*|Äª²»ÊÕµ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|ÄÜ×öÖñ°ôµÄÖñ×Ó¶¼½Ø¹âÁË¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkbang=yes µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÒª¶ÔË­×ö ysis Õâ¸ö¶¯×÷£¿\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬1118¾ÍÊÇÕâÀï£¡\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬2048¾ÍÊÇÕâÀï£¡\w*)"
+   name="dealwith_stick_dosth1"
+   regexp="y"
+   script="addtri_38869"
+   sequence="10"
+   variable="dealwith_stick_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="dealwith_ji"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Äã´ÓËÎÀÏ°åÄÇÀïÂòÏÂÁË.+ÅèÆû¹ø¼¦¡£\w*|ÄãÏòËÎÀÏ°å´òÌýÓÐ¹Ø¡¸¼¦¼¦»¹ÔÚ²»¡¹µÄÏûÏ¢¡£\w*|Ó´£¬±§Ç¸°¡£¬ÎÒÕâ¶ùÕýÃ¦×ÅÄØ¡­¡­ÄúÇëÉÔºò¡£\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡ºËÎÀÏ°å¡»\w*|ÕâÀïÃ»ÓÐ song laoban Õâ¸öÈË¡£\w*)"
+   name="dealwith_ji_dosth1"
+   regexp="y"
+   script="addtri_38843"
+   sequence="10"
+   variable="dealwith_ji_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="dealwith_chain"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Äã´ÓÌÆéªÄÇÀïÂòÏÂÁËÒ»ÌõÌúÁ´¡£\w*|ÄãÏëÂòµÄ¶«Î÷ÎÒÕâÀïÃ»ÓÐ¡£\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡ºÌÆéª¡»\w*|ÕâÀïÃ»ÓÐ gao Õâ¸öÈË¡£\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡º¸ßÉýÌ©¡»\w*|¸ßÉýÌ©ËµµÀ£º.*(ÄãÈ¥ÑïÖÝ´òÌúÆÌµÄÌú½³|²»ÈçÄã¹ýÈ¥°ïÎÒ¿´¿´°É)\w*|¸ßÉýÌ©ËµµÀ£º(Äã¸Õ²Å²»ÊÇÀ´Áì¹ýÌúÁ´ÁËÂð|ÌúÁ´ÒÑ¾­·¢ÍêÁË£¬ÎÒÒÑ¾­ÅÉ)\w*|¸ßÉýÌ©ËµµÀ£ºÄãÄÃÈ¥»¤Éí£¬¼ûµ½ÓÐ´ò¼Ü¶·Å¹µÄ°ÑËûÃÇËÍ¸ø¶ÎÚê´¦ÖÃ¡£\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡ºÍõÌú½³¡»\w*)"
+   name="dealwith_chain_dosth1"
+   regexp="y"
+   script="addtri_38822"
+   sequence="10"
+   variable="dealwith_chain_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="dealwith_fuling"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Äã´ÓÍõÍ¨ÖÎÄÇÀïÂòÏÂÁËÒ»Ç®ÜòÜß¡£\w*|Ó´£¬±§Ç¸°¡£¬ÎÒÕâ¶ùÕýÃ¦×ÅÄØ¡­¡­ÄúÇëÉÔºò¡£\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡ºÍõÍ¨ÖÎ¡»\w*)"
+   name="dealwith_fuling_dosth1"
+   regexp="y"
+   script="addtri_38831"
+   sequence="10"
+   variable="dealwith_fuling_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="dealwith_shengzi"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Äã´ÓÐ¡··ÄÇÀïÂòÏÂÁËÒ»À¦Éþ×Ó¡£\w*|ÄãÏòÐ¡··´òÌýÓÐ¹Ø¡¸ÉÏµõµÄÉþ×ÓÓÐÍÛ¡«¡¹µÄÏûÏ¢¡£\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬615¾ÍÊÇÕâÀï£¡\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬837¾ÍÊÇÕâÀï£¡\w*|ÕâÀïÃ»ÓÐ seller Õâ¸öÈË¡£\w*|ÕâÀïÃ»ÓÐ xiao fan Õâ¸öÈË¡£\w*)"
+   name="dealwith_shengzi_dosth1"
+   regexp="y"
+   script="addtri_38855"
+   sequence="10"
+   variable="dealwith_shengzi_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_gb_gold"
+   lines_to_match="3"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Äã´Õµ½.+Éí±ß£¬Ïò.+ÎÊµÀ£º²»Öª.+¿É¿´µ½ÓÐ¸»¼ÖÔÚ¸½½ü¾­¹ý£¿\n(.+)¡£\n.+ËµµÀ£ºÕâ¸½½üÃ»¼ûµ½Ê²Ã´¸»¼Ö¡£\Z\w*|Äã´Õµ½.+Éí±ß£¬Ïò.+ÎÊµÀ£º²»Öª.+¿É¿´µ½ÓÐ¸»¼ÖÔÚ¸½½ü¾­¹ý£¿\nÒ»¸ö.+³¯Õâ±ß×ßÁË¹ýÀ´¡£\n.+ËµµÀ£ºÌ¤±éÌúÐ¬ÎÞÃÙ´¦£¬µÃÀ´È«²¿·Ñ¹¦·ò¡£Äã¿´²»ÊÇÓÐ¸ö(.+)ÕýÍùÕâÀï×ßÀ´ÁËÂð£¿\Z\w*)"
+   multi_line="y"
+   name="mp_gb_gold_m2_dosth1"
+   regexp="y"
+   script="addtri_39347"
+   sequence="10"
+   variable="mp_gb_gold_m2_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_gb_gold"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Äã´Õµ½.+Éí±ß£¬Ïò.+ÎÊµÀ£º²»Öª.+¿É¿´µ½ÓÐ¸»¼ÖÔÚ¸½½ü¾­¹ý£¿\n.+ËµµÀ£ºÔõÃ´ÀÏÓÐ.+´òÌ½ÏûÏ¢£¬·³²»·³À²£¡\Z\w*|Äã´Õµ½.+Éí±ß£¬Ïò.+ÎÊµÀ£º²»Öª.+¿É¿´µ½ÓÐ¸»¼ÖÔÚ¸½½ü¾­¹ý£¿\n.+ËµµÀ£ºÕâ¸½½üÃ»¼ûµ½Ê²Ã´¸»¼Ö¡£\Z\w*|Äã´Õµ½.+Éí±ß£¬Ïò.+ÎÊµÀ£º²»Öª.+¿É¿´µ½ÓÐ¸»¼ÖÔÚ¸½½ü¾­¹ý£¿\n.+ËµµÀ£ºÌ¤±éÌúÐ¬ÎÞÃÙ´¦£¬µÃÀ´È«²¿·Ñ¹¦·ò¡£Äã¿´²»ÊÇÓÐ¸ö(.+)ÕýÍùÕâÀï×ßÀ´ÁËÂð£¿\Z\w*|Äã´Õµ½.+Éí±ß£¬Ïò.+ÎÊµÀ£º²»Öª.+¿É¿´µ½ÓÐ¸»¼ÖÔÚ¸½½ü¾­¹ý£¿\n.+ËµµÀ£ºÄã»³ÖÐµÄ½ðÒø²Æ±¦¶¼¿ìµô³öÀ´ÁË£¬»¹Ï¹´òÌýÊ²Ã´£¡\Z\w*|Äã´Õµ½.+Éí±ß£¬Ïò.+ÎÊµÀ£º²»Öª.+¿É¿´µ½ÓÐ¸»¼ÖÔÚ¸½½ü¾­¹ý£¿\n.+ËµµÀ£ºÄã¸úÎÒÌ×½üºõ²»»áÊÇ¿´ÉÏÎÒÁË°É£¿\Z\w*|Äã´Õµ½.+Éí±ß£¬Ïò.+ÎÊµÀ£º²»Öª.+¿É¿´µ½ÓÐ¸»¼ÖÔÚ¸½½ü¾­¹ý£¿\n.+ËµµÀ£ºÄãÉí±ß²»ÊÇ¾ÍÓÐÒ»¸öÂð£¬»¹ÎÊÎÒ£¿\Z\w*|Äã´Õµ½.+Éí±ß£¬Ïò.+ÎÊµÀ£º²»Öª.+¿É¿´µ½ÓÐ¸»¼ÖÔÚ¸½½ü¾­¹ý£¿\n.+ËµµÀ£ºÄãÏÈµÉ´óÑÛ¾¦¿´¿´ÕâÀïÊÇÊ²Ã´µØ½çÔÙÎÊÎÒ°É¡£\Z\w*|Äã´Õµ½.+Éí±ß£¬Ïò.+ÎÊµÀ£º²»Öª.+¿É¿´µ½ÓÐ¸»¼ÖÔÚ¸½½ü¾­¹ý£¿\n.+ËµµÀ£º¸Õ²Åµ¹ÊÇÓÐ¸ö(.+)´ÓÕâÀï¾­¹ý£¬ºÃÏñÊÇÍù(.+)ÄÇ±ßÈ¥ÁË¡£\Z\w*)"
+   multi_line="y"
+   name="mp_gb_gold_m_dosth1"
+   regexp="y"
+   script="addtri_39342"
+   sequence="10"
+   variable="mp_gb_gold_m_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="shizhe"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãµÄÑÛÇ°Ò»ºÚ£¬½ÓÖøÊ²Ã´Ò²²»ÖªµÀÁË....\w*|ÈÕÔÂÉñ½ÌÊ¹Õßµ¹ÔÚµØÉÏ£¬ÊÖ½Å¼¸ÏÂ³é¶¯±ãËÀÁË£¡\w*|ÈÕÔÂÉñ½ÌÊ¹ÕßÍ»È»ÂôÒ»ÆÆÕÀ£¬Ìø³öÕ½È¦£¬ÌÓÁË£¡\w*|ÈÕÔÂÉñ½ÌÊ¹Õßã¬È»ËµµÀ£ºËãÄã¹»ºÝ£¡ÀÏ×ÓÏÈ²»·îÅãÁË£¡ÔÛÃÇ×ß×ÅÇÆ£¡\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª killover=yes µÄ±äÁ¿Éè¶¨¡£\w*)"
+   name="shizhe_dosth1"
+   regexp="y"
+   script="addtri_38891"
+   sequence="10"
+   variable="shizhe_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_th_start"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãµÍÉùÔÚ¼Ò¶¡¶ú±ßËµµÀ£ºÊÇ²»ÊÇÕâ¸ö.+£¿\n(.+)\Z)"
+   multi_line="y"
+   name="mp_th_start_m_dosth2"
+   regexp="y"
+   script="addtri_39630"
+   sequence="10"
+   variable="mp_th_start_m_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="gps_waitrelease"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Äã¶ÔÄãËµµÀ£º¡°ÄúµÄ´ó¶÷´óµÂÐ¡µÜÃ»³ÝÄÑÍü£¡¡±\w*|ÀÎÃÅ»º»ºµØ¿ªÆôÁË£®£®£®\w*)"
+   name="gps_waitrelease_dosth1"
+   regexp="y"
+   script="addtri_39067"
+   sequence="10"
+   variable="gps_waitrelease_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="dealwith_stick"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Äã¸½½üÃ»ÓÐÕâÑù¶«Î÷¡£\nÄã¸½½üÃ»ÓÐÕâÑù¶«Î÷¡£\Z\w*|Äã¼ñÆðÒ»¸ù»ÆÖñ°ô¡£\nÄã¸½½üÃ»ÓÐÕâÑù¶«Î÷¡£\Z\w*|Äã¼ñÆðÒ»¸ù»ÆÖñ°ô¡£\nÄã¼ñÆðÒ»¸ù»ÆÖñ°ô¡£\Z\w*|Äã¼ñÆðÒ»¸ù»ÆÖñ°ô¡£\nÄã¼ñÆðÒ»¸ùÍ­°ô¡£\Z\w*|Äã¼ñÆðÒ»¸ù»ÆÖñ°ô¡£\nÄã¼ñÆðÒ»¸ùÖñ°ô¡£\Z\w*|Äã¼ñÆðÒ»¸ùÍ­°ô¡£\nÄã¸½½üÃ»ÓÐÕâÑù¶«Î÷¡£\Z\w*|Äã¼ñÆðÒ»¸ùÍ­°ô¡£\nÄã¼ñÆðÒ»¸ù»ÆÖñ°ô¡£\Z\w*|Äã¼ñÆðÒ»¸ùÍ­°ô¡£\nÄã¼ñÆðÒ»¸ùÍ­°ô¡£\Z\w*|Äã¼ñÆðÒ»¸ùÍ­°ô¡£\nÄã¼ñÆðÒ»¸ùÖñ°ô¡£\Z\w*|Äã¼ñÆðÒ»¸ùÖñ°ô¡£\nÄã¸½½üÃ»ÓÐÕâÑù¶«Î÷¡£\Z\w*|Äã¼ñÆðÒ»¸ùÖñ°ô¡£\nÄã¼ñÆðÒ»¸ù»ÆÖñ°ô¡£\Z\w*|Äã¼ñÆðÒ»¸ùÖñ°ô¡£\nÄã¼ñÆðÒ»¸ùÍ­°ô¡£\Z\w*|Äã¼ñÆðÒ»¸ùÖñ°ô¡£\nÄã¼ñÆðÒ»¸ùÖñ°ô¡£\Z\w*)"
+   multi_line="y"
+   name="dealwith_stick_dosth2"
+   regexp="y"
+   script="addtri_38872"
+   sequence="10"
+   variable="dealwith_stick_dosth2"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_watch"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Äã¿ªÊ¼¸Ðµ½ÉíÌå±äµÃ±ùÁ¹¡£\w*|Ëæ×ÅÒ»Õó×êÐÄµÄÌÛÍ´£¬Äã¿ªÊ¼¸Ðµ½ËÄÖ«·¢Âé£¬Éß¶¾·¢×÷ÁË£¡\w*|·çÔÆÍ»±ä£¬Ê±´ú±äÇ¨£¬ÄãÒÑ¾­²»ÊÇÎäÁÖÃËÖ÷ÁË¡£\w*|¹íÃÅ¹Ø - \w*|×ø×Å×ß£¿\w*|ÄãÖ»¾õµÃ¡°ÉñÃÅÑ¨¡±ÉÏÒ»ÕóËáÂé\w*|¹í×ä¶Ô×ÅÄãÒ»µÉÑÛºðµÀ£º¡°ÄãÔõÃ´»¹ÀµÔÚÕâÀï£¿½øÈ¥½øÈ¥£¡¡±\w*|Äã³ÔÏÂÒ»¿Å´óÑªÌÙ£¬Ö»¾õµÃ¸Î³¦´ç¶Ï£¬ÎåÔàÓûÁÑ£¬Ô­À´·þÊ³Ì«¶àÒ©Îï£¬Ò©Ð§ÊÊµÃÆä·´£¡\w*|Äã³ÔÏÂÒ»¿Ã´óÑªÌÙ£¬¶ÙÊ±ÑªÆø·­Ó¿ÑªÂöÅòÕÍ£¬ÆøÁ¦´ó³¤¡£\w*|ÄãÐ¡ÐÄÒíÒíµØ°ÑÒ»°ü½ð´´Ò©·óÔÚÉË¿ÚÉÏ\w*|Äã³ÔÏÂÒ»Íè×Ï½ðÍ¨Âöµ¤£¬Ö»¾õµÃÍ·ÖØ½ÅÇá£¬Ò¡Ò¡Óûµ¹£¬Ô­À´·þÊ³Ì«¼±Ì«¶à£¬Ò©Ð§ÊÊµÃÆä·´£¡\w*|Äã½«Ò»Íè×Ï½ðÍ¨Âöµ¤·ÅÈë¿ÚÖÐ£¬±ÕÄ¿ÄýÉñ£¬´ýµ¤Ò©ÍêÈ«ÈÚ»¯£¬È«Éí¹Ç÷À¾¹È»·¢³öÅ¾Å¾µÄÉùÏì¡£\w*|ÄãµÄÉË¿Ú·¢Âé£¬È«Éí½©Ö±£¬²»ÌýÊ¹»½£¬Õâ²»ÊÇÆÕÍ¨µÄÉß¶¾£¡\w*|ÄãµÄÑÛÇ°Ò»ºÚ£¬½ÓÖøÊ²Ã´Ò²²»ÖªµÀÁË....\w*|Äã·ÅÆúÊÖÖÐµÄ.+£¬»ºÈ»ÊÕÆð»ìÌìÆø¹¦½«ÄÚÁ¦ÄÉ»Øµ¤Ìï¡£\w*|Äã¸Ðµ½.+Ò»ÕóËáÂé£¬ÑªÆø²»³©£¬¶ÙÊ±¶¯µ¯²»µÃ£¡\w*|Äã¼ûÉí±ß¹ÖÉßµÄÁÛÆ¬Ò²Öð½¥»Ö¸´ÎªÒø°×É«£¬²»µÃ²»·ÅÂý¡ºó¸òÜ²½·¨¡»¡£\w*|ÄãÄýÉñÄ¬È»ÔË¹¦£¬²»Ò»»áÊÖÉÏµÄ.+ËÆºõ·¢³öµ­µ­¹â»Ô£¡\w*|ÄãÎ¢Ò»ÄýÉñ£¬ÔËÆð»ìÌìÆø¹¦£¬È«Éí¹Ç½Ú·¢³öÒ»Õó±¬¶¹°ãµÄÉùÏì\w*|Ò»µÀÉÁµç´ÓÌì½µÏÂ£¬Ö±³¯ÄãÅüÈ¥¡­¡­½á¹ûÃ»´òÖÐ£¡\w*|Ö»¼ûÄãµÄ¸òó¡¹¦ÔËÐÐÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\w*|Äã·çÔÆÐÐ¹¦ÒÑ¾Ã£¬ÂÔ¾õ²½ÂÄ³ÁÖØÁËÒ»Ð©¡£\w*|Äã½ÅÏÂÊ©Õ¹¡ºó¸òÜ²½·¨¡»¿ÚÖÐßñÐêÖ®Éù²»¶Ï£¬Ö»¼ûÄãÉí±ß¹ÖÉßÉíÉÏÁÛÆ¬·¢ºì£¬ÓÎ×ßÒì³£¡£\w*|ÄãËù¾ÛÌìµØÖ®¾«ÆøÒÑÉ¢»ØÌìµØÖ®¼ä£¬ÄãÓÖ»Ö¸´ÁËÔ­ÓÐ¾«Æø¡£\w*|ÄãÌåÄÚÒÑ»ý¹ý¶à×ÇÆø£¬ËÆºõÁìÎòÁ¦ÓÖ¹éÓÚÑ°³£¡£\w*|ÄãÐÐ´óÐ¡¶þ×¯ÒÑ¾Ã£¬ÓÖ»Ö¸´ÁËÔ­ÓÐ¾«Æø¡£\w*|.+ÏòÄã¹ªÉíÎªÀñ£¬ËµµÀ£ºÃËÖ÷ÄúÀÏÈË¼ÒºÃ£¡\w*|.+ÏòÄãÆëÉù´óº°£ºÃËÖ÷ÍòËê£¬ÍòËê£¬ÍòÍòËê£¡\w*|µØ²ØÍõÆÐÈøÄîµÀ£º°¢ÃÖÍÓ·ð£¡\w*|ÂýÂýµØÒ»ÕóÑ£ÔÎ¸Ð´«À´£¬ÄãÖÕÓÚÓÖÓÐÁËÖª¾õ....\w*|Äã°µÔË·çÔÆÁ½×¯£¬ÐÄË¼¸¡ÔÆÆ®¿ÕÖ®ÓÆÏÐ»ºÂý£¬Ä¬Ïë¿ñ·çµ´µØÖ®Ñ¸ËÙ½ô¼±£¬\w*|ÄãµÄ»ìÌìÆø¹¦ÔËÐÐÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\w*|ÄãÆÁÏ¢¾²Æø£¬½»´íÔËÐÐ´óÐ¡¶þ×¯£¬Ö»¾õÒ»¹ÉÅ¯Á÷³öÌìÃÅ£¬´©µØ»§£¬ÑØ×ÅÈ«Éí¾­ÂöÔËÐÐÒ»ÖÜ£¬»ãÈëµ¤ÌïÆøº£¡£\w*|ÄãÎ¢Ò»ÄýÉñ£¬ÔË¶¯Ö®ÐÄÁ½×¯£¬È¥×ÇÆø³öÌåÍâ£¬ÊÕÇåÆøÈëÐÄÖÐ£¬Ö»¾õÁéÌ¨ÇåÃ÷£¬ÁìÎòÁ¦ËÆºõÓÐËùÔö¼Ó¡£\w*|ÄãÏ¯µØ¶ø×ø£¬ÎåÐÄÏòÌì£¬ÔËÐÐÌìµØ¶þ×¯£¬ÒæÆøÉýÑô£¬ÒæÒõÇ±Ñô£¬Éý½µ·´Õý£¬ÌìµØ¶þÆø½»Ì©ÓÚÉí£¬¶Ù¾õ×Ô¼º¾«ÆøÉÏÏÞÔö¼ÓÁË¡£\w*|Í»È»Ò»¹ÉÇ¿´óµÄÁ¦Á¿½«ÄãÍÆ³öÃØ¶´¡£\w*|ºöÈ»Ò»Õó´Ì¹ÇµÄÆæº®Ï®À´£¬ÄãÖÐµÄÐÇËÞÕÆ¶¾·¢×÷ÁË£¡\w*|ÄãÉßÕÈÀïµÄ°µÆ÷×¼±¸ºÃÁË¡£\w*|Ò»¹ÉÒõÀäµÄÅ¨ÎíÍ»È»³öÏÖ£¬ºÜ¿ìµØ°üÎ§ÁËÄã¡£\w*|Ö»ÌýÄãºÙºÙºÙ¼¸Éù¼éÐ¦£¬Éí·¨±äµÃ¸ü¼ÓÆæ¹îÄÑ²â£¬½Ó×ÅË«ÕÆÒ»»®£¬Ë¿Ë¿°×Æø×ÔÕÆÐÄÃ°³ö£¬\w*|ÄãµÃµ½Ò»Ö»¿¾Ñ¼¡£\w*|¹í×ä½«ÄãµÄ¡¸ÒõË¾Â·Òý¡¹ÊÕÁËÆðÀ´£¬ÉìÊÖÖ¸ÁËÖ¸¹ØÃÅ£¬ºÃÏóÊÇ½ÐÄã½øÈ¥¡£\w*|Äã¾õµÃ×Ô¼ºµÄÒâÊ¶Ô½À´Ô½Èõ£¬½¥½¥²»Ê¡ÈËÊÂÁË¡£¡£¡£\w*|Ò»¸öÊØ¹Ø¹í×äÊÖÖ´½£êªÀ´µ½ÄãÃæÇ°£¬ÉìÊÖ×¥×¡ÄãÏîÉÏµÄ¡¸ÒõË¾Â·Òý¡¹×ÐÏ¸¼ì²é×Å¡£\w*|Ö»¼ûÄã¿ÚÖÐ½ÐµÀ¡¸²î¶û´Ìºô£¬¹þ»¢¡¹£¬ºö×öÍ·ÏÂ½ÅÉÏÖ®ÐÎ£¬Ë«ÊÖ³ÅµØ£¬±ÄÀ´±ÄÈ¥¡£\w*|Í»È»Äã¸Ð¾õµ½ºÃÏñÓÐ¶«Î÷ÔÚ±³ºó¶Ô×ÅÄãµÄ²±×Ó´µÆø£¡\w*|ÄãÖ»¾õµÃÒ»ÕóÍ·ÔÎ, ÑÛÇ°Ö»¿´¼ûÎå²Ê°ßìµµÄÒ»Æ¬Ä£ºý, Ô­À´ÄãÖÐµÄÇ§ÖëÍò¶¾ÊÖ·¢×÷ÁË!\w*|ÄãÆøÄýµ¤Ìï£¬ÔËÆð×ÏÏ¼Éñ¹¦£¬Á³ÉÏ×ÏÆø´óÊ¢¡£\w*|ÄãÍÂÏ¢ÄÅÆø£¬½«±é²¼È«ÉíµÄ×ÏÏ¼ÕæÆø»º»ºÉ¢È¥¡£\w*|Ö»ÌýµÃÄãÒ»Éù´óºÈ£¬È­·çÍ»È»±äµÃÃÍ¾¢Ö®¼«£¬Éí·¨È´¸ü¼ÓÆ®ºöÄÑ²â£¡\w*|.+½­ºþ¸÷´óÃÅÅÉÍýÏë½ø¹¥¹âÃ÷¶¥\w*|.+Ò»ÅúÕýÅÉµÜ×ÓÒÑ¾­¹¥ÏòÁË\w*|.+ÎÒÃ÷½ÌÉÏÏÂÒ»ÐÄ£¬ÖÕÓÚ³É¹¦´òÍËÄÇ°ïËùÎ½ÃûÃÅÕýÅÉµÄ½ø¹¥\w*|Äã¾õµÃ¾«Æø¼«Îª²»×ã\w*|Äã¾õµÃÆøÑªÑÏÖØÓÙÈû\w*|Äã¾õµÃ¾«Éñ·Ç³£²»Õñ\w*|µ«¼ûÒõÌì×Ó°ÑÊÖÒ»ÕÐ£¬Æ®À´ÁËÅ£Í·ÂíÃæ£¬¼ÜÆðÄã¾ÍÍùÄÚµî¶øÈ¥¡£\w*|ÄãÒ»ÕóÒ¡»Î, ÃÍÌáµ¤ÌïÖ®ÆøÈ´Ìá²»ÉÏÀ´£¬½á¹ûÏÕÐ©Ë¤µ¹.\w*|Ò»ÕóÎ¢·ç´µ¹ý£¬ËÄÃæ¾°ÖÂËÆºõÆðÁËÐ©±ä»¯¡£\w*|ÄãÁ³É«×ª°×£¬ÉíÉÏÄÇ¹É±ÆÈËµÄÒõº®Ö®Æø½¥½¥ÏûÊ§£¡\w*|Ö»¼ûÄã¶×ÔÚµØÏÂ£¬Ë«ÊÖÍäÓë¼çÆë£¬ÍðËÆÒ»Ö»´óÇàÍÜ°ã×÷ÊÆÏàÆË£¬¿ÚÖÐ·¢³öÀÏÅ£Ë»Ãù°ãµÄ¹¾¹¾Ö®Éù£¬Ê±ÐªÊ±×÷¡£\w*|(.+)ËµµÀ:¡°ÐÁ¿àÄãÁË£¬(.+)£¬ÄãÎª±¾ÃÅÁ¢ÏÂÁËÒ»¹¦¡£¡±\w*|.+¾Æ´üÒÑ¾­±»ºÈµÃÒ»µÎÒ²²»Ê£ÁË¡£\w*|(.+) - (\w+)\w*|¿´À´¸ÃÕÒ»ú»áÌÓÅÜÁË...\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª rbt=start µÄ±äÁ¿Éè¶¨¡£\w*|Ò»¸öÃÉÃæÈËÏòÄã×ßÁË¹ýÀ´£¬ÂúÉíµÄÉ±Æø£¬¿´À´ËÆºõ²»ÊÇÒ×ÓëÖ®±²¡£\w*|Ò»¹Éî¸Æø×Ôµ¤ÌïÓ¿³ö£¬Ö±³åÌìÁé£¬ÄãÍ´µÃ¼¸ºõÔÎËÀ¹ýÈ¥£¡\w*|Ö»ÌýÄãÃÆºßÁËÒ»Éù, ºóÐÄÒÑ±».+Ö¸Á¦´ÁÖÐ.\w*|Ò»¸ö.+µÜ×Ó×ßÁË¹ýÀ´,¶ÔÄã±¨È­µÀ£º¡°ÔÚÏÂ·î(.+)Ö®Ãü£¬ÇëÄãËÙ»Ø.+´¦½ú¼û¡±¡£\w*|Äã.+(ÎÕÔÚÊÖÖÐ|È¡³ö°×Áú½£)\w*|Äã³ÔÏÂÒ»¿Å´ó»¹µ¤£¬Ö»¾õµÃÌåÄÚÕæÁ¦Ô´Ô´×ÌÉú£¬¹ý×Ï¹¬£¬ÈëÄàÍè\w*|ÄãµÄ¾­Âöµ¹×ªÔËÐÐÍê±Ï£¬¾­Âö»Ø¸´Ò»ÈçÍù³£¡£\w*|ÄãµÄÁúÏóÖ®Á¦ÔËÐÐÍê±Ï£¬½«ÄÚÁ¦ÊÕ»Øµ¤Ìï¡£\w*|ÄãµÄÄÚÁ¦Ôö¼ÓÁË£¡£¡\w*|ÄãµÄ×î´óÄÚÁ¦ÉÏÉýÁË(\d+)µã¡£\w*|Äã»º»ºÎüÁËÒ»¿ÚÆø£¬½«ÄÚ¾¢ÊÕ»Øµ¤Ìï¡£\w*|Äã¿ÚÖÐÄ¬Äî´óÃ÷Áù×ÖÕæÑÔ£¬ÊÖ½áÄ¦ÀûÖ§Ìì·ßÅ­Ó¡£¬ÔËÆð.+Ö®Á¦£¡\w*|ÄãÒÑ¾­½«.+¾Æ´üÀïµÄÇåË®ºÈµÃµ×³¯ÌìÁË¡£\w*|°¢¶þÕý¶¢ÖøÄã¿´£¬²»ÖªµÀ´òÐ©Ê²Ã´Ö÷Òâ¡£\w*|°¢ÈýÕý¶¢ÖøÄã¿´£¬²»ÖªµÀ´òÐ©Ê²Ã´Ö÷Òâ¡£\w*|·½¶«°×Õý¶¢ÖøÄã¿´£¬²»ÖªµÀ´òÐ©Ê²Ã´Ö÷Òâ¡£\w*|Ã»¸ÉÍê»î¶ù¾ÍÏëÁï£¬Ã»ÃÅ¶ù£¡\w*|ÄãÊ¹²»ÁËÄÇÃ´¶à·¨ÂÖ¡£\w*|ÄãÌåÄÚ¾Û¶¾¹ý¶à£¬ÄÑÒÔ¼ÌÐøÌá¸ß¡£\w*|ÏÈ½â.+ÉÏµÄ±ø½«ÔÙÀë¿ª°É¡£\w*)"
+   name="always_watch_dosth1"
+   regexp="y"
+   script="addtri_38733"
+   sequence="10"
+   variable="always_watch_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="xf_hs"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Äã¿´×ÅÕâ¹åÀöÆæ¾°£¬ºöÈ»ÏëÆðÊ¦¸¸µÄÆ½ÈÕµÄ½Ìµ¼£¬\nÉî¾õ×Ô¼º¶Ô¿ï·öÎäÁÖÕýÆø×öµÃ²»¹»£¬²»½ûÒ»ÕóÐßÀ¢¡£\Z\w*)"
+   multi_line="y"
+   name="xf_hs_m_dosth1"
+   regexp="y"
+   script="addtri_39209"
+   sequence="10"
+   variable="xf_hs_m_dosth1"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_watch"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª (.+) µÄ±äÁ¿Éè¶¨¡£\w*|Äã²¢Î´ÔËÓÃÄ¦ÔÆÐÄ·¨¡£\w*|ÄãÏÖÔÚºÜÃ¦£¬Í£²»ÏÂÀ´¡£\w*)"
+   name="always_watch_gag_dosth1"
+   omit_from_output="y"
+   regexp="y"
+   sequence="10"
+   variable="always_watch_gag_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="bidu"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª busyover=bidu µÄ±äÁ¿Éè¶¨¡£\w*|Äã±ÕÄ¿¶ø×ø£¬¼±ºô»ºÎü£¬¹ýÁËÒ»¶Ù·¹¹¤·ò£¬Á³É«ÂÔ¸´ºìÈó¡£\w*|Äã²¢Î´ÖÐ¶¾\w*|ÄãÎÞ·¨ÔÚÕ½¶·ÖÐÔË¹¦ÁÆ¶¾\w*)"
+   name="bidu_dosth1"
+   regexp="y"
+   script="addtri_38923"
+   sequence="10"
+   variable="bidu_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="cure"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª busyover=cure µÄ±äÁ¿Éè¶¨¡£\w*|ÄãËùÑ§µÄÄÚ¹¦ÖÐÃ»ÓÐÕâÖÖ¹¦ÄÜ¡£\w*|ÄãÏÖÔÚ²»ÐëÒªÁÆ¾«£¡\w*|ÄãÔÚÉíÉÏ»®Ò»µÀÉË¿Ú£¬¼·³öÒ»Ð©ÓÙÑª£¬Æø³Áµ¤Ìï£¬¿ªÊ¼ÄýÉñÁÆ¾«¡£\w*)"
+   name="cure_dosth1"
+   regexp="y"
+   script="addtri_38920"
+   sequence="10"
+   variable="cure_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="qudu"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª busyover=qudu µÄ±äÁ¿Éè¶¨¡£\w*|Äã²¢Î´ÖÐ¶¾\w*|ÄãÍ·ÏÂ½ÅÉÏ£¬µ¹ÔËÆøÏ¢£¬ÆøÑªÄæÐÐ£¬ÏëÈÃ.+´Ó½øÈëÉí×ÓÖ®´¦»Ø³ö¡£\w*|ÄãÎÞ·¨ÔÚÕ½¶·ÖÐÔË¹¦ÁÆ¶¾\w*)"
+   name="qudu_dosth1"
+   regexp="y"
+   script="addtri_38902"
+   sequence="10"
+   variable="qudu_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="yinyun"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª busyover=yinyun µÄ±äÁ¿Éè¶¨¡£\w*|Äã²¢Î´ÖÐ¶¾\w*|Äã½«ÄÚÁ¦Ñ­»·Ò»ÖÜ£¬Éí×ÓÈç¹à¸ÊÂ¶£¬µ¤ÌïÀïµÄÕæÆøËÆÏãÑÌçÔÈÆ\w*|ÄãÎÞ·¨ÔÚÕ½¶·ÖÐÔË¹¦ÁÆ¶¾\w*)"
+   name="yinyun_dosth1"
+   regexp="y"
+   script="addtri_38885"
+   sequence="10"
+   variable="yinyun_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="dealwith_xs"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª check=falun µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª check=burn µÄ±äÁ¿Éè¶¨¡£\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬(431|423|428|437)¾ÍÊÇÕâÀï£¡\w*)"
+   name="dealwith_xs_dosth1"
+   regexp="y"
+   script="addtri_38828"
+   sequence="10"
+   variable="dealwith_xs_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="login"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª check=jifa µÄ±äÁ¿Éè¶¨¡£\w*|ÄúÄ¿Ç°µÄÈ¨ÏÞÊÇ£º\w*|ÇëÄúÊäÈëÃÜÂë\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬1282¾ÍÊÇÕâÀï£¡\w*|.+ÖØÐÂÁ¬ÏßÍê±Ï¡£\w*|.+¶Ô²»Æð£¬ÓÉì¶Á¬½Ó¹ýì¶Æµ·±£¬ÄãµÄµØÖ·±»ÔÝÊ±·âËø¡£\w*)"
+   name="login_dosth1"
+   regexp="y"
+   script="addtri_38929"
+   sequence="10"
+   variable="login_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="watch_death"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª check=lifesavehp µÄ±äÁ¿Éè¶¨¡£\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡ºÓáá·ÑÒ¡»\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬950¾ÍÊÇÕâÀï£¡\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬(\d+)¾ÍÊÇÕâÀï£¡\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkexpover=death µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª check=lifesaveover µÄ±äÁ¿Éè¶¨¡£\w*)"
+   name="watch_death_dosth1"
+   regexp="y"
+   script="addtri_38795"
+   sequence="10"
+   variable="watch_death_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="check_exp"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkexp=(.+) µÄ±äÁ¿Éè¶¨¡£\w*)"
+   name="check_exp_dosth1"
+   regexp="y"
+   script="addtri_38813"
+   sequence="10"
+   variable="check_exp_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="check_items"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkitems=yes µÄ±äÁ¿Éè¶¨¡£\w*|Äã¿ÚÄîÖäÓï¡ºÉñÂí¶¼ÊÇ¸¡ÔÆ,ÏºÃ×¶¼ÊÇ³¾ÍÁ¡»£¬¡ºÎäÃí¡»Á¢Âíµ½´ï£¡\w*|Äã¸ø(.+)Ò»(±¾|²á|Ò³).+¾«Òª¡£\w*|ÕÈÉÏÅÌ×ÅÒ»ÌõÒøÁÛÉÁÉÁµÄÐ¡Éß£¬²»×¡µÄòêÑÑÉÏÏÂ¡£\w*)"
+   name="check_items_dosth1"
+   regexp="y"
+   script="addtri_38802"
+   sequence="10"
+   variable="check_items_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="fj_pre"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª dealwithitems=over µÄ±äÁ¿Éè¶¨¡£\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬(\d+)¾ÍÊÇÕâÀï£¡\w*|(.+)ÅÄÁËÅÄÄãµÄ¼ç°ò£¬ËµµÀ£ººÃ£¬ÎÒÓÐÈÎÎñÊ±×ÔÈ»»áÅÉÈËÈ¥Í¨ÖªÄã¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª dazuo=over µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkhp=addneili µÄ±äÁ¿Éè¶¨¡£\w*|¶Ô·½ÕýÃ¦×ÅÄØ£¬ÄãµÈ»á¶ùÔÚÎÊ»°°É¡£\w*|ÕâÀïÃ»ÓÐ (.+) Õâ¸öÈË¡£\w*|ÄãÃ¦×ÅÄØ£¬ÄãµÈ»á¶ùÔÚÎÊ»°°É¡£\w*)"
+   name="fj_pre_dosth1"
+   regexp="y"
+   script="addtri_39243"
+   sequence="10"
+   variable="fj_pre_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="dealwith_sellyao"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª sellyao=over µÄ±äÁ¿Éè¶¨¡£\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡ººÎºìÒ©¡»\w*)"
+   name="dealwith_sellyao_dosth1"
+   regexp="y"
+   script="addtri_38852"
+   sequence="10"
+   variable="dealwith_sellyao_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_gb_pre"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª sx=over µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkmihan=yes µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÒª¿´Ê²Ã´£¿\w*|ÃÜº¯ÉÏÃæÐ´×Å£º(.+)Ç×Æô¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª dealwithitems=over µÄ±äÁ¿Éè¶¨¡£\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬(\d+)¾ÍÊÇÕâÀï£¡\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkhp=addneili µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª dazuo=over µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkexpover=mp µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª lian=over µÄ±äÁ¿Éè¶¨¡£\w*|ÕâÀïÃ»ÓÐ lu youjiao Õâ¸öÈË¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª lian=full µÄ±äÁ¿Éè¶¨¡£\w*|¶Ô·½ÕýÃ¦×ÅÄØ£¬ÄãµÈ»á¶ùÔÚÎÊ»°°É¡£\w*|Äã¿ÚÄîÖäÓï¡ºÉñÂí¶¼ÊÇ¸¡ÔÆ,ÏºÃ×¶¼ÊÇ³¾ÍÁ¡»£¬¡ºÎäÃí¡»Á¢Âíµ½´ï£¡\w*)"
+   name="mp_gb_pre_dosth1"
+   regexp="y"
+   script="addtri_39370"
+   sequence="10"
+   variable="mp_gb_pre_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_xs_watch"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÉíÉÏÃ»ÓÐÕâÑù¶«Î÷\w*|Äã²¢Ã»ÓÐ×°±¸ÕâÑù¶«Î÷\w*|Äã¸½½üÃ»ÓÐÕâÑù¶«Î÷\w*|Äã¶ªÏÂ\w*|ÕâÎ»ÉÏÈËÇëÒ»ÅÔÉÔºò\w*|×ßÁË¹ýÀ´\w*|¼±²½Íù\w*)"
+   name="mp_xs_watch_gag_dosth1"
+   omit_from_output="y"
+   regexp="y"
+   sequence="10"
+   variable="mp_xs_watch_gag_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_dl_watch"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÉíÉÏÃ»ÓÐÕâÑù¶«Î÷\w*|ÄãÉíÐÐÏòºóÒ»Ô¾\w*|.+Áì½Ì×³Ê¿µÄ¸ßÕÐ\w*|.+ÔÚÏÂÖ»ºÃ·îÅã\w*|ÄãÕýÃ¦×ÅÄØ\w*|ÄãÏÖÔÚ²»Ã¦\w*|ÈË¼ÒÃ»ÔÚÈÇÊÂÉú·Ç£¬ÄãËø²¶²»ÁË£¡\w*)"
+   name="mp_dl_watch_gag_dosth1"
+   omit_from_output="y"
+   regexp="y"
+   sequence="10"
+   variable="mp_dl_watch_gag_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="fj_escape"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÉíÐÐÏòºóÒ»Ô¾£¬Ìø³öÕ½È¦²»´òÁË¡£\n.+ \-.*\Z\w*)"
+   multi_line="y"
+   name="fj_escape_m_dosth1"
+   regexp="y"
+   script="addtri_39254"
+   sequence="10"
+   variable="fj_escape_m_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_em_start"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÉíÐÐÏòºóÒ»Ô¾£¬Ìø³öÕ½È¦²»´òÁË¡£\nÄãÏÖÔÚÕýÃ¦×Å£¡\Z)"
+   multi_line="y"
+   name="mp_em_start_m_dosth2"
+   regexp="y"
+   script="addtri_39543"
+   sequence="10"
+   variable="mp_em_start_m_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="mp_qz_start"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏÖÔÚ²»Ã¦¡£\n(.+)\Z|ÄãÏòÕÔÖ¾¾´´òÌýÓÐ¹Ø¡¸Ììî¸±±¶·Õó¡¹µÄÏûÏ¢¡£\n(.+)\Z)"
+   multi_line="y"
+   name="mp_qz_start_m_dosth2"
+   regexp="y"
+   script="addtri_39456"
+   sequence="10"
+   variable="mp_qz_start_m_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="mp_mj_wxq"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏò.+´òÌýÓÐ¹Ø¡¸.+¡¹µÄÏûÏ¢¡£\n(.+)\Z)"
+   multi_line="y"
+   name="mp_mj_wxq_m_dosth2"
+   regexp="y"
+   script="addtri_39647"
+   sequence="10"
+   variable="mp_mj_wxq_m_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="ftb_pre"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏò³Ì½ð¸«´òÌýÓÐ¹Ø¡¸job¡¹µÄÏûÏ¢¡£\n(.+)\Z)"
+   multi_line="y"
+   name="ftb_pre_m_dosth2"
+   regexp="y"
+   script="addtri_39294"
+   sequence="10"
+   variable="ftb_pre_m_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="ftb_ask"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏò³Ì½ð¸«´òÌýÓÐ¹Ø¡¸job¡¹µÄÏûÏ¢¡£\n(.+)\Z)"
+   multi_line="y"
+   name="ftb_ask_m_dosth2"
+   regexp="y"
+   script="addtri_39276"
+   sequence="10"
+   variable="ftb_ask_m_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="ftb_ask"
+   lines_to_match="3"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏò³Ì½ð¸«´òÌýÓÐ¹Ø¡¸job¡¹µÄÏûÏ¢¡£\n(.+)\n(.+)\Z)"
+   multi_line="y"
+   name="ftb_ask_m_dosth3"
+   regexp="y"
+   script="addtri_39281"
+   sequence="10"
+   variable="ftb_ask_m_dosth3"
+  >
+  </trigger>
+  <trigger
+   group="ftb_pre"
+   lines_to_match="3"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏò³Ì½ð¸«´òÌýÓÐ¹Ø¡¸job¡¹µÄÏûÏ¢¡£\n(.+)\n(.+)\Z)"
+   multi_line="y"
+   name="ftb_pre_m_dosth3"
+   regexp="y"
+   script="addtri_39299"
+   sequence="10"
+   variable="ftb_pre_m_dosth3"
+  >
+  </trigger>
+  <trigger
+   group="ftb_ask"
+   lines_to_match="4"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏò³Ì½ð¸«´òÌýÓÐ¹Ø¡¸job¡¹µÄÏûÏ¢¡£\n(.+)\n(.+)\n(.+)\Z)"
+   multi_line="y"
+   name="ftb_ask_m_dosth4"
+   regexp="y"
+   script="addtri_39286"
+   sequence="10"
+   variable="ftb_ask_m_dosth4"
+  >
+  </trigger>
+  <trigger
+   group="fj_other"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏòµÀÏóìøÊ¦´òÌýÓÐ¹Ø¡¸´ó»¹µ¤¡¹µÄÏûÏ¢¡£\nµÀÏóìøÊ¦ËµµÀ£º¶Ô²»Æð£¬´ó»¹µ¤ÒÑ¾­·¢ÍêÁË\Z\w*|ÄãÏòµÀÏóìøÊ¦´òÌýÓÐ¹Ø¡¸´ó»¹µ¤¡¹µÄÏûÏ¢¡£\nÄã»ñµÃÒ»¿Å´ó»¹µ¤¡£\Z\w*|ÄãÏòµÀÏóìøÊ¦´òÌýÓÐ¹Ø¡¸´ó»¹µ¤¡¹µÄÏûÏ¢¡£\nµÀÏóìøÊ¦ËµµÀ£º.+ÄãÊÇ²»ÊÇ¸Õ³Ô¹ýÒ©£¬ÔõÃ´ÓÖÀ´ÒªÁË£¿ ÁéÒ©¶à³ÔÓÐº¦ÎÞÒË£¬¹ý¶ÎÊ±¼äÔÙÀ´°É¡£\Z\w*)"
+   multi_line="y"
+   name="fj_other_m_dosth1"
+   regexp="y"
+   script="addtri_39246"
+   sequence="10"
+   variable="fj_other_m_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_xs_start"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏò¸ðÂ×²¼´òÌýÓÐ¹Ø¡¸×¼±¸·¨ÊÂ¡¹µÄÏûÏ¢¡£\n(.+)\Z)"
+   multi_line="y"
+   name="mp_xs_start_m_dosth2"
+   regexp="y"
+   script="addtri_39508"
+   sequence="10"
+   variable="mp_xs_start_m_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="mp_dl_work"
+   lines_to_match="3"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏò»¨½³´òÌýÓÐ¹Ø¡¸check¡¹µÄÏûÏ¢¡£\n»¨½³¶Ô×ÅÄãµãÁËµãÍ·¡£\n(.+)\Z\w*)"
+   multi_line="y"
+   name="mp_dl_work_m_dosth2"
+   regexp="y"
+   script="addtri_39405"
+   sequence="10"
+   variable="mp_dl_work_m_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="mp_dl_work"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏò»¨½³´òÌýÓÐ¹Ø¡¸¸É»î¡¹µÄÏûÏ¢¡£\n(.+)\Z\w*|»¨½³¶ÔÄãµãµãÍ·£¬ÂúÒâµØËµ£º¡°¹»ÁË£¬¹»ÁË£¬½ñÌìµÄ»î¾Í¸Éµ½ÕâÀï°É¡£\n(.+)\Z\w*)"
+   multi_line="y"
+   name="mp_dl_work_m_dosth1"
+   regexp="y"
+   script="addtri_39400"
+   sequence="10"
+   variable="mp_dl_work_m_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="dealwith_yaodai"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏò¾²·ç´òÌýÓÐ¹Ø¡¸ÁøÒ¶µ¶¡¹µÄÏûÏ¢¡£\n¾²·çÊ¦Ì«¸øÄãÒ»°ÑÁøÒ¶µ¶¡£\Z\w*|ÄãÏò¾²·ç´òÌýÓÐ¹Ø¡¸ÁøÒ¶µ¶¡¹µÄÏûÏ¢¡£\n¾²·çËµµÀ£º.+ÄãÏÖÔÚÉíÉÏ²»ÊÇÓÐÁøÒ¶µ¶Âð£¬Ôõ÷áÓÖÀ´ÒªÁË£¿ ÕæÊÇÌ°µÃÎÞ÷Ð£¡\Z\w*|ÄãÏò¾²·ç´òÌýÓÐ¹Ø¡¸ÁøÒ¶µ¶¡¹µÄÏûÏ¢¡£\n¾²·çËµµÀ£ºÎÒ²»ÊÇ¸Õ¸ø¹ýÄãÂð£¬Ôõ÷áÓÖÀ´ÒªÁË£¿ÕæÊÇÌ°µÃÎÞ÷Ð£¡\Z\w*|ÄãÏò¾²·ç´òÌýÓÐ¹Ø¡¸Æ¤Ñü´ø¡¹µÄÏûÏ¢¡£\n¾²·çÊ¦Ì«¸øÄãÒ»ÌõÆ¤Ñü´ø¡£\Z\w*|ÄãÏò¾²·ç´òÌýÓÐ¹Ø¡¸Æ¤Ñü´ø¡¹µÄÏûÏ¢¡£\n¾²·çËµµÀ£º.+ÄãÏÖÔÚÉíÉÏ²»ÊÇÓÐÆ¤Ñü´øÂð£¬Ôõ÷áÓÖÀ´ÒªÁË£¿ ÕæÊÇÌ°µÃÎÞ÷Ð£¡\Z\w*|ÄãÏò¾²·ç´òÌýÓÐ¹Ø¡¸Æ¤Ñü´ø¡¹µÄÏûÏ¢¡£\n¾²·çËµµÀ£ºÎÒ²»ÊÇ¸Õ¸ø¹ýÄãÂð£¬Ôõ÷áÓÖÀ´ÒªÁË£¿ÕæÊÇÌ°µÃÎÞ÷Ð£¡\Z\w*|ÄãÏò¾²·ç´òÌýÓÐ¹Ø¡¸Èí½£¡¹µÄÏûÏ¢¡£\n¾²·çÊ¦Ì«¸øÄãÒ»°ÑÈí½£¡£\Z\w*|ÄãÏò¾²·ç´òÌýÓÐ¹Ø¡¸Èí½£¡¹µÄÏûÏ¢¡£\n¾²·çËµµÀ£º.+ÄãÏÖÔÚÉíÉÏ²»ÊÇÓÐÈí½£Âð£¬Ôõ÷áÓÖÀ´ÒªÁË£¿ ÕæÊÇÌ°µÃÎÞ÷Ð£¡\Z\w*|ÄãÏò¾²·ç´òÌýÓÐ¹Ø¡¸Èí½£¡¹µÄÏûÏ¢¡£\n¾²·çËµµÀ£ºÎÒ²»ÊÇ¸Õ¸ø¹ýÄãÂð£¬Ôõ÷áÓÖÀ´ÒªÁË£¿ÕæÊÇÌ°µÃÎÞ÷Ð£¡\Z\w*|ÄãÏò¾²·ç´òÌýÓÐ¹Ø¡¸ÌìÏã¶ÏÐø¸à¡¹µÄÏûÏ¢¡£\n¾²·çËµµÀ£ºÎÒ²»ÊÇ¸Õ¸ø¹ýÄãÒ»ºÐÌìÏã¶ÏÐø¸àÂð£¬Ôõ÷áÓÖÀ´ÒªÁË£¿ ÕæÊÇÌ°µÃÎÞ÷Ð£¡\Z\w*|ÄãÏò¾²·ç´òÌýÓÐ¹Ø¡¸ÌìÏã¶ÏÐø¸à¡¹µÄÏûÏ¢¡£\nÄã»ñµÃÒ»ºÐÌìÏã¶ÏÐø¸à¡£\Z\w*)"
+   multi_line="y"
+   name="dealwith_yaodai_dosth2"
+   regexp="y"
+   script="addtri_38880"
+   sequence="10"
+   variable="dealwith_yaodai_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="sl_sj"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏò¿ÝÄ¾ìøÊ¦´òÌýÓÐ¹Ø¡¸job¡¹µÄÏûÏ¢¡£\n¿ÝÄ¾ìøÊ¦ËµµÀ£º±¾ËÂ×²ÖÓËÐ¾­Ê±³½ÒÑ¹ý£¬´óÊ¦ÏÂ´ÎÔÙÀ´°É¡£\Z\w*)"
+   multi_line="y"
+   name="sl_sj_m_dosth1"
+   regexp="y"
+   script="addtri_39222"
+   sequence="10"
+   variable="sl_sj_m_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_xs_lzjob"
+   lines_to_match="4"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏòÁéÖÇÉÏÈË´òÌýÓÐ¹Ø¡¸job¡¹µÄÏûÏ¢¡£\n(.+)\n(.+)\n(.+)\Z)"
+   multi_line="y"
+   name="mp_xs_lzjob_m_dosth4"
+   regexp="y"
+   script="addtri_39532"
+   sequence="10"
+   variable="mp_xs_lzjob_m_dosth4"
+  >
+  </trigger>
+  <trigger
+   group="mp_gb_pre"
+   lines_to_match="3"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏòÂ³ÓÐ½Å´òÌýÓÐ¹Ø¡¸gold¡¹µÄÏûÏ¢¡£\nÂ³ÓÐ½ÅÔÚÄãµÄ¶ú±ßÇÄÉùËµµÀ£º.+\nÂ³ÓÐ½ÅËµµÀ£ºÄãÈ¥(.+)¸½½ü´òÌý¿´¿´£¬¿´¿´ÊÇ·ñÓÐ¸»¼Ö¾­¹ý£¬ÏòÆäÌÖÒ»Ð©»Æ½ðÀ´¡£\Z\w*)"
+   multi_line="y"
+   name="mp_gb_pre_m3_dosth1"
+   regexp="y"
+   script="addtri_39360"
+   sequence="10"
+   variable="mp_gb_pre_m3_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_gb_pre"
+   lines_to_match="5"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏòÂ³ÓÐ½Å´òÌýÓÐ¹Ø¡¸job¡¹µÄÏûÏ¢¡£\nÂ³ÓÐ½ÅµãÁËµãÍ·¡£\nÂ³ÓÐ½ÅËµµÀ£ºÄãÀ´µÃÕýÇÉ£¬ÎÒÓÐ¼þÊÂÒªÄãÈ¥°ì£¡\nÂ³ÓÐ½ÅÉìÊÖÈë»³È¡³öÒ»·âÐÅ¼ã¡£\nÂ³ÓÐ½Å¶ÔÄãËµµÀ£ºÄã°ÑÕâ·âÃÜº¯½»¸ø(.+)£¬Îñ±ØÇ××ÔËÍµ½£¡\Z\w*)"
+   multi_line="y"
+   name="mp_gb_pre_m2_dosth1"
+   regexp="y"
+   script="addtri_39365"
+   sequence="10"
+   variable="mp_gb_pre_m2_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_gb_pre"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏòÂ³ÓÐ½ÅÎÊµÀ£ºÕâÎ».+£¬.+³õµ½¹ó±¦µØ£¬²»ÖªÕâÀïÓÐÐ©Ê²÷á·çÍÁÈËÇé£¿\nÂ³ÓÐ½Å¶ÔÄãËµµÀ£ºÕâÀïÊÇÍÁµØÃí£¬ÆäËüµÄÔÚÏÂ²»±ã¶àËµ¡£\Z\w*|Äã´Ó»³ÖÐÈ¡³ö³ï´ëÀ´µÄ.+½»¸øÁËÂ³ÓÐ½Å¡£\nÂ³ÓÐ½ÅËµµÀ£ºÕâ.+Öµ²»ÉÙÁ½»Æ½ð£¬Äã´ËÐÐÊÕ»ñÉõ´ó£¬ÐÁ¿àÁË£¬¿ìÏÂÈ¥ÐªÏ¢°É¡£\Z\w*|Äã´Ó»³ÖÐÈ¡³ö.+½»¸øÁËÂ³ÓÐ½Å¡£\nÂ³ÓÐ½ÅËµµÀ£ºÕâ.+ºÃÏñ²»ÊÇÄãËùÓÐ°É£¿ÏëÃÉ»ì¹ý¹Ø£¬µ±ÎÒÊÇ´óÉµµ°£¿\Z\w*|Äã´Ó»³ÖÐÈ¡³ö.+½»¸øÁËÂ³ÓÐ½Å¡£\nÂ³ÓÐ½ÅÀäÀäµÄ¿´ÁËÄãÒ»ÑÛ£¬×ªÍ·½«.+½»¸øÒ»ÃûÐ¡½Ð»¯£¬·Ô¸ÀËû·ÅÈëµØµ×ÃÜÊÒ¡£\Z\w*|ÄãÏòÂ³ÓÐ½ÅÎÊµÀ£ºÕâÎ».+£¬.+³õµ½¹ó±¦µØ£¬²»ÖªÕâÀïÓÐÐ©Ê²÷á·çÍÁÈËÇé£¿\nµ«ÊÇºÜÏÔÈ»µÄ£¬Â³ÓÐ½ÅÏÖÔÚµÄ×´¿öÃ»ÓÐ°ì·¨¸øÄãÈÎºÎ´ð¸²¡£\Z\w*|ÄãÏòÂ³ÓÐ½Å´òÌýÓÐ¹Ø¡¸job¡¹µÄÏûÏ¢¡£\nÂ³ÓÐ½ÅËµµÀ£ºÄã»¹Ã»Íê³ÉÎÒ½»´ýµÄ¹¤×÷£¬Ôõ÷áÓÖÀ´ÎÊÎÒ£¿\Z\w*|ÄãÏòÂ³ÓÐ½Å´òÌýÓÐ¹Ø¡¸job¡¹µÄÏûÏ¢¡£\nÂ³ÓÐ½ÅËµµÀ£ºÎÒÏÖÔÚÃ»ÒªÊÂÈÃÄãÈ¥¸É£¬´ý»á¶ùÄãÔÙÀ´°É¡£\Z\w*|ÄãÏòÂ³ÓÐ½Å´òÌýÓÐ¹Ø¡¸gold¡¹µÄÏûÏ¢¡£\nÂ³ÓÐ½ÅËµµÀ£ºÎÒ²»ÊÇÒÑ¾­·Ô¸ÀÄãÈ¥³ï´ë»Æ½ðÁËÂð£¿\Z\w*|ÄãÏòÂ³ÓÐ½Å´òÌýÓÐ¹Ø¡¸gold¡¹µÄÏûÏ¢¡£\nÂ³ÓÐ½ÅËµµÀ£ºÄ¿Ç°Ã»ÓÐÊ²Ã´ÈÎÎñ£¬.+ÇëÏÈÉÔÊÂÐªÏ¢°Õ¡£\Z\w*|ÄãÏòÂ³ÓÐ½Å´òÌýÓÐ¹Ø¡¸gold¡¹µÄÏûÏ¢¡£\nÂ³ÓÐ½ÅËµµÀ£ºÄãÏÈ°Ñ.+Á·ºÃÁËÔÙËµ°É¡£\Z\w*|ÄãÏòÂ³ÓÐ½Å´òÌýÓÐ¹Ø¡¸gold¡¹µÄÏûÏ¢¡£\nÂ³ÓÐ½ÅËµµÀ£ºÄã»¹Ã»Íê³ÉÎÒ½»´ýµÄ¹¤×÷£¬Ôõ÷áÓÖÀ´ÎÊÎÒ\Z\w*|ÄãÏòÂ³ÓÐ½Å´òÌýÓÐ¹Ø¡¸gold¡¹µÄÏûÏ¢¡£\nÂ³ÓÐ½ÅËµµÀ£º×î½üºÃÏñÃ»Ê²Ã´¸»¼ÖµÄÏûÏ¢¡£\Z\w*|ÄãÏòÂ³ÓÐ½Å´òÌýÓÐ¹Ø¡¸gold¡¹µÄÏûÏ¢¡£\nµ«ÊÇºÜÏÔÈ»µÄ£¬Â³ÓÐ½ÅÏÖÔÚµÄ×´¿öÃ»ÓÐ°ì·¨¸øÄãÈÎºÎ´ð¸²¡£\Z\w*)"
+   multi_line="y"
+   name="mp_gb_pre_m_dosth1"
+   regexp="y"
+   script="addtri_39355"
+   sequence="10"
+   variable="mp_gb_pre_m_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_th_pre"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏòÂ½³Ë·ç´òÌýÓÐ¹Ø¡¸yapu¡¹µÄÏûÏ¢¡£\n(.+)\Z|ÄãÏò¼Ò¶¡´òÌýÓÐ¹Ø¡¸yapu¡¹µÄÏûÏ¢¡£\n(.+)\Z)"
+   multi_line="y"
+   name="mp_th_pre_m_dosth2"
+   regexp="y"
+   script="addtri_39622"
+   sequence="10"
+   variable="mp_th_pre_m_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="dealwith_staff"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏòÅ·Ñô¿Ë´òÌýÓÐ¹Ø¡¸¹ÖÉß¡¹µÄÏûÏ¢¡£\nµ«ÊÇºÜÏÔÈ»µÄ£¬Å·Ñô¿ËÏÖÔÚµÄ×´¿öÃ»ÓÐ°ì·¨¸øÄãÈÎºÎ´ð¸²¡£\Z\w*|ÄãÏòÅ·Ñô¿Ë´òÌýÓÐ¹Ø¡¸¹ÖÉß¡¹µÄÏûÏ¢¡£\n¶Ô·½ÕýÃ¦×ÅÄØ£¬ÄãµÈ»á¶ùÔÚÎÊ»°°É¡£\Z\w*|ÄãÏòÅ·Ñô¿Ë´òÌýÓÐ¹Ø¡¸¹ÖÉß¡¹µÄÏûÏ¢¡£\nÅ·Ñô¿ËËµµÀ£ºÒÔÄãµÄÑ±ÊÞÊõ²Ù¿ØÒ»Ìõ¹ÖÉßÒÑ¾­Ê®·Ö³ÔÁ¦£¬²»ÄÜ¿ØÖÆ¸ü¶àµÄ¹ÖÉßÁË¡£\Z\w*|Å·Ñô¿Ë¸øÄãÒ»Ö»¹ÖÉß¡£\nÅ·Ñô¿Ë¸øÄãÒ»¸ù¹ÖÉßÕÈ¡£\Z\w*)"
+   multi_line="y"
+   name="dealwith_staff_dosth2"
+   regexp="y"
+   script="addtri_38864"
+   sequence="10"
+   variable="dealwith_staff_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="mp_qz_pre"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏòÇð´¦»ú´òÌýÓÐ¹Ø¡¸job¡¹µÄÏûÏ¢¡£\n(.+)\Z)"
+   multi_line="y"
+   name="mp_qz_pre_m_dosth2"
+   regexp="y"
+   script="addtri_39443"
+   sequence="10"
+   variable="mp_qz_pre_m_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="mp_qz_pre"
+   lines_to_match="3"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏòÇð´¦»ú´òÌýÓÐ¹Ø¡¸job¡¹µÄÏûÏ¢¡£\n(.+)\n(.+)\Z)"
+   multi_line="y"
+   name="mp_qz_pre_m_dosth3"
+   regexp="y"
+   script="addtri_39448"
+   sequence="10"
+   variable="mp_qz_pre_m_dosth3"
+  >
+  </trigger>
+  <trigger
+   group="mp_bt_start"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏòÐÁÒÅ´òÌýÓÐ¹Ø¡¸ÍâµÐÈëÇÖ¡¹µÄÏûÏ¢¡£\nÐÁÒÅËµµÀ£ºÄúËµµÄÊÇ£¬ÕâÀï¿É²»ÄÜÈÃÍâµÐ½øÈë¡£\Z)"
+   multi_line="y"
+   name="mp_bt_start_m_dosth2"
+   regexp="y"
+   script="addtri_39576"
+   sequence="10"
+   variable="mp_bt_start_m_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="mp_bt_watch"
+   lines_to_match="3"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏòÐÁÒÅ´òÌýÓÐ¹Ø¡¸ÍâµÐÈëÇÖ¡¹µÄÏûÏ¢¡£\nÐÁÒÅËµµÀ£ºÈÃÎÒÏÈ´­¿ÚÆø¡­¡­¡­\nÐÁÒÅËµµÀ£º¸Õ²ÅµÄÔôÈË¿ÉÏÅËÀÎÒÁË¡­¡­ÄúÇ×ÊÖ°ÑËû³ýµôÁËÃ´£¿\Z)"
+   multi_line="y"
+   name="mp_bt_watch_m_dosth3"
+   regexp="y"
+   script="addtri_39584"
+   sequence="10"
+   variable="mp_bt_watch_m_dosth3"
+  >
+  </trigger>
+  <trigger
+   group="mp_mj_tyjob"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏòÒóÒ°Íõ´òÌýÓÐ¹Ø¡¸job¡¹µÄÏûÏ¢¡£\n(.+)\Z)"
+   multi_line="y"
+   name="mp_mj_tyjob_m_dosth2"
+   regexp="y"
+   script="addtri_39657"
+   sequence="10"
+   variable="mp_mj_tyjob_m_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="mp_mj_tyjob"
+   lines_to_match="3"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏòÒóÒ°Íõ´òÌýÓÐ¹Ø¡¸job¡¹µÄÏûÏ¢¡£\n(.+)\n(.+)\Z)"
+   multi_line="y"
+   name="mp_mj_tyjob_m_dosth3"
+   regexp="y"
+   script="addtri_39662"
+   sequence="10"
+   variable="mp_mj_tyjob_m_dosth3"
+  >
+  </trigger>
+  <trigger
+   group="mp_qz_start"
+   lines_to_match="3"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏòÕÔÖ¾¾´´òÌýÓÐ¹Ø¡¸Ììî¸±±¶·Õó¡¹µÄÏûÏ¢¡£\n(.+)\n(.+)\Z)"
+   multi_line="y"
+   name="mp_qz_start_m_dosth3"
+   regexp="y"
+   script="addtri_39461"
+   sequence="10"
+   variable="mp_qz_start_m_dosth3"
+  >
+  </trigger>
+  <trigger
+   group="mp_qz_start"
+   lines_to_match="4"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏòÕÔÖ¾¾´´òÌýÓÐ¹Ø¡¸Ììî¸±±¶·Õó¡¹µÄÏûÏ¢¡£\n(.+)\n(.+)\n(.+)\Z)"
+   multi_line="y"
+   name="mp_qz_start_m_dosth4"
+   regexp="y"
+   script="addtri_39466"
+   sequence="10"
+   variable="mp_qz_start_m_dosth4"
+  >
+  </trigger>
+  <trigger
+   group="mp_qz_start"
+   lines_to_match="5"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏòÕÔÖ¾¾´´òÌýÓÐ¹Ø¡¸Ììî¸±±¶·Õó¡¹µÄÏûÏ¢¡£\n(.+)\n(.+)\n(.+)\n(.+)\Z)"
+   multi_line="y"
+   name="mp_qz_start_m_dosth5"
+   regexp="y"
+   script="addtri_39471"
+   sequence="10"
+   variable="mp_qz_start_m_dosth5"
+  >
+  </trigger>
+  <trigger
+   group="mp_xs_watch"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏòÖµÈÕÀ®Âï´òÌýÓÐ¹Ø¡¸¾´·î¡¹µÄÏûÏ¢¡£\n(.+)\Z)"
+   multi_line="y"
+   name="mp_xs_watch_m_dosth2"
+   regexp="y"
+   script="addtri_39516"
+   sequence="10"
+   variable="mp_xs_watch_m_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="mp_xs_watch"
+   lines_to_match="3"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÏòÖµÈÕÀ®Âï´òÌýÓÐ¹Ø¡¸¾´·î¡¹µÄÏûÏ¢¡£\n(.+)\n(.+)\Z)"
+   multi_line="y"
+   name="mp_xs_watch_m_dosth3"
+   regexp="y"
+   script="addtri_39521"
+   sequence="10"
+   variable="mp_xs_watch_m_dosth3"
+  >
+  </trigger>
+  <trigger
+   group="skills_jingyao"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÑÐ¶ÁÍê±Ï£¬°Ñ.+¾«ÒªÊÕÁËÆðÀ´¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª check=neili µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÕý·­¿´×ÅÕâ.+¾«Òª£¬È´Ò»²»Ð¡ÐÄ³¶ÆÆÁË¡£\w*|ÄãÕýÒª·­¿´Õâ.+¾«Òª£¬È´Ò»²»Ð¡ÐÄ³¶ÆÆÁË¡£\w*|ÄãµÄÇ±ÄÜ²»¹»£¬Ã»ÓÐ°ì·¨ÔÙ³É³¤ÁË¡£\w*|ÄãÑÐ¶Á×Å.+¾«ÒªÖÐËù¼ÇÔØµÄÄÚÈÝ£¬Ò»ÏÂ×ÓÏëÍ¨ÁËºÃ¼¸¸öÄÑµã¡£\w*|Äã×ÐÏ¸ÑÐ¶Á×Å.+¾«Òª£¬µ«È´°ÙË¼²»µÃÆä½â¡£\w*|ÄãË¼¿¼×Å.+¾«ÒªÖÐËùÐ´µÄÄÚÈÝ£¬ºöÈ»¶Ô.+´óÓÐÁìÎò¡£\w*|Äã¿ªÊ¼×¨ÐÄÑÐ¶Á.+¾«Òª¡£\w*|Äã°ºÆðÍ·Ä¬Ä¬±³ËÐ×Å.+¾«ÒªËù¼ÇÂ¼µÄÄÚÈÝ£¬ËÆºõ¶Ô.+ÓÐÐ©ÐÄµÃ¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª dazuo=over µÄ±äÁ¿Éè¶¨¡£\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡ºÖììä¡»\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkhp=addneili µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª dujingyao=over µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÎ¢Î¢Ò»Ð¦£¬Éí×Ó»º»ºÓÒ×ª£¬×óÊÖ³Ö½£ÏòÉÏÌáÆð£¬½£Éíºáì¶ÐØÇ°£¬×óÓÒË«ÕÆÕÆÐÄÏà¶Ô£¬Èç±§Ô²Çò¡£.+Î´³ö£¬ÒÑÈ»ÐîÊÆÎÞÇî¡£\w*|Äã´óÖÜÌì°áÔËÍê±Ï£¬½«ÄÚÁ¦ºÏÓÚµ¤Ìï£¬ÈëÇÏ¹éÔª¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª busyover=taijistart µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª busyover=taijiover µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÊÕÆðÊÖÉÏµÄ.+¾«Òª£¬²»¼ÌÐø¿´ÁË¡£\w*|Ò²ÐíÊÇÈ±·¦ÊµÕ½¾­Ñé£¬Äã¶Ô.+¾«ÒªÉÏÃæËùËµµÄ¶«Î÷×ÜÊÇÎÞ·¨Áì»á¡£\w*|ÄãÑÐ¶ÁÁËÒ»»á¶ù£¬µ«ÊÇ·¢ÏÖÉÏÃæËùËµµÄ¶ÔÄã¶øÑÔ¶¼Ì«(Ç³|Éî)ÁË£¬Ã»ÓÐÑ§µ½ÈÎºÎ¶«Î÷¡£\w*|Ñ§Ï°ÖªÊ¶ÐèÒªÔÚÊéÔº·½ÄÜ¾²ÐÄÑ§Ï°¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª busyover=jyover µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª startworkflow=yes µÄ±äÁ¿Éè¶¨¡£\w*)"
+   name="skills_jingyao_dosth1"
+   regexp="y"
+   script="addtri_39187"
+   sequence="10"
+   variable="skills_jingyao_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="kill_bt"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÓÃÉßÕÈÊ¾Òâ¹ÖÉßÍ£ÏÂÀ´¡£\n¿ÉÊÇ¹ÖÉßÀí¶¼²»Àí¡£\Z\w*|´ÓÏÖÔÚÆðÄãÓÃÁãµãÄÚÁ¦ÉËµÐ¡£\nÊ²Ã´£¿\Z\w*|Äã·¢ÏÖ(.+)µÄÉí·¨ÖÐÓÐÐ©ÐíÆÆÕÀ¡£\nÈç¹ûÕâÊ±ÍµÏ®³É¹¦£¬¿ÉÒÔ´òµÄ¶ÔÊÖÈ«ÎÞ»¹ÊÖÖ®Á¦¡£\Z\w*)"
+   multi_line="y"
+   name="kill_bt_m_dosth2"
+   regexp="y"
+   script="addtri_39165"
+   sequence="10"
+   variable="kill_bt_m_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="fj_escape"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÔÚ(.+)µÄ¶ú±ßÇÄÉùËµµÀ£ºÄã²»ÊÇÎÒµÄ²Ë£¡\w*|ÄãÒª¶ÔË­×ö doufu Õâ¸ö¶¯×÷£¿\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª busyover=escape µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª dazuo=over µÄ±äÁ¿Éè¶¨¡£\w*|\s+(.+)ÕýÔÚÔË¹¦ÁÆÉË¡£\w*|\s+.+µÜ×Ó (.+)\(*\) &lt;Õ½¶·ÖÐ&gt;\w*|\s+.+µÜ×Ó (.+)\(*\) &lt;»èÃÔ²»ÐÑ&gt;\w*|\s+.+µÜ×Ó (.+)\(*\)$\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checknpcleave=yes µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÒª¿´Ê²Ã´£¿\w*|ÄãÒªÍùÄÄ¸ö·½Ïò×ß£¿\w*|Õâ¸ö·½ÏòÃ»ÓÐ³öÂ·¡£\w*|ÕâÀï¿ÕÆø²»ºÃ£¬²»ÄÜ´ò×ø¡£\w*|Õ½¶·ÖÐ²»ÄÜÁ·ÄÚ¹¦£¬»á×ß»ðÈëÄ§¡£\w*|ÄãÍÂÆøÄÉÏ¢£¬Ó²ÉúÉúµØ½«ÄÚÏ¢Ñ¹ÁËÏÂÈ¥£¬»º»ºÕ¾ÁËÆðÀ´¡£\w*|\s+ÕâÀï.{4}µÄ³ö¿ÚÊÇ (.+)¡£$\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª resetSafe=yes µÄ±äÁ¿Éè¶¨¡£\w*|Ôã¸â£¬ÄãÌÓÅÜÊ§°ÜÁË£¡\w*|ÄãµÄ¶¯×÷»¹Ã»ÓÐÍê³É£¬²»ÄÜÒÆ¶¯¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª check=escapeback µÄ±äÁ¿Éè¶¨¡£\w*|ÉÙÁÖµÜ×ÓÆñ¿ÉÌ°ÉúÅÂËÀ£¬ÒÔ×¹±¾ÅÉÉùÃû£¡\w*|ÄãÉîÇéµØ¶Ô(.+)³ªµÀ£º×ßÇ§É½ÍòÀïÂ·£¬¶ÁÇ§²áÍò¾íÊé£¬¶¼²»Èç¿¿½ü³ÔÄãÁ½¿é¶¹¸¯£¡\w*|ºöÈ»Ò»ÕóÐÈ·çÏ®À´£¬Ò»Ìõ¾Þòþ´ÓÉíÅÔ´óÊ÷ÉÏÐüÏÂ£¬°ÑÄã¾í×ßÁË¡£\w*)"
+   name="fj_escape_dosth1"
+   regexp="y"
+   script="addtri_39259"
+   sequence="10"
+   variable="fj_escape_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_mj_watch"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÕýÃ¦×ÅÄØ\w*|ÄãÏÖÔÚ²»Ã¦¡£\w*|ÕâÀïÃ»ÓÐÕâ¸öÈË¡£\w*|Ê²Ã´£¿\w*|Äã²¢Ã»ÓÐ×°±¸ÕâÑù¶«Î÷×÷ÎªÎäÆ÷\w*|Ö»ÄÜ¶ÔÕ½¶·ÖÐµÄ¶ÔÊÖÊ¹ÓÃ\w*)"
+   name="mp_mj_watch_gag_dosth1"
+   omit_from_output="y"
+   regexp="y"
+   sequence="10"
+   variable="mp_mj_watch_gag_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_gb_watch"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÄãÕýÃ¦×ÅÄØ\w*|ÄãÒÑ¾­ÔÚÏòÈË¼ÒÆòÌÖÁË£¡\w*)"
+   name="mp_gb_watch_gag_dosth1"
+   omit_from_output="y"
+   regexp="y"
+   sequence="10"
+   variable="mp_gb_watch_gag_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_qz_boyao"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Çð´¦»úËµµÀ£º.+%?\nÄã¸øÇð´¦»ú.+¡£\Z|Çð´¦»úÇáÇáµØÅÄÁËÅÄÄãµÄÍ·¡£\nÇð´¦»úËµµÀ(.+)\Z)"
+   multi_line="y"
+   name="mp_qz_boyao_m_dosth2"
+   regexp="y"
+   script="addtri_39430"
+   sequence="10"
+   variable="mp_qz_boyao_m_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="gps_nanyang"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÊØ³Ç¹Ù±øµ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|ÊØ³Ç¹Ù±ø½ÅÏÂÒ»¸ö²»ÎÈ£¬µøÔÚµØÉÏ»èÁË¹ýÈ¥¡£\w*|ÊØ³Ç¾ü¹Ù³òÖøÄã£¬¾ÙÆðÊÖÖÐ±øÆ÷£¬µ²×¡ÄãµÄÈ¥Â·¡£\w*|Õâ²»ÊÇ»îÎï£¡\w*)"
+   name="gps_nanyang_dosth1"
+   regexp="y"
+   script="addtri_38998"
+   sequence="10"
+   variable="gps_nanyang_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="fj_close"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬(\d+)¾ÍÊÇÕâÀï£¡\w*|ÄãÏò(.+)´òÌýÓÐ¹Ø¡¸ÒªÊÂÔÚÉí¡¹µÄÏûÏ¢¡£\w*)"
+   name="fj_close_dosth1"
+   regexp="y"
+   script="addtri_39262"
+   sequence="10"
+   variable="fj_close_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_gb_gold"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬(\d+)¾ÍÊÇÕâÀï£¡\w*|ÕâÀïÃ»ÓÐ (.+) Õâ¸öÈË¡£\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡ºÂ³ÓÐ½Å¡»\w*|¶Ô·½ÕýÃ¦×ÅÄØ£¬ÄãµÈ»á¶ùÔÚÎÊ»°°É¡£\w*|ÄãÃ¦×ÅÄØ£¬ÄãµÈ»á¶ùÔÚÎÊ»°°É¡£\w*|µ«ÊÇºÜÏÔÈ»µÄ£¬(.+)ÏÖÔÚµÄ×´¿öÃ»ÓÐ°ì·¨¸øÄãÈÎºÎ´ð¸²¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª searchgold=next µÄ±äÁ¿Éè¶¨¡£\w*|ÕâÀïÃ»ÓÐ (.+)¡£\w*|ÕâÀïÃ»ÓÐ (.+)\s+(.+)¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª searchgold=over µÄ±äÁ¿Éè¶¨¡£\w*|Äã¾ö¶¨¿ªÊ¼¸úËæ(.+)Ò»ÆðÐÐ¶¯¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª busyover=begover µÄ±äÁ¿Éè¶¨¡£\w*|(.+)µÍÍ·ÏëÁËÒ»»á£¬ÓÖ¿´ÁË¿´Äã£¬Ò¡Ò¡Í·£¬Ì¾ÁË¿ÚÆø£¬¶ª¸øÄãÒ»(¿Å|¿é)(.+)¡£\w*|(.+)ËµµÀ£ºµ±ÄêÎÒÔøÊÜ¹ý(.+)µÄ¶÷»Ý£¬Õâ(.+)ËãÊÇÎÒµÄÒ»·¬ÐÄÒâ£¬Çë´ú(Îª×ª¸æ|ÎÒ½»¸øËû°É)¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkgoldowner=yes µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkgoldrobber=yes µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÒª¶ÔË­×ö beg1 Õâ¸ö¶¯×÷£¿\w*|ÄãËµµÀ£º¡¸.+£¬ÎÒÇóÄãÒ»¼þÊÂ£¬Äã¿Ï´ðÔÊÃ´£¿¡¹\w*|(.+)¸øÄãÒ»(¿Å|¿é)(.+)¡£\w*|Äã¿ÚÄîÖäÓï¡ºÉñÂí¶¼ÊÇ¸¡ÔÆ,ÏºÃ×¶¼ÊÇ³¾ÍÁ¡»£¬¡º(.+)¡»Á¢Âíµ½´ï£¡\w*|¸¡ÔÆ¶ä¶äÆ®£¬Æ®µ½ÁË \d+ ¸ö¡º(.+)¡»ÖÐµÄµÚ \d+ ¸ö¡«¡«\w*|Äã×°³ö¿ÉÁ¯°Í°ÍµÄÑù×Ó£¬ÂýÂýµØÏò(.+)×ß¹ýÈ¥£¬Éì³öË«ÊÖ£¬ÏëÒª(Ð©|±­)\w*|Äã×°³ö¿ÉÁ¯°Í°ÍµÄÑù×Ó£¬ÂýÂýµØÏò(.+)×ß¹ýÈ¥£¬Éì³öË«ÊÖ£¬ÏëÒª(¿Å|¿é)(.+)...\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª busyover=giveowner µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª dazuo=over µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkfujiaid=yes µÄ±äÁ¿Éè¶¨¡£\w*|(.+)¶ªÏÂÒ»(¿Å|¿é)(.+)¡£\w*|(.+)¶Ô×Å(.+)ËµÁËÉù¡¸¸æ´Ç¡¹£¬×ªÉí½¥½¥×ßÔ¶ÁË¡£\w*|Äã¼ñÆðÒ»(¿Å|¿é)(.+)¡£\w*)"
+   name="mp_gb_gold_dosth1"
+   regexp="y"
+   script="addtri_39352"
+   sequence="10"
+   variable="mp_gb_gold_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_xx_start"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Í»È»¼ä´ÓÊ÷ºóÔ½³öÒ»¸öÈË£¬¸ßº°Ò»Éù£º¡°ÐÇËÞ¼éÈË£¬ÄÃÃüÀ´£¡¡±\n¿´ÆðÀ´(.+)ÏëÉ±ËÀÄã£¡\Z|ÄãÏò¶¡´ºÇï´òÌýÓÐ¹Ø¡¸job¡¹µÄÏûÏ¢¡£\n¶¡´ºÇïËµµÀ£º¡°ÀÏÏÉÎÒ×î½üÁ·¹¦ÐèÒªÒ»Ð©¶¾µ¤£¬Äãµ½ºóÉ½ÄÃÐ©À´¸øÎÒ°É¡£¡±\Z|ÄãÏò¶¡´ºÇï´òÌýÓÐ¹Ø¡¸job¡¹µÄÏûÏ¢¡£\n¶¡´ºÇïËµµÀ£ººÃÐ¡×Ó£¬ÉÏÒ»¸ö¹¤×÷Ã»ÓÐÍê³É¾Í¸ÒÀ´ÎÊÎÒ¹¤×÷¡£\Z)"
+   multi_line="y"
+   name="mp_xx_start_m_dosth2"
+   regexp="y"
+   script="addtri_39599"
+   sequence="10"
+   variable="mp_xx_start_m_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="dealwith_gold"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÍõÎåËµµÀ£ºÎÒ¡­²»ÖªµÀ¡£\w*|¶Ô·½»¹Ã»ÓÐÍêÈ«»èÃÔ£¬ÏÈµÈµÈ°É¡£\w*|Äã½«ÎâÀÏ°å·öÁËÆðÀ´±³ÔÚ±³ÉÏ¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª busyover=killwang µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª busyover=stealwu µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÏëÐÐÇÔµÄ¶ÔÏó²»ÔÚÕâÀï¡£\w*|Ç®×¯ÍíÉÏ²»¿ª£¬ÇëÌìÁÁÁËÔÙÀ´£¡\w*|ÍõÎåµ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|ÍõÎå½ÅÏÂÒ»¸ö²»ÎÈ£¬µøÔÚµØÉÏ»èÁË¹ýÈ¥¡£\w*|ÍõÎåËµµÀ£ºÀÏ×Ó¾ÍÊÇ¹íµ¶ÍõÎå£¬¹íµ¶ÍõÎå¾ÍÊÇÄãÀÏ×Ó£¡ÄÉÃüÀ´°É£¡\w*|ÎâÀÏ°å½ÅÏÂÒ»¸ö²»ÎÈ£¬µøÔÚµØÉÏ»èÁË¹ýÈ¥¡£\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡º´óÀÇ¹·¡»\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡º»ÆÕæ¡»\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡ºÍõÎå¡»\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡ºÎâÀÏ°å¡»\w*|ÕâÀïÃ»ÓÐ wang Õâ¸öÈË¡£\w*)"
+   name="dealwith_gold_dosth1"
+   regexp="y"
+   script="addtri_38834"
+   sequence="10"
+   variable="dealwith_gold_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_thd_thl"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Ð¡¾¶ -\w*|ÏÖÔÚÄàÌ¶Ê±¼äÊÇ.+Äê.+ÔÂ.+ÈÕ(.+)Ê±.+¡£\w*)"
+   name="gps_thd_thl_dosth1"
+   regexp="y"
+   script="addtri_39058"
+   sequence="10"
+   variable="gps_thd_thl_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_yz_ym"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÑÃÒÛµ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|ÑÃÒÛ½ÅÏÂÒ»¸ö²»ÎÈ£¬µøÔÚµØÉÏ»èÁË¹ýÈ¥¡£\w*|ÑÃÒÛºÈµÀ£º¡°Íþ¡­¡­Îä¡­¡­¡£¡±\w*|Õâ²»ÊÇ»îÎï£¡\w*)"
+   name="gps_yz_ym_dosth1"
+   regexp="y"
+   script="addtri_39093"
+   sequence="10"
+   variable="gps_yz_ym_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="aoyao"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Ò©Â¯ÏÂÕýÈ¼×Å»ð¡£\w*|ÄãÉîÎüÒ»¿ÚÆø£¬Í£ÁËÏÂÀ´¡£\w*|Ì¿»ð½¥½¥Ã÷ÁÁ£¬¿´À´¿ÉÒÔ¿ªÊ¼ÁË¡£\w*|.+½«Ì¿»ðÏ¨Ãð¡£\w*|Äã°¾ÕâÃ´¶àÒ©¸ÉÂð£¿\w*|Äã¿ªÂ¯Ò»¿´£¬Â¯ÖÐÖ®ÎïÏóÒ»ÍÅ½¬ºýÒ»Ñù£¬¿´À´Ã»Ê²Ã´ÓÃ¡£\w*|ÄãÈ¡³öÒ©²ÄÒ»¿´£¬ÒÑ¾­ÉÕ³ÉÒ»ÍÅ½¹Ì¿¡£\w*|Ó´£¬±§Ç¸°¡£¬ÎÒÕâ¶ùÕýÃ¦×ÅÄØ¡­¡­ÄúÇëÉÔºò¡£\w*|ÕâÀïÃ»ÓÐ wang tongzhi Õâ¸öÈË¡£\w*|Äã´ò¿ªÁË×Ô¼ºµÄÒ¥ÑÔÆµµÀ¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª busyover=false µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª busyover=miehuo µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª busyover=quyao µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkfire=yes µÄ±äÁ¿Éè¶¨¡£\w*|ÄãÏòÍõÍ¨ÖÎ´òÌýÓÐ¹Ø¡¸ÄãÂè¿ÉºÃ£¿¡¹µÄÏûÏ¢¡£\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬[6|2057]¾ÍÊÇÕâÀï£¡\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡ºÍõÍ¨ÖÎ¡»\w*|Äã´ÓÒ©Â¯ÖÐÈ¡³öÒ».{2}(.+)\w*|Äã´ÓÍõÍ¨ÖÎÄÇÀïÂòÏÂÁËÒ».{2}(.+)¡£\w*)"
+   name="aoyao_dosth1"
+   regexp="y"
+   script="addtri_38926"
+   sequence="10"
+   variable="aoyao_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_gb_watch"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Ò»±ß´ò¼ÜÒ»±ßÒª·¹£¿ÄãÕæÊÇ»îÄåÁË£¡\w*|.+¹í¹íËîËîµÄ¶ÔÄãµÀ£ºÂ³³¤ÀÏÈÃÄãÕÒµÄÊÇÕâ¸ö°É£¬¿ì¿ìÊÕºÃ£¬±ð±»Î×Ê¦¿´µ½ÁË¡£\w*|ÄãÉìÊÖÍù»³ÖÐÒ»Ãþ£¬¾ª¾õÃÜº¯²»¼ûÁË£¡\w*)"
+   name="mp_gb_watch_dosth1"
+   regexp="y"
+   script="addtri_39376"
+   sequence="10"
+   variable="mp_gb_watch_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="fj_other"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡ºµÀÏó¡»\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡º¶ÉÄÑ¡»\w*|ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª busyover=putizi µÄ±äÁ¿Éè¶¨¡£\w*|¶ÉÄÑ²ÒÈ»Ò»Ð¦£¬½ÓÖø³¤Ì¾Ò»Éù£¬´ÓÊ÷¶´ÀïÈ¡³ö¸ö°×Óñ´ÅÆ¿£¬µ¹³öÆÐÌá×ÓµÝ¸øÄã¡£\w*|¶ÉÄÑËµµÀ£ºÆÐÌá×ÓÄËÌìµØÖ®ÁéÎï£¬²É¼¯¼èÄÑÎÞ±È£¬ÎÒÕâÀïÏÖÔÚ¿ÉÃ»ÓÐ¡£\w*|Äã³ÔÏÂÒ»¿ÅÆÐÌá×Ó£¬¶ÙÈ»¼äÖ»¾õÒ»¹ÉºÆµ´ÎÞ±ÈµÄÕæÆøÖ±³å¶¥ÃÅ\w*|ÕâÀïÃ»ÓÐ nan Õâ¸öÈË¡£\w*|ÕâÀïÃ»ÓÐ chanshi Õâ¸öÈË¡£\w*|Äã¿ÚÄîÖäÓï¡ºÉñÂí¶¼ÊÇ¸¡ÔÆ,ÏºÃ×¶¼ÊÇ³¾ÍÁ¡»£¬¡ºÎäÃí¡»Á¢Âíµ½´ï£¡\w*|ÄãÉíÉÏÓÐÑªÐÈÎ¶£¬Ä¿Ç°²»ÔÊÐí½øÈë¸Ã·¿¼ä¡£\w*)"
+   name="fj_other_dosth1"
+   regexp="y"
+   script="addtri_39251"
+   sequence="10"
+   variable="fj_other_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="dealwith_yaodai"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡º¾²·ç¡»\w*)"
+   name="dealwith_yaodai_dosth1"
+   regexp="y"
+   script="addtri_38877"
+   sequence="10"
+   variable="dealwith_yaodai_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="dealwith_tyl"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡ºÀîÌìºã¡»\w*|ÓÐÒ»Ìì£¬Äã²È×ÅÆßÉ«ÔÆ²ÊÀ´Ó­È¢¡ºÀäÇ«¡»\w*)"
+   name="dealwith_tyl_dosth1"
+   regexp="y"
+   script="addtri_38858"
+   sequence="10"
+   variable="dealwith_tyl_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_hs_pre"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÔÀ²»ÈºËµµÀ£º¶ÌÊ±¼äÄÚÈç´Ë¶àµÐÈË£¿\nÔÀ²»ÈºËµµÀ£º(.+)£¬ÕâÐ©ÁîÅÆÄãÏÈÊÕ×Å£¬ÈÃÎÒºÃºÃ³ï»®ÓùµÐ´ó¼Æ¡£\Z|ÔÀ²»ÈºÖå×ÅÃ¼Í·ËµµÀ£ºÕâÊÇÐ°ÅÉµÄÇàÍ­Áî£¬ËûÃÇµ½µ×ÓÐºÎÆóÍ¼£¿\nÔÀ²»ÈºËµµÀ£º(.+)Äã×öµÃ·Ç³£ºÃ£¡¿ìÏÂÈ¥ÐÝÏ¢°É¡£\Z)"
+   multi_line="y"
+   name="mp_hs_pre_m_dosth1"
+   regexp="y"
+   script="addtri_39416"
+   sequence="10"
+   variable="mp_hs_pre_m_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="tongmai"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(ÔÚÄãµÄ¶ú±ßÇÄÉùËµµÀ£ºÃ»ÓÐÄÚÁ¦ÖÎÁÆ£¡\w*|ÔÚÄãµÄ¶ú±ßÇÄÉùËµµÀ£ºÄãµÄÒ»ÑôÖ¸ÒÑÖÎÓú£¡\w*|ÔÚÄãµÄ¶ú±ßÇÄÉùËµµÀ£ºÐ¡Ñù£¡ÎÒ²»ÊÇÕâÃ´Ëæ±ãµÄÈË¡«¡«\w*|ÄãÃ¦×ÅÄØ£¬ÄãµÈ»á¶ùÔÚÎÊ»°°É¡£\w*|Äã¸Ðµ½Ò»¹É¾¢Á¦Ö±ÇÖÄãÉíÉÏÒªÑ¨£¬ÒþÒþÉúÌÛ¡£\w*|ÄãÍ»È»¾õµÃÉíÌåÒ»Çá£¬¸÷Â·ÒªÑ¨ËÆºõ¶¼±»´òÍ¨£¬²»ÔÙÌÛÍ´¡£\w*|ÊýÂëÊÀ½ç£¬Êý×ÖµØÍ¼£¬950¾ÍÊÇÕâÀï£¡\w*|ÔÚÎåÖ¸Çá¸§ÏÂ£¬Ö»¼ûÄã²»×¡¿ÚÍÂÏÊÑª£¬µ«ÊÇÆøÉ«È´±È·½²ÅºÃÁËÐí¶à¡£\w*|ÕâÀïÃ»ÓÐ  Õâ¸öÈË¡£\w*)"
+   name="tongmai_dosth1"
+   regexp="y"
+   script="addtri_38888"
+   sequence="10"
+   variable="tongmai_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_dl_fsg"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Õâ²»ÊÇ»îÎï£¡\w*|ÊØÎÀºÈµÀ£ºÏÐÔÓÈËµÈ£¬²»µÃÂÒ´³¡£\w*|¸µË¼¹é½ÅÏÂÒ»¸ö²»ÎÈ£¬µøÔÚµØÉÏ»èÁË¹ýÈ¥¡£\w*|¸µË¼¹éµ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*)"
+   name="gps_dl_fsg_dosth1"
+   regexp="y"
+   script="addtri_38980"
+   sequence="10"
+   variable="gps_dl_fsg_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_zeikou"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Ö»¼û.+ÍùºóÒ»×Ý£¬ËµµÀ£ººÃ£¡.+ÔÚ´ËÏàÈ°£¬¿´ÔÚÈË¼ÒµÄÃæ×ÓÉÏ£¬Õâ´Î¾ÍËãÁË¡£\w*|Ö»¼û.+ÍùºóÒ»×Ý£¬ËµµÀ£ººÃ£¡.+Á¼ÑÔÏàÈ°£¬ÔÝÇÒ°ÕÊÖ¡£\w*|Õâ²»ÊÇÄãµÄÉß£¬Ëü²»»áÌý´ÓÄãµÄÖ¸»ÓµÄ¡£\w*|Ã«ÔôÍù´óÑÒÊ¯ÉÏÒ»Ìø£¬×ªÑÛ¾Í²»¼ûÁË\w*|¹ÖÉß¿´ÁË¿´Äã£¬Í»È»ËÆ¼ýÒ»°ãÔ¾Æð£¬×¼È·µØÂäÔÚÉßÕÈÉÏ£¬ÅÌÁËÆðÀ´¡£\w*|ÄãÏëÈ°·þË­£¿\w*|ÄãÕýÔÚÈ°·þ±ðÈË£¡\w*|Äã¸ÕÈ°·þ¹ýËû£¬Ïë±ØÕâ´Î²»»áÔÙÌýÄãÈ°ÁË¡£\w*|Ã«Ôôµ¹ÔÚµØÉÏ£¬ÕõÔúÁË¼¸ÏÂ¾ÍËÀÁË¡£\w*|.+Í»È»ÂôÒ»ÆÆÕÀ£¬Ìø³öÕ½È¦£¬ÌÓÁË£¡\w*|.+¶ÔÄãÀíÒ²²»Àí\w*|.+ÊÜµ½Äã·ð·¨¸ÐÕÐ£¬¾ö¶¨°ÕÊÖ²»¶·¡£\w*)"
+   name="gps_zeikou_dosth1"
+   regexp="y"
+   script="addtri_39120"
+   sequence="10"
+   variable="gps_zeikou_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_thrownpc"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)(Ö»¼û.+ÍùºóÒ»×Ý£¬ËµµÀ£ººÃ£¡¼ÍÏþÜ½ÔÚ´ËÏàÈ°£¬¿´ÔÚÈË¼ÒµÄÃæ×ÓÉÏ£¬Õâ´Î¾ÍËãÁË¡£\w*|ÄãÊ¤ÁËÕâÕÐ£¬ÏòºóÔ¾¿ªÈý³ß£¬Ð¦µÀ£º³ÐÈÃ£¡\w*|ÄãË«ÊÖÒ»¹°£¬Ð¦ÖøËµµÀ£º³ÐÈÃ£¡\w*|Äã¹þ¹þ´óÐ¦£¬ËµµÀ£º³ÐÈÃÁË£¡\w*|.+ÏòºóÒ»×Ý£¬¹ªÉí×öÒ¾ËµµÀ£º¸óÏÂÎäÒÕ²»·²£¬¹ûÈ»¸ßÃ÷£¡\w*|.+ÏòºóÍËÁË¼¸²½£¬ËµµÀ£ºÕâ³¡±ÈÊÔËãÎÒÊäÁË£¬Åå·þ£¬Åå·þ£¡\w*|.+Á³É«Î¢±ä£¬ËµµÀ£ºÅå·þ£¬Åå·þ£¡\w*)"
+   name="gps_thrownpc_dosth1"
+   regexp="y"
+   script="addtri_39064"
+   sequence="10"
+   variable="gps_thrownpc_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_xydcy"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)´ó²ÝÔ­\s+-\s+(.+)"
+   name="gps_xydcy_dosth1"
+   regexp="y"
+   script="addtri_39075"
+   sequence="10"
+   variable="gps_xydcy_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="kill"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)¿´À´¸ÃÕÒ»ú»áÌÓÅÜÁË\.\.\.\n\S+ -\Z"
+   multi_line="y"
+   name="kill_m_dosth1"
+   regexp="y"
+   script="addtri_39134"
+   sequence="10"
+   variable="kill_m_dosth1"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_skills"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãµÄ¡¸(»ù±¾ÄÚ¹¦|±ÌÌÎÐþ¹¦|µßµ¹¹¦|¶¾Áú´ó·¨|¹âÃ÷Ê¥»ð¹¦|¸òó¡¹¦|»¯¹¦´ó·¨|»ìÌìÆø¹¦|»ìÔª¹¦|»ìÔªÒ»Æø¹¦|¾ÅÑôÉñ¹¦|¿ÝÈÙìø¹¦|ÁÙ¼ÃÊ®¶þ×¯|ÁúÏó°ãÈô¹¦|ÃÖÀÕ¹¦|Ä¦ÌìÔÆÆø|Ì«¼«Éñ¹¦|Ì«Ðþ¹¦|ÏÈÌì¹¦|ÐÞÁäÒªÖ¼|ÐþÃÅµ¼Òý¹¦|ÐþÒõÕæÆø|ÓñÅ®ÐÄ¾­|×ÏÏ¼¹¦)¡¹½ø²½ÁË£¡"
+   name="always_skills_dosth4"
+   regexp="y"
+   script="addtri_38724"
+   sequence="10"
+   variable="always_skills_dosth4"
+  >
+  </trigger>
+  <trigger
+   group="gps_dl_fsg"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª (.+) µÄ±äÁ¿Éè¶¨¡£"
+   name="gps_dl_fsg_dosth2"
+   regexp="y"
+   script="addtri_38983"
+   sequence="10"
+   variable="gps_dl_fsg_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="gps_em_killjm"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª (.+) µÄ±äÁ¿Éè¶¨¡£"
+   name="gps_em_killjm_dosth2"
+   regexp="y"
+   script="addtri_38989"
+   sequence="10"
+   variable="gps_em_killjm_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="gps_qzh_mcx"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª (.+) µÄ±äÁ¿Éè¶¨¡£"
+   name="gps_qzh_mcx_dosth2"
+   regexp="y"
+   script="addtri_39007"
+   sequence="10"
+   variable="gps_qzh_mcx_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="gps_climbxy"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª (.+) µÄ±äÁ¿Éè¶¨¡£"
+   name="gps_climbxy_dosth2"
+   regexp="y"
+   script="addtri_38977"
+   sequence="10"
+   variable="gps_climbxy_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="gps_qzh_sl"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª (.+) µÄ±äÁ¿Éè¶¨¡£"
+   name="gps_qzh_sl_dosth2"
+   regexp="y"
+   script="addtri_39013"
+   sequence="10"
+   variable="gps_qzh_sl_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="gps_nanyang"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª (.+) µÄ±äÁ¿Éè¶¨¡£"
+   name="gps_nanyang_dosth2"
+   regexp="y"
+   script="addtri_39001"
+   sequence="10"
+   variable="gps_nanyang_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="gps_start"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª (\S+) µÄ±äÁ¿Éè¶¨¡£"
+   name="gps_start_dosth5"
+   regexp="y"
+   script="addtri_38946"
+   sequence="10"
+   variable="gps_start_dosth5"
+  >
+  </trigger>
+  <trigger
+   group="gps_thd_ms"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª busyover=ms µÄ±äÁ¿Éè¶¨¡£"
+   name="gps_thd_ms_dosth2"
+   regexp="y"
+   script="addtri_39049"
+   sequence="10"
+   variable="gps_thd_ms_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="gps_thd_thl"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª busyover=thl µÄ±äÁ¿Éè¶¨¡£"
+   name="gps_thd_thl_dosth2"
+   regexp="y"
+   script="addtri_39061"
+   sequence="10"
+   variable="gps_thd_thl_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="gps_slh"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª busyover=up µÄ±äÁ¿Éè¶¨¡£"
+   name="gps_slh_dosth2"
+   regexp="y"
+   script="addtri_39037"
+   sequence="10"
+   variable="gps_slh_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="gps_qzh_xmdq"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checklook=yes µÄ±äÁ¿Éè¶¨¡£"
+   name="gps_qzh_xmdq_dosth2"
+   regexp="y"
+   script="addtri_39019"
+   sequence="10"
+   variable="gps_qzh_xmdq_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="gps_sgy_sd"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkmianbi=yes µÄ±äÁ¿Éè¶¨¡£"
+   name="gps_sgy_sd_dosth2"
+   regexp="y"
+   script="addtri_39025"
+   sequence="10"
+   variable="gps_sgy_sd_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="gps_thd_sg"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkmove=yes µÄ±äÁ¿Éè¶¨¡£"
+   name="gps_thd_sg_dosth2"
+   regexp="y"
+   script="addtri_39055"
+   sequence="10"
+   variable="gps_thd_sg_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="gps_yz_ym"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkmove=yes µÄ±äÁ¿Éè¶¨¡£"
+   name="gps_yz_ym_dosth2"
+   regexp="y"
+   script="addtri_39096"
+   sequence="10"
+   variable="gps_yz_ym_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="gps_yz_lts"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkmove=yes µÄ±äÁ¿Éè¶¨¡£"
+   name="gps_yz_lts_dosth2"
+   regexp="y"
+   script="addtri_39090"
+   sequence="10"
+   variable="gps_yz_lts_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="gps_xydcy"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkxydcy=yes µÄ±äÁ¿Éè¶¨¡£"
+   name="gps_xydcy_dosth2"
+   regexp="y"
+   script="addtri_39078"
+   sequence="10"
+   variable="gps_xydcy_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="gps_xydcy_sl"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª checkxydcy=yes µÄ±äÁ¿Éè¶¨¡£"
+   name="gps_xydcy_sl_dosth2"
+   regexp="y"
+   script="addtri_39084"
+   sequence="10"
+   variable="gps_xydcy_sl_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="gps_zeikou"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÄ¿Ç°»¹Ã»ÓÐÈÎºÎÎª killover=zeikou µÄ±äÁ¿Éè¶¨¡£"
+   name="gps_zeikou_dosth2"
+   regexp="y"
+   script="addtri_39123"
+   sequence="10"
+   variable="gps_zeikou_dosth2"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_skills"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÄ¿Ç°ËùÑ§¹ýµÄ¼¼ÄÜ£º£¨¹²(\S+)Ïî¼¼ÄÜ£©"
+   name="always_skills_dosth6"
+   regexp="y"
+   script="addtri_38730"
+   sequence="10"
+   variable="always_skills_dosth6"
+  >
+  </trigger>
+  <trigger
+   group="kill_gb"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÊ¹³ö´ò¹·°ô·¨¡¸²ø¡¹×Ö¾÷£¬»Ã³öÁ¬É½°ôÓ°£¬½«.+ÍÌÃ»£¡\n½á¹ûËû±»Äã²øÁË¸öÊÖÃ¦½ÅÂÒ£¬Ò»Ê±ÎÞ·¨»¹ÕÐ½ø¹¥£¡\Z"
+   multi_line="y"
+   name="kill_gb_m_dosth1"
+   regexp="y"
+   script="addtri_39148"
+   sequence="10"
+   variable="kill_gb_m_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_dl_pre"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÏò(·¶æè|°ÍÌìÊ¯|»ªºÕôÞ+)´òÌýÓÐ¹Ø¡¸ÖÎ°²¡¹µÄÏûÏ¢¡£\n(.+)\Z"
+   multi_line="y"
+   name="mp_dl_pre_m_dosth1"
+   regexp="y"
+   script="addtri_39384"
+   sequence="10"
+   variable="mp_dl_pre_m_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="mp_dl_start"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÏò.+´òÌýÓÐ¹Ø¡¸ÖÎ°²¡¹µÄÏûÏ¢¡£\n(.+)\Z"
+   multi_line="y"
+   name="mp_dl_start_m_dosth1"
+   regexp="y"
+   script="addtri_39392"
+   sequence="10"
+   variable="mp_dl_start_m_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_zeikou"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÄãÓÃÉßÕÈÊ¾Òâ¹ÖÉßÍ£ÏÂÀ´¡£\n¿ÉÊÇ¹ÖÉßÀí¶¼²»Àí¡£\Z"
+   multi_line="y"
+   name="gps_zeikou_dosth3"
+   regexp="y"
+   script="addtri_39126"
+   sequence="10"
+   variable="gps_zeikou_dosth3"
+  >
+  </trigger>
+  <trigger
+   group="gps_xydcy_sl"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)ÊèÀÕ\s+-"
+   name="gps_xydcy_sl_dosth1"
+   regexp="y"
+   script="addtri_39081"
+   sequence="10"
+   variable="gps_xydcy_sl_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="kill_xx"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)Í»È»ÄãÒõÒõÒ»Ð¦£¬³ò×¼»ú»á£¬ÓÒÊÖÃÍµØÏò.+ÅÄÈ¥£¡\n.+×ªÉí²»Áé£¬ÄÑÒÔÉÁ±Ü£¬Ö»µÃÍ¦ÓÒÊÖÏàµÖ¡£µ½´ËµØ²½£¬ÒÑÊÇ¸ßÊÖ±ÈÆ´ÕæÁ¦\Z"
+   multi_line="y"
+   name="kill_xx_m_dosth1"
+   regexp="y"
+   script="addtri_39182"
+   sequence="10"
+   variable="kill_xx_m_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="check_items"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^(&gt; &gt; &gt; |&gt; &gt; |&gt; |)Ò»¸öÓÃÂ­¹ÇÖÆ³ÉµÄ²§¡£\nÀïÃæ×°(ÂúÁË|ÁËÆß¡¢°Ë·ÖÂú|ÁËÎå¡¢Áù·ÖÂú)\Z"
+   multi_line="y"
+   name="check_items_dosth3"
+   regexp="y"
+   script="addtri_38808"
+   sequence="10"
+   variable="check_items_dosth3"
+  >
+  </trigger>
+  <trigger
+   group="gps_start"
+   keep_evaluating="y"
+   match="^(\S+)( - (\S+)){0,1}"
+   name="gps_start_dosth4"
+   regexp="y"
+   script="addtri_38943"
+   sequence="10"
+   variable="gps_start_dosth4"
+  >
+  </trigger>
+  <trigger
+   group="gps_start"
+   keep_evaluating="y"
+   match="^\s*ÕâÀï.{4}µÄ³ö¿ÚÊÇ (.*)¡£$"
+   name="gps_start_dosth2"
+   regexp="y"
+   script="addtri_38937"
+   sequence="10"
+   variable="gps_start_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="gps_qzh_xmdq"
+   keep_evaluating="y"
+   match="^\s*ÕâÀï.{4}µÄ³ö¿ÚÊÇ (.*)¡£$"
+   name="gps_qzh_xmdq_dosth1"
+   regexp="y"
+   script="addtri_39016"
+   sequence="10"
+   variable="gps_qzh_xmdq_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_yztd_2_3"
+   keep_evaluating="y"
+   match="^\s*ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÊÇ\s+(\w+)\s*ºÍ\s*(\w+)¡£"
+   name="gps_yztd_2_3_dosth1"
+   regexp="y"
+   script="addtri_39108"
+   sequence="10"
+   variable="gps_yztd_2_3_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_yztd_2_1"
+   keep_evaluating="y"
+   match="^\s*ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÊÇ\s+(\w+)\s*ºÍ\s*(\w+)¡£"
+   name="gps_yztd_2_1_dosth1"
+   regexp="y"
+   script="addtri_39102"
+   sequence="10"
+   variable="gps_yztd_2_1_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_yztd_2_1"
+   keep_evaluating="y"
+   match="^\s*ÕâÀïÎ¨Ò»µÄ³ö¿ÚÊÇ\s*(\w+)¡£"
+   name="gps_yztd_2_1_dosth2"
+   regexp="y"
+   script="addtri_39105"
+   sequence="10"
+   variable="gps_yztd_2_1_dosth2"
+  >
+  </trigger>
+  <trigger
+   group="gps_yztd_2_3"
+   keep_evaluating="y"
+   match="^\s*ÕâÀïÎ¨Ò»µÄ³ö¿ÚÊÇ\s*(\w+)¡£"
+   name="gps_yztd_2_3_dosth2"
+   regexp="y"
+   script="addtri_39111"
+   sequence="10"
+   variable="gps_yztd_2_3_dosth2"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_skills"
+   keep_evaluating="y"
+   match="^©¦(¡¡|¡õ)(\S+)\s*\((\S+)\)\s+-\s*\S+\s*(\d+)\/\s*(\d+)"
+   name="always_skills_dosth5"
+   regexp="y"
+   script="addtri_38727"
+   sequence="10"
+   variable="always_skills_dosth5"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_hp"
+   keep_evaluating="y"
+   match="^©¦(ÐÄ¾²ÈçÊ¼|ÐùÔ¯ÕýÆø)£º(\d+)"
+   name="always_hp_dosth8"
+   regexp="y"
+   script="addtri_38685"
+   sequence="10"
+   variable="always_hp_dosth8"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_hp"
+   keep_evaluating="y"
+   match="^©¦½­ºþÃÅÅÉ£º(\S+)\s+"
+   name="always_hp_dosth9"
+   regexp="y"
+   script="addtri_38691"
+   sequence="10"
+   variable="always_hp_dosth9"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_hp"
+   keep_evaluating="y"
+   match="^©¦ÊÚÒµÊ¦¸¸£º(\S+)\s+"
+   name="always_hp_dosth10"
+   regexp="y"
+   script="addtri_38694"
+   sequence="10"
+   variable="always_hp_dosth10"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_hp"
+   keep_evaluating="y"
+   match="^©¦ÍË³öÏÞÖÆ£º(\S+)"
+   name="always_hp_dosth11"
+   regexp="y"
+   script="addtri_38697"
+   sequence="10"
+   variable="always_hp_dosth11"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_hp"
+   keep_evaluating="y"
+   match="^©¦ÐÔ  ±ð£º(\S+)ÈËÀà"
+   name="always_hp_dosth12"
+   regexp="y"
+   script="addtri_38700"
+   sequence="10"
+   variable="always_hp_dosth12"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_hp"
+   keep_evaluating="y"
+   match="^©¦ÐÕ  Ãû£º(\S+)\s+"
+   name="always_hp_dosth13"
+   regexp="y"
+   script="addtri_38703"
+   sequence="10"
+   variable="always_hp_dosth13"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_hp"
+   keep_evaluating="y"
+   match="^©¦ÑýÄ§ÄõÆø£º(\d+)"
+   name="always_hp_dosth14"
+   regexp="y"
+   script="addtri_38688"
+   sequence="10"
+   variable="always_hp_dosth14"
+  >
+  </trigger>
+  <trigger
+   enabled="y"
+   group="always_hp"
+   keep_evaluating="y"
+   match="^©¦Ó¢ÎÄID£º(\w+)\s+"
+   name="always_hp_dosth15"
+   regexp="y"
+   script="addtri_38706"
+   sequence="10"
+   variable="always_hp_dosth15"
+  >
+  </trigger>
+  <trigger
+   group="gps_zhou"
+   keep_evaluating="y"
+   match="ºöÈ»ÓÐ¸öÈËÀ­×¡Äã£¬½øÁË¶´¡£Äã¸ú×ÅÄÇÈËÔÚºÚ°µÖÐ×ó×ªÓÒ×ª£¬²»¾Ã¾Í³öÁË¶´¡£"
+   name="gps_zhou_dosth1"
+   regexp="y"
+   script="addtri_39117"
+   sequence="10"
+   variable="gps_zhou_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_thd_sg"
+   keep_evaluating="y"
+   match="Éµ¹ÃÉµÐ¦ÁË¼¸Éù£¬Éì¿ªË«ÊÖÒ»À¹£¬Ëµµ½£ºÒª½øÈ¥ÏÈÅãÎÒÍæÒ»»á¶ù°É£¬"
+   name="gps_thd_sg_dosth1"
+   regexp="y"
+   script="addtri_39052"
+   sequence="10"
+   variable="gps_thd_sg_dosth1"
+  >
+  </trigger>
+  <trigger
+   group="gps_sl_sl"
+   keep_evaluating="y"
+   match="ÕâÀïÃ÷ÏÔµÄ³ö¿ÚÊÇ\s+(\w+)\s+ºÍ\s+(\w+)¡£"
+   name="gps_sl_sl_dosth1"
+   regexp="y"
+   script="addtri_39031"
+   sequence="10"
+   variable="gps_sl_sl_dosth1"
+  >
+  </trigger>
+</triggers>
+
+<!-- aliases -->
+
+<aliases
+   muclient_version="5.02"
+   world_file_version="15"
+   date_saved="2016-12-20 16:39:14"
+  >
+  <alias
+   name="alias_fn"
+   script="alias.flytonext"
+   match="fn"
+   enabled="y"
+   regexp="y"
+   sequence="100"
+  >
+  </alias>
+  <alias
+   name="alias_goto"
+   script="alias.goto"
+   match="goto (.*)"
+   enabled="y"
+   regexp="y"
+   sequence="100"
+  >
+  </alias>
+</aliases>
+
+<!-- timers -->
+
+<timers
+   muclient_version="5.02"
+   world_file_version="15"
+   date_saved="2016-12-20 16:39:14"
+  >
+  <timer name="mp_xx_start_sandu_timer" script="mp_xx_start_sandu.timer" second="1.00" offset_second="0.00" group="mp_xx_start_sandu" >
+
+  </timer>
+  <timer name="mp_dl_dowork_timer" script="mp_dl_dowork.timer" second="1.00" offset_second="0.00" group="mp_dl_dowork" >
+
+  </timer>
+  <timer name="always_watch_log_timer0" script="always_watch.timer_log" enabled="y" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="always_watch_log_timer1" script="always_watch.timer_log" enabled="y" hour="1" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="always_watch_log_timer2" script="always_watch.timer_log" enabled="y" hour="2" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="always_watch_log_timer3" script="always_watch.timer_log" enabled="y" hour="3" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="always_watch_log_timer4" script="always_watch.timer_log" enabled="y" hour="4" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="always_watch_log_timer5" script="always_watch.timer_log" enabled="y" hour="5" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="always_watch_log_timer6" script="always_watch.timer_log" enabled="y" hour="6" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="always_watch_log_timer7" script="always_watch.timer_log" enabled="y" hour="7" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="always_watch_log_timer8" script="always_watch.timer_log" enabled="y" hour="8" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="always_watch_log_timer9" script="always_watch.timer_log" enabled="y" hour="9" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="gps_waitrelease_timer" script="gps_waitrelease.timer" second="30.00" offset_second="0.00" group="gps_waitrelease" >
+
+  </timer>
+  <timer name="always_watch_timer30" script="always_watch.timer30" enabled="y" second="30.00" offset_second="0.00" group="always_watch" >
+
+  </timer>
+  <timer name="mp_xx_start_search_timer" script="mp_xx_start_search.timer" second="1.00" offset_second="0.00" group="mp_xx_start_search" >
+
+  </timer>
+  <timer name="mp_xx_pre_suck_timer" script="mp_xx_pre_suck.timer" second="1.00" offset_second="0.00" group="mp_xx_pre_suck" >
+
+  </timer>
+  <timer name="mp_em_start_timer" script="mp_em_start.timer" second="3.00" offset_second="0.00" group="mp_em_start" >
+
+  </timer>
+  <timer name="mp_gb_gold_ti_timer" script="mp_gb_gold_ti.timer" second="1.00" offset_second="0.00" group="mp_gb_gold_ti" >
+
+  </timer>
+  <timer name="always_watch_timer60" script="always_watch.timer60" enabled="y" minute="1" second="0.00" offset_second="0.00" group="always_watch" >
+
+  </timer>
+  <timer name="mp_qz_boyao_ti_timer" script="mp_qz_boyao_ti.timer" second="2.00" offset_second="0.00" group="mp_qz_boyao_ti" >
+
+  </timer>
+  <timer name="mp_gm_caimi_t_timer" script="mp_gm_caimi_t.timer" second="2.00" offset_second="0.00" group="mp_gm_caimi_t" >
+
+  </timer>
+  <timer name="gps_dealwith_kill_timer" script="gps_dealwith.timer" second="5.00" offset_second="0.00" group="gps_dealwith" >
+
+  </timer>
+  <timer name="always_watch_timer1" script="always_watch.timer1d" enabled="y" hour="1" second="0.00" offset_second="0.00" group="always_watch" >
+
+  </timer>
+  <timer name="quit_timer" script="quit.timer" second="2.00" offset_second="0.00" group="quit" >
+
+  </timer>
+  <timer name="always_watch_log_timer10" script="always_watch.timer_log" enabled="y" hour="10" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="always_watch_log_timer11" script="always_watch.timer_log" enabled="y" hour="11" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="always_watch_log_timer12" script="always_watch.timer_log" enabled="y" hour="12" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="always_watch_log_timer13" script="always_watch.timer_log" enabled="y" hour="13" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="always_watch_log_timer14" script="always_watch.timer_log" enabled="y" hour="14" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="always_watch_log_timer15" script="always_watch.timer_log" enabled="y" hour="15" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="always_watch_log_timer16" script="always_watch.timer_log" enabled="y" hour="16" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="mp_xx_pre_sandu_timer" script="mp_xx_pre_sandu.timer" second="1.00" offset_second="0.00" group="mp_xx_pre_sandu" >
+
+  </timer>
+  <timer name="always_watch_log_timer17" script="always_watch.timer_log" enabled="y" hour="17" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="always_watch_log_timer18" script="always_watch.timer_log" enabled="y" hour="18" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="always_watch_log_timer19" script="always_watch.timer_log" enabled="y" hour="19" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="mp_xx_start_catch_timer" script="mp_xx_start_catch.timer" second="1.00" offset_second="0.00" group="mp_xx_start_catch" >
+
+  </timer>
+  <timer name="always_watch_log_timer20" script="always_watch.timer_log" enabled="y" hour="20" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="always_watch_log_timer21" script="always_watch.timer_log" enabled="y" hour="21" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="always_watch_log_timer22" script="always_watch.timer_log" enabled="y" hour="22" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="watch_death_timer" script="alias.resetidle" second="10.00" offset_second="0.00" group="watch_death" >
+
+  </timer>
+  <timer name="always_watch_log_timer23" script="always_watch.timer_log" enabled="y" hour="23" second="1.00" offset_second="0.00" at_time="y" group="always_watch" >
+
+  </timer>
+  <timer name="always_watch_timer10" script="always_watch.timer10" enabled="y" second="10.00" offset_second="0.00" group="always_watch" >
+
+  </timer>
+  <timer name="wd_xtjf_fight_timer" script="wd_xtjf_fight.timer" second="5.00" offset_second="0.00" group="wd_xtjf_fight" >
+
+  </timer>
+  <timer name="mp_sl_start_timer" script="mp_sl_start.timer" second="3.00" offset_second="0.00" group="mp_sl_start" >
+
+  </timer>
+  <timer name="skills_ask_timer" script="skills_ask.timer" second="0.50" offset_second="0.00" group="skills_ask" >
+
+  </timer>
+  <timer name="mp_mj_wxqjob_timer" script="mp_mj_wxqjob.timer" second="1.00" offset_second="0.00" group="mp_mj_wxqjob" >
+
+  </timer>
+  <timer name="sl_sj_timer" script="sl_sj.timer" second="10.00" offset_second="0.00" group="sl_sj" >
+
+  </timer>
+  <timer name="xf_em_resetidle_timer" script="xf_em_resetidle.timer" second="5.00" offset_second="0.00" group="xf_em_resetidle" >
+
+  </timer>
+</timers>
+
+<!-- macros -->
+
+<macros
+   muclient_version="5.02"
+   world_file_version="15"
+   date_saved="2016-12-20 16:39:14"
+  >
+
+  <macro name="up" type="send_now" >
+  <send>up</send>
+
+  </macro>
+
+  <macro name="down" type="send_now" >
+  <send>down</send>
+
+  </macro>
+
+  <macro name="north" type="send_now" >
+  <send>north</send>
+
+  </macro>
+
+  <macro name="south" type="send_now" >
+  <send>south</send>
+
+  </macro>
+
+  <macro name="east" type="send_now" >
+  <send>east</send>
+
+  </macro>
+
+  <macro name="west" type="send_now" >
+  <send>west</send>
+
+  </macro>
+
+  <macro name="examine" type="replace" >
+  <send>examine </send>
+
+  </macro>
+
+  <macro name="look" type="replace" >
+  <send>look </send>
+
+  </macro>
+
+  <macro name="page" type="replace" >
+  <send>page </send>
+
+  </macro>
+
+  <macro name="say" type="replace" >
+  <send>say </send>
+
+  </macro>
+
+  <macro name="whisper" type="replace" >
+  <send>whisper </send>
+
+  </macro>
+
+  <macro name="doing" type="send_now" >
+  <send>DOING</send>
+
+  </macro>
+
+  <macro name="who" type="send_now" >
+  <send>WHO</send>
+
+  </macro>
+
+  <macro name="drop" type="replace" >
+  <send>drop </send>
+
+  </macro>
+
+  <macro name="take" type="replace" >
+  <send>take </send>
+
+  </macro>
+
+  <macro name="logout" type="send_now" >
+  <send>LOGOUT</send>
+
+  </macro>
+
+  <macro name="quit" type="send_now" >
+  <send>QUIT</send>
+
+  </macro>
+</macros>
+
+<!-- variables -->
+
+<variables
+   muclient_version="5.02"
+   world_file_version="15"
+   date_saved="2016-12-20 16:39:14"
+  >
+  <variable name="id">ysh</variable>
+  <variable name="passwd">19890305zz</variable>
+</variables>
+
+<!-- colours -->
+
+<colours
+   muclient_version="5.02"
+   world_file_version="15"
+   date_saved="2016-12-20 16:39:14"
+  >
+
+<ansi>
+
+ <normal>
+   <colour seq="1" rgb="black" />
+   <colour seq="2" rgb="maroon" />
+   <colour seq="3" rgb="green" />
+   <colour seq="4" rgb="olive" />
+   <colour seq="5" rgb="navy" />
+   <colour seq="6" rgb="purple" />
+   <colour seq="7" rgb="teal" />
+   <colour seq="8" rgb="silver" />
+
+ </normal>
+
+ <bold>
+   <colour seq="1" rgb="gray" />
+   <colour seq="2" rgb="red" />
+   <colour seq="3" rgb="lime" />
+   <colour seq="4" rgb="yellow" />
+   <colour seq="5" rgb="blue" />
+   <colour seq="6" rgb="magenta" />
+   <colour seq="7" rgb="cyan" />
+   <colour seq="8" rgb="white" />
+
+ </bold>
+
+</ansi>
+
+<custom>
+  <colour seq="1" name="Custom1" text="#FF8080" back="black" />
+  <colour seq="2" name="Custom2" text="#FFFF80" back="black" />
+  <colour seq="3" name="Custom3" text="#80FF80" back="black" />
+  <colour seq="4" name="Custom4" text="#80FFFF" back="black" />
+  <colour seq="5" name="Custom5" text="#0080FF" back="black" />
+  <colour seq="6" name="Custom6" text="#FF80C0" back="black" />
+  <colour seq="7" name="Custom7" text="red" back="black" />
+  <colour seq="8" name="Custom8" text="#0080C0" back="black" />
+  <colour seq="9" name="Custom9" text="magenta" back="black" />
+  <colour seq="10" name="Custom10" text="#804040" back="black" />
+  <colour seq="11" name="Custom11" text="#FF8040" back="black" />
+  <colour seq="12" name="Custom12" text="teal" back="black" />
+  <colour seq="13" name="Custom13" text="#004080" back="black" />
+  <colour seq="14" name="Custom14" text="#FF0080" back="black" />
+  <colour seq="15" name="Custom15" text="green" back="black" />
+  <colour seq="16" name="Custom16" text="blue" back="black" />
+
+</custom>
+</colours>
+
+<!-- keypad -->
+
+<keypad
+   muclient_version="5.02"
+   world_file_version="15"
+   date_saved="2016-12-20 16:39:14"
+  >
+
+  <key name="0" >
+  <send>look</send>
+  </key>
+
+  <key name="1" >
+  <send>sw</send>
+  </key>
+
+  <key name="2" >
+  <send>south</send>
+  </key>
+
+  <key name="3" >
+  <send>se</send>
+  </key>
+
+  <key name="4" >
+  <send>west</send>
+  </key>
+
+  <key name="5" >
+  <send>look</send>
+  </key>
+
+  <key name="6" >
+  <send>east</send>
+  </key>
+
+  <key name="7" >
+  <send>nw</send>
+  </key>
+
+  <key name="8" >
+  <send>north</send>
+  </key>
+
+  <key name="9" >
+  <send>ne</send>
+  </key>
+
+  <key name="." >
+  <send>hide</send>
+  </key>
+
+  <key name="/" >
+  <send>inventory</send>
+  </key>
+
+  <key name="*" >
+  <send>score</send>
+  </key>
+
+  <key name="-" >
+  <send>up</send>
+  </key>
+
+  <key name="+" >
+  <send>down</send>
+  </key>
+
+  <key name="Ctrl+0" >
+  </key>
+
+  <key name="Ctrl+1" >
+  </key>
+
+  <key name="Ctrl+2" >
+  </key>
+
+  <key name="Ctrl+3" >
+  </key>
+
+  <key name="Ctrl+4" >
+  </key>
+
+  <key name="Ctrl+5" >
+  </key>
+
+  <key name="Ctrl+6" >
+  </key>
+
+  <key name="Ctrl+7" >
+  </key>
+
+  <key name="Ctrl+8" >
+  </key>
+
+  <key name="Ctrl+9" >
+  </key>
+
+  <key name="Ctrl+." >
+  </key>
+
+  <key name="Ctrl+/" >
+  </key>
+
+  <key name="Ctrl+*" >
+  </key>
+
+  <key name="Ctrl+-" >
+  </key>
+
+  <key name="Ctrl++" >
+  </key>
+</keypad>
+
+<!-- printing -->
+
+<printing
+   muclient_version="5.02"
+   world_file_version="15"
+   date_saved="2016-12-20 16:39:14"
+  >
+
+<ansi>
+
+ <normal>
+
+ </normal>
+
+ <bold>
+   <style seq="1" bold="y" />
+   <style seq="2" bold="y" />
+   <style seq="3" bold="y" />
+   <style seq="4" bold="y" />
+   <style seq="5" bold="y" />
+   <style seq="6" bold="y" />
+   <style seq="7" bold="y" />
+   <style seq="8" bold="y" />
+
+ </bold>
+
+</ansi>
+</printing>
+
+<!-- plugins -->
+<include name="D:\Program Files\pkuxkx\mushclient499(º¬ºº»¯³£ÓÃ²å¼þ)\³£ÓÃ²å¼þ\pkuxkx_chat.xml" plugin="y" />
+<include name="D:\Program Files\pkuxkx\mushclient499(º¬ºº»¯³£ÓÃ²å¼þ)\³£ÓÃ²å¼þ\pkuxkx_p2palias_v2016.xml" plugin="y" />
+<include name="D:\Program Files\pkuxkx\mushclient499(º¬ºº»¯³£ÓÃ²å¼þ)\³£ÓÃ²å¼þ\Show_fullme_CODE_oem.xml" plugin="y" />
+<include name="D:\Program Files\pkuxkx\mushclient499(º¬ºº»¯³£ÓÃ²å¼þ)\³£ÓÃ²å¼þ\Pkuxkx_mw_z_order_monitor.xml" plugin="y" />
+</muclient>

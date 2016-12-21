@@ -1,0 +1,848 @@
+<?xml version="1.2" encoding="UTF-8"?>
+<!DOCTYPE muclient [
+  <!ENTITY horizontal "y" > 
+  <!ENTITY show_time "y" >
+]>
+
+<muclient>
+<plugin
+   name="dztn_tools_121129"
+   author="binfena"
+   id="a0385c119f7155caf7d57fd8"
+   language="Lua"
+   purpose="计数型打坐吐纳工具"
+   save_state="y"
+   date_written="2012-11-29 21:56:20"
+   requires="4.85"
+   version="1.0"
+   >
+<description trim="y">
+<![CDATA[
+每50次打坐吐纳自动吃喝，请自带干粮，酒袋
+感谢论坛上所有分享和教学贴子的大神们
+感谢studyman
+
+20121202更新为1.2版
+增加打坐到双倍内力功能 命令：dztn d
+增加打坐一定次数功能   命令: dztn N(N为数字)
+增加打坐完成后模拟服务端回显，用于触发下一步行动。
+请先点图标开关一次，以初始化数据
+
+
+                             binfena
+]]>
+</description>
+
+</plugin>
+
+
+<!--  Get our standard constants -->
+
+<include name="constants.lua"/>
+
+<!--  Timers  -->
+
+<timers>
+  <timer 
+    script="handle_cooldowns" 
+    enabled="y" second="1.00" 
+    active_closed="y" >
+  </timer>
+</timers>
+
+
+<!--  Script  -->
+
+<script>
+
+-- pull in entities outside the CDATA block
+
+horizontal = ("&horizontal;"):lower ():sub (1, 1) == "y";
+show_time = ("&show_time;"):lower ():sub (1, 1) == "y";
+
+
+<![CDATA[
+
+-- table of buttons
+
+--[[
+  Each button can have up to four entries:
+  
+  icon - filename of the image to draw
+  tooltip - what to show if you hover the mouse over the button
+  send - what to send to the MUD
+  script - a script function to call
+  cooldown - time spell takes to cool down, in seconds
+  sound - sound to play when button pressed
+
+--]]
+  
+
+buttons = {
+
+  -- button 1
+  {
+  icon = "dz1.png",  -- icon image
+  tooltip = "开始打坐",  -- tooltip help text
+  send = "godztn",  -- what to send
+  cooldown = 1,          -- cooldown time in seconds
+  sound = "",   -- sound to play when cast
+  }, -- end of button 1
+  
+  -- button 2
+  {
+  icon = "dz2.png",
+  tooltip = "停止打坐",
+  send = "stopdztn",
+  cooldown = 1,  -- 1 hour cooldown
+  }, -- end of button 2
+  
+ 
+  
+ --> add more buttons here
+ 
+  
+} -- end of buttons table
+
+
+-- configuration
+
+ICON_SIZE = 32
+
+BACKGROUND_COLOUR = ColourNameToRGB "bisque"
+BOX_COLOUR = ColourNameToRGB "royalblue"
+BUTTON_EDGE = ColourNameToRGB "silver"
+
+MOUSE_DOWN_COLOUR = ColourNameToRGB "darkorange"
+
+-- where to put the window
+WINDOW_POSITION = 6  -- top right
+OFFSET = 6  -- gap inside box
+EDGE_WIDTH = 2 -- size of border stroke
+
+--[[
+Useful positions:
+
+4 = top left
+5 = center left-right at top
+6 = top right
+7 = on right, center top-bottom
+8 = on right, at bottom
+9 = center left-right at bottom
+--]]
+
+-- font and size to use
+
+FONT_NAME = "Lucida Sans Unicode"
+FONT_SIZE = 18
+FONT_SIZE_MEDIUM = 14
+FONT_SIZE_SMALL = 10
+FONT_COLOUR = ColourNameToRGB "yellow"
+
+-- sound to play if on cooldown
+ON_COOLDOWN_SOUND = "ding.wav"
+
+frames = {}  -- remember where each icon was
+
+require "commas"
+
+function mousedown (flags, hotspot_id)
+
+  if hotspot_id == "_" then
+  
+    -- find where mouse is so we can adjust window relative to mouse
+    startx, starty = WindowInfo (win, 14), WindowInfo (win, 15)
+    
+    -- find where window is in case we drag it offscreen
+    origx, origy = WindowInfo (win, 10), WindowInfo (win, 11)
+  
+    return
+    end -- if
+    
+    
+  local n = tonumber (hotspot_id)
+  
+  -- draw the button border in another colour for visual feedback
+  WindowRectOp (win, 1, 
+                frames [n].x1, frames [n].y1, frames [n].x2, frames [n].y2, 
+                MOUSE_DOWN_COLOUR) 
+  
+  Redraw ()                
+end -- mousedown
+
+function cancelmousedown (flags, hotspot_id)
+  local n = tonumber (hotspot_id)
+  
+  -- draw the button border in original colour for visual feedback
+  WindowRectOp (win, 1, 
+                frames [n].x1, frames [n].y1, frames [n].x2, frames [n].y2, 
+                BUTTON_EDGE) 
+  Redraw ()                
+
+end -- cancelmousedown
+
+function mouseup (flags, hotspot_id)
+   
+  -- fix border colour
+  cancelmousedown (flags, hotspot_id)
+  
+  local n = tonumber (hotspot_id)
+  
+  local button = buttons [n]
+  
+  -- shift key clears cooldown
+  if bit.band (flags, 1) == 1 then
+    SetCooldown (n, nil)
+    return
+  end -- if
+  
+  -- can't press button if on cooldown
+  if (button.cooldown_left or 0) > 0 then
+    Sound (ON_COOLDOWN_SOUND)
+    return
+  end -- still on cooldown
+  
+  -- play sound if defined
+  if button.sound then
+    Sound (button.sound)
+  end -- sound to play
+  
+  -- send to world if something specified
+  if type (button.send) == "string" and 
+    button.send ~= "" then
+     
+    local errors =  {} -- no errors yet
+  
+    -- function to do the replacements for string.gsub
+    
+    local function replace_variables (s)
+      s = string.sub (s, 2)  -- remove the @
+      replacement = GetPluginVariable ("", s)    -- look up variable in global variables
+      if not replacement then  -- not there, add to errors list
+        table.insert (errors, s)
+        return
+      end -- not there
+      return replacement  -- return variable
+    end -- replace_variables 
+    
+    -- replace all variables starting with @
+    
+    local command = string.gsub (button.send, "@%a[%w_]*", replace_variables)
+    
+    -- report any errors
+    
+    if #errors > 0 then
+      for k, v in ipairs (errors) do
+        ColourNote ("white", "red", "Variable '" .. v .. "' does not exist")
+      end -- for
+      return
+    end -- error in replacing
+     
+    Execute (command)
+  end -- if
+  
+  -- execute script if wanted
+  if type (button.script) == "function" then
+    button.script (n) 
+  end -- if
+     
+  SetCooldown (n, button.cooldown)
+  
+end -- mouseup
+
+function dragmove(flags, hotspot_id)
+
+  -- find where it is now
+  local posx, posy = WindowInfo (win, 17),
+                     WindowInfo (win, 18)
+
+  -- move the window to the new location
+  WindowPosition(win, posx - startx, posy - starty, 0, 2);
+  
+  -- change the mouse cursor shape appropriately
+  if posx < 0 or posx > GetInfo (281) or
+     posy < 0 or posy > GetInfo (280) then
+    SetCursor (11)   -- X cursor
+  else
+    SetCursor (10)   -- arrow (NS/EW) cursor
+  end -- if
+  
+end -- dragmove
+
+function dragrelease(flags, hotspot_id)
+  local newx, newy = WindowInfo (win, 17), WindowInfo (win, 18)
+  
+  -- don't let them drag it out of view
+  if newx < 0 or newx > GetInfo (281) or
+     newy < 0 or newy > GetInfo (280) then
+     -- put it back
+    WindowPosition(win, origx, origy, 0, 2);
+  end -- if out of bounds
+  
+end -- dragrelease
+
+function SetCooldown (n, amount)
+  assert (n >= 1 and n <= #buttons, 
+          "Bad button number " .. n .. " to SetCooldown")
+  if amount then
+    assert (amount >= 0, "Bad amount " .. amount .. " to SetCooldown")
+  end -- if
+          
+  local frame = frames [n] 
+  local x1, y1, x2, y2 = frame.x1 + 1, frame.y1 + 1, frame.x2 - 1, frame.y2 - 1         
+  buttons [n].cooldown_left = amount  -- cooldown time left in seconds
+  local max = buttons [n].cooldown or 0   -- max cooldown time
+  local percent  -- how far cooled down we are as a percent
+  
+  if max > 0 then
+    percent = (amount or 0) / max 
+  else
+    percent = 0  -- don't divide by zero!
+  end -- if
+  
+  -- reload the image
+  if WindowDrawImage(win, n, 
+                  x1, y1,   -- left, top
+                  x2, y2,  -- right, bottom
+                  2)  -- mode - stretch or shrink
+    ~= error_code.eOK then
+    WindowRectOp (win, 2, x1, y1,   -- left, top
+                  x2, y2,  -- right, bottom
+                  BACKGROUND_COLOUR)
+  end
+                 
+  if amount and amount > 0 then
+  
+    -- calculate pie end point
+    local endx = math.cos (math.rad (percent * 360 + 90)) * ICON_SIZE + ICON_SIZE / 2
+    local endy = -1 * math.sin (math.rad (percent * 360 + 90)) * ICON_SIZE + ICON_SIZE / 2
+    
+    -- clear temporary window
+    WindowRectOp (tempwin, 2, 0, 0, 0, 0, 0xFFFFFF)  -- fill with white
+    
+    -- draw the pie showing amount of cooldown
+    WindowCircleOp (tempwin, 5, -10, -10, ICON_SIZE + 10, ICON_SIZE + 10,   -- pie
+          0x000000, 5, 0,   -- no pen
+          0x000000, 0,  -- solid brush, black
+          ICON_SIZE / 2, 0,   -- from 12 o'clock position
+          endx, endy)
+    
+    -- turn pie shape into an image
+    WindowImageFromWindow(win, "mask", tempwin)
+                      
+    -- blend in (darken mode) with 50% opacity
+    WindowBlendImage(win, "mask", 
+                     x1, y1, x2, y2,  -- rectangle
+                     5,  -- darken
+                     0.5)  -- opacity
+                  
+    -- if they want to see the time left (text on top of the button) do that now   
+    if show_time then
+      local font = "f"
+      local time_left = convert_time (amount)
+      time_left = string.gsub (time_left, "[ s]", "") -- get rid of spaces, and "s"
+      local time_len = WindowTextWidth (win, font, time_left)
+      
+      -- use smaller font if it doesn't fit
+      if time_len > ICON_SIZE then
+        font = "f2"
+        time_len = WindowTextWidth (win, font, time_left)
+  
+        -- still too big?        
+        if time_len > ICON_SIZE then
+          font = "f3"
+          time_len = WindowTextWidth (win, font, time_left)
+        end -- if
+     
+      end -- if
+      
+      local font_height = WindowFontInfo (win, font, 1)  
+      local x_offset = math.max ((ICON_SIZE - time_len) / 2, 0)
+      local y_offset = math.max ((ICON_SIZE - font_height) / 2, 0)
+      
+      WindowText (win, font, time_left, x1 + x_offset + 2, y1 + y_offset + 2, x2, y2, 0x000000)
+      WindowText (win, font, time_left, x1 + x_offset, y1 + y_offset, x2, y2, FONT_COLOUR)
+    end -- show_time
+    
+  else
+    buttons [n].cooldown_left = nil
+  end -- if
+  
+  Redraw ()
+  
+end -- function SetCooldown
+
+function OnPluginInstall ()
+
+  local x, y, mode, flags = 
+      tonumber (GetVariable ("windowx")) or 0,
+      tonumber (GetVariable ("windowy")) or 0,
+      tonumber (GetVariable ("windowmode")) or WINDOW_POSITION, -- top right
+      tonumber (GetVariable ("windowflags")) or 0
+  
+  -- check miniwindow visible
+  if x < 0 or x > GetInfo (281) or
+     y < 0 or y > GetInfo (280) then
+     x, y = 0, 0  -- reset to top left
+  end -- if not visible
+           
+  win = GetPluginID ()  -- get a unique name
+  tempwin = win .. ":temp"
+  
+  local gauge_height, gauge_width
+  
+  if horizontal then
+    window_width = (#buttons * (ICON_SIZE + OFFSET)) + OFFSET
+    window_height = ICON_SIZE + (OFFSET * 2)
+  else
+    window_width = ICON_SIZE + (OFFSET * 2)
+    window_height = (#buttons * (ICON_SIZE + OFFSET)) + OFFSET
+  end -- if
+  
+  -- make the miniwindow
+  WindowCreate (win, 
+             x, y,   -- left, top (auto-positions)
+             window_width,     -- width
+             window_height,  -- height
+             mode,   -- position mode
+             flags,  -- flags
+             BACKGROUND_COLOUR) 
+        
+  -- for drawing cooldowns (window not visible)
+  WindowCreate (tempwin, 
+             0, 0,   -- left, top 
+             ICON_SIZE,     -- width
+             ICON_SIZE,  -- height
+             12,   -- position mode
+             0,  -- flags
+             ColourNameToRGB "white") 
+
+  -- grab fonts
+  WindowFont (win, "f", FONT_NAME, FONT_SIZE, true) 
+  WindowFont (win, "f2", FONT_NAME, FONT_SIZE_MEDIUM, true) 
+  WindowFont (win, "f3", FONT_NAME, FONT_SIZE_SMALL, true) 
+             
+  -- draw the buttons
+  
+  for n, v in ipairs (buttons) do
+
+    if v.icon then
+      if WindowLoadImage (win, n, GetInfo (66) .. v.icon) ~= error_code.eOK then
+          DoAfterSpecial (1, string.format ([[
+              ColourNote ("white", "red", "Could not load image '%s'")]], 
+                          string.gsub (GetInfo (66) .. v.icon, '\\', '\\\\')),
+                          sendto.script)
+      end -- if
+    end -- if icon specified
+       
+    local x1, y1, x2, y2
+
+    -- where to draw the icon
+    if horizontal then
+      x1, y1 = (n - 1) * (ICON_SIZE + OFFSET) + OFFSET, OFFSET
+      x2, y2 = n * (ICON_SIZE + OFFSET), ICON_SIZE + OFFSET
+    else
+      x1, y1 = OFFSET, (n - 1) * (ICON_SIZE + OFFSET) + OFFSET
+      x2, y2 = ICON_SIZE + OFFSET, n * (ICON_SIZE + OFFSET)
+    end -- if
+        
+    -- draw the image
+    if WindowDrawImage(win, n, 
+                    x1, y1,   -- left, top
+                    x2, y2,  -- right, bottom
+                    2)  -- mode - stretch or shrink
+        ~= error_code.eOK then
+      WindowRectOp (win, 2, x1, y1,   -- left, top
+                    x2, y2,  -- right, bottom
+                    BACKGROUND_COLOUR)
+    end -- if
+               
+    -- remember where to draw the frame, for mouse clicks
+    frames [n] = { 
+            x1 = x1 - 1,
+            y1 = y1 - 1,
+            x2 = x2 + 1,
+            y2 = y2 + 1
+            }
+    
+    -- draw the button border
+    WindowRectOp (win, 1, 
+                  frames [n].x1, frames [n].y1, frames [n].x2, frames [n].y2, 
+                  BUTTON_EDGE) 
+    
+    -- make a hotspot we can click on
+    WindowAddHotspot(win, n,  
+                 frames [n].x1, frames [n].y1, frames [n].x2, frames [n].y2,   -- rectangle
+                 "",   -- mouseover
+                 "",   -- cancelmouseover
+                 "mousedown",
+                 "cancelmousedown", 
+                 "mouseup", 
+                 v.tooltip,  -- tooltip text
+                 1, 0)  -- hand cursor
+                      
+  end --  for each world
+  
+
+  -- draw the border of the whole box
+  WindowCircleOp (win, 2, 0, 0, 0, 0, BOX_COLOUR, 6, EDGE_WIDTH, 0x000000, 1) 
+    
+  -- make a hotspot
+  WindowAddHotspot(win, "_",  
+                   0, 0, 0, 0,   -- whole window
+                   "",   -- MouseOver
+                   "",   -- CancelMouseOver
+                   "mousedown",
+                   "",   -- CancelMouseDown
+                   "",   -- MouseUp
+                   "Drag to move",  -- tooltip text
+                   10, 0)  -- arrow (NS/EW) cursor
+                   
+  WindowDragHandler(win, "_", "dragmove", "dragrelease", 0) 
+  
+  if GetVariable ("enabled") == "false" then
+    ColourNote ("yellow", "", "Warning: Plugin " .. GetPluginName ().. " is currently disabled.")
+    EnablePlugin (GetPluginID (), false)
+    return
+  end -- they didn't enable us last time
+ 
+  -- ensure window visible
+  WindowShow (win, true)
+    
+end -- OnPluginInstall
+
+-- hide window on removal
+function OnPluginClose ()
+  WindowShow (win,  false)  -- hide it
+end -- OnPluginClose
+
+-- show window on enable
+function OnPluginEnable ()
+  WindowShow (win,  true)  -- show it
+end -- OnPluginEnable
+
+-- hide window on disable
+function OnPluginDisable ()
+  WindowShow (win,  false)  -- hide it
+end -- OnPluginDisable
+
+function OnPluginSaveState ()
+  SetVariable ("enabled",     tostring (GetPluginInfo (GetPluginID (), 17)))
+  SetVariable ("windowx",     WindowInfo (win, 10))
+  SetVariable ("windowy",     WindowInfo (win, 11))
+  SetVariable ("windowmode",  WindowInfo (win, 7))
+  SetVariable ("windowflags", WindowInfo (win, 8))
+end -- OnPluginSaveState
+
+-- called every second on a timer
+function handle_cooldowns (name)
+  for n, v in ipairs (buttons) do
+    if buttons [n].cooldown_left then
+      SetCooldown (n, buttons [n].cooldown_left - 1) 
+    end -- if some cooldown left
+  end -- for
+end -- function handle_cooldowns
+
+]]>
+</script>
+
+<!--  Triggers  -->
+
+<triggers>
+  <trigger
+   enabled="y"
+   group="dztn_tools"
+   keep_evaluating="y"
+   match="^现在现实中的时间是北京时间\s\S+\s\S+\s+(\d+)\s+(\d+):(\d+):(\d+) \d+\S+。"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>SetVariable("day",%1);
+SetVariable("hour",%2);
+SetVariable("minu",%3);
+SetVariable("sec",%4);</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="dztn_tools"
+   keep_evaluating="y"
+   match="^\s*内功\s\(force\).*有效等级：\s*(\d+)$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>local dztn=%1/10+1;
+SetVariable ("dztn",dztn);</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="dztn"
+   keep_evaluating="y"
+   match="^[&gt; ]*你随意一站，双手缓缓抬起，深吸一口气，真气开始在体内运转。"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>local dztn=GetVariable("dztn");
+local i = GetVariable("num")+1;
+local j = i % 50;
+if j==0 then Execute("aed") end;
+Note("开始第"..i.."次打坐吐纳");
+SetVariable ("num",i);
+Send ("dazuo "..dztn);</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="dztn"
+   keep_evaluating="y"
+   match="^[&gt; ]*你吐纳完毕，睁开双眼，站了起来。"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>if GetVariable("dzdouble")+0==1 then Send("hpbrief") else
+if GetVariable("dz_C")+0==0 then
+local dztn=GetVariable("dztn");
+local i = GetVariable("num")+1;
+local j = i % 50;
+  if j==0 then Execute("aed") end;
+Note("开始第"..i.."次打坐吐纳");
+SetVariable ("num",i);
+Send ("dazuo "..dztn);
+else
+local h = GetVariable("dz_num")-1;
+Execute ("dztn "..h);
+end
+end</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="dztn_tools"
+   lines_to_match="5"
+   keep_evaluating="y"
+   match="^[&gt;]*\s*【 气血 】\s+(\d+)\s+/\s+(\d+)\s+\[\s*\d+\%]\s+【 内力 】\s+(\d+)\s+./\s+(\d+)\s+.*$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>SetVariable ("qi",%1);
+SetVariable ("maxqi",%2);
+SetVariable ("neili",%3);
+SetVariable ("maxneili",%4)</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="dztn_tools"
+   keep_evaluating="y"
+   match="^[&gt;]*\s*【 精神 】\s+(\d+)\s+/\s+(\d+)\s+\[\s*\d+\%]\s+【 精力 】\s+(\d+)\s+./\s+(\d+)\s+.*$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>SetVariable ("jing",%1);
+SetVariable ("maxjing",%2);
+SetVariable ("jingli",%3);
+SetVariable ("maxjingli",%4)</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="dztn_tools"
+   keep_evaluating="y"
+   match="^[&gt; ]*设定环境变量：wait \= \&quot;continue\&quot;$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>local i = GetVariable("num");
+local day = GetVariable("day") - GetVariable("tempday");
+local hour = GetVariable("hour") - GetVariable("temphour");
+local i = GetVariable("num");
+local day = GetVariable("day") - GetVariable("tempday");
+local hour = GetVariable("hour") - GetVariable("temphour");
+local i = GetVariable("num");
+local day = GetVariable("day") - GetVariable("tempday");
+local hour = GetVariable("hour") - GetVariable("temphour");
+local minu = GetVariable("minu") - GetVariable("tempminu");
+local sec = GetVariable("sec") - GetVariable("tempsec");
+if sec &lt; 0 then sec = sec +60;minu = minu -1; end;
+if minu &lt;0 then minu = minu +60;hour = hour -1; end;
+if hour &lt;0 then hour = hour +24;day = day -1; end;
+local nl = GetVariable("maxneili") - GetVariable("tempmaxneili");
+local jl = GetVariable("maxjingli") - GetVariable("tempmaxjingli");
+local nl_hour=nl*3600/(day*24*3600+hour*3600+minu*60+sec);
+EnableTriggerGroup("dztn_tools",0);
+Note ("=======================打坐吐纳结束=======================");
+Note ("   本次打坐共计 "..i.." 次,共用时 "..day.." 天"..hour.." 小时 "..minu.." 分钟 "..sec.." 秒。");
+Note ("   最大内力从 "..GetVariable("tempmaxneili").." 点增加到 "..GetVariable("maxneili").." 点，共计增加 "..nl.." 点");
+Note ("   最大精力从 "..GetVariable("tempmaxjingli").." 点增加到 "..GetVariable("maxjingli").." 点，共计增加 "..jl.." 点");
+Note ("   约每小时增加 "..nl_hour.." 点             ");
+Note ("=========================感谢使用=========================");</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="dztn_tools"
+   match="^[&gt; ]*设定环境变量：wait \= \&quot;wait\&quot;$"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>local dztn = GetVariable("dztn");
+local i = GetVariable("num");
+SetVariable ("tempmaxneili",GetVariable("maxneili"));
+SetVariable ("tempmaxjingli",GetVariable("maxjingli"));
+SetVariable ("tempday",GetVariable("day"));
+SetVariable ("temphour",GetVariable("hour"));
+SetVariable ("tempminu",GetVariable("minu"));
+SetVariable ("tempsec",GetVariable("sec"));
+Note("开始第"..i.."次打坐吐纳");
+Send ("dazuo "..dztn);</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   expand_variables="y"
+   group="dztn"
+   match="^[&gt; ]*你运功完毕，深深吸了口气，站了起来。"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>local dztn=GetVariable("dztn");
+Send ("tuna "..dztn)</send>
+  </trigger>
+  <trigger
+   enabled="y"
+   group="dztn_tools"
+   lines_to_match="2"
+   keep_evaluating="y"
+   match="^[&gt; ]*\#\d+[\.\d]*[\w]*\,\d+\,(\d+)\,(\d+)\,\d+\,\d+\n\#\d+\,\d+\,\d+\,\d+\,\d+\,\d+\Z"
+   multi_line="y"
+   regexp="y"
+   send_to="12"
+   sequence="100"
+  >
+  <send>local dztn=GetVariable("dztn")+0;
+  local a=%1*2-%2;
+  if a&gt;=dztn then Send("dazuo "..dztn) else 
+  SetVariable("dzdouble",0);
+  EnableTriggerGroup("dztn_tools",0);
+  Note ("完成打坐。---一秒后返回模拟信息");
+  DoAfterSpecial(1,'Simulate("^^计数型打坐吐纳工具帮助您打坐双倍内力---完成^^")',12);
+  end</send>
+  </trigger>
+</triggers>
+
+<!--  Aliases  -->
+<aliases>
+  <alias
+   match="^dztn (.+)"
+   enabled="y"
+   regexp="y"
+   send_to="12"
+   keep_evaluating="y"
+   sequence="100"
+  >
+  <send>EnableTriggerGroup("dztn_tools",1);
+EnableTriggerGroup("dztn",1);
+if %1 == d then SetVariable("dzdouble",1);
+Send ("hpbrief");
+else 
+if %1&gt;0 then
+SetVariable("dz_C",1);
+SetVariable("dz_num",%1);
+local dznl=GetVariable("dztn");
+local i=%1;
+Note ("-------------- 计数型打坐开始，倒数: "..i.. "--------------");
+Send ("dazuo "..dznl);
+else SetVariable("dz_C",0);
+Note (" ------------------- 打坐完成 ------------------- ");
+DoAfterSpecial(1,'Simulate("^^计数型打坐吐纳工具帮助您打坐---完成^^")',12);end
+end</send>
+  </alias>
+  <alias
+   match="stopdztn"
+   enabled="y"
+   send_to="12"
+   keep_evaluating="y"
+   sequence="100"
+  >
+  <send>EnableTriggerGroup("dztn",0);
+Send ("time");
+Send ("hp");
+DoAfterSpecial(2,'Send ("set wait continue")',12)</send>
+  </alias>
+  <alias
+   match="godztn"
+   enabled="y"
+   send_to="12"
+   keep_evaluating="y"
+   sequence="100"
+  >
+  <send>Note ("------------欢迎使用计数型打坐吐纳工具------------");
+EnableTriggerGroup("dztn",1);
+EnableTriggerGroup("dztn_tools",1);
+Send ("time");
+Send ("jifa");
+Send ("hp");
+local num=1;
+SetVariable ("num",num);
+Send ("set wait wait");
+</send>
+  </alias>
+  <alias
+   match="aed"
+   enabled="y"
+   group="all"
+   send_to="10"
+   sequence="100"
+  >
+  <send>eat liang;drink jiudai</send>
+  </alias>
+</aliases>
+
+<!--  Variables  -->
+
+<variables>
+  <variable name="sec">28</variable>
+  <variable name="tempday">29</variable>
+  <variable name="maxjing">522</variable>
+  <variable name="jing">522</variable>
+  <variable name="tempmaxneili">1432</variable>
+  <variable name="temphour">21</variable>
+  <variable name="minu">43</variable>
+  <variable name="maxneili">1432</variable>
+  <variable name="tempsec">28</variable>
+  <variable name="day">29</variable>
+  <variable name="maxjingli">1319</variable>
+  <variable name="maxqi">876</variable>
+  <variable name="jingli">1751</variable>
+  <variable name="dztn">16.1</variable>
+  <variable name="tempminu">43</variable>
+  <variable name="tempmaxjingli">1319</variable>
+  <variable name="neili">1976</variable>
+  <variable name="qi">876</variable>
+  <variable name="hour">21</variable>
+  <variable name="dz_num">0</variable>
+  <variable name="dzdouble">0</variable>
+  <variable name="dz_C">0</variable>
+</variables>
+
+<!--  Plugin help  -->
+
+<aliases>
+  <alias
+   script="OnHelp"
+   match="dztn_tools:help"
+   enabled="y"
+  >
+  </alias>
+</aliases>
+
+<script>
+<![CDATA[
+function OnHelp ()
+  world.Note (world.GetPluginInfo (world.GetPluginID (), 3))
+end
+]]>
+</script> 
+</muclient>

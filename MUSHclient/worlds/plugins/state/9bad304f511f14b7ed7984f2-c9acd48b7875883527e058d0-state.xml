@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE muclient>
+<!-- Saved on 2016Äê Ê®¶þÔÂ 20ÈÕ ÐÇÆÚ¶þ, ÉÏÎç 11:27 -->
+<!-- MuClient version 5.02 -->
+<!-- Written by Nick Gammon -->
+<!-- Home Page: http://www.mushclient.com/ -->
+
+<!-- ²å¼þ×´Ì¬ÒÑ±»±£´æ¡£²å¼þ:¡°pkuxkx_p2palias_v20160728¡±£¬ÓÎÏ·:¡°pkuxkx¡±¡£ -->
+
+<muclient>
+
+<!-- variables -->
+
+<variables
+   muclient_version="5.02"
+   world_file_version="15"
+   date_saved="2016-12-20 11:27:57"
+  >
+  <variable name="gt_end">fuzhou</variable>
+  <variable name="prev_cmd">gt fuzhou</variable>
+  <variable name="roomname">¾®µ×</variable>
+  <variable name="step_maxn">1</variable>
+  <variable name="walk_step_count">2</variable>
+</variables>
+</muclient>
